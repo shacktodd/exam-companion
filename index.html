@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>格 · Exam Companion — Chinese L1–3 Study</title>
+<meta name="description" content="A weekly study companion for the Chinese L1–3 exam: vocabulary, stroke-order writing practice, listening, reading, speaking, and composition." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f3f2ec; --paper-2:#eae8de; --card:#fcfbf7; --card-2:#f6f4ec;
+    --ink:#1b2430; --ink-soft:#3b4552; --muted:#6c6b60;
+    --mark:#cf3f2c; --mark-deep:#a22e1f;
+    --jade:#2f7d5b; --jade-deep:#215c42;
+    --gold:#b0813a; --blue:#2b5a8c;
+    --line:#d6d2c6; --line-2:#e3dfd3;
+    --grid:rgba(43,90,140,.06);
+    --t1:#2b5a8c; --t2:#2f7d5b; --t3:#b0813a; --t4:#cf3f2c; --t0:#8a8880;
+    --shadow:0 20px 46px -26px rgba(27,36,48,.5);
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background:
+      linear-gradient(var(--grid) 1px,transparent 1px) 0 0/26px 26px,
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/26px 26px,
+      var(--paper);}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.06;margin:0}
+  .hanzi{font-family:"Noto Serif SC",serif}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mark);font-weight:500}
+  .pinyin{font-family:"IBM Plex Mono",monospace;font-weight:500}
+  .t1{color:var(--t1)}.t2{color:var(--t2)}.t3{color:var(--t3)}.t4{color:var(--t4)}.t0{color:var(--t0)}
+  [hidden]{display:none!important}
+
+  /* speaker button */
+  .spk{border:1px solid var(--line);background:var(--card);cursor:pointer;border-radius:8px;width:34px;height:34px;
+    display:inline-grid;place-items:center;color:var(--jade-deep);transition:.13s;flex:none;padding:0}
+  .spk:hover{border-color:var(--jade);background:rgba(47,125,91,.1)}
+  .spk:active{transform:scale(.92)}
+  .spk svg{width:17px;height:17px}
+  .spk.lg{width:44px;height:44px}.spk.lg svg{width:21px;height:21px}
+  .spk.on-dark{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.22);color:#cfe6da}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(243,242,236,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;gap:16px;height:62px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
+  .brand .seal{width:36px;height:36px;border:1.5px solid var(--mark);border-radius:8px;display:grid;place-items:center;
+    color:var(--mark);background:rgba(207,63,44,.06);font-family:"Noto Serif SC",serif;font-weight:700;font-size:1.15rem}
+  .brand b{font-family:"Fraunces",serif;font-weight:600;font-size:1.06rem}
+  .brand small{display:block;font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .week-select{margin-left:6px;position:relative}
+  .week-select select{appearance:none;border:1px solid var(--line);background:var(--card);border-radius:9px;
+    padding:8px 30px 8px 12px;font-family:"IBM Plex Sans",sans-serif;font-size:.82rem;font-weight:600;color:var(--ink);cursor:pointer}
+  .week-select::after{content:"▾";position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted);font-size:.7rem}
+  .nav nav{margin-left:auto;display:flex;gap:2px}
+  .nav nav a{text-decoration:none;font-size:.83rem;font-weight:500;color:var(--muted);padding:8px 11px;border-radius:8px;transition:.14s;white-space:nowrap}
+  .nav nav a:hover{color:var(--ink);background:rgba(27,36,48,.05)}
+  .nav nav a.active{color:var(--mark)}
+
+  /* HERO */
+  .hero{border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:52px 22px 58px}
+  .hero .kick{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .hero .kick .wk{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink);background:var(--paper-2);border:1px solid var(--line);padding:4px 10px;border-radius:99px}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);letter-spacing:-.015em}
+  .hero h1 em{font-style:italic;color:var(--mark)}
+  .hero p.lede{color:var(--ink-soft);font-size:1.05rem;max-width:44ch;margin:16px 0 26px}
+  .hero .cta{display:flex;gap:11px;flex-wrap:wrap}
+  .btn{border:0;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:.9rem;padding:12px 20px;border-radius:11px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.15s}
+  .btn.primary{background:var(--ink);color:var(--paper)}.btn.primary:hover{background:#0f1720}
+  .btn.mark{background:var(--mark);color:#fff}.btn.mark:hover{background:var(--mark-deep)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.ghost:hover{border-color:var(--ink)}
+  .btn.soft{background:var(--card);color:var(--ink);border:1px solid var(--line)}.btn.soft:hover{border-color:var(--jade)}
+  .btn:disabled{opacity:.5;cursor:default}
+
+  /* 米字格 writing square (shared) */
+  .mzg{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:6px;aspect-ratio:1;width:100%}
+  .mzg .grid-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .mzg .hw{position:absolute;inset:0;display:grid;place-items:center}
+  .hero-mzg{max-width:320px;margin:0 auto;box-shadow:var(--shadow)}
+  .hero-fallback{font-family:"Noto Serif SC",serif;font-size:11rem;color:var(--ink);line-height:1}
+  .hero-cap{text-align:center;font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+  section.block{padding:56px 0}
+  .sec-head{max-width:60ch;margin-bottom:26px}
+  .sec-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.01em;margin-top:8px}
+  .sec-head p{color:var(--muted);margin:11px 0 0;font-size:1rem}
+  .band{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* EXAM ROADMAP */
+  .roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .rm-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;position:relative;transition:.14s}
+  .rm-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .rm-card .rm-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+  .rm-card .rm-n{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;color:var(--mark)}
+  .rm-card .rm-pts{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px}
+  .rm-card h3{font-size:1.05rem;margin-bottom:6px}
+  .rm-card p{font-size:.86rem;color:var(--muted);margin:0}
+  .rm-card .rm-go{margin-top:10px;font-size:.8rem;font-weight:600;color:var(--jade-deep);text-decoration:none}
+  .rm-card.extra{background:linear-gradient(180deg,rgba(207,63,44,.05),var(--card))}
+
+  /* deck picker / chips */
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .chip{border:1px solid var(--line);background:var(--card);cursor:pointer;padding:8px 14px;border-radius:99px;font-size:.83rem;font-weight:500;color:var(--ink);transition:.14s;display:flex;gap:7px;align-items:center}
+  .chip:hover{border-color:var(--jade)}
+  .chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .chip .ct{font-family:"IBM Plex Mono",monospace;font-size:.7rem;opacity:.7}
+
+  /* VOCAB FLASHCARDS */
+  .vocab-wrap{max-width:520px;margin:0 auto}
+  .vocab-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:.85rem;color:var(--muted)}
+  .vocab-top .prog{font-family:"IBM Plex Mono",monospace}
+  .flip{perspective:1600px;cursor:pointer;outline:none;user-select:none}
+  .flip-inner{position:relative;width:100%;aspect-ratio:1/.82;transition:transform .5s cubic-bezier(.4,.05,.2,1);transform-style:preserve-3d}
+  .flip.flipped .flip-inner{transform:rotateY(180deg)}
+  .flip.noanim .flip-inner{transition:none!important}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;padding:20px}
+  .face.back{transform:rotateY(180deg)}
+  .face-tag{display:flex;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  .face .center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+  .face .fc{font-family:"Noto Serif SC",serif;font-weight:600;font-size:clamp(2.6rem,11vw,4rem);line-height:1.05;text-align:center}
+  .face .fhint{font-size:.78rem;color:var(--muted)}
+  .face .fpy{font-family:"IBM Plex Mono",monospace;font-size:1.5rem;font-weight:600}
+  .face .fmean{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;text-align:center}
+  .face .frow{display:flex;align-items:center;gap:12px}
+  .rate-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .rate{border:1.5px solid var(--line);background:var(--card);cursor:pointer;border-radius:12px;padding:13px;font-weight:600;font-size:.92rem;color:var(--ink);transition:.13s}
+  .rate.again:hover{border-color:var(--gold);color:#7a5a14;background:rgba(176,129,58,.08)}
+  .rate.good:hover{border-color:var(--jade);color:var(--jade-deep);background:rgba(47,125,91,.1)}
+  .mini-hint{text-align:center;font-size:.78rem;color:var(--muted);margin-top:10px}
+
+  /* WRITING LAB */
+  #writing{}
+  .lab{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:28px;align-items:start}
+  .lab-left{display:flex;flex-direction:column;gap:14px}
+  .writer-shell{width:100%;max-width:360px;margin:0 auto}
+  .writer-info{display:flex;align-items:center;gap:12px;justify-content:center;text-align:center;flex-wrap:wrap}
+  .writer-info .wi-py{font-family:"IBM Plex Mono",monospace;font-size:1.3rem;font-weight:600}
+  .writer-info .wi-m{font-family:"Fraunces",serif;font-size:1.2rem}
+  .writer-info .wi-rad{font-size:.7rem;color:var(--mark);border:1px solid var(--mark);border-radius:99px;padding:2px 8px;letter-spacing:.04em}
+  .writer-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .writer-controls .btn{justify-content:center;padding:11px}
+  .nav-arrows{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .arrow-btn{border:1px solid var(--line);background:var(--card);border-radius:10px;width:42px;height:42px;cursor:pointer;font-size:1.1rem;color:var(--ink);transition:.13s;flex:none}
+  .arrow-btn:hover{border-color:var(--ink)}
+  .write-feedback{min-height:26px;text-align:center;font-size:.9rem;font-weight:600}
+  .write-feedback.good{color:var(--jade-deep)}.write-feedback.bad{color:var(--mark-deep)}
+  .lab-right h3{font-size:1.1rem;margin-bottom:6px}
+  .lab-right .lr-sub{font-size:.86rem;color:var(--muted);margin-bottom:14px}
+  .char-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:8px}
+  .char-tile{aspect-ratio:1;border:1px solid var(--line);background:var(--card);border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:.12s;position:relative}
+  .char-tile:hover{border-color:var(--jade);transform:translateY(-2px)}
+  .char-tile.active{border-color:var(--mark);background:#fff;box-shadow:0 0 0 2px rgba(207,63,44,.15)}
+  .char-tile.done::after{content:"✓";position:absolute;top:3px;right:5px;font-size:.66rem;color:var(--jade);font-weight:700}
+  .char-tile .tc{font-family:"Noto Serif SC",serif;font-size:1.6rem;font-weight:600;line-height:1}
+  .char-tile .tp{font-family:"IBM Plex Mono",monospace;font-size:.6rem;color:var(--muted)}
+  .char-tile.rad{border-style:dashed;border-color:var(--mark)}
+  .lab-progress{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--muted);margin-top:12px}
+
+  /* LISTENING */
+  .listen-box{max-width:560px;margin:0 auto}
+  .listen-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:.85rem;color:var(--muted)}
+  .listen-card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px;text-align:center}
+  .big-play{width:88px;height:88px;border-radius:50%;border:2px solid var(--ink);background:var(--card);cursor:pointer;display:inline-grid;place-items:center;color:var(--ink);transition:.14s;margin-bottom:6px}
+  .big-play:hover{background:var(--ink);color:var(--paper)}
+  .big-play svg{width:34px;height:34px}
+  .listen-q{font-size:.85rem;color:var(--muted);margin-bottom:18px}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+  .opt{border:1px solid var(--line);background:var(--paper);border-radius:11px;padding:14px;cursor:pointer;font-family:"Noto Serif SC",serif;font-size:1.3rem;font-weight:600;color:var(--ink);transition:.12s}
+  .opt:hover:not(:disabled){border-color:var(--jade);background:var(--card)}
+  .opt.correct{border-color:var(--jade);background:rgba(47,125,91,.14);color:var(--jade-deep)}
+  .opt.wrong{border-color:var(--mark);background:rgba(207,63,44,.12);color:var(--mark-deep)}
+  .opt:disabled{cursor:default}
+  .opt .op-py{display:block;font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:500;color:var(--muted);margin-top:3px}
+  .listen-foot{margin-top:16px;display:flex;justify-content:space-between;align-items:center;min-height:42px;gap:10px}
+  .lf-msg{font-weight:600;font-size:.9rem}.lf-msg.good{color:var(--jade-deep)}.lf-msg.bad{color:var(--mark-deep)}
+  .dots{display:flex;gap:5px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--paper);border:1px solid var(--line)}
+  .dot.good{background:var(--jade);border-color:var(--jade)}.dot.bad{background:var(--mark);border-color:var(--mark)}
+
+  /* READING */
+  .read-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .toggle{border:1px solid var(--line);background:var(--card);cursor:pointer;padding:8px 13px;border-radius:99px;font-size:.8rem;font-weight:500;color:var(--ink);transition:.13s}
+  .toggle.on{background:var(--jade);border-color:var(--jade);color:#fff}
+  .dialogue{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px 24px}
+  .d-line{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line-2)}
+  .d-line:last-child{border-bottom:0}
+  .d-who{font-family:"Noto Serif SC",serif;font-weight:700;color:var(--mark);flex:none;width:26px;font-size:1.1rem}
+  .d-body{flex:1;min-width:0}
+  .d-han{font-family:"Noto Serif SC",serif;font-size:1.3rem;font-weight:500;line-height:1.5;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .d-py{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--blue);margin-top:4px}
+  .d-en{font-size:.9rem;color:var(--muted);margin-top:2px;font-style:italic}
+  .tf-wrap{margin-top:24px}
+  .tf-wrap h3{font-size:1.05rem;margin-bottom:12px}
+  .tf-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:9px}
+  .tf-q{font-family:"Noto Serif SC",serif;font-size:1.05rem;margin-bottom:9px}
+  .tf-btns{display:flex;gap:8px}
+  .tf-btn{border:1px solid var(--line);background:var(--paper);cursor:pointer;padding:7px 16px;border-radius:9px;font-size:.82rem;font-weight:600;color:var(--ink);transition:.12s}
+  .tf-btn:hover:not(:disabled){border-color:var(--ink)}
+  .tf-btn.correct{background:rgba(47,125,91,.16);border-color:var(--jade);color:var(--jade-deep)}
+  .tf-btn.wrong{background:rgba(207,63,44,.12);border-color:var(--mark);color:var(--mark-deep)}
+  .tf-btn:disabled{cursor:default}
+  .tf-exp{font-size:.82rem;color:var(--muted);margin-top:8px}
+
+  /* SPEAKING */
+  .speak-box{max-width:560px;margin:0 auto}
+  .speak-card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px;text-align:center}
+  .speak-q-han{font-family:"Noto Serif SC",serif;font-size:1.9rem;font-weight:600;line-height:1.4}
+  .speak-q-py{font-family:"IBM Plex Mono",monospace;font-size:.95rem;color:var(--blue);margin-top:8px}
+  .speak-q-en{font-family:"Fraunces",serif;font-size:1.1rem;color:var(--muted);font-style:italic;margin-top:4px}
+  .speak-actions{display:flex;gap:10px;justify-content:center;margin:18px 0 6px;flex-wrap:wrap}
+  .model{background:var(--paper-2);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;margin-top:14px;text-align:left}
+  .model .m-lbl{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mark);margin-bottom:6px}
+  .model .m-han{font-family:"Noto Serif SC",serif;font-size:1.2rem;line-height:1.5}
+  .model .m-en{font-size:.86rem;color:var(--muted);margin-top:4px}
+  .speak-nav{display:flex;align-items:center;justify-content:space-between;margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
+
+  /* COMPOSE */
+  .compose{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .fields{display:flex;flex-direction:column;gap:12px}
+  .field label{display:block;font-size:.78rem;font-weight:600;color:var(--ink-soft);margin-bottom:5px}
+  .field label .zh{font-family:"Noto Serif SC",serif;color:var(--muted);font-weight:500;margin-left:6px}
+  .field input,.field select{width:100%;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;font-family:"IBM Plex Sans",sans-serif;font-size:.9rem;color:var(--ink)}
+  .field input:focus,.field select:focus{outline:2px solid var(--jade);outline-offset:1px}
+  .field.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .field.row2 label{grid-column:1/-1}
+  .compose-out{background:var(--ink);color:var(--paper);border-radius:16px;padding:24px;box-shadow:var(--shadow);position:sticky;top:78px}
+  .compose-out .co-lbl{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#cfe6da;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .compose-out .co-text{font-family:"Noto Serif SC",serif;font-size:1.35rem;line-height:2}
+  .compose-out .co-en{font-size:.86rem;color:#aeb8c2;margin-top:14px;line-height:1.6}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#aeb8c2;padding:44px 0 38px;margin-top:20px}
+  footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+  footer h4{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#cfe6da;margin:0 0 12px}
+  footer a{color:#d6dce2;text-decoration:none;font-size:.88rem;display:block;padding:3px 0}
+  footer a:hover{color:#fff}
+  footer .big{font-family:"Noto Serif SC",serif;font-size:1.9rem;color:var(--paper)}
+  footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);margin-top:16px;padding-top:16px;font-size:.76rem;color:#8994a0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.flip-inner{transition:none}}
+
+  /* notice */
+  .tts-note{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:200;max-width:min(560px,calc(100vw - 24px));
+    background:var(--ink);color:#e7ece6;border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px 14px 12px 16px;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,.5);font-size:.84rem;line-height:1.45;display:flex;align-items:flex-start;gap:10px}
+  .tts-note .fix{display:block;color:#9aa6b0;margin-top:3px;font-size:.78rem}
+  .tts-note button{flex:none;background:transparent;border:0;color:#9aa6b0;font-size:1.3rem;line-height:1;cursor:pointer}
+
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:26px}
+    .lab{grid-template-columns:1fr}
+    .compose{grid-template-columns:1fr}
+    .compose-out{position:static}
+  }
+  @media(max-width:760px){
+    .nav nav{display:none}
+    .opts{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="seal hanzi">格</span>
+      <span><b>Exam Companion</b><small id="brandSub">Chinese · L1–3</small></span>
+    </a>
+    <div class="week-select">
+      <select id="weekSelect" aria-label="Choose a study week"></select>
+    </div>
+    <nav id="navlinks">
+      <a href="#roadmap">Exam</a>
+      <a href="#vocab">Vocab</a>
+      <a href="#writing">Writing</a>
+      <a href="#listening">Listening</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#compose">Compose</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kick"><span class="wk" id="heroWeek">Week 1</span><span class="eyebrow" id="heroRange">Lessons 1–3</span></div>
+      <h1>Study for the exam, <em>one stroke at a time.</em></h1>
+      <p class="lede" id="heroLede">Everything on your L1–3 exam in one place — vocabulary, stroke-order writing, listening, reading, speaking, and the self-introduction — organized week by week.</p>
+      <div class="cta">
+        <a class="btn mark" href="#writing">Practice writing</a>
+        <a class="btn ghost" href="#roadmap">See what's on the exam</a>
+      </div>
+    </div>
+    <div>
+      <div class="mzg hero-mzg" id="heroMzg">
+        <svg class="grid-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="50" y1="0" x2="50" y2="100" stroke="var(--mark)" stroke-width="0.5" stroke-dasharray="3 3" opacity=".5"/>
+          <line x1="0" y1="50" x2="100" y2="50" stroke="var(--mark)" stroke-width="0.5" stroke-dasharray="3 3" opacity=".5"/>
+          <line x1="0" y1="0" x2="100" y2="100" stroke="var(--mark)" stroke-width="0.4" stroke-dasharray="3 3" opacity=".35"/>
+          <line x1="100" y1="0" x2="0" y2="100" stroke="var(--mark)" stroke-width="0.4" stroke-dasharray="3 3" opacity=".35"/>
+        </svg>
+        <div class="hw" id="heroWriter"></div>
+      </div>
+      <div class="hero-cap">米字格 · watch it write, then try it yourself</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAM ROADMAP -->
+<section class="block" id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The exam · 60 points + oral</span>
+      <h2>What you'll be tested on.</h2>
+      <p>Six parts on paper plus an oral. Each tool below drills one of them — start wherever you feel weakest.</p>
+    </div>
+    <div class="roadmap" id="roadmapGrid"></div>
+  </div>
+</section>
+
+<!-- VOCAB -->
+<section class="block band" id="vocab">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Part 1 & 2 · Vocabulary</span>
+      <h2>Learn the words, hear them, recall them.</h2>
+      <p>Flip through the week's vocabulary by lesson. Tap a card to reveal pinyin, meaning, and audio — then rate yourself so the ones you miss come back.</p>
+    </div>
+    <div class="chips" id="vocabChips"></div>
+    <div class="vocab-wrap">
+      <div class="vocab-top">
+        <span id="vocabGroupName">Lesson 1 · Dialogue 1</span>
+        <span class="prog"><b id="vocabDone">0</b> / <span id="vocabTotal">0</span> mastered</span>
+      </div>
+      <div class="flip" id="vflip" tabindex="0" role="button" aria-label="Vocabulary card, space to flip">
+        <div class="flip-inner">
+          <div class="face front">
+            <div class="face-tag"><span id="vTag">word</span><span id="vIdx"></span></div>
+            <div class="center">
+              <div class="fc hanzi" id="vFront"></div>
+              <div class="fhint">tap to reveal · space to flip</div>
+            </div>
+          </div>
+          <div class="face back">
+            <div class="face-tag"><span>answer</span><span id="vIdx2"></span></div>
+            <div class="center">
+              <div class="frow"><span class="fpy pinyin" id="vPy"></span><button class="spk" id="vSpk" aria-label="Hear"></button></div>
+              <div class="fmean" id="vMean"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rate-row">
+        <button class="rate again" id="vAgain">Still learning</button>
+        <button class="rate good" id="vGood">Got it</button>
+      </div>
+      <div class="mini-hint" id="vHint">Tap the card to see the answer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING LAB -->
+<section class="block" id="writing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Extra credit · Stroke-order writing</span>
+      <h2>The writing lab.</h2>
+      <p>Watch a character write itself in the correct stroke order, then practice it yourself right in the 米字格 — the grid checks each stroke and shows you where you slipped, Skritter-style.</p>
+    </div>
+    <div class="lab">
+      <div class="lab-left">
+        <div class="writer-shell">
+          <div class="mzg" id="writerMzg">
+            <svg class="grid-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="50" y1="0" x2="50" y2="100" stroke="var(--mark)" stroke-width="0.5" stroke-dasharray="3 3" opacity=".45"/>
+              <line x1="0" y1="50" x2="100" y2="50" stroke="var(--mark)" stroke-width="0.5" stroke-dasharray="3 3" opacity=".45"/>
+              <line x1="0" y1="0" x2="100" y2="100" stroke="var(--mark)" stroke-width="0.4" stroke-dasharray="3 3" opacity=".3"/>
+              <line x1="100" y1="0" x2="0" y2="100" stroke="var(--mark)" stroke-width="0.4" stroke-dasharray="3 3" opacity=".3"/>
+            </svg>
+            <div class="hw" id="writerTarget"></div>
+          </div>
+        </div>
+        <div class="nav-arrows">
+          <button class="arrow-btn" id="wPrev" aria-label="Previous character">‹</button>
+          <div class="writer-info">
+            <span class="wi-py pinyin" id="wPy"></span>
+            <span class="wi-m" id="wMean"></span>
+            <span class="wi-rad" id="wRad" hidden>radical</span>
+            <button class="spk" id="wSpk" aria-label="Hear"></button>
+          </div>
+          <button class="arrow-btn" id="wNext" aria-label="Next character">›</button>
+        </div>
+        <div class="write-feedback" id="wFeedback"></div>
+        <div class="writer-controls">
+          <button class="btn soft" id="wAnimate">▷ Show strokes</button>
+          <button class="btn mark" id="wPractice">✎ Practice</button>
+          <button class="btn ghost" id="wOutline">Toggle outline</button>
+          <button class="btn ghost" id="wReset">Reset</button>
+        </div>
+      </div>
+      <div class="lab-right">
+        <h3>This week's characters</h3>
+        <div class="lr-sub">Tap any character to load it. Dashed tiles are this week's radicals.</div>
+        <div class="char-grid" id="charGrid"></div>
+        <div class="lab-progress"><b id="wDone">0</b> / <span id="wTotal">0</span> practiced this week</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTENING -->
+<section class="block band" id="listening">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Part 1 · Listening</span>
+      <h2>Hear it, then find the word.</h2>
+      <p>Just like the word-bank section of the exam: press play, listen, and choose the word you heard. Ten rounds, instant feedback.</p>
+    </div>
+    <div class="listen-box">
+      <div class="listen-top">
+        <span id="listenProg">Round 1 / 10</span>
+        <span>Score <b id="listenScore" class="pinyin">0</b></span>
+      </div>
+      <div class="dots" id="listenDots" style="margin-bottom:14px"></div>
+      <div class="listen-card" id="listenCard"></div>
+    </div>
+  </div>
+</section>
+
+<!-- READING -->
+<section class="block" id="reading">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Part 4 · Reading</span>
+      <h2>Read the dialogue, then judge each statement.</h2>
+      <p>Work through the passage — toggle pinyin and translation as training wheels, tap a line to hear it — then answer true or false.</p>
+    </div>
+    <div class="read-tools">
+      <button class="toggle" id="togglePy">Show pinyin</button>
+      <button class="toggle" id="toggleEn">Show translation</button>
+    </div>
+    <div class="dialogue" id="dialogue"></div>
+    <div class="tf-wrap">
+      <h3>True or false? · 判断对错</h3>
+      <div id="tfList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section class="block band" id="speaking">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Part 3 & oral · Speaking</span>
+      <h2>Rehearse the questions you'll be asked.</h2>
+      <p>These are the oral-exam questions. Hear each one, answer out loud, then reveal a model answer with a blank to fill in with your own details.</p>
+    </div>
+    <div class="speak-box">
+      <div class="speak-card" id="speakCard"></div>
+      <div class="speak-nav">
+        <button class="arrow-btn" id="spPrev" aria-label="Previous question">‹</button>
+        <span id="speakProg">1 / 1</span>
+        <button class="arrow-btn" id="spNext" aria-label="Next question">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPOSE -->
+<section class="block" id="compose">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Part 5 · Composition</span>
+      <h2>Build your self-introduction.</h2>
+      <p>Fill in your details and watch a complete 自我介绍 assemble in real time — the exact 8–10 sentence structure the exam asks for. Read it aloud, then memorize your own.</p>
+    </div>
+    <div class="compose">
+      <div class="fields" id="composeFields"></div>
+      <div class="compose-out">
+        <div class="co-lbl"><span>Your composition · 自我介绍</span><button class="spk on-dark" id="composeSpk" aria-label="Read aloud"></button></div>
+        <div class="co-text hanzi" id="composeText"></div>
+        <div class="co-en" id="composeEn"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="big hanzi">格物致知</div>
+      <p style="margin:10px 0 0;max-width:32ch;font-size:.86rem;color:#8994a0">“Study things to gain knowledge.” A weekly companion for your Chinese class exams — updated as each new guide arrives.</p>
+    </div>
+    <div>
+      <h4>Study tools</h4>
+      <a href="#vocab">Vocabulary cards</a>
+      <a href="#writing">Writing lab</a>
+      <a href="#listening">Listening drill</a>
+      <a href="#reading">Reading & true/false</a>
+      <a href="#speaking">Speaking practice</a>
+      <a href="#compose">Self-intro composer</a>
+    </div>
+    <div>
+      <h4>Keep going</h4>
+      <a href="https://www.pleco.com" target="_blank" rel="noopener">Pleco dictionary</a>
+      <a href="https://hanziwriter.org" target="_blank" rel="noopener">Hanzi Writer</a>
+      <a href="https://www.archchinese.com/chinese_radicals.html" target="_blank" rel="noopener">Radical reference</a>
+    </div>
+    <div class="fine">
+      <span class="hanzi">加油 · jiā yóu — you've got this.</span>
+      <span>Audio uses your device's built-in Chinese voice. Stroke data by Hanzi Writer / Make Me a Hanzi.</span>
+    </div>
+  </div>
+</footer>
+
+<div id="ttsNote" class="tts-note" hidden role="status">
+  <span>This device's text-to-speech isn't returning a Chinese voice, so audio is silent. On Android, install <b>Google Speech Services</b> and a <b>Chinese (zh-CN)</b> voice in Settings → System → Languages &amp; input → Text-to-speech, then reload.<span class="fix">Also check your media volume.</span></span>
+  <button id="ttsNoteClose" aria-label="Dismiss">&times;</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+<script>
+/* ===================== helpers ===================== */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];}return a;}
+const TONE={ā:1,ē:1,ī:1,ō:1,ū:1,ǖ:1,á:2,é:2,í:2,ó:2,ú:2,ǘ:2,ǎ:3,ě:3,ǐ:3,ǒ:3,ǔ:3,ǚ:3,à:4,è:4,ì:4,ò:4,ù:4,ǜ:4};
+function toneOf(p){for(const c of (p||""))if(TONE[c])return TONE[c];return 0;}
+function pyHTML(p){return '<span class="pinyin t'+toneOf(p)+'">'+p+'</span>';}
+
+/* ===================== audio (mobile-hardened) ===================== */
+const HAS_TTS=('speechSynthesis' in window)&&('SpeechSynthesisUtterance' in window);
+let zhVoice=null,voicesLoaded=false,primed=false,noticeShown=false,pendingText=null;
+function scanVoices(){
+  if(!HAS_TTS)return false;
+  const vs=speechSynthesis.getVoices(); if(!vs||!vs.length)return false;
+  voicesLoaded=true;
+  zhVoice=vs.find(v=>/^zh[-_]?(cn|hans|sg)/i.test(v.lang))||vs.find(v=>/^zh/i.test(v.lang))||
+          vs.find(v=>/chinese|mandarin|putonghua|中文|普通话/i.test(v.name||""))||null;
+  return true;
+}
+function showNotice(){ if(noticeShown)return; noticeShown=true; const e=$("#ttsNote"); if(e)e.hidden=false; }
+function utter(t,rate){const u=new SpeechSynthesisUtterance(t);u.lang="zh-CN";if(zhVoice)u.voice=zhVoice;u.rate=rate;u.pitch=1;u.volume=1;return u;}
+function doSpeak(t,twice){
+  try{
+    if(speechSynthesis.paused)speechSynthesis.resume();
+    speechSynthesis.cancel();
+    if(twice){speechSynthesis.speak(utter(t,.55));speechSynthesis.speak(utter(t,.95));}
+    else speechSynthesis.speak(utter(t,.86));
+    setTimeout(()=>{try{if(speechSynthesis.paused)speechSynthesis.resume();}catch(e){}},120);
+  }catch(e){}
+}
+function speak(t){ _speak(t,true); }
+function speakOnce(t){ _speak(t,false); }
+function _speak(t,twice){
+  if(!t)return;
+  if(!HAS_TTS){showNotice();return;}
+  if(!voicesLoaded)scanVoices();
+  if(!voicesLoaded){
+    pendingText={t,twice};
+    setTimeout(()=>{scanVoices();const p=pendingText;pendingText=null;if(!p)return;if(!voicesLoaded||!zhVoice)showNotice();doSpeak(p.t,p.twice);},500);
+    return;
+  }
+  if(!zhVoice)showNotice();
+  doSpeak(t,twice);
+}
+function primeTTS(){ if(primed||!HAS_TTS)return; primed=true; try{const u=utter(" ",1);u.volume=0;speechSynthesis.speak(u);}catch(e){} scanVoices(); }
+if(HAS_TTS){
+  scanVoices();
+  speechSynthesis.onvoiceschanged=()=>{scanVoices();if(pendingText){const p=pendingText;pendingText=null;if(!zhVoice)showNotice();doSpeak(p.t,p.twice);}};
+  ["pointerdown","touchend","click","keydown"].forEach(ev=>window.addEventListener(ev,primeTTS,{capture:true,passive:true,once:true}));
+}
+const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>';
+const PLAY='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+function paintSpk(root=document){
+  $$(".spk",root).forEach(b=>{if(!b.innerHTML.trim())b.innerHTML=SPK;});
+  $$("[data-say]",root).forEach(el=>{
+    el.onclick=e=>{e.stopPropagation();const t=el.dataset.say||"";
+      const zh=[...t].filter(ch=>/[\u4e00-\u9fff]/.test(ch)).length;
+      zh>2?speakOnce(t):speak(t);};
+  });
+}
+
+/* ===================== WEEK DATA ===================== */
+/* Each week is self-contained. To add a week, append another object. */
+const WEEKS=[{
+  id:"w1", label:"Week 1", range:"Lessons 1–3", subtitle:"Greetings · Family · Dates · Meals", examTitle:"L1–3 Exam",
+  exam:[
+    {n:1,pts:10,title:"Listening — word bank",desc:"Hear a word, find and copy it from the bank.",go:"#listening"},
+    {n:2,pts:10,title:"Write the pinyin",desc:"Add the correct pinyin, tones included, for each word.",go:"#vocab"},
+    {n:3,pts:10,title:"Answer about yourself",desc:"Respond to spoken questions about your own life.",go:"#speaking"},
+    {n:4,pts:10,title:"Reading — true / false",desc:"Read a short dialogue and judge each statement.",go:"#reading"},
+    {n:5,pts:10,title:"Write a self-introduction",desc:"An 8–10 sentence 自我介绍 for a language partner.",go:"#compose"},
+    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"Shape, pinyin, and meaning for this week's 5 radicals.",go:"#writing",extra:true}
+  ],
+  vocab:[
+    {group:"L1 · D1", items:[
+      {c:"你好",py:"nǐ hǎo",m:"hello"},{c:"请问",py:"qǐng wèn",m:"may I ask…"},{c:"贵姓",py:"guì xìng",m:"your (honorable) surname"},
+      {c:"我",py:"wǒ",m:"I / me"},{c:"叫",py:"jiào",m:"to be called"},{c:"什么",py:"shén me",m:"what"},
+      {c:"名字",py:"míng zi",m:"name"},{c:"呢",py:"ne",m:"and…? (particle)"},{c:"先生",py:"xiān sheng",m:"Mr. / sir"},
+      {c:"小姐",py:"xiǎo jiě",m:"Miss / young lady"},{c:"朋友",py:"péng yǒu",m:"friend"},{c:"王",py:"wáng",m:"Wang (surname)"},{c:"李",py:"lǐ",m:"Li (surname)"}
+    ]},
+    {group:"L1 · D2", items:[
+      {c:"是",py:"shì",m:"to be"},{c:"不是",py:"bú shì",m:"is not"},{c:"也",py:"yě",m:"also"},{c:"老师",py:"lǎo shī",m:"teacher"},
+      {c:"学生",py:"xué sheng",m:"student"},{c:"中国",py:"zhōng guó",m:"China"},{c:"美国",py:"měi guó",m:"America"},
+      {c:"北京",py:"běi jīng",m:"Beijing"},{c:"纽约",py:"niǔ yuē",m:"New York"},{c:"人",py:"rén",m:"person"},{c:"吗",py:"ma",m:"(yes/no particle)"}
+    ]},
+    {group:"L2 · D1", items:[
+      {c:"家",py:"jiā",m:"family / home"},{c:"爸爸",py:"bà ba",m:"dad"},{c:"妈妈",py:"mā ma",m:"mom"},{c:"哥哥",py:"gē ge",m:"elder brother"},
+      {c:"弟弟",py:"dì di",m:"younger brother"},{c:"姐姐",py:"jiě jie",m:"elder sister"},{c:"妹妹",py:"mèi mei",m:"younger sister"},
+      {c:"有",py:"yǒu",m:"to have"},{c:"没有",py:"méi yǒu",m:"to not have"},{c:"和",py:"hé",m:"and"},{c:"几",py:"jǐ",m:"how many"},
+      {c:"两",py:"liǎng",m:"two (of something)"},{c:"口",py:"kǒu",m:"(measure word: family)"},{c:"他",py:"tā",m:"he"},{c:"她",py:"tā",m:"she"},{c:"的",py:"de",m:"(possessive)"}
+    ]},
+    {group:"L2 · D2", items:[
+      {c:"做",py:"zuò",m:"to do"},{c:"工作",py:"gōng zuò",m:"job / to work"},{c:"律师",py:"lǜ shī",m:"lawyer"},{c:"医生",py:"yī shēng",m:"doctor"},
+      {c:"英文",py:"yīng wén",m:"English"},{c:"大学",py:"dà xué",m:"college"},{c:"高中",py:"gāo zhōng",m:"high school"},
+      {c:"这",py:"zhè",m:"this"},{c:"那",py:"nà",m:"that"},{c:"都",py:"dōu",m:"all / both"},{c:"照片",py:"zhào piàn",m:"photo"},{c:"谁",py:"shéi",m:"who"}
+    ]},
+    {group:"L3 · D1", items:[
+      {c:"现在",py:"xiàn zài",m:"now"},{c:"年",py:"nián",m:"year"},{c:"月",py:"yuè",m:"month"},{c:"号",py:"hào",m:"day of the month"},
+      {c:"日",py:"rì",m:"day"},{c:"星期",py:"xīng qī",m:"week"},{c:"今天",py:"jīn tiān",m:"today"},{c:"明天",py:"míng tiān",m:"tomorrow"},
+      {c:"生日",py:"shēng rì",m:"birthday"},{c:"几点",py:"jǐ diǎn",m:"what time"},{c:"分",py:"fēn",m:"minute"},{c:"岁",py:"suì",m:"years old"},{c:"多大",py:"duō dà",m:"how old"}
+    ]},
+    {group:"L3 · D2", items:[
+      {c:"吃饭",py:"chī fàn",m:"to eat"},{c:"晚饭",py:"wǎn fàn",m:"dinner"},{c:"菜",py:"cài",m:"dish / food"},{c:"喜欢",py:"xǐ huān",m:"to like"},
+      {c:"还是",py:"hái shì",m:"or (in a question)"},{c:"可是",py:"kě shì",m:"but"},{c:"因为",py:"yīn wèi",m:"because"},{c:"为什么",py:"wèi shén me",m:"why"},
+      {c:"怎么样",py:"zěn me yàng",m:"how about…?"},{c:"忙",py:"máng",m:"busy"},{c:"请",py:"qǐng",m:"to treat / invite"},{c:"谢谢",py:"xiè xie",m:"thanks"},{c:"再见",py:"zài jiàn",m:"goodbye"}
+    ]}
+  ],
+  writeChars:[
+    {c:"你",py:"nǐ",m:"you"},{c:"好",py:"hǎo",m:"good"},{c:"我",py:"wǒ",m:"I / me"},{c:"叫",py:"jiào",m:"to be called"},
+    {c:"名",py:"míng",m:"name"},{c:"字",py:"zì",m:"character"},{c:"是",py:"shì",m:"to be"},{c:"老",py:"lǎo",m:"old"},
+    {c:"师",py:"shī",m:"teacher"},{c:"学",py:"xué",m:"to study"},{c:"生",py:"shēng",m:"to be born / life"},{c:"中",py:"zhōng",m:"middle"},
+    {c:"国",py:"guó",m:"country"},{c:"人",py:"rén",m:"person"},{c:"家",py:"jiā",m:"home / family"},{c:"有",py:"yǒu",m:"to have"},
+    {c:"和",py:"hé",m:"and"},{c:"他",py:"tā",m:"he"},{c:"她",py:"tā",m:"she"},{c:"做",py:"zuò",m:"to do"},
+    {c:"工",py:"gōng",m:"work"},{c:"这",py:"zhè",m:"this"},{c:"那",py:"nà",m:"that"},{c:"谁",py:"shéi",m:"who"},
+    {c:"年",py:"nián",m:"year"},{c:"月",py:"yuè",m:"month"},{c:"日",py:"rì",m:"day / sun"},{c:"今",py:"jīn",m:"now / today"},
+    {c:"点",py:"diǎn",m:"o'clock"},{c:"岁",py:"suì",m:"years old"},{c:"吃",py:"chī",m:"to eat"},{c:"饭",py:"fàn",m:"rice / meal"},
+    {c:"喜",py:"xǐ",m:"to like / happy"},{c:"谢",py:"xiè",m:"thanks"},
+    {c:"水",py:"shuǐ",m:"water",rad:"氵"},{c:"手",py:"shǒu",m:"hand",rad:"扌"},{c:"木",py:"mù",m:"tree / wood",rad:"木"},{c:"口",py:"kǒu",m:"mouth",rad:"口"},{c:"艹",py:"cǎo",m:"grass / plant",rad:"艹"}
+  ],
+  listenPool:["名字","朋友","美国","老师","家","哥哥","姐姐","工作","英文","现在","星期","几点","吃饭","喜欢","贵姓","医生","照片","生日","再见","中国"],
+  reading:{
+    lines:[
+      {who:"张",c:"您贵姓？",py:"nín guì xìng?",en:"May I ask your surname?"},
+      {who:"王",c:"我姓王。您贵姓？",py:"wǒ xìng Wáng. nín guì xìng?",en:"My surname is Wang. And yours?"},
+      {who:"张",c:"我姓张。我的名字叫张一白。",py:"wǒ xìng Zhāng. wǒ de míngzi jiào Zhāng Yībái.",en:"My surname is Zhang. My name is Zhang Yibai."},
+      {who:"王",c:"我叫王日华。",py:"wǒ jiào Wáng Rìhuá.",en:"I'm called Wang Rihua."},
+      {who:"张",c:"我是学生，你是老师吗？",py:"wǒ shì xuésheng, nǐ shì lǎoshī ma?",en:"I'm a student — are you a teacher?"},
+      {who:"王",c:"不，我也是学生。我是大学生。",py:"bù, wǒ yěshì xuésheng. wǒ shì dàxuéshēng.",en:"No, I'm also a student. I'm a college student."},
+      {who:"张",c:"这是你的书吗？",py:"zhè shì nǐ de shū ma?",en:"Is this your book?"},
+      {who:"王",c:"是，这是我的书。那是什么？",py:"shì, zhè shì wǒ de shū. nà shì shénme?",en:"Yes, this is my book. What's that?"},
+      {who:"张",c:"这是我的狗，也是我的好朋友。",py:"zhè shì wǒ de gǒu, yěshì wǒ de hǎo péngyǒu.",en:"This is my dog — and also my good friend."}
+    ],
+    tf:[
+      {q:"张一白是老师。",a:false,exp:"He says 我是学生 — he's a student."},
+      {q:"王日华是学生。",a:true,exp:"He says 我也是学生，我是大学生。"},
+      {q:"张一白有狗。",a:true,exp:"这是我的狗 — the dog is his."},
+      {q:"王日华没有书。",a:false,exp:"这是我的书 — he does have a book."},
+      {q:"张一白和王日华是好朋友。",a:true,exp:"He calls the dog 好朋友; the two students are friendly — treated as true here."}
+    ]
+  },
+  speaking:[
+    {c:"请问，你贵姓？",py:"qǐng wèn, nǐ guì xìng?",en:"May I ask your surname?",mHan:"我姓＿＿。",mEn:"My surname is ＿."},
+    {c:"你叫什么名字？",py:"nǐ jiào shénme míngzi?",en:"What is your name?",mHan:"我叫＿＿＿。",mEn:"My name is ＿."},
+    {c:"你是哪国人？",py:"nǐ shì nǎ guó rén?",en:"What country are you from?",mHan:"我是＿＿人。",mEn:"I am ＿ (nationality)."},
+    {c:"你是不是老师？",py:"nǐ shì bu shì lǎoshī?",en:"Are you a teacher?",mHan:"我不是老师，我是学生。",mEn:"I'm not a teacher, I'm a student."},
+    {c:"你家有几口人？",py:"nǐ jiā yǒu jǐ kǒu rén?",en:"How many people are in your family?",mHan:"我家有＿口人。",mEn:"There are ＿ people in my family."},
+    {c:"你有没有兄弟姐妹？",py:"nǐ yǒu méiyǒu xiōngdì jiěmèi?",en:"Do you have siblings?",mHan:"我有＿＿。／ 我没有兄弟姐妹。",mEn:"I have ＿. / I have no siblings."},
+    {c:"你爸爸妈妈做什么工作？",py:"nǐ bàba māma zuò shénme gōngzuò?",en:"What work do your parents do?",mHan:"我爸爸是＿＿，我妈妈是＿＿。",mEn:"My dad is a ＿, my mom is a ＿."},
+    {c:"你今年多大？",py:"nǐ jīnnián duō dà?",en:"How old are you this year?",mHan:"我今年＿＿岁。",mEn:"I am ＿ years old."},
+    {c:"你的生日是几月几号？",py:"nǐ de shēngrì shì jǐ yuè jǐ hào?",en:"When is your birthday?",mHan:"我的生日是＿月＿号。",mEn:"My birthday is ＿ / ＿."},
+    {c:"今天是几月几号星期几？",py:"jīntiān shì jǐ yuè jǐ hào xīngqī jǐ?",en:"What's today's date and weekday?",mHan:"今天是＿月＿号，星期＿。",mEn:"Today is ＿."},
+    {c:"现在几点？",py:"xiànzài jǐ diǎn?",en:"What time is it now?",mHan:"现在＿点＿分。",mEn:"It's ＿ o'clock."},
+    {c:"你为什么学中文？",py:"nǐ wèishénme xué zhōngwén?",en:"Why do you study Chinese?",mHan:"因为＿＿＿。",mEn:"Because ＿."},
+    {c:"你喜欢吃中国菜还是美国菜？",py:"nǐ xǐhuān chī zhōngguó cài háishì měiguó cài?",en:"Do you prefer Chinese or American food?",mHan:"我喜欢吃＿＿菜。",mEn:"I like to eat ＿ food."}
+  ],
+  compose:{
+    nationalities:[["美国","měiguó — American"],["中国","zhōngguó — Chinese"],["英国","yīngguó — British"],["加拿大","jiānádà — Canadian"],["法国","fǎguó — French"],["日本","rìběn — Japanese"]],
+    cuisines:[["中国","Chinese"],["美国","American"],["法国","French"],["日本","Japanese"],["意大利","Italian"]]
+  }
+}];
+
+/* ===================== state ===================== */
+let W=WEEKS[0];
+
+function buildWeekSelect(){
+  const s=$("#weekSelect"); s.innerHTML="";
+  WEEKS.forEach((w,i)=>{const o=document.createElement("option");o.value=i;o.textContent=w.label+" · "+w.range;s.appendChild(o);});
+  s.onchange=()=>{ W=WEEKS[+s.value]; renderAll(); window.scrollTo({top:0}); };
+}
+function renderAll(){
+  $("#brandSub").textContent="Chinese · "+W.range;
+  $("#heroWeek").textContent=W.label;
+  $("#heroRange").textContent=W.subtitle;
+  buildRoadmap(); buildVocab(); buildWriting(); startListening(); buildReading(); buildSpeaking(); buildCompose();
+  paintSpk();
+}
+
+/* ---------- roadmap ---------- */
+function buildRoadmap(){
+  const g=$("#roadmapGrid"); g.innerHTML="";
+  W.exam.forEach(e=>{
+    const a=document.createElement("a"); a.href=e.go; a.className="rm-card"+(e.extra?" extra":"");
+    a.innerHTML='<div class="rm-top"><span class="rm-n">'+e.n+'</span><span class="rm-pts">'+e.pts+' pts</span></div>'+
+      '<h3>'+e.title+'</h3><p>'+e.desc+'</p><span class="rm-go">Practice →</span>';
+    g.appendChild(a);
+  });
+}
+
+/* ---------- vocab flashcards ---------- */
+let vGroup=0,vQueue=[],vMastered=new Set(),vTotal=0;
+function buildVocab(){
+  vGroup=0;
+  const chips=$("#vocabChips"); chips.innerHTML="";
+  W.vocab.forEach((grp,i)=>{
+    const b=document.createElement("button"); b.className="chip"+(i===0?" active":"");
+    b.innerHTML=grp.group+' <span class="ct">'+grp.items.length+'</span>';
+    b.onclick=()=>{$$("#vocabChips .chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");startVocab(i);};
+    chips.appendChild(b);
+  });
+  startVocab(0);
+}
+function startVocab(i){
+  vGroup=i; const grp=W.vocab[i];
+  vTotal=grp.items.length; vQueue=shuffle(grp.items.map((_,k)=>k)); vMastered=new Set();
+  $("#vocabGroupName").textContent=grp.group;
+  $("#vocabTotal").textContent=vTotal;
+  renderVocabCard();
+}
+function renderVocabCard(){
+  const grp=W.vocab[vGroup];
+  if(!vQueue.length){
+    $("#vFront").innerHTML='<span style="font-size:2.4rem" class="hanzi">✓</span>';
+    $("#vHint").textContent="Group complete — every word mastered. Pick another lesson above.";
+    $("#vGood").disabled=true;$("#vAgain").disabled=true;
+    $("#vocabDone").textContent=vMastered.size;
+    return;
+  }
+  $("#vGood").disabled=false;$("#vAgain").disabled=false;
+  const it=grp.items[vQueue[0]];
+  const f=$("#vflip"); f.classList.add("noanim"); f.classList.remove("flipped");
+  const n=[...it.c].length;
+  $("#vFront").style.fontSize = n>=4?"2.2rem":n===3?"2.9rem":"";
+  $("#vFront").textContent=it.c;
+  $("#vTag").textContent=grp.group;
+  $("#vIdx").textContent=$("#vIdx2").textContent=(vMastered.size+1)+"/"+vTotal;
+  $("#vPy").innerHTML=pyHTML(it.py);
+  $("#vMean").textContent=it.m;
+  $("#vSpk").dataset.say=it.c; $("#vSpk").dataset.bound=""; 
+  $("#vocabDone").textContent=vMastered.size;
+  $("#vHint").textContent="Tap the card to see the answer.";
+  paintSpk($("#vflip"));
+  void f.offsetWidth; requestAnimationFrame(()=>requestAnimationFrame(()=>f.classList.remove("noanim")));
+}
+function vFlip(){
+  const f=$("#vflip");
+  if(!vQueue.length)return;
+  f.classList.toggle("flipped");
+  if(f.classList.contains("flipped")){speak(W.vocab[vGroup].items[vQueue[0]].c);$("#vHint").textContent="Still learning, or got it?";}
+}
+function vRate(good){
+  if(!vQueue.length)return;
+  const id=vQueue.shift();
+  if(good)vMastered.add(id); else vQueue.splice(Math.min(vQueue.length,3),0,id);
+  renderVocabCard();
+}
+$("#vflip").addEventListener("click",vFlip);
+$("#vflip").addEventListener("keydown",e=>{if(e.code==="Space"||e.code==="Enter"){e.preventDefault();vFlip();}else if(e.key==="1")vRate(false);else if(e.key==="2")vRate(true);});
+$("#vAgain").onclick=()=>{const f=$("#vflip");f.classList.contains("flipped")?vRate(false):vFlip();};
+$("#vGood").onclick=()=>{const f=$("#vflip");f.classList.contains("flipped")?vRate(true):vFlip();};
+
+/* ---------- writing lab (Hanzi Writer) ---------- */
+let writer=null,wIndex=0,wDoneSet=new Set(),wOutlineOn=true,heroWriter=null;
+function writerSize(){ return Math.max(200, Math.min(340, (window.innerWidth||360)-70)); }
+function buildWriting(){
+  wIndex=0; wDoneSet=new Set();
+  $("#wTotal").textContent=W.writeChars.length;
+  const grid=$("#charGrid"); grid.innerHTML="";
+  W.writeChars.forEach((ch,i)=>{
+    const t=document.createElement("button"); t.className="char-tile"+(ch.rad?" rad":"")+(i===0?" active":"");
+    t.dataset.i=i;
+    t.innerHTML='<span class="tc hanzi">'+ch.c+'</span><span class="tp">'+ch.py+'</span>';
+    t.onclick=()=>loadChar(i);
+    grid.appendChild(t);
+  });
+  $("#wDone").textContent="0";
+  initWriter();
+}
+function initWriter(){
+  const target=$("#writerTarget"); target.innerHTML="";
+  if(typeof HanziWriter==="undefined"){
+    target.innerHTML='<div style="text-align:center;color:var(--muted);font-size:.85rem;padding:20px">Stroke engine offline.<br>Reconnect to load stroke data.</div>';
+    writer=null; updateCharInfo(); return;
+  }
+  const sz=writerSize();
+  writer=HanziWriter.create(target,W.writeChars[wIndex].c,{
+    width:sz,height:sz,padding:6,showOutline:wOutlineOn,showCharacter:true,
+    strokeColor:"#1b2430",radicalColor:"#cf3f2c",outlineColor:"#c9c5b8",drawingColor:"#2f7d5b",drawingWidth:26,
+    delayBetweenStrokes:170,strokeAnimationSpeed:1.1,showHintAfterMisses:2,highlightOnComplete:true,
+    onLoadCharDataError:()=>{$("#wFeedback").className="write-feedback bad";$("#wFeedback").textContent="No stroke data for this character.";}
+  });
+  updateCharInfo();
+}
+function updateCharInfo(){
+  const ch=W.writeChars[wIndex];
+  $("#wPy").innerHTML=pyHTML(ch.py);
+  $("#wMean").textContent=ch.m;
+  const r=$("#wRad");
+  if(ch.rad){r.hidden=false;r.textContent="radical "+ch.rad;}else r.hidden=true;
+  $("#wSpk").dataset.say=ch.c; $("#wSpk").dataset.bound="";
+  $$("#charGrid .char-tile").forEach(t=>t.classList.toggle("active",+t.dataset.i===wIndex));
+  $("#wFeedback").textContent=""; $("#wFeedback").className="write-feedback";
+  paintSpk($(".writer-info"));
+}
+function loadChar(i){
+  wIndex=(i+W.writeChars.length)%W.writeChars.length;
+  if(writer){ writer.cancelQuiz(); writer.setCharacter(W.writeChars[wIndex].c).then(()=>{ if(wOutlineOn)writer.showOutline(); writer.showCharacter(); }).catch(()=>{}); }
+  updateCharInfo();
+}
+$("#wPrev").onclick=()=>loadChar(wIndex-1);
+$("#wNext").onclick=()=>loadChar(wIndex+1);
+$("#wAnimate").onclick=()=>{ if(!writer)return; $("#wFeedback").textContent=""; writer.cancelQuiz(); writer.showCharacter(); writer.animateCharacter(); };
+$("#wOutline").onclick=()=>{ if(!writer)return; wOutlineOn=!wOutlineOn; wOutlineOn?writer.showOutline():writer.hideOutline(); };
+$("#wReset").onclick=()=>{ if(!writer)return; writer.cancelQuiz(); writer.showCharacter(); if(wOutlineOn)writer.showOutline(); $("#wFeedback").textContent=""; $("#wFeedback").className="write-feedback"; };
+$("#wPractice").onclick=()=>{
+  if(!writer)return;
+  const fb=$("#wFeedback"); fb.className="write-feedback"; fb.textContent="Draw the strokes in order…";
+  writer.quiz({
+    showHintAfterMisses:2, leniency:1.0, highlightOnComplete:true,
+    onMistake:(s)=>{ fb.className="write-feedback bad"; fb.textContent="Stroke "+(s.strokeNum+1)+" — try again ("+s.mistakesOnStroke+")"; },
+    onCorrectStroke:(s)=>{ fb.className="write-feedback"; fb.textContent="Stroke "+(s.strokeNum+1)+" ✓  ·  "+s.strokesRemaining+" to go"; },
+    onComplete:(s)=>{
+      fb.className="write-feedback good";
+      fb.textContent = s.totalMistakes===0 ? "Perfect — clean strokes! 完成" : "Done! "+s.totalMistakes+" mistake"+(s.totalMistakes===1?"":"s")+".";
+      wDoneSet.add(wIndex); $("#wDone").textContent=wDoneSet.size;
+      const tile=$('#charGrid .char-tile[data-i="'+wIndex+'"]'); if(tile)tile.classList.add("done");
+      speak(W.writeChars[wIndex].c);
+    }
+  });
+};
+function startHero(){
+  const host=$("#heroWriter");
+  if(typeof HanziWriter==="undefined"){ host.innerHTML='<span class="hero-fallback hanzi">写</span>'; return; }
+  const sz=Math.max(180,Math.min(300,(window.innerWidth||360)-90));
+  const seq=["你","好","中","文","写"]; let k=0;
+  heroWriter=HanziWriter.create(host,seq[0],{width:sz,height:sz,padding:8,showOutline:true,
+    strokeColor:"#1b2430",radicalColor:"#cf3f2c",outlineColor:"#cfcabb",delayBetweenStrokes:160,strokeAnimationSpeed:1.15});
+  function loop(){
+    heroWriter.setCharacter(seq[k%seq.length]).then(()=>{
+      heroWriter.animateCharacter({onComplete:()=>{k++;setTimeout(loop,1000);}});
+    }).catch(()=>{});
+  }
+  loop();
+}
+
+/* ---------- listening ---------- */
+let lQueue=[],lIndex=0,lScore=0,lResults=[],lCorrect=null;
+function startListening(){
+  const pool=W.listenPool.filter(w=>w&&[...w].length);
+  const n=Math.min(10,pool.length);
+  lQueue=shuffle(pool).slice(0,n); lIndex=0; lScore=0; lResults=new Array(n).fill(null);
+  $("#listenScore").textContent="0";
+  renderListenDots(); renderListen();
+}
+function renderListenDots(){
+  const d=$("#listenDots"); d.innerHTML="";
+  lQueue.forEach((_,i)=>{const s=document.createElement("span");s.className="dot"+(lResults[i]==="good"?" good":lResults[i]==="bad"?" bad":"");d.appendChild(s);});
+}
+function renderListen(){
+  if(lIndex>=lQueue.length){ return showListenResult(); }
+  $("#listenProg").textContent="Round "+(lIndex+1)+" / "+lQueue.length;
+  lCorrect=lQueue[lIndex];
+  const others=shuffle(W.listenPool.filter(w=>w!==lCorrect)).slice(0,3);
+  const opts=shuffle([lCorrect,...others]);
+  const card=$("#listenCard");
+  card.innerHTML='<button class="big-play" id="lPlay" aria-label="Play the word">'+PLAY+'</button>'+
+    '<div class="listen-q">Tap play, then choose the word you heard.</div>'+
+    '<div class="opts" id="lOpts"></div>'+
+    '<div class="listen-foot"><span class="lf-msg" id="lMsg"></span><span id="lNext"></span></div>';
+  const box=$("#lOpts");
+  opts.forEach(w=>{
+    const py=vocabPinyin(w);
+    const b=document.createElement("button"); b.className="opt hanzi";
+    b.innerHTML=w+(py?'<span class="op-py">'+py+'</span>':'');
+    b.onclick=()=>answerListen(b,w);
+    box.appendChild(b);
+  });
+  $("#lPlay").onclick=()=>speakOnce(lCorrect);
+  setTimeout(()=>speakOnce(lCorrect),300);
+}
+function vocabPinyin(word){
+  for(const g of W.vocab){const it=g.items.find(x=>x.c===word);if(it)return it.py;}
+  return "";
+}
+function answerListen(btn,word){
+  if($("#lOpts").dataset.done)return; $("#lOpts").dataset.done="1";
+  const ok=word===lCorrect;
+  $$("#lOpts .opt").forEach(b=>{b.disabled=true;});
+  $$("#lOpts .opt").forEach(b=>{ if(b.textContent.startsWith(lCorrect))b.classList.add("correct"); });
+  const msg=$("#lMsg");
+  if(ok){lScore++;lResults[lIndex]="good";msg.className="lf-msg good";msg.textContent="✓ Correct";}
+  else{lResults[lIndex]="bad";btn.classList.add("wrong");msg.className="lf-msg bad";msg.textContent="✗ It was "+lCorrect;}
+  $("#listenScore").textContent=lScore;
+  renderListenDots();
+  const nb=document.createElement("button");nb.className="btn primary";nb.style.padding="8px 16px";
+  nb.textContent=lIndex<lQueue.length-1?"Next →":"Results";
+  nb.onclick=()=>{lIndex++;renderListen();};
+  $("#lNext").appendChild(nb);
+}
+function showListenResult(){
+  const pct=Math.round(lScore/lQueue.length*100);
+  let msg = pct>=90?"Sharp ears. 太好了！" : pct>=60?"Solid — replay the misses and go again." : "Keep drilling the vocab cards, then retry.";
+  $("#listenCard").innerHTML='<div style="padding:12px 0"><div style="font-family:Fraunces,serif;font-size:2.6rem;font-weight:600">'+lScore+' / '+lQueue.length+'</div>'+
+    '<div style="color:var(--muted);margin:6px 0 18px">'+msg+'</div><button class="btn mark" id="lAgain">↻ New round</button></div>';
+  $("#listenProg").textContent="Done";
+  $("#lAgain").onclick=startListening;
+}
+
+/* ---------- reading ---------- */
+let showPy=false,showEn=false;
+function buildReading(){
+  const d=$("#dialogue"); d.innerHTML="";
+  W.reading.lines.forEach(ln=>{
+    const row=document.createElement("div"); row.className="d-line";
+    row.innerHTML='<div class="d-who hanzi">'+ln.who+'</div>'+
+      '<div class="d-body"><div class="d-han hanzi">'+ln.c+' <button class="spk" data-say="'+ln.c+'" aria-label="Hear line"></button></div>'+
+      '<div class="d-py" '+(showPy?'':'hidden')+'>'+ln.py+'</div>'+
+      '<div class="d-en" '+(showEn?'':'hidden')+'>'+ln.en+'</div></div>';
+    d.appendChild(row);
+  });
+  paintSpk(d);
+  const tf=$("#tfList"); tf.innerHTML="";
+  W.reading.tf.forEach((item,i)=>{
+    const el=document.createElement("div"); el.className="tf-item";
+    el.innerHTML='<div class="tf-q hanzi">'+(i+1)+'. '+item.q+'</div>'+
+      '<div class="tf-btns"><button class="tf-btn" data-v="true">对 True</button><button class="tf-btn" data-v="false">错 False</button></div>'+
+      '<div class="tf-exp" hidden>'+item.exp+'</div>';
+    $$(".tf-btn",el).forEach(b=>{
+      b.onclick=()=>{
+        if(el.dataset.done)return; el.dataset.done="1";
+        const chose=b.dataset.v==="true";
+        $$(".tf-btn",el).forEach(x=>x.disabled=true);
+        const correctBtn=$$(".tf-btn",el).find(x=>(x.dataset.v==="true")===item.a);
+        if(correctBtn)correctBtn.classList.add("correct");
+        if(chose!==item.a)b.classList.add("wrong");
+        $(".tf-exp",el).hidden=false;
+      };
+    });
+    tf.appendChild(el);
+  });
+}
+$("#togglePy").onclick=()=>{ showPy=!showPy; $("#togglePy").classList.toggle("on",showPy); $("#togglePy").textContent=showPy?"Hide pinyin":"Show pinyin"; $$("#dialogue .d-py").forEach(e=>e.hidden=!showPy); };
+$("#toggleEn").onclick=()=>{ showEn=!showEn; $("#toggleEn").classList.toggle("on",showEn); $("#toggleEn").textContent=showEn?"Hide translation":"Show translation"; $$("#dialogue .d-en").forEach(e=>e.hidden=!showEn); };
+
+/* ---------- speaking ---------- */
+let spIndex=0;
+function buildSpeaking(){ spIndex=0; renderSpeak(); }
+function renderSpeak(){
+  const q=W.speaking[spIndex];
+  $("#speakCard").innerHTML=
+    '<div class="speak-q-han hanzi">'+q.c+'</div>'+
+    '<div class="speak-q-py">'+q.py+'</div>'+
+    '<div class="speak-q-en">'+q.en+'</div>'+
+    '<div class="speak-actions"><button class="btn soft" id="spSpeak">'+SPK+' Hear question</button><button class="btn ghost" id="spModel">Show model answer</button></div>'+
+    '<div class="model" id="spModelBox" hidden><div class="m-lbl">Model answer · fill in your own</div><div class="m-han hanzi">'+q.mHan+' <button class="spk" data-say="'+q.mHan.replace(/[＿]/g,'')+'" aria-label="Hear"></button></div><div class="m-en">'+q.mEn+'</div></div>';
+  $("#speakProg").textContent=(spIndex+1)+" / "+W.speaking.length;
+  $("#spSpeak").innerHTML=SPK+" Hear question";
+  $("#spSpeak").onclick=()=>speakOnce(q.c);
+  $("#spModel").onclick=()=>{ const box=$("#spModelBox"); box.hidden=!box.hidden; $("#spModel").textContent=box.hidden?"Show model answer":"Hide model answer"; paintSpk(box); };
+  paintSpk($("#speakCard"));
+}
+$("#spPrev").onclick=()=>{spIndex=(spIndex-1+W.speaking.length)%W.speaking.length;renderSpeak();};
+$("#spNext").onclick=()=>{spIndex=(spIndex+1)%W.speaking.length;renderSpeak();};
+
+/* ---------- compose ---------- */
+const CN_NUM=["零","一","二","三","四","五","六","七","八","九","十","十一","十二"];
+function numToCN(n){ n=parseInt(n); if(isNaN(n))return "＿"; if(n<=12&&n>=0)return CN_NUM[n];
+  if(n<20)return "十"+CN_NUM[n-10]; if(n<100){const t=Math.floor(n/10),o=n%10;return CN_NUM[t]+"十"+(o?CN_NUM[o]:"");} return ""+n; }
+function buildCompose(){
+  const f=$("#composeFields"); const c=W.compose;
+  const natOpts=c.nationalities.map(x=>'<option value="'+x[0]+'">'+x[0]+' — '+x[1].split(" — ")[1]+'</option>').join("");
+  const cuiOpts=c.cuisines.map(x=>'<option value="'+x[0]+'">'+x[0]+'菜 — '+x[1]+'</option>').join("");
+  f.innerHTML=
+    '<div class="field"><label>Name <span class="zh">名字</span></label><input id="cName" placeholder="e.g. 王小明 or Xiaoming"></div>'+
+    '<div class="field"><label>Nationality <span class="zh">哪国人</span></label><select id="cNat">'+natOpts+'</select></div>'+
+    '<div class="field"><label>Hometown (optional) <span class="zh">哪里人</span></label><input id="cHome" placeholder="e.g. 西雅图 / Seattle"></div>'+
+    '<div class="field row2"><label>Family <span class="zh">家有几口人</span></label><input id="cFam" type="number" min="1" max="12" placeholder="how many"><input id="cMembers" placeholder="members, e.g. 爸爸、妈妈、我"></div>'+
+    '<div class="field row2"><label>Birthday <span class="zh">生日</span></label><input id="cMonth" type="number" min="1" max="12" placeholder="month"><input id="cDay" type="number" min="1" max="31" placeholder="day"></div>'+
+    '<div class="field"><label>Age <span class="zh">今年几岁</span></label><input id="cAge" type="number" min="1" max="120" placeholder="years old"></div>'+
+    '<div class="field"><label>Favorite cuisine <span class="zh">喜欢吃</span></label><select id="cCui">'+cuiOpts+'</select></div>'+
+    '<div class="field"><label>When you\'re free <span class="zh">什么时候不忙</span></label><input id="cFree" placeholder="e.g. 周末 / weekends"></div>';
+  ["cName","cNat","cHome","cFam","cMembers","cMonth","cDay","cAge","cCui","cFree"].forEach(id=>{
+    const el=$("#"+id); el.addEventListener("input",renderCompose); el.addEventListener("change",renderCompose);
+  });
+  renderCompose();
+}
+function renderCompose(){
+  const g=id=>$("#"+id)?$("#"+id).value.trim():"";
+  const name=g("cName")||"＿＿";
+  const nat=g("cNat")||"美国";
+  const home=g("cHome");
+  const fam=g("cFam"), members=g("cMembers");
+  const mon=g("cMonth"), day=g("cDay");
+  const age=g("cAge");
+  const cui=g("cCui")||"中国";
+  const free=g("cFree");
+  let zh="你好，我叫"+name+"。我是"+nat+"人。";
+  if(home)zh+="我是"+home+"人。";
+  if(fam)zh+="我家有"+numToCN(fam)+"口人"+(members?("，"+members):"")+"。";
+  if(mon&&day)zh+="我的生日是"+numToCN(mon)+"月"+numToCN(day)+"号。";
+  if(age)zh+="我今年"+numToCN(age)+"岁。";
+  zh+="我喜欢吃"+cui+"菜。我学中文。";
+  if(free)zh+="我"+free+"不忙，我们见面吧。";
+  $("#composeText").textContent=zh;
+  $("#composeSpk").dataset.say=zh; $("#composeSpk").dataset.bound="";
+  paintSpk($(".compose-out"));
+  const parts=["Hi, my name is "+ (g("cName")||"＿")+".","I'm "+nat+"."];
+  if(home)parts.push("I'm from "+home+".");
+  if(fam)parts.push("My family has "+fam+" people"+(members?" ("+members+")":"")+".");
+  if(mon&&day)parts.push("My birthday is "+mon+"/"+day+".");
+  if(age)parts.push("I'm "+age+".");
+  parts.push("I like "+ (W.compose.cuisines.find(x=>x[0]===cui)||["","Chinese"])[1] +" food. I study Chinese.");
+  if(free)parts.push("I'm free "+free+".");
+  $("#composeEn").textContent=parts.join(" ");
+}
+$("#composeSpk")&&($("#composeSpk").onclick=()=>speakOnce($("#composeText").textContent));
+
+/* ---------- nav scroll-spy + reveal ---------- */
+const navLinks=$$("#navlinks a");
+const sections=["roadmap","vocab","writing","listening","reading","speaking","compose"].map(id=>$("#"+id));
+if("IntersectionObserver" in window){
+  const no=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));}),{rootMargin:"-45% 0px -50% 0px"});
+  sections.forEach(s=>s&&no.observe(s));
+}
+
+/* ===================== init ===================== */
+buildWeekSelect();
+renderAll();
+startHero();
+$("#ttsNoteClose")&&($("#ttsNoteClose").onclick=()=>{$("#ttsNote").hidden=true;});
+</script>
+</body>
+</html>
