@@ -118,6 +118,15 @@
   .chip .ct{font-family:"IBM Plex Mono",monospace;font-size:.7rem;opacity:.7}
 
   /* VOCAB FLASHCARDS */
+  .pytask{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:20px}
+  .pytask .pt-lbl{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mark);margin-bottom:10px}
+  .pytask .pt-row{display:flex;flex-wrap:wrap;gap:8px}
+  .pt-item{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:9px 13px;cursor:pointer;text-align:center;transition:.13s;min-width:74px}
+  .pt-item:hover{border-color:var(--jade)}
+  .pt-item .pt-c{font-family:"Noto Serif SC",serif;font-size:1.4rem;font-weight:600;line-height:1.1}
+  .pt-item .pt-py{font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;margin-top:3px;min-height:1.1em;color:var(--muted)}
+  .pt-item.shown .pt-py{color:var(--ink)}
+  .pt-hint{font-size:.78rem;color:var(--muted);margin-top:10px}
   .vocab-wrap{max-width:520px;margin:0 auto}
   .vocab-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:.85rem;color:var(--muted)}
   .vocab-top .prog{font-family:"IBM Plex Mono",monospace}
@@ -141,7 +150,6 @@
   .mini-hint{text-align:center;font-size:.78rem;color:var(--muted);margin-top:10px}
 
   /* WRITING LAB */
-  #writing{}
   .lab{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:28px;align-items:start}
   .lab-left{display:flex;flex-direction:column;gap:14px}
   .writer-shell{width:100%;max-width:360px;margin:0 auto}
@@ -343,6 +351,7 @@
       <p>Flip through the week's vocabulary by lesson. Tap a card to reveal pinyin, meaning, and audio — then rate yourself so the ones you miss come back.</p>
     </div>
     <div class="chips" id="vocabChips"></div>
+    <div class="pytask" id="pyTask"></div>
     <div class="vocab-wrap">
       <div class="vocab-top">
         <span id="vocabGroupName">Lesson 1 · Dialogue 1</span>
@@ -625,22 +634,26 @@ const WEEKS=[{
       {c:"家",py:"jiā",m:"family / home"},{c:"爸爸",py:"bà ba",m:"dad"},{c:"妈妈",py:"mā ma",m:"mom"},{c:"哥哥",py:"gē ge",m:"elder brother"},
       {c:"弟弟",py:"dì di",m:"younger brother"},{c:"姐姐",py:"jiě jie",m:"elder sister"},{c:"妹妹",py:"mèi mei",m:"younger sister"},
       {c:"有",py:"yǒu",m:"to have"},{c:"没有",py:"méi yǒu",m:"to not have"},{c:"和",py:"hé",m:"and"},{c:"几",py:"jǐ",m:"how many"},
-      {c:"两",py:"liǎng",m:"two (of something)"},{c:"口",py:"kǒu",m:"(measure word: family)"},{c:"他",py:"tā",m:"he"},{c:"她",py:"tā",m:"she"},{c:"的",py:"de",m:"(possessive)"}
+      {c:"两",py:"liǎng",m:"two (of something)"},{c:"口",py:"kǒu",m:"(measure word: family)"},{c:"他",py:"tā",m:"he"},{c:"她",py:"tā",m:"she"},{c:"的",py:"de",m:"(possessive)"},
+      {c:"兄弟姐妹",py:"xiōng dì jiě mèi",m:"siblings"},{c:"儿子",py:"ér zi",m:"son"},{c:"女儿",py:"nǚ ér",m:"daughter"},{c:"大哥",py:"dà gē",m:"big brother"},{c:"二姐",py:"èr jiě",m:"second oldest sister"},{c:"孩子",py:"hái zi",m:"child"},{c:"男",py:"nán",m:"male"},{c:"个",py:"gè",m:"(general measure word)"}
     ]},
     {group:"L2 · D2", items:[
       {c:"做",py:"zuò",m:"to do"},{c:"工作",py:"gōng zuò",m:"job / to work"},{c:"律师",py:"lǜ shī",m:"lawyer"},{c:"医生",py:"yī shēng",m:"doctor"},
       {c:"英文",py:"yīng wén",m:"English"},{c:"大学",py:"dà xué",m:"college"},{c:"高中",py:"gāo zhōng",m:"high school"},
-      {c:"这",py:"zhè",m:"this"},{c:"那",py:"nà",m:"that"},{c:"都",py:"dōu",m:"all / both"},{c:"照片",py:"zhào piàn",m:"photo"},{c:"谁",py:"shéi",m:"who"}
+      {c:"这",py:"zhè",m:"this"},{c:"那",py:"nà",m:"that"},{c:"都",py:"dōu",m:"all / both"},{c:"照片",py:"zhào piàn",m:"photo"},{c:"谁",py:"shéi",m:"who"},
+      {c:"白英爱",py:"bái yīng ài",m:"Bai Ying'ai (name)"},{c:"高文中",py:"gāo wén zhōng",m:"Gao Wenzhong (name)"}
     ]},
     {group:"L3 · D1", items:[
       {c:"现在",py:"xiàn zài",m:"now"},{c:"年",py:"nián",m:"year"},{c:"月",py:"yuè",m:"month"},{c:"号",py:"hào",m:"day of the month"},
       {c:"日",py:"rì",m:"day"},{c:"星期",py:"xīng qī",m:"week"},{c:"今天",py:"jīn tiān",m:"today"},{c:"明天",py:"míng tiān",m:"tomorrow"},
-      {c:"生日",py:"shēng rì",m:"birthday"},{c:"几点",py:"jǐ diǎn",m:"what time"},{c:"分",py:"fēn",m:"minute"},{c:"岁",py:"suì",m:"years old"},{c:"多大",py:"duō dà",m:"how old"}
+      {c:"生日",py:"shēng rì",m:"birthday"},{c:"几点",py:"jǐ diǎn",m:"what time"},{c:"分",py:"fēn",m:"minute"},{c:"岁",py:"suì",m:"years old"},{c:"多大",py:"duō dà",m:"how old"},
+      {c:"天",py:"tiān",m:"sky / day"},{c:"今年",py:"jīn nián",m:"this year"},{c:"这个月",py:"zhè ge yuè",m:"this month"},{c:"晚上",py:"wǎn shang",m:"evening / night"},{c:"点半",py:"diǎn bàn",m:"half past (o'clock)"},{c:"一刻",py:"yí kè",m:"a quarter / 15 min"}
     ]},
     {group:"L3 · D2", items:[
       {c:"吃饭",py:"chī fàn",m:"to eat"},{c:"晚饭",py:"wǎn fàn",m:"dinner"},{c:"菜",py:"cài",m:"dish / food"},{c:"喜欢",py:"xǐ huān",m:"to like"},
       {c:"还是",py:"hái shì",m:"or (in a question)"},{c:"可是",py:"kě shì",m:"but"},{c:"因为",py:"yīn wèi",m:"because"},{c:"为什么",py:"wèi shén me",m:"why"},
-      {c:"怎么样",py:"zěn me yàng",m:"how about…?"},{c:"忙",py:"máng",m:"busy"},{c:"请",py:"qǐng",m:"to treat / invite"},{c:"谢谢",py:"xiè xie",m:"thanks"},{c:"再见",py:"zài jiàn",m:"goodbye"}
+      {c:"怎么样",py:"zěn me yàng",m:"how about…?"},{c:"忙",py:"máng",m:"busy"},{c:"请",py:"qǐng",m:"to treat / invite"},{c:"谢谢",py:"xiè xie",m:"thanks"},{c:"再见",py:"zài jiàn",m:"goodbye"},
+      {c:"还",py:"hái",m:"also / as well"},{c:"有事儿",py:"yǒu shìr",m:"to be occupied"},{c:"太好了",py:"tài hǎo le",m:"that's great"},{c:"英国",py:"yīng guó",m:"Britain"},{c:"我们",py:"wǒ men",m:"we / us"},{c:"认识",py:"rèn shi",m:"to know / recognize"},{c:"同学",py:"tóng xué",m:"classmate"}
     ]}
   ],
   writeChars:[
@@ -655,7 +668,8 @@ const WEEKS=[{
     {c:"喜",py:"xǐ",m:"to like / happy"},{c:"谢",py:"xiè",m:"thanks"},
     {c:"水",py:"shuǐ",m:"water",rad:"氵"},{c:"手",py:"shǒu",m:"hand",rad:"扌"},{c:"木",py:"mù",m:"tree / wood",rad:"木"},{c:"口",py:"kǒu",m:"mouth",rad:"口"},{c:"艹",py:"cǎo",m:"grass / plant",rad:"艹"}
   ],
-  listenPool:["名字","朋友","美国","老师","家","哥哥","姐姐","工作","英文","现在","星期","几点","吃饭","喜欢","贵姓","医生","照片","生日","再见","中国"],
+  listenPool:["贵姓","朋友","名字","美国","老师","家","哥哥","姐姐","工作","英文","现在","星期","几点","吃饭","喜欢"],
+  pinyinTask:[{c:"姓",py:"xìng"},{c:"先生",py:"xiān sheng"},{c:"小姐",py:"xiǎo jiě"},{c:"照片",py:"zhào piàn"},{c:"谢谢",py:"xiè xie"}],
   reading:{
     lines:[
       {who:"张",c:"您贵姓？",py:"nín guì xìng?",en:"May I ask your surname?"},
@@ -677,19 +691,36 @@ const WEEKS=[{
     ]
   },
   speaking:[
-    {c:"请问，你贵姓？",py:"qǐng wèn, nǐ guì xìng?",en:"May I ask your surname?",mHan:"我姓＿＿。",mEn:"My surname is ＿."},
+    {c:"请问，你/您贵姓？",py:"qǐng wèn, nǐ/nín guì xìng?",en:"May I ask your surname?",mHan:"我姓＿＿。",mEn:"My surname is ＿."},
     {c:"你叫什么名字？",py:"nǐ jiào shénme míngzi?",en:"What is your name?",mHan:"我叫＿＿＿。",mEn:"My name is ＿."},
-    {c:"你是哪国人？",py:"nǐ shì nǎ guó rén?",en:"What country are you from?",mHan:"我是＿＿人。",mEn:"I am ＿ (nationality)."},
+    {c:"我是老师，你呢？",py:"wǒ shì lǎoshī, nǐ ne?",en:"I'm a teacher — and you?",mHan:"我是学生。",mEn:"I'm a student."},
+    {c:"你是美国人吗？",py:"nǐ shì měiguó rén ma?",en:"Are you American?",mHan:"我是＿＿人。",mEn:"I am ＿ (nationality)."},
+    {c:"你是中国人吗？",py:"nǐ shì zhōngguó rén ma?",en:"Are you Chinese?",mHan:"我不是中国人，我是＿＿人。",mEn:"I'm not Chinese; I'm ＿."},
+    {c:"这是你的照片吗？",py:"zhè shì nǐ de zhàopiàn ma?",en:"Is this your photo?",mHan:"是，这是我的照片。／ 不是。",mEn:"Yes, it's my photo. / No."},
+    {c:"谁是你的中文老师？",py:"shéi shì nǐ de zhōngwén lǎoshī?",en:"Who is your Chinese teacher?",mHan:"＿＿老师是我的中文老师。",mEn:"＿ is my Chinese teacher."},
     {c:"你是不是老师？",py:"nǐ shì bu shì lǎoshī?",en:"Are you a teacher?",mHan:"我不是老师，我是学生。",mEn:"I'm not a teacher, I'm a student."},
+    {c:"你有哥哥弟弟姐姐妹妹吗？",py:"nǐ yǒu gēge dìdi jiějie mèimei ma?",en:"Do you have siblings?",mHan:"我有＿＿。／ 我没有兄弟姐妹。",mEn:"I have ＿. / I have no siblings."},
     {c:"你家有几口人？",py:"nǐ jiā yǒu jǐ kǒu rén?",en:"How many people are in your family?",mHan:"我家有＿口人。",mEn:"There are ＿ people in my family."},
-    {c:"你有没有兄弟姐妹？",py:"nǐ yǒu méiyǒu xiōngdì jiěmèi?",en:"Do you have siblings?",mHan:"我有＿＿。／ 我没有兄弟姐妹。",mEn:"I have ＿. / I have no siblings."},
     {c:"你爸爸妈妈做什么工作？",py:"nǐ bàba māma zuò shénme gōngzuò?",en:"What work do your parents do?",mHan:"我爸爸是＿＿，我妈妈是＿＿。",mEn:"My dad is a ＿, my mom is a ＿."},
-    {c:"你今年多大？",py:"nǐ jīnnián duō dà?",en:"How old are you this year?",mHan:"我今年＿＿岁。",mEn:"I am ＿ years old."},
+    {c:"你的爸爸做什么工作？他是不是老师？",py:"nǐ de bàba zuò shénme gōngzuò? tā shì bu shì lǎoshī?",en:"What does your dad do? Is he a teacher?",mHan:"我爸爸是＿＿，他不是老师。",mEn:"My dad is a ＿; he's not a teacher."},
+    {c:"你的妈妈做什么工作？她是不是医生？",py:"nǐ de māma zuò shénme gōngzuò? tā shì bu shì yīshēng?",en:"What does your mom do? Is she a doctor?",mHan:"我妈妈是＿＿，她不是医生。",mEn:"My mom is a ＿; she's not a doctor."},
+    {c:"你是大学生吗？",py:"nǐ shì dàxuéshēng ma?",en:"Are you a college student?",mHan:"我是大学生。／ 我不是大学生。",mEn:"I am / am not a college student."},
+    {c:"你今年多大？／ 你今年几岁？",py:"nǐ jīnnián duō dà? / nǐ jīnnián jǐ suì?",en:"How old are you this year?",mHan:"我今年＿＿岁。",mEn:"I am ＿ years old."},
+    {c:"你爸爸妈妈今年多大？",py:"nǐ bàba māma jīnnián duō dà?",en:"How old are your parents this year?",mHan:"我爸爸＿＿岁，我妈妈＿＿岁。",mEn:"My dad is ＿, my mom is ＿."},
     {c:"你的生日是几月几号？",py:"nǐ de shēngrì shì jǐ yuè jǐ hào?",en:"When is your birthday?",mHan:"我的生日是＿月＿号。",mEn:"My birthday is ＿ / ＿."},
-    {c:"今天是几月几号星期几？",py:"jīntiān shì jǐ yuè jǐ hào xīngqī jǐ?",en:"What's today's date and weekday?",mHan:"今天是＿月＿号，星期＿。",mEn:"Today is ＿."},
+    {c:"今天是几几年几月几号星期几？",py:"jīntiān shì jǐ jǐ nián jǐ yuè jǐ hào xīngqī jǐ?",en:"What's today's full date and weekday?",mHan:"今天是＿年＿月＿号，星期＿。",mEn:"Today is ＿."},
+    {c:"七月四号星期几？",py:"qī yuè sì hào xīngqī jǐ?",en:"What weekday is July 4th?",mHan:"七月四号星期＿。",mEn:"July 4th is a ＿."},
     {c:"现在几点？",py:"xiànzài jǐ diǎn?",en:"What time is it now?",mHan:"现在＿点＿分。",mEn:"It's ＿ o'clock."},
+    {c:"今天你忙不忙？",py:"jīntiān nǐ máng bu máng?",en:"Are you busy today?",mHan:"我今天很忙。／ 我今天不忙。",mEn:"I'm busy / not busy today."},
+    {c:"你星期几有时间？",py:"nǐ xīngqī jǐ yǒu shíjiān?",en:"Which day are you free?",mHan:"我星期＿有时间。",mEn:"I'm free on ＿."},
+    {c:"你今天几点吃晚饭？",py:"nǐ jīntiān jǐ diǎn chī wǎnfàn?",en:"What time do you eat dinner today?",mHan:"我今天＿点吃晚饭。",mEn:"I eat dinner at ＿ today."},
+    {c:"你喜欢吃中国菜吗？",py:"nǐ xǐhuān chī zhōngguó cài ma?",en:"Do you like Chinese food?",mHan:"我喜欢吃中国菜。／ 我不喜欢。",mEn:"I like / don't like Chinese food."},
+    {c:"你喜欢吃中国菜还是美国菜？",py:"nǐ xǐhuān chī zhōngguó cài háishì měiguó cài?",en:"Do you prefer Chinese or American food?",mHan:"我喜欢吃＿＿菜。",mEn:"I like ＿ food."},
+    {c:"你今天怎么样？",py:"nǐ jīntiān zěnmeyàng?",en:"How are you today?",mHan:"我今天很好。",mEn:"I'm good today."},
     {c:"你为什么学中文？",py:"nǐ wèishénme xué zhōngwén?",en:"Why do you study Chinese?",mHan:"因为＿＿＿。",mEn:"Because ＿."},
-    {c:"你喜欢吃中国菜还是美国菜？",py:"nǐ xǐhuān chī zhōngguó cài háishì měiguó cài?",en:"Do you prefer Chinese or American food?",mHan:"我喜欢吃＿＿菜。",mEn:"I like to eat ＿ food."}
+    {c:"你认识朱老师吗？",py:"nǐ rènshi Zhū lǎoshī ma?",en:"Do you know Teacher Zhu?",mHan:"我认识朱老师。／ 我不认识。",mEn:"I know / don't know Teacher Zhu."},
+    {c:"这个周末我请你吃晚饭怎么样？",py:"zhège zhōumò wǒ qǐng nǐ chī wǎnfàn zěnmeyàng?",en:"How about I treat you to dinner this weekend?",mHan:"太好了，谢谢！",mEn:"Great, thanks!"},
+    {c:"我们去吃中国菜，怎么样？",py:"wǒmen qù chī zhōngguó cài, zěnmeyàng?",en:"Shall we go eat Chinese food?",mHan:"好，我们去吃中国菜。",mEn:"Sure, let's go."}
   ],
   compose:{
     nationalities:[["美国","měiguó — American"],["中国","zhōngguó — Chinese"],["英国","yīngguó — British"],["加拿大","jiānádà — Canadian"],["法国","fǎguó — French"],["日本","rìběn — Japanese"]],
@@ -726,7 +757,22 @@ function buildRoadmap(){
 
 /* ---------- vocab flashcards ---------- */
 let vGroup=0,vQueue=[],vMastered=new Set(),vTotal=0;
+function buildPyTask(){
+  const host=$("#pyTask"); if(!host)return;
+  const list=W.pinyinTask||[];
+  if(!list.length){host.hidden=true;return;}
+  host.hidden=false;
+  host.innerHTML='<div class="pt-lbl">Part 2 · write the pinyin — tap to check</div><div class="pt-row" id="ptRow"></div><div class="pt-hint">Say the tones aloud, then tap each word to reveal the answer.</div>';
+  const row=$("#ptRow");
+  list.forEach(it=>{
+    const b=document.createElement("button"); b.className="pt-item";
+    b.innerHTML='<div class="pt-c hanzi">'+it.c+'</div><div class="pt-py">•••</div>';
+    b.onclick=()=>{ const shown=b.classList.toggle("shown"); b.querySelector(".pt-py").innerHTML=shown?pyHTML(it.py):"•••"; if(shown)speak(it.c); };
+    row.appendChild(b);
+  });
+}
 function buildVocab(){
+  buildPyTask();
   vGroup=0;
   const chips=$("#vocabChips"); chips.innerHTML="";
   W.vocab.forEach((grp,i)=>{
