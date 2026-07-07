@@ -197,6 +197,25 @@
   .dot{width:9px;height:9px;border-radius:50%;background:var(--paper);border:1px solid var(--line)}
   .dot.good{background:var(--jade);border-color:var(--jade)}.dot.bad{background:var(--mark);border-color:var(--mark)}
 
+  /* LISTENING COMPREHENSION */
+  .listen-comp-wrap{max-width:560px;margin:26px auto 0}
+  .lc-title{font-size:1.15rem;margin-bottom:4px}
+  .lc-sub{font-size:.85rem;color:var(--muted);margin:0 0 16px}
+  .lc-item{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:18px;margin-bottom:14px}
+  .lc-q{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .lc-play{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);background:var(--card);cursor:pointer;display:inline-grid;place-items:center;color:var(--ink);flex:none;transition:.13s}
+  .lc-play:hover{background:var(--ink);color:var(--paper)}
+  .lc-play svg{width:20px;height:20px}
+  .lc-qt{font-weight:600;font-size:.98rem}
+  .lc-opts{display:grid;gap:8px}
+  .lc-opt{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:11px 14px;cursor:pointer;text-align:left;font-size:.92rem;color:var(--ink);transition:.12s}
+  .lc-opt:hover:not(:disabled){border-color:var(--jade);background:var(--card)}
+  .lc-opt.correct{border-color:var(--jade);background:rgba(47,125,91,.14);color:var(--jade-deep);font-weight:600}
+  .lc-opt.wrong{border-color:var(--mark);background:rgba(207,63,44,.12);color:var(--mark-deep)}
+  .lc-opt:disabled{cursor:default}
+  .lc-script{font-size:.82rem;color:var(--muted);margin-top:10px}
+  .lc-script .lc-han{font-family:"Noto Serif SC",serif;color:var(--ink-soft)}
+
   /* READING */
   .read-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
   .toggle{border:1px solid var(--line);background:var(--card);cursor:pointer;padding:8px 13px;border-radius:99px;font-size:.8rem;font-weight:500;color:var(--ink);transition:.13s}
@@ -449,6 +468,12 @@
       <div class="dots" id="listenDots" style="margin-bottom:14px"></div>
       <div class="listen-card" id="listenCard"></div>
     </div>
+
+    <div class="listen-comp-wrap" id="listenCompWrap" hidden>
+      <h3 class="lc-title">Listening comprehension · 听力理解</h3>
+      <p class="lc-sub">Exam-style questions. Press play to hear a short dialogue, then choose the best answer.</p>
+      <div id="listenCompList"></div>
+    </div>
   </div>
 </section>
 
@@ -496,13 +521,13 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Part 5 · Composition</span>
-      <h2>Build your self-introduction.</h2>
-      <p>Fill in your details and watch a complete 自我介绍 assemble in real time — the exact 8–10 sentence structure the exam asks for. Read it aloud, then memorize your own.</p>
+      <h2 id="composeHeading">Build your self-introduction.</h2>
+      <p id="composeIntro">Fill in your details and watch a complete 自我介绍 assemble in real time — the exact 8–10 sentence structure the exam asks for. Read it aloud, then memorize your own.</p>
     </div>
     <div class="compose">
       <div class="fields" id="composeFields"></div>
       <div class="compose-out">
-        <div class="co-lbl"><span>Your composition · 自我介绍</span><button class="spk on-dark" id="composeSpk" aria-label="Read aloud"></button></div>
+        <div class="co-lbl"><span id="composeLabel">Your composition · 自我介绍</span><button class="spk on-dark" id="composeSpk" aria-label="Read aloud"></button></div>
         <div class="co-text hanzi" id="composeText"></div>
         <div class="co-en" id="composeEn"></div>
       </div>
@@ -723,8 +748,118 @@ const WEEKS=[{
     {c:"我们去吃中国菜，怎么样？",py:"wǒmen qù chī zhōngguó cài, zěnmeyàng?",en:"Shall we go eat Chinese food?",mHan:"好，我们去吃中国菜。",mEn:"Sure, let's go."}
   ],
   compose:{
+    mode:"selfintro",
     nationalities:[["美国","měiguó — American"],["中国","zhōngguó — Chinese"],["英国","yīngguó — British"],["加拿大","jiānádà — Canadian"],["法国","fǎguó — French"],["日本","rìběn — Japanese"]],
     cuisines:[["中国","Chinese"],["美国","American"],["法国","French"],["日本","Japanese"],["意大利","Italian"]]
+  }
+},
+{
+  id:"w2", label:"Week 2", range:"Lessons 4–5", subtitle:"Hobbies · Visiting · Ordering · Places", examTitle:"L4–5 Exam",
+  exam:[
+    {n:1,pts:10,title:"Listening — word bank",desc:"Hear a word and copy it (the last one isn't in the bank).",go:"#listening"},
+    {n:2,pts:10,title:"Write the pinyin",desc:"Add correct pinyin with tones for each word.",go:"#vocab"},
+    {n:3,pts:10,title:"Answer about yourself",desc:"3 spoken questions + 2 fill-in-the-blank writing prompts.",go:"#speaking"},
+    {n:4,pts:10,title:"Reading — true / false",desc:"A tea-and-hotpot dialogue with five statements to judge.",go:"#reading"},
+    {n:5,pts:10,title:"Write a weekend message",desc:"A friendly note to a friend/family member visiting this weekend.",go:"#compose"},
+    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"Radicals 6–10 from Lesson 2: 人/亻 土 月 金/钅 心/忄.",go:"#writing",extra:true}
+  ],
+  vocab:[
+    {group:"L4 · D1", items:[
+      {c:"觉得",py:"jué de",m:"to feel / think"},{c:"有意思",py:"yǒu yì si",m:"interesting"},{c:"想",py:"xiǎng",m:"to want to / think"},{c:"常常",py:"cháng cháng",m:"often"},{c:"有时候",py:"yǒu shí hou",m:"sometimes"}
+    ]},
+    {group:"L4 · D2", items:[
+      {c:"周末",py:"zhōu mò",m:"weekend"},{c:"昨天",py:"zuó tiān",m:"yesterday"},{c:"对",py:"duì",m:"correct"},{c:"不错",py:"bú cuò",m:"not bad"},{c:"别的",py:"bié de",m:"other"}
+    ]},
+    {group:"L5 · D1", items:[
+      {c:"进来",py:"jìn lai",m:"to come in"},{c:"高兴",py:"gāo xìng",m:"happy"},{c:"要",py:"yào",m:"to want (to order)"},{c:"一点儿",py:"yì diǎnr",m:"a little bit"},{c:"可以",py:"kě yǐ",m:"can / may"}
+    ]},
+    {group:"L5 · D2", items:[
+      {c:"一起",py:"yì qǐ",m:"together"},{c:"玩儿",py:"wánr",m:"to have fun / play"},{c:"回家",py:"huí jiā",m:"to go home"},{c:"图书馆",py:"tú shū guǎn",m:"library"},{c:"才",py:"cái",m:"not until / only then"}
+    ]},
+    {group:"L4 · More", items:[
+      {c:"打球",py:"dǎ qiú",m:"to play ball"},{c:"看电视",py:"kàn diàn shì",m:"to watch TV"},{c:"看书",py:"kàn shū",m:"to read books"},{c:"看电影",py:"kàn diàn yǐng",m:"to watch a movie"},{c:"看球",py:"kàn qiú",m:"to watch a ball game"},{c:"外国",py:"wài guó",m:"foreign country"},{c:"唱歌",py:"chàng gē",m:"to sing"},{c:"跳舞",py:"tiào wǔ",m:"to dance"},{c:"听音乐",py:"tīng yīn yuè",m:"to listen to music"},{c:"睡觉",py:"shuì jiào",m:"to sleep"},{c:"没意思",py:"méi yì si",m:"not interesting"},{c:"去",py:"qù",m:"to go"},{c:"因为",py:"yīn wèi",m:"because"},{c:"所以",py:"suǒ yǐ",m:"so / therefore"},{c:"那",py:"nà",m:"that / in that case"},{c:"好久不见",py:"hǎo jiǔ bú jiàn",m:"long time no see"},{c:"请客",py:"qǐng kè",m:"to treat (someone)"},{c:"算了",py:"suàn le",m:"forget it / never mind"},{c:"找",py:"zhǎo",m:"to look for"},{c:"别人",py:"bié rén",m:"other people"},{c:"只",py:"zhǐ",m:"only"}
+    ]},
+    {group:"L5 · More", items:[
+      {c:"请进",py:"qǐng jìn",m:"please come in"},{c:"请坐",py:"qǐng zuò",m:"please sit"},{c:"介绍",py:"jiè shào",m:"to introduce"},{c:"茶",py:"chá",m:"tea"},{c:"咖啡",py:"kā fēi",m:"coffee"},{c:"可乐",py:"kě lè",m:"cola"},{c:"喝",py:"hē",m:"to drink"},{c:"瓶",py:"píng",m:"bottle"},{c:"杯",py:"bēi",m:"cup"},{c:"吧",py:"ba",m:"(softening particle)"},{c:"给",py:"gěi",m:"to give"},{c:"对不起",py:"duì bu qǐ",m:"sorry"},{c:"学校",py:"xué xiào",m:"school"},{c:"在",py:"zài",m:"at / in"},{c:"哪儿",py:"nǎr",m:"where"},{c:"漂亮",py:"piào liang",m:"pretty"},{c:"聊天儿",py:"liáo tiānr",m:"to chat"},{c:"了",py:"le",m:"(completed action)"},{c:"快",py:"kuài",m:"fast / quickly"},{c:"呀",py:"ya",m:"(particle: surprise)"}
+    ]}
+  ],
+  pinyinTask:[{c:"跳舞",py:"tiào wǔ"},{c:"漂亮",py:"piào liang"},{c:"不错",py:"bú cuò"},{c:"聊天儿",py:"liáo tiānr"},{c:"喝",py:"hē"}],
+  writeChars:[
+    {c:"觉",py:"jué",m:"to feel"},{c:"得",py:"de",m:"(particle)"},{c:"意",py:"yì",m:"meaning / idea"},{c:"思",py:"sī",m:"to think"},{c:"想",py:"xiǎng",m:"to want / think"},
+    {c:"常",py:"cháng",m:"often"},{c:"周",py:"zhōu",m:"week"},{c:"末",py:"mò",m:"end"},{c:"昨",py:"zuó",m:"yesterday"},{c:"对",py:"duì",m:"correct"},
+    {c:"错",py:"cuò",m:"wrong"},{c:"别",py:"bié",m:"other / don't"},{c:"进",py:"jìn",m:"to enter"},{c:"来",py:"lái",m:"to come"},{c:"高",py:"gāo",m:"tall / high"},
+    {c:"兴",py:"xìng",m:"mood / interest"},{c:"要",py:"yào",m:"to want"},{c:"点",py:"diǎn",m:"a bit / o'clock"},{c:"可",py:"kě",m:"can / may"},{c:"起",py:"qǐ",m:"to rise"},
+    {c:"玩",py:"wán",m:"to play"},{c:"回",py:"huí",m:"to return"},{c:"图",py:"tú",m:"picture / chart"},{c:"书",py:"shū",m:"book"},{c:"馆",py:"guǎn",m:"hall / building"},
+    {c:"才",py:"cái",m:"only then"},{c:"打",py:"dǎ",m:"to hit / play"},{c:"球",py:"qiú",m:"ball"},{c:"看",py:"kàn",m:"to look / watch"},{c:"电",py:"diàn",m:"electric"},
+    {c:"影",py:"yǐng",m:"shadow / film"},{c:"唱",py:"chàng",m:"to sing"},{c:"歌",py:"gē",m:"song"},{c:"跳",py:"tiào",m:"to jump / dance"},{c:"舞",py:"wǔ",m:"dance"},
+    {c:"茶",py:"chá",m:"tea"},{c:"喝",py:"hē",m:"to drink"},{c:"给",py:"gěi",m:"to give"},{c:"漂",py:"piào",m:"pretty (漂亮)"},{c:"亮",py:"liàng",m:"bright"},
+    {c:"聊",py:"liáo",m:"to chat"},{c:"快",py:"kuài",m:"fast"},
+    {c:"人",py:"rén",m:"person",rad:"亻"},{c:"土",py:"tǔ",m:"earth / soil",rad:"土"},{c:"月",py:"yuè",m:"moon / meat",rad:"月"},{c:"金",py:"jīn",m:"gold / metal",rad:"钅"},{c:"心",py:"xīn",m:"heart",rad:"忄"}
+  ],
+  listenPool:["觉得","有意思","想","常常","有时候","周末","昨天","对","不错","别的","进来","高兴","要","可以","一起","玩儿","回家","图书馆","才"],
+  listenComp:[
+    {dialogue:"快请进，请坐！你想喝点儿什么？我家有咖啡、可乐和茶。我想喝一点儿茶，谢谢。好，我给你一杯茶。",q:"What will the woman offer the man?",opts:["A cup of coffee","A glass of wine","A bottle of beer","A cup of tea"],a:3},
+    {dialogue:"王朋，你昨天晚上做什么了？我昨天晚上和朋友一起看电影了。电影有意思吗？很有意思！",q:"What did Wang Peng do last night?",opts:["He played ball","He chatted with friends","He drank coffee","He watched a movie"],a:3},
+    {dialogue:"王朋，你昨天晚上见谁了？我见了白老师的两个孩子，一个儿子，一个女儿。",q:"Who did Wang Peng meet last night?",opts:["Professor Bai and his wife","The sons of Professor Bai","The daughters of Professor Bai","Professor Bai's two children"],a:3}
+  ],
+  reading:{
+    lines:[
+      {who:"甲",c:"好久不见，你怎么样？",py:"hǎo jiǔ bú jiàn, nǐ zěnmeyàng?",en:"Long time no see — how are you?"},
+      {who:"乙",c:"我很好呀！",py:"wǒ hěn hǎo ya!",en:"I'm great!"},
+      {who:"甲",c:"你要不要先喝点儿什么？",py:"nǐ yào bu yào xiān hē diǎnr shénme?",en:"Would you like something to drink first?"},
+      {who:"乙",c:"我要喝茶，白茶。",py:"wǒ yào hē chá, bái chá.",en:"I'll have tea — white tea."},
+      {who:"甲",c:"白茶是什么茶？",py:"bái chá shì shénme chá?",en:"What kind of tea is white tea?"},
+      {who:"乙",c:"白茶是一种绿茶。我喜欢绿茶，我不喝红茶。",py:"bái chá shì yì zhǒng lǜchá. wǒ xǐhuān lǜchá, wǒ bù hē hóngchá.",en:"White tea is a kind of green tea. I like green tea; I don't drink black tea."},
+      {who:"甲",c:"我红茶绿茶都不喝，只喝汽水。",py:"wǒ hóngchá lǜchá dōu bù hē, zhǐ hē qìshuǐ.",en:"I drink neither — I only drink soda."},
+      {who:"乙",c:"喝太多汽水肚子会不舒服的！这是我肚子的声音。我觉得饿了。",py:"hē tài duō qìshuǐ dùzi huì bù shūfu de! zhè shì wǒ dùzi de shēngyīn. wǒ juéde è le.",en:"Too much soda upsets your stomach! That's my stomach growling — I feel hungry."},
+      {who:"甲",c:"我也饿死了。你想吃什么？我请你。这家饭店的火锅很有名，你想不想吃？",py:"wǒ yě è sǐ le. nǐ xiǎng chī shénme? wǒ qǐng nǐ. zhè jiā fàndiàn de huǒguō hěn yǒumíng, nǐ xiǎng bu xiǎng chī?",en:"I'm starving too. What do you want? My treat. This restaurant's hotpot is famous — want some?"},
+      {who:"乙",c:"火锅？太辣了！我不吃辣。",py:"huǒguō? tài là le! wǒ bù chī là.",en:"Hotpot? Too spicy! I don't eat spicy food."},
+      {who:"甲",c:"没关系，我们可以点鸳鸯火锅，一半辣一半不辣。我吃辣的，你吃不辣的，好吗？",py:"méi guānxi, wǒmen kěyǐ diǎn yuānyāng huǒguō, yíbàn là yíbàn bú là. wǒ chī là de, nǐ chī bú là de, hǎo ma?",en:"No problem — we can order a split pot, half spicy, half mild. I'll eat the spicy side, you eat the mild. OK?"},
+      {who:"乙",c:"那好吧。",py:"nà hǎo ba.",en:"OK then."}
+    ],
+    tf:[
+      {q:"甲不认识乙。",a:false,exp:"“好久不见” — they already know each other."},
+      {q:"乙喜欢喝白茶不喜欢绿茶。",a:false,exp:"白茶是一种绿茶，乙喜欢绿茶。"},
+      {q:"甲喜欢喝汽水。",a:true,exp:"我…只喝汽水。"},
+      {q:"乙不想吃火锅因为他觉得火锅很辣。",a:true,exp:"火锅？太辣了！我不吃辣。"},
+      {q:"他们最后没有去吃火锅因为他们都不吃辣。",a:false,exp:"他们点鸳鸯火锅；甲吃辣的。"}
+    ]
+  },
+  speaking:[
+    {c:"你常常几点吃晚饭？",py:"nǐ chángcháng jǐ diǎn chī wǎnfàn?",en:"What time do you usually eat dinner?",mHan:"我常常八点／七点左右／六点半吃晚饭。",mEn:"I usually eat at 8 / around 7 / 6:30."},
+    {c:"晚饭你常常吃中国菜还是美国菜？",py:"wǎnfàn nǐ chángcháng chī zhōngguó cài háishì měiguó cài?",en:"Do you usually eat Chinese or American food for dinner?",mHan:"我常常吃中国菜／美国菜。",mEn:"I usually eat Chinese / American food."},
+    {c:"周末你忙不忙？周末你常常做什么？",py:"zhōumò nǐ máng bu máng? zhōumò nǐ chángcháng zuò shénme?",en:"Are you busy on weekends? What do you usually do?",mHan:"周末我很忙／我不忙。周末我常常听音乐、看电影、跳舞、看书。",mEn:"I'm busy / not busy. I often listen to music, watch movies, dance, read."},
+    {c:"你觉得看书有意思还是看电视有意思？",py:"nǐ juéde kàn shū yǒu yìsi háishì kàn diànshì yǒu yìsi?",en:"Do you think reading or watching TV is more interesting?",mHan:"我觉得看书有意思／看电视有意思／都很有意思／都没有意思。",mEn:"I think reading / TV / both / neither is interesting."},
+    {c:"今天是你的生日，你为什么不请朋友吃饭？",py:"jīntiān shì nǐ de shēngrì, nǐ wèishénme bù qǐng péngyǒu chīfàn?",en:"It's your birthday — why not treat your friends to dinner?",mHan:"因为太忙了。／ 因为我不高兴，所以我不请他。／ 因为我的朋友很忙。",mEn:"Because I'm too busy. / Because I'm not happy. / Because my friends are busy."},
+    {c:"今天晚上，你想吃一点什么？",py:"jīntiān wǎnshang, nǐ xiǎng chī yìdiǎn shénme?",en:"What would you like to eat tonight?",mHan:"我想吃中国菜／美国菜。",mEn:"I'd like Chinese / American food."},
+    {c:"你常常在哪儿吃晚饭？",py:"nǐ chángcháng zài nǎr chī wǎnfàn?",en:"Where do you usually eat dinner?",mHan:"我常常在餐厅吃饭／在家吃饭。",mEn:"I usually eat at a restaurant / at home."},
+    {c:"你喜欢喝咖啡吗？今天早上你喝咖啡了吗？你喝了几杯咖啡？",py:"nǐ xǐhuān hē kāfēi ma? jīntiān zǎoshang nǐ hē kāfēi le ma? nǐ hē le jǐ bēi kāfēi?",en:"Do you like coffee? Did you drink coffee this morning? How many cups?",mHan:"我喜欢喝咖啡／茶／可乐。今天早上我没有喝咖啡／我喝了两杯咖啡。",mEn:"I like coffee/tea/cola. This morning I didn't drink coffee / I drank two cups."},
+    {c:"你常常跟谁一起聊天？",py:"nǐ chángcháng gēn shéi yìqǐ liáotiān?",en:"Who do you usually chat with?",mHan:"我常常跟朋友／家人／弟弟聊天。",mEn:"I usually chat with friends / family / my younger brother."},
+    {c:"你的学校大不大？漂亮不漂亮？",py:"nǐ de xuéxiào dà bu dà? piàoliang bu piàoliang?",en:"Is your school big? Is it pretty?",mHan:"我的学校很大，很漂亮。／ 我的学校不大，但是很漂亮。",mEn:"My school is big and pretty. / Not big, but very pretty."},
+    {c:"你喜欢做什么？你的爱好是什么？",py:"nǐ xǐhuān zuò shénme? nǐ de àihào shì shénme?",en:"What do you like to do? What are your hobbies?",mHan:"我喜欢＿＿。我的爱好是＿＿。",mEn:"I like ＿. My hobby is ＿."},
+    {c:"你常常打球吗？",py:"nǐ chángcháng dǎ qiú ma?",en:"Do you often play ball?",mHan:"我常常打球。／ 我不常常打球。",mEn:"I often / don't often play ball."},
+    {c:"我有时候和朋友去看电影，你呢？",py:"wǒ yǒu shíhou hé péngyǒu qù kàn diànyǐng, nǐ ne?",en:"I sometimes go to movies with friends — and you?",mHan:"我也有时候和朋友去看电影。",mEn:"I also sometimes go with friends."},
+    {c:"你觉得学中文有意思吗？",py:"nǐ juéde xué zhōngwén yǒu yìsi ma?",en:"Do you find studying Chinese interesting?",mHan:"我觉得学中文很有意思。",mEn:"I think studying Chinese is interesting."},
+    {c:"好久不见，你怎么样？",py:"hǎo jiǔ bú jiàn, nǐ zěnmeyàng?",en:"Long time no see — how are you?",mHan:"我很好／我不错／我太忙了！你呢？",mEn:"I'm good / not bad / so busy! And you?"},
+    {c:"我们去跳舞，我请客，好不好？",py:"wǒmen qù tiàowǔ, wǒ qǐngkè, hǎo bu hǎo?",en:"Let's go dancing, my treat — OK?",mHan:"好，那太好了，谢谢！",mEn:"Great, thank you!"},
+    {c:"你喜欢找谁去吃饭？",py:"nǐ xǐhuān zhǎo shéi qù chīfàn?",en:"Who do you like to go eat with?",mHan:"我喜欢找＿＿去吃饭。",mEn:"I like to eat with ＿."},
+    {c:"明天是周末，对不对？",py:"míngtiān shì zhōumò, duì bu duì?",en:"Tomorrow is the weekend, right?",mHan:"对／不对。",mEn:"Right / not right."},
+    {c:"你是美国人，那你为什么学中文？",py:"nǐ shì měiguó rén, nà nǐ wèishénme xué zhōngwén?",en:"You're American — so why study Chinese?",mHan:"因为我觉得中文很有意思。",mEn:"Because I find Chinese interesting."},
+    {c:"你想喝点儿什么？",py:"nǐ xiǎng hē diǎnr shénme?",en:"What would you like to drink?",mHan:"我想喝一点儿茶／咖啡吧。",mEn:"I'd like a bit of tea / coffee."},
+    {c:"你常常喝茶，咖啡，还是水？",py:"nǐ chángcháng hē chá, kāfēi, háishì shuǐ?",en:"Do you usually drink tea, coffee, or water?",mHan:"我常常喝＿＿。",mEn:"I usually drink ＿."},
+    {c:"你在哪儿上学？你的学校怎么样？",py:"nǐ zài nǎr shàngxué? nǐ de xuéxiào zěnmeyàng?",en:"Where do you go to school? How is it?",mHan:"我在＿＿上学，我的学校很漂亮。",mEn:"I study at ＿; my school is pretty."},
+    {c:"你喜欢华大的图书馆吗？你在图书馆做什么？",py:"nǐ xǐhuān huádà de túshūguǎn ma? nǐ zài túshūguǎn zuò shénme?",en:"Do you like UW's library? What do you do there?",mHan:"我喜欢。我常常在图书馆看书。",mEn:"I do. I often read there."},
+    {c:"你喜欢和谁一起玩儿？",py:"nǐ xǐhuān hé shéi yìqǐ wánr?",en:"Who do you like to hang out with?",mHan:"我喜欢和＿＿一起玩儿。",mEn:"I like to hang out with ＿."},
+    {c:"我昨天晚上十二点才睡觉，你呢？",py:"wǒ zuótiān wǎnshang shí'èr diǎn cái shuìjiào, nǐ ne?",en:"I didn't sleep until 12 last night — and you?",mHan:"我昨天＿点才睡觉。",mEn:"I didn't sleep until ＿ last night."},
+    {c:"Part 2 (1)：A: ＿＿（想）？ B: 这个周末我不想打球，我太忙了。",py:"—",en:"Fill in A's question using 想.",mHan:"你这个周末想不想打球？",mEn:"Do you want to play ball this weekend?"},
+    {c:"Part 2 (2)：A: 你要喝点儿什么？ B: ＿＿（给，杯，水，吧）",py:"—",en:"Fill in B using 给 / 杯 / 水 / 吧.",mHan:"给我一杯水吧。",mEn:"Give me a cup of water, please."},
+    {c:"Part 2 (3)：A: 你＿＿（谁）？ B: 我常常和朋友一起去吃中国菜。",py:"—",en:"Fill in A's question using 谁.",mHan:"你常常和谁一起去吃中国菜？",mEn:"Who do you usually go eat Chinese food with?"},
+    {c:"Part 2 (4)：要是你不喜欢看电影，＿＿（那……吧）。",py:"—",en:"Complete with 那…吧.",mHan:"那我们去唱歌吧。",mEn:"Then let's go sing."},
+    {c:"Part 2 (5)：因为我有中文考试，所以＿＿（要 + 动词短语）。",py:"—",en:"Complete with 要 + verb phrase.",mHan:"所以我要在图书馆看书。",mEn:"So I'm going to study in the library."}
+  ],
+  compose:{
+    mode:"visitmsg",
+    activities:[["唱歌","chànggē — sing"],["跳舞","tiàowǔ — dance"],["看电影","kàn diànyǐng — watch a movie"],["打球","dǎqiú — play ball"],["听音乐","tīng yīnyuè — listen to music"],["看书","kànshū — read"],["聊天儿","liáotiānr — chat"]]
   }
 }];
 
@@ -739,7 +874,8 @@ function buildWeekSelect(){
 function renderAll(){
   $("#brandSub").textContent="Chinese · "+W.range;
   $("#heroWeek").textContent=W.label;
-  $("#heroRange").textContent=W.subtitle;
+  $("#heroRange").textContent=W.range;
+  const lede=$("#heroLede"); if(lede)lede.textContent="Everything on your "+W.examTitle+" in one place — vocabulary, stroke-order writing, listening, reading, speaking, and the composition — for "+W.range+", "+W.subtitle+".";
   buildRoadmap(); buildVocab(); buildWriting(); startListening(); buildReading(); buildSpeaking(); buildCompose();
   paintSpk();
 }
@@ -924,6 +1060,35 @@ function startListening(){
   lQueue=shuffle(pool).slice(0,n); lIndex=0; lScore=0; lResults=new Array(n).fill(null);
   $("#listenScore").textContent="0";
   renderListenDots(); renderListen();
+  buildListenComp();
+}
+function buildListenComp(){
+  const wrap=$("#listenCompWrap"); if(!wrap)return;
+  const list=W.listenComp||[];
+  if(!list.length){wrap.hidden=true;return;}
+  wrap.hidden=false;
+  const host=$("#listenCompList"); host.innerHTML="";
+  list.forEach((item,i)=>{
+    const el=document.createElement("div"); el.className="lc-item";
+    el.innerHTML='<div class="lc-q"><button class="lc-play" aria-label="Play dialogue">'+PLAY+'</button>'+
+      '<span class="lc-qt">'+(i+1)+'. '+item.q+'</span></div><div class="lc-opts"></div>'+
+      '<div class="lc-script" hidden><b>Script:</b> <span class="lc-han">'+item.dialogue+'</span></div>';
+    const opts=$(".lc-opts",el);
+    item.opts.forEach((o,k)=>{
+      const b=document.createElement("button"); b.className="lc-opt";
+      b.textContent=String.fromCharCode(97+k)+". "+o;
+      b.onclick=()=>{
+        if(el.dataset.done)return; el.dataset.done="1";
+        $$(".lc-opt",el).forEach(x=>x.disabled=true);
+        $$(".lc-opt",el)[item.a].classList.add("correct");
+        if(k!==item.a)b.classList.add("wrong");
+        $(".lc-script",el).hidden=false;
+      };
+      opts.appendChild(b);
+    });
+    $(".lc-play",el).onclick=()=>speakOnce(item.dialogue);
+    host.appendChild(el);
+  });
 }
 function renderListenDots(){
   const d=$("#listenDots"); d.innerHTML="";
@@ -1040,6 +1205,21 @@ const CN_NUM=["零","一","二","三","四","五","六","七","八","九","十",
 function numToCN(n){ n=parseInt(n); if(isNaN(n))return "＿"; if(n<=12&&n>=0)return CN_NUM[n];
   if(n<20)return "十"+CN_NUM[n-10]; if(n<100){const t=Math.floor(n/10),o=n%10;return CN_NUM[t]+"十"+(o?CN_NUM[o]:"");} return ""+n; }
 function buildCompose(){
+  const mode=(W.compose&&W.compose.mode)||"selfintro";
+  const label=$("#composeLabel"); const heading=$("#composeHeading"); const intro=$("#composeIntro");
+  if(mode==="visitmsg"){
+    if(label)label.textContent="Your message · 给客人的短信";
+    if(heading)heading.textContent="Write your weekend message.";
+    if(intro)intro.textContent="Fill in the details and a friendly 8–10 sentence note to your visiting friend or family assembles in real time — greeting, plan, reason, and what to eat and drink. Read it aloud, then write your own.";
+  }else{
+    if(label)label.textContent="Your composition · 自我介绍";
+    if(heading)heading.textContent="Build your self-introduction.";
+    if(intro)intro.textContent="Fill in your details and watch a complete 自我介绍 assemble in real time — the exact 8–10 sentence structure the exam asks for. Read it aloud, then memorize your own.";
+  }
+  if(mode==="visitmsg") return buildComposeVisit();
+  return buildComposeSelf();
+}
+function buildComposeSelf(){
   const f=$("#composeFields"); const c=W.compose;
   const natOpts=c.nationalities.map(x=>'<option value="'+x[0]+'">'+x[0]+' — '+x[1].split(" — ")[1]+'</option>').join("");
   const cuiOpts=c.cuisines.map(x=>'<option value="'+x[0]+'">'+x[0]+'菜 — '+x[1]+'</option>').join("");
@@ -1053,11 +1233,11 @@ function buildCompose(){
     '<div class="field"><label>Favorite cuisine <span class="zh">喜欢吃</span></label><select id="cCui">'+cuiOpts+'</select></div>'+
     '<div class="field"><label>When you\'re free <span class="zh">什么时候不忙</span></label><input id="cFree" placeholder="e.g. 周末 / weekends"></div>';
   ["cName","cNat","cHome","cFam","cMembers","cMonth","cDay","cAge","cCui","cFree"].forEach(id=>{
-    const el=$("#"+id); el.addEventListener("input",renderCompose); el.addEventListener("change",renderCompose);
+    const el=$("#"+id); el.addEventListener("input",renderComposeSelf); el.addEventListener("change",renderComposeSelf);
   });
-  renderCompose();
+  renderComposeSelf();
 }
-function renderCompose(){
+function renderComposeSelf(){
   const g=id=>$("#"+id)?$("#"+id).value.trim():"";
   const name=g("cName")||"＿＿";
   const nat=g("cNat")||"美国";
@@ -1074,17 +1254,55 @@ function renderCompose(){
   if(age)zh+="我今年"+numToCN(age)+"岁。";
   zh+="我喜欢吃"+cui+"菜。我学中文。";
   if(free)zh+="我"+free+"不忙，我们见面吧。";
-  $("#composeText").textContent=zh;
-  $("#composeSpk").dataset.say=zh; $("#composeSpk").dataset.bound="";
-  paintSpk($(".compose-out"));
+  setComposeOut(zh);
   const parts=["Hi, my name is "+ (g("cName")||"＿")+".","I'm "+nat+"."];
   if(home)parts.push("I'm from "+home+".");
   if(fam)parts.push("My family has "+fam+" people"+(members?" ("+members+")":"")+".");
   if(mon&&day)parts.push("My birthday is "+mon+"/"+day+".");
   if(age)parts.push("I'm "+age+".");
-  parts.push("I like "+ (W.compose.cuisines.find(x=>x[0]===cui)||["","Chinese"])[1] +" food. I study Chinese.");
+  parts.push("I like "+ ((W.compose.cuisines||[]).find(x=>x[0]===cui)||["","Chinese"])[1] +" food. I study Chinese.");
   if(free)parts.push("I'm free "+free+".");
   $("#composeEn").textContent=parts.join(" ");
+}
+function buildComposeVisit(){
+  const f=$("#composeFields"); const c=W.compose;
+  const actOpts=c.activities.map(x=>'<option value="'+x[0]+'">'+x[0]+' — '+x[1].split(" — ")[1]+'</option>').join("");
+  f.innerHTML=
+    '<div class="field"><label>Who is visiting? <span class="zh">亲爱的…</span></label><input id="mWho" placeholder="e.g. 爸爸妈妈 / 朋友"></div>'+
+    '<div class="field"><label>Where you are <span class="zh">来…看我</span></label><input id="mCity" placeholder="e.g. 西雅图 / Seattle"></div>'+
+    '<div class="field"><label>Activity you planned <span class="zh">一起去做什么</span></label><select id="mAct">'+actOpts+'</select></div>'+
+    '<div class="field"><label>Why you chose it <span class="zh">因为…</span></label><input id="mWhy" placeholder="e.g. 因为我们都喜欢唱歌"></div>'+
+    '<div class="field"><label>When you\'ll go <span class="zh">什么时候</span></label><input id="mWhen" placeholder="e.g. 周六晚上"></div>'+
+    '<div class="field"><label>Drinks you have at home <span class="zh">我家有…</span></label><input id="mDrinks" placeholder="e.g. 可乐、果汁和汽水"></div>';
+  ["mWho","mCity","mAct","mWhy","mWhen","mDrinks"].forEach(id=>{
+    const el=$("#"+id); el.addEventListener("input",renderComposeVisit); el.addEventListener("change",renderComposeVisit);
+  });
+  renderComposeVisit();
+}
+function renderComposeVisit(){
+  const g=id=>$("#"+id)?$("#"+id).value.trim():"";
+  const who=g("mWho")||"爸爸妈妈";
+  const city=g("mCity")||"西雅图";
+  const act=g("mAct")||"唱歌";
+  const why=g("mWhy");
+  const when=g("mWhen")||"周六晚上";
+  const drinks=g("mDrinks")||"可乐、果汁和汽水";
+  let zh="亲爱的"+who+"：好久不见，你们好吗？很高兴这个周末你们来"+city+"看我。";
+  if(why)zh+=(why.indexOf("因为")===0?why:("因为"+why))+"，";
+  zh+="所以"+when+"我们一起去"+act+"，好不好？我觉得"+act+"很有意思。"+
+      "我们也去吃饭。你们想吃中国菜还是美国菜？你们想喝点儿什么？我家有"+drinks+"。我们"+when+"见！";
+  setComposeOut(zh);
+  const actEn=((W.compose.activities||[]).find(x=>x[0]===act)||["","the activity"])[1].split(" — ")[1]||"the activity";
+  const parts=["Dear "+who+", long time no see — how are you?","So glad you're coming to "+city+" this weekend."];
+  if(why)parts.push("Because "+why+",");
+  parts.push("let's go "+actEn+" together on "+when+", OK? I think it's a lot of fun.");
+  parts.push("We'll also go eat. Do you prefer Chinese or American food? What would you like to drink? At home I have "+drinks+". See you "+when+"!");
+  $("#composeEn").textContent=parts.join(" ");
+}
+function setComposeOut(zh){
+  $("#composeText").textContent=zh;
+  const sp=$("#composeSpk"); if(sp){ sp.dataset.say=zh; }
+  paintSpk($(".compose-out"));
 }
 $("#composeSpk")&&($("#composeSpk").onclick=()=>speakOnce($("#composeText").textContent));
 
