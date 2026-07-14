@@ -267,6 +267,84 @@
   .compose-out .co-text{font-family:"Noto Serif SC",serif;font-size:1.35rem;line-height:2}
   .compose-out .co-en{font-size:.86rem;color:#aeb8c2;margin-top:14px;line-height:1.6}
 
+  /* SEGMENTED CONTROLS (shared) */
+  .seg{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:4px}
+  .seg-btn{border:0;background:transparent;cursor:pointer;padding:8px 13px;border-radius:9px;font-family:"IBM Plex Sans",sans-serif;font-size:.82rem;font-weight:600;color:var(--muted);transition:.13s}
+  .seg-btn:hover{color:var(--ink)}
+  .seg-btn.active{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(27,36,48,.12)}
+  .muted-note{color:var(--muted);font-size:.9rem}
+
+  /* RECALL TRAINER */
+  .recall-controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  .recall-stats{max-width:640px;margin:0 auto 16px}
+  .recall-stats .rs-line{font-size:.85rem;color:var(--muted);margin-bottom:8px}
+  .recall-stats .rs-line b{color:var(--ink);font-family:"IBM Plex Mono",monospace}
+  .rs-bars{display:flex;height:12px;border-radius:99px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+  .rs-b{display:grid;place-items:center;font-size:.6rem;color:#fff;font-family:"IBM Plex Mono",monospace;min-width:0}
+  .rs-b.new{background:#9aa6b0}.rs-b.learn{background:var(--mark)}.rs-b.young{background:var(--gold)}.rs-b.mature{background:var(--jade)}
+  .rs-legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:.74rem;color:var(--muted);margin-top:8px}
+  .rs-legend .k{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:middle}
+  .rs-legend .k.new{background:#9aa6b0}.rs-legend .k.learn{background:var(--mark)}.rs-legend .k.young{background:var(--gold)}.rs-legend .k.mature{background:var(--jade)}
+  .recall-box{max-width:560px;margin:0 auto}
+  .recall-card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:30px 26px;text-align:center}
+  .r-prompt{display:flex;flex-direction:column;align-items:center;gap:12px;min-height:120px;justify-content:center}
+  .r-cue{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mark)}
+  .r-mean{font-family:"Fraunces",serif;font-size:2rem;font-weight:600;line-height:1.2}
+  .r-han{font-family:"Noto Serif SC",serif;font-size:3.4rem;font-weight:700;line-height:1}
+  .r-hint{padding:7px 14px;font-size:.8rem}
+  .r-pyhint{font-family:"IBM Plex Mono",monospace;font-size:1.3rem;font-weight:700;color:var(--blue)}
+  .recall-answer{border-top:1px dashed var(--line);margin-top:20px;padding-top:18px;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .ra-han{font-family:"Noto Serif SC",serif;font-size:3rem;font-weight:700;line-height:1}
+  .ra-py{font-family:"IBM Plex Mono",monospace;font-size:1.2rem;font-weight:700;color:var(--blue)}
+  .ra-m{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--muted)}
+  .recall-actions{margin-top:20px}
+  .rate4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .r4{border:1.5px solid var(--line);background:var(--card);cursor:pointer;border-radius:11px;padding:12px 6px;font-weight:600;font-size:.86rem;color:var(--ink);transition:.12s}
+  .r4.again:hover{border-color:var(--mark);background:rgba(207,63,44,.1);color:var(--mark-deep)}
+  .r4.hard:hover{border-color:var(--gold);background:rgba(176,129,58,.1);color:#7a5a14}
+  .r4.good:hover{border-color:var(--jade);background:rgba(47,125,91,.1);color:var(--jade-deep)}
+  .r4.easy:hover{border-color:var(--blue);background:rgba(43,90,140,.1);color:var(--blue)}
+  .recall-done{text-align:center;padding:10px}
+  .recall-done .rd-han{font-family:"Noto Serif SC",serif;font-size:2.6rem;color:var(--jade)}
+  .recall-done h3{font-family:"Fraunces",serif;font-size:1.5rem;margin:4px 0}
+  .recall-done p{color:var(--muted);font-size:.9rem;max-width:42ch;margin:0 auto 16px}
+
+  /* SENTENCES */
+  .sent-card{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:24px}
+  .sent-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+  .sent-top .mono{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--muted)}
+  .sent-en{font-family:"Fraunces",serif;font-style:italic;color:var(--muted);text-align:right}
+  .cloze-sentence{font-family:"Noto Serif SC",serif;font-size:1.7rem;line-height:1.7;text-align:center}
+  .cloze-sentence .blank{display:inline-block;min-width:2.2em;border-bottom:2px solid var(--mark);color:transparent;margin:0 2px}
+  .cloze-sentence .fill{color:var(--mark);border-bottom:2px solid var(--mark);padding:0 2px}
+  .cloze-hint{text-align:center;color:var(--muted);font-size:.85rem;margin-top:14px}
+  .sent-actions{display:flex;gap:8px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+  .cloze-answer{margin-top:16px;text-align:center;background:var(--paper-2);border-radius:10px;padding:12px;font-size:1.05rem}
+  .cloze-answer .hanzi{font-size:1.4rem;font-weight:600}
+  .build-line{min-height:56px;border:1.5px dashed var(--line);border-radius:12px;padding:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin-bottom:14px}
+  .build-line .bl-placeholder{color:var(--muted);font-size:.85rem}
+  .build-line .picked{font-family:"Noto Serif SC",serif;font-size:1.3rem;background:var(--ink);color:var(--paper);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+  .build-tiles{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .build-tiles .tile{font-family:"Noto Serif SC",serif;font-size:1.3rem;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px 14px;cursor:pointer;transition:.12s}
+  .build-tiles .tile:hover:not(:disabled){border-color:var(--jade);background:var(--card)}
+  .build-tiles .tile:disabled{opacity:.25;cursor:default}
+  .build-fb{text-align:center;margin-top:14px;font-weight:600;min-height:24px}
+  .build-fb.good{color:var(--jade-deep)}.build-fb.bad{color:var(--mark-deep)}
+
+  /* WORDS */
+  .words-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .words-tools input{flex:1;min-width:220px;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:11px 14px;font-family:"IBM Plex Sans",sans-serif;font-size:.92rem;color:var(--ink)}
+  .words-tools input:focus{outline:2px solid var(--jade);outline-offset:1px}
+  .words-count{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--muted);margin-bottom:16px}
+  .word-group{margin-bottom:22px}
+  .wg-title{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mark);margin-bottom:10px}
+  .word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .word-cell{border:1px solid var(--line);background:var(--card);border-radius:11px;padding:11px 13px;cursor:pointer;text-align:left;transition:.12s;display:flex;flex-direction:column;gap:1px}
+  .word-cell:hover{border-color:var(--jade);transform:translateY(-2px)}
+  .wc-han{font-family:"Noto Serif SC",serif;font-size:1.5rem;font-weight:600;line-height:1.1}
+  .wc-py{font-family:"IBM Plex Mono",monospace;font-size:.8rem;font-weight:600}
+  .wc-m{font-size:.8rem;color:var(--muted)}
+
   /* FOOTER */
   footer{background:var(--ink);color:#aeb8c2;padding:44px 0 38px;margin-top:20px}
   footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
@@ -312,12 +390,15 @@
     </div>
     <nav id="navlinks">
       <a href="#roadmap">Exam</a>
-      <a href="#vocab">Vocab</a>
+      <a href="#recall">Recall</a>
       <a href="#writing">Writing</a>
-      <a href="#listening">Listening</a>
-      <a href="#reading">Reading</a>
-      <a href="#speaking">Speaking</a>
+      <a href="#sentences">Sentences</a>
+      <a href="#vocab">Learn</a>
+      <a href="#listening">Listen</a>
+      <a href="#reading">Read</a>
+      <a href="#speaking">Speak</a>
       <a href="#compose">Compose</a>
+      <a href="#words">Words</a>
     </nav>
   </div>
 </header>
@@ -327,10 +408,10 @@
   <div class="wrap">
     <div>
       <div class="kick"><span class="wk" id="heroWeek">Week 1</span><span class="eyebrow" id="heroRange">Lessons 1–3</span></div>
-      <h1>Study for the exam, <em>one stroke at a time.</em></h1>
-      <p class="lede" id="heroLede">Everything on your L1–3 exam in one place — vocabulary, stroke-order writing, listening, reading, speaking, and the self-introduction — organized week by week.</p>
+      <h1>Don't just recognize it — <em>recall it.</em></h1>
+      <p class="lede" id="heroLede">Recognizing a character is easy; producing it from memory is the exam. This companion is built around retrieval practice and spaced repetition — the two most proven ways to make vocabulary stick — and it builds week over week.</p>
       <div class="cta">
-        <a class="btn mark" href="#writing">Practice writing</a>
+        <a class="btn mark" href="#recall">Start recalling</a>
         <a class="btn ghost" href="#roadmap">See what's on the exam</a>
       </div>
     </div>
@@ -361,13 +442,55 @@
   </div>
 </section>
 
-<!-- VOCAB -->
+<!-- RECALL TRAINER (SRS) -->
+<section class="block band" id="recall">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Core method · Active recall + spacing</span>
+      <h2>The Recall Trainer.</h2>
+      <p>You're shown the meaning; you produce the character from memory, then check yourself and rate how it went. Words you miss come back fast; words you know get spaced out over days. This is the engine that turns recognition into recall.</p>
+    </div>
+    <div class="recall-controls">
+      <div class="seg" id="recallScope" role="group" aria-label="scope">
+        <button class="seg-btn active" data-scope="week">This week</button>
+        <button class="seg-btn" data-scope="cumulative">All weeks</button>
+      </div>
+      <div class="seg" id="recallDir" role="group" aria-label="direction">
+        <button class="seg-btn active" data-dir="m2h">意 → 字</button>
+        <button class="seg-btn" data-dir="m2p">意 → 拼音</button>
+        <button class="seg-btn" data-dir="h2m">字 → 意</button>
+        <button class="seg-btn" data-dir="a2h">听 → 字</button>
+      </div>
+    </div>
+    <div class="recall-stats" id="recallStats"></div>
+    <div class="recall-box" id="recallBox"></div>
+  </div>
+</section>
+
+<!-- SENTENCES (cloze + construct) -->
+<section class="block" id="sentences">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Build up · Cumulative sentence practice</span>
+      <h2>From words to sentences.</h2>
+      <p>Retention sticks best in context. Recall the missing word in a real sentence, or rebuild a sentence from scrambled tiles — both pull from everything you've studied up to this week, so earlier vocabulary keeps working for you.</p>
+    </div>
+    <div class="seg" id="sentMode" role="group" aria-label="mode" style="margin-bottom:18px">
+      <button class="seg-btn active" data-mode="cloze">Fill the blank</button>
+      <button class="seg-btn" data-mode="build">Build the sentence</button>
+    </div>
+    <div id="clozePanel"></div>
+    <div id="buildPanel" hidden></div>
+  </div>
+</section>
+
+<!-- VOCAB (Learn) -->
 <section class="block band" id="vocab">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Part 1 & 2 · Vocabulary</span>
-      <h2>Learn the words, hear them, recall them.</h2>
-      <p>Flip through the week's vocabulary by lesson. Tap a card to reveal pinyin, meaning, and audio — then rate yourself so the ones you miss come back.</p>
+      <span class="eyebrow">First exposure · Learn</span>
+      <h2>Meet the week's words.</h2>
+      <p>Start here for a first pass: flip through the new vocabulary by lesson to see the characters, pinyin, meaning, and hear each one. Once they feel familiar, move to the Recall Trainer to make them stick.</p>
     </div>
     <div class="chips" id="vocabChips"></div>
     <div class="pytask" id="pyTask"></div>
@@ -407,9 +530,9 @@
 <section class="block" id="writing">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Extra credit · Stroke-order writing</span>
+      <span class="eyebrow">Production · Stroke-order writing</span>
       <h2>The writing lab.</h2>
-      <p>Watch a character write itself in the correct stroke order, then practice it yourself right in the 米字格 — the grid checks each stroke and shows you where you slipped, Skritter-style.</p>
+      <p>Watch a character write itself, trace it with the outline as a crutch — then hit <b>From memory</b> to write it with no outline at all. Producing the strokes yourself is the strongest way to lock a character in.</p>
     </div>
     <div class="lab">
       <div class="lab-left">
@@ -437,8 +560,8 @@
         <div class="write-feedback" id="wFeedback"></div>
         <div class="writer-controls">
           <button class="btn soft" id="wAnimate">▷ Show strokes</button>
-          <button class="btn mark" id="wPractice">✎ Practice</button>
-          <button class="btn ghost" id="wOutline">Toggle outline</button>
+          <button class="btn mark" id="wMemory">🧠 From memory</button>
+          <button class="btn ghost" id="wPractice">✎ Practice (with outline)</button>
           <button class="btn ghost" id="wReset">Reset</button>
         </div>
       </div>
@@ -532,6 +655,26 @@
         <div class="co-en" id="composeEn"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- WORDS REFERENCE -->
+<section class="block band" id="words">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Reference · Every word explained</span>
+      <h2>The word list.</h2>
+      <p>Every vocabulary item, with characters, pinyin, and meaning — searchable, grouped by lesson. Tap any word to hear it. Switch to “all weeks” to see the full cumulative list.</p>
+    </div>
+    <div class="words-tools">
+      <input type="search" id="wordSearch" placeholder="Search 汉字, pinyin, or English…" autocomplete="off">
+      <div class="seg" id="wordScope" role="group">
+        <button class="seg-btn active" data-scope="week">This week</button>
+        <button class="seg-btn" data-scope="cumulative">All weeks</button>
+      </div>
+    </div>
+    <div class="words-count" id="wordCount"></div>
+    <div id="wordGroups"></div>
   </div>
 </section>
 
@@ -861,24 +1004,322 @@ const WEEKS=[{
     mode:"visitmsg",
     activities:[["唱歌","chànggē — sing"],["跳舞","tiàowǔ — dance"],["看电影","kàn diànyǐng — watch a movie"],["打球","dǎqiú — play ball"],["听音乐","tīng yīnyuè — listen to music"],["看书","kànshū — read"],["聊天儿","liáotiānr — chat"]]
   }
+},
+{
+  id:"w3", label:"Week 3", range:"Lessons 6–7", subtitle:"Appointments · Studying Chinese", examTitle:"L6–7 Exam",
+  exam:[
+    {n:1,pts:10,title:"Listening — word bank",desc:"Hear a word and copy it (the last two aren't in the bank).",go:"#listening"},
+    {n:2,pts:10,title:"Write the pinyin",desc:"Add correct pinyin with tones for each word.",go:"#vocab"},
+    {n:3,pts:10,title:"Answer about yourself",desc:"3 spoken questions + 4 fill-in-the-blank writing prompts.",go:"#speaking"},
+    {n:4,pts:10,title:"Reading — true / false",desc:"A dialogue about who studies what, with five statements.",go:"#reading"},
+    {n:5,pts:10,title:"Email your teacher",desc:"Request a make-up test and ask a question before the exam.",go:"#compose"},
+    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"This week's radicals: 糸/纟 虫 言/讠 女 竹/⺮.",go:"#writing",extra:true}
+  ],
+  vocab:[
+    {group:"L6 · D1", items:[
+      {c:"给",py:"gěi",m:"to give / to (someone)"},{c:"打电话",py:"dǎ diàn huà",m:"to make a phone call"},{c:"就",py:"jiù",m:"precisely / as early as"},{c:"问题",py:"wèn tí",m:"question / problem"},{c:"要是",py:"yào shì",m:"if"},{c:"开会",py:"kāi huì",m:"to have a meeting"},{c:"考试",py:"kǎo shì",m:"exam / to take an exam"},{c:"上课",py:"shàng kè",m:"to have / go to class"},{c:"有时间",py:"yǒu shí jiān",m:"to have (free) time"}
+    ]},
+    {group:"L6 · D2", items:[
+      {c:"前",py:"qián",m:"before / front"},{c:"后",py:"hòu",m:"after / back"},{c:"见面",py:"jiàn miàn",m:"to meet"},{c:"练习",py:"liàn xí",m:"to practice"},{c:"说",py:"shuō",m:"to speak / say"},{c:"但是",py:"dàn shì",m:"but"},{c:"回来",py:"huí lai",m:"to return / come back"},{c:"得",py:"děi",m:"must / have to"}
+    ]},
+    {group:"L7 · D1", items:[
+      {c:"预习",py:"yù xí",m:"to preview"},{c:"复习",py:"fù xí",m:"to review"},{c:"写汉字",py:"xiě hàn zì",m:"to write characters"},{c:"说话",py:"shuō huà",m:"to talk / speak"},{c:"语法",py:"yǔ fǎ",m:"grammar"},{c:"枝",py:"zhī",m:"(measure word: pens)"},{c:"张",py:"zhāng",m:"(measure word: flat objects)"},{c:"得",py:"de",m:"(complement particle)"}
+    ]},
+    {group:"L7 · D2", items:[
+      {c:"开始",py:"kāi shǐ",m:"to start"},{c:"这么",py:"zhè me",m:"so / such"},{c:"平常",py:"píng cháng",m:"usually"},{c:"听录音",py:"tīng lù yīn",m:"to listen to recordings"},{c:"早上",py:"zǎo shang",m:"early morning"},{c:"晚",py:"wǎn",m:"late"}
+    ]},
+    {group:"L6 · More", items:[
+      {c:"年级",py:"nián jí",m:"grade level"},{c:"喂",py:"wéi",m:"hello (on the phone)"},{c:"行",py:"xíng",m:"ok / it works"},{c:"别",py:"bié",m:"don't"},{c:"方便",py:"fāng biàn",m:"convenient"},{c:"等",py:"děng",m:"to wait"},{c:"哪位",py:"nǎ wèi",m:"which person"},{c:"上午",py:"shàng wǔ",m:"morning"},{c:"下午",py:"xià wǔ",m:"afternoon"},{c:"空儿",py:"kòngr",m:"free time"},{c:"别客气",py:"bié kè qi",m:"you're welcome"},{c:"要",py:"yào",m:"will / to want"},{c:"课",py:"kè",m:"class / lesson"},{c:"节",py:"jié",m:"(measure word: class periods)"},{c:"以后",py:"yǐ hòu",m:"after"},{c:"到",py:"dào",m:"to arrive"},{c:"办公室",py:"bàn gōng shì",m:"office"},{c:"上个",py:"shàng ge",m:"last / previous"},{c:"下个",py:"xià ge",m:"next"},{c:"前天",py:"qián tiān",m:"day before yesterday"},{c:"后天",py:"hòu tiān",m:"day after tomorrow"},{c:"跟",py:"gēn",m:"with"},{c:"帮",py:"bāng",m:"to help"},{c:"准备",py:"zhǔn bèi",m:"to prepare"}
+    ]},
+    {group:"L7 · More", items:[
+      {c:"第",py:"dì",m:"(ordinal prefix)"},{c:"生词",py:"shēng cí",m:"new words / vocabulary"},{c:"多",py:"duō",m:"many / much"},{c:"汉字",py:"hàn zì",m:"Chinese characters"},{c:"写",py:"xiě",m:"to write"},{c:"怎么",py:"zěn me",m:"how / how come"},{c:"笔",py:"bǐ",m:"pen"},{c:"纸",py:"zhǐ",m:"paper"},{c:"教",py:"jiāo",m:"to teach"},{c:"懂",py:"dǒng",m:"to understand"},{c:"容易",py:"róng yì",m:"easy"},{c:"难",py:"nán",m:"difficult"},{c:"真",py:"zhēn",m:"real / really"},{c:"哪里",py:"nǎ lǐ",m:"where / (modest reply)"},{c:"慢",py:"màn",m:"slow(ly)"},{c:"快",py:"kuài",m:"fast / quick(ly)"},{c:"大家",py:"dà jiā",m:"everyone"},{c:"学习",py:"xué xí",m:"to study / learn"},{c:"念课文",py:"niàn kè wén",m:"to read the text aloud"},{c:"做功课",py:"zuò gōng kè",m:"to do homework"},{c:"帅",py:"shuài",m:"handsome"},{c:"酷",py:"kù",m:"cool"},{c:"早",py:"zǎo",m:"early"}
+    ]}
+  ],
+  pinyinTask:[{c:"问题",py:"wèn tí"},{c:"办公室",py:"bàn gōng shì"},{c:"准备",py:"zhǔn bèi"},{c:"容易",py:"róng yì"},{c:"听录音",py:"tīng lù yīn"}],
+  writeChars:[
+    {c:"给",py:"gěi",m:"to give"},{c:"打",py:"dǎ",m:"to hit / make (a call)"},{c:"电",py:"diàn",m:"electric"},{c:"话",py:"huà",m:"speech / words"},{c:"就",py:"jiù",m:"precisely"},
+    {c:"问",py:"wèn",m:"to ask"},{c:"题",py:"tí",m:"topic / problem"},{c:"要",py:"yào",m:"to want / will"},{c:"开",py:"kāi",m:"to open / start"},{c:"会",py:"huì",m:"can / meeting"},
+    {c:"考",py:"kǎo",m:"to test"},{c:"试",py:"shì",m:"to try / test"},{c:"课",py:"kè",m:"class"},{c:"间",py:"jiān",m:"between / room"},{c:"前",py:"qián",m:"before / front"},
+    {c:"后",py:"hòu",m:"after / back"},{c:"见",py:"jiàn",m:"to see / meet"},{c:"面",py:"miàn",m:"face / side"},{c:"练",py:"liàn",m:"to practice"},{c:"习",py:"xí",m:"to practice / study"},
+    {c:"说",py:"shuō",m:"to speak"},{c:"回",py:"huí",m:"to return"},{c:"得",py:"děi",m:"must / (complement)"},{c:"预",py:"yù",m:"in advance"},{c:"复",py:"fù",m:"to repeat / review"},
+    {c:"写",py:"xiě",m:"to write"},{c:"汉",py:"hàn",m:"Han / Chinese"},{c:"字",py:"zì",m:"character"},{c:"语",py:"yǔ",m:"language"},{c:"法",py:"fǎ",m:"law / method"},
+    {c:"教",py:"jiāo",m:"to teach"},{c:"懂",py:"dǒng",m:"to understand"},{c:"难",py:"nán",m:"difficult"},{c:"慢",py:"màn",m:"slow"},{c:"常",py:"cháng",m:"often"},
+    {c:"念",py:"niàn",m:"to read aloud"},{c:"录",py:"lù",m:"to record"},{c:"音",py:"yīn",m:"sound"},
+    {c:"糸",py:"mì",m:"silk",rad:"纟"},{c:"虫",py:"chóng",m:"insect",rad:"虫"},{c:"言",py:"yán",m:"speech",rad:"讠"},{c:"女",py:"nǚ",m:"female",rad:"女"},{c:"竹",py:"zhú",m:"bamboo",rad:"⺮"}
+  ],
+  listenPool:["问题","要是","考试","上课","有时间","听录音","早上","晚","前","后","见面","练习","说","回来","预习","复习","写汉字","说话","语法"],
+  reading:{
+    lines:[
+      {who:"甲",c:"请坐，请坐。你还有课吗？",py:"qǐng zuò, qǐng zuò. nǐ hái yǒu kè ma?",en:"Sit, please. Do you still have class?"},
+      {who:"乙",c:"现在没有课，可是下午还有课。",py:"xiànzài méiyǒu kè, kěshì xiàwǔ hái yǒu kè.",en:"Not now, but I have class this afternoon."},
+      {who:"甲",c:"下午有几节课？",py:"xiàwǔ yǒu jǐ jié kè?",en:"How many classes this afternoon?"},
+      {who:"乙",c:"有两节。",py:"yǒu liǎng jié.",en:"Two."},
+      {who:"甲",c:"是什么课？是不是中文课？",py:"shì shénme kè? shì bu shì zhōngwén kè?",en:"What classes? Chinese class?"},
+      {who:"乙",c:"不是，是英文课。我没有中文课。",py:"bú shì, shì yīngwén kè. wǒ méiyǒu zhōngwén kè.",en:"No, English class. I don't have Chinese class."},
+      {who:"甲",c:"中文太有意思了！你怎么不学中文呢？",py:"zhōngwén tài yǒu yìsi le! nǐ zěnme bù xué zhōngwén ne?",en:"Chinese is so interesting! How come you don't study it?"},
+      {who:"乙",c:"因为我是中国人，我会说中国话，所以我不学中文，要学英文。",py:"yīnwèi wǒ shì zhōngguó rén, wǒ huì shuō zhōngguó huà, suǒyǐ wǒ bù xué zhōngwén, yào xué yīngwén.",en:"Because I'm Chinese and can speak it, so I don't study Chinese — I study English."},
+      {who:"甲",c:"我真喜欢中文。我天天都学中文，每天都有中文课。",py:"wǒ zhēn xǐhuān zhōngwén. wǒ tiāntiān dōu xué zhōngwén, měitiān dōu yǒu zhōngwén kè.",en:"I really love Chinese. I study it every day and have class daily."},
+      {who:"乙",c:"你那么喜欢中文，现在说中国话说得好吗？",py:"nǐ nàme xǐhuān zhōngwén, xiànzài shuō zhōngguó huà shuō de hǎo ma?",en:"You like it so much — do you speak it well now?"},
+      {who:"甲",c:"我只会说一点儿，可是我会写汉字。",py:"wǒ zhǐ huì shuō yìdiǎnr, kěshì wǒ huì xiě hànzì.",en:"I can only say a little, but I can write characters."},
+      {who:"乙",c:"你会写很多中国字吗？",py:"nǐ huì xiě hěn duō zhōngguó zì ma?",en:"Can you write many characters?"},
+      {who:"甲",c:"大字小字我都会写。",py:"dà zì xiǎo zì wǒ dōu huì xiě.",en:"Big and small — I can write both."},
+      {who:"乙",c:"真的？我不信。",py:"zhēn de? wǒ bú xìn.",en:"Really? I don't believe it."},
+      {who:"甲",c:"你看，这是大字，这是小字。",py:"nǐ kàn, zhè shì dà zì, zhè shì xiǎo zì.",en:"Look — this is 大, this is 小."},
+      {who:"乙",c:"哦，你只会写“大”“小”这两个字啊！",py:"ó, nǐ zhǐ huì xiě “dà” “xiǎo” zhè liǎng ge zì a!",en:"Oh, you can only write those two characters!"},
+      {who:"甲",c:"我也会写一、二、三，还有上，还有下。",py:"wǒ yě huì xiě yī, èr, sān, hái yǒu shàng, hái yǒu xià.",en:"I can also write 一二三, and 上, and 下."},
+      {who:"乙",c:"虾？虾字怎么写？",py:"xiā? xiā zì zěnme xiě?",en:"Shrimp? How do you write “shrimp”?"},
+      {who:"甲",c:"（甲写了“下”）",py:"(jiǎ xiě le “xià”)",en:"(A writes 下.)"},
+      {who:"乙",c:"噢，是“下”不是“虾”。哎呀！你一说虾，我觉得饿了。",py:"ō, shì “xià” bú shì “xiā”. āiya! nǐ yì shuō xiā, wǒ juéde è le.",en:"Oh, it's 下 not 虾 (shrimp)! Ah — talking about shrimp made me hungry."},
+      {who:"甲",c:"好。咱们吃饭吧，就吃虾！",py:"hǎo. zánmen chīfàn ba, jiù chī xiā!",en:"OK, let's eat — shrimp it is!"}
+    ],
+    tf:[
+      {q:"甲不喜欢学中文因为中文太难了！",a:false,exp:"甲说“我真喜欢中文”。"},
+      {q:"乙不学中文因为他是中国人，会说中文。",a:true,exp:"因为我是中国人…所以我不学中文。"},
+      {q:"甲会写很多字。",a:false,exp:"甲只会写大、小、下等几个字。"},
+      {q:"乙跟甲学习英文。",a:false,exp:"乙自己学英文；甲学中文。"},
+      {q:"甲不会写“上”和“下”，只会写“大”和“小”。",a:false,exp:"甲说“还有上，还有下”。"}
+    ]
+  },
+  speaking:[
+    {c:"你常常给谁打电话？",py:"nǐ chángcháng gěi shéi dǎ diànhuà?",en:"Who do you often call?",mHan:"我常常给＿＿打电话。",mEn:"I often call ＿."},
+    {c:"今天下午你有时间吗？你想不想跟朋友一起去打球？",py:"jīntiān xiàwǔ nǐ yǒu shíjiān ma? nǐ xiǎng bu xiǎng gēn péngyǒu yìqǐ qù dǎqiú?",en:"Are you free this afternoon? Want to play ball with friends?",mHan:"我有时间。／ 我没有时间，我得复习中文。",mEn:"I'm free. / I'm not — I have to review Chinese."},
+    {c:"要是你有空，这个周末你要做什么？",py:"yàoshì nǐ yǒu kòngr, zhège zhōumò nǐ yào zuò shénme?",en:"If you're free, what will you do this weekend?",mHan:"要是我有空，我要＿＿。",mEn:"If I'm free, I'll ＿."},
+    {c:"你这个星期三的考试考得怎么样？",py:"nǐ zhège xīngqīsān de kǎoshì kǎo de zěnmeyàng?",en:"How did Wednesday's exam go?",mHan:"我考得很好／不太好。",mEn:"I did well / not so well."},
+    {c:"你写中国字写得怎么样？",py:"nǐ xiě zhōngguó zì xiě de zěnmeyàng?",en:"How well do you write characters?",mHan:"我写汉字写得很慢／还不错。",mEn:"I write slowly / pretty well."},
+    {c:"你的中文老师常常教你什么？",py:"nǐ de zhōngwén lǎoshī chángcháng jiāo nǐ shénme?",en:"What does your teacher often teach you?",mHan:"老师常常教我们语法和生词。",mEn:"The teacher often teaches us grammar and vocabulary."},
+    {c:"你觉得中文课难不难？",py:"nǐ juéde zhōngwén kè nán bu nán?",en:"Is Chinese class hard?",mHan:"我觉得有一点儿难。／ 不太难。",mEn:"A little hard. / Not too hard."},
+    {c:"你平常来得很早还是来得很晚？",py:"nǐ píngcháng lái de hěn zǎo háishì lái de hěn wǎn?",en:"Do you usually arrive early or late?",mHan:"我平常来得很早／很晚。",mEn:"I usually come early / late."},
+    {c:"你平常怎么预习中文课？",py:"nǐ píngcháng zěnme yùxí zhōngwén kè?",en:"How do you usually preview Chinese class?",mHan:"我平常念课文、听录音、写生词。",mEn:"I read the text, listen to recordings, write vocabulary."},
+    {c:"你平常很早就睡觉还是很晚才睡觉？",py:"nǐ píngcháng hěn zǎo jiù shuìjiào háishì hěn wǎn cái shuìjiào?",en:"Do you sleep early or late?",mHan:"我平常很早就睡觉／很晚才睡觉。",mEn:"I sleep early / not until late."},
+    {c:"我想请你吃中国菜，什么时候方便？",py:"wǒ xiǎng qǐng nǐ chī zhōngguó cài, shénme shíhou fāngbiàn?",en:"I'd like to treat you to Chinese food — when is convenient?",mHan:"＿＿方便。谢谢你！",mEn:"＿ works. Thanks!"},
+    {c:"下个星期三是几月几号？",py:"xiàge xīngqīsān shì jǐ yuè jǐ hào?",en:"What's the date next Wednesday?",mHan:"下个星期三是＿月＿号。",mEn:"Next Wednesday is ＿."},
+    {c:"谁帮你准备中文考试？",py:"shéi bāng nǐ zhǔnbèi zhōngwén kǎoshì?",en:"Who helps you prepare for the exam?",mHan:"＿＿帮我准备。／ 我自己准备。",mEn:"＿ helps me. / I prepare on my own."},
+    {c:"你觉得学中文什么容易，什么难？",py:"nǐ juéde xué zhōngwén shénme róngyì, shénme nán?",en:"What's easy and what's hard about Chinese?",mHan:"我觉得说话容易，写汉字难。",mEn:"Speaking is easy; writing characters is hard."},
+    {c:"你说中文说得快吗？",py:"nǐ shuō zhōngwén shuō de kuài ma?",en:"Do you speak Chinese fast?",mHan:"我说中文说得不快／很慢。",mEn:"Not fast / quite slow."},
+    {c:"我们平常几点上中文课，几点下课？",py:"wǒmen píngcháng jǐ diǎn shàng zhōngwén kè, jǐ diǎn xiàkè?",en:"When does class start and end?",mHan:"我们＿点上课，＿点下课。",mEn:"Class is ＿ to ＿."},
+    {c:"Part 2 (1)：要是你不喜欢看电影，＿＿（那……吧）。",py:"—",en:"Complete with 那…吧.",mHan:"那我们去打球吧。",mEn:"Then let's play ball."},
+    {c:"Part 2 (2)：因为我有中文考试，所以＿＿（要 + 动词短语）。",py:"—",en:"Complete with 要 + verb phrase.",mHan:"所以我要复习生词和语法。",mEn:"So I'm going to review vocab and grammar."},
+    {c:"Part 2 (3)：Q: 你觉得说中文难不难？ A: 我觉得＿＿（有一点儿）。",py:"—",en:"Complete with 有一点儿.",mHan:"我觉得有一点儿难。",mEn:"I think it's a little hard."},
+    {c:"Part 2 (4)：Q: 你写汉字写得怎么样？ A: 我写汉字＿＿（得 de）。",py:"—",en:"Complete with a 得-complement.",mHan:"我写汉字写得很慢。",mEn:"I write characters slowly."}
+  ],
+  compose:{ mode:"makeup" }
 }];
 
+/* ===== Cumulative sentence practice (wk index 0=W1). Shown for all weeks up to the selected one. ===== */
+const CLOZE=[
+  {wk:0,pre:"你家有几",ans:{c:"口",py:"kǒu",m:"(MW: family members)"},post:"人？",en:"How many people are in your family?"},
+  {wk:0,pre:"他是中国",ans:{c:"人",py:"rén",m:"person"},post:"。",en:"He is Chinese."},
+  {wk:0,pre:"我的生日是五月十",ans:{c:"号",py:"hào",m:"day of the month"},post:"。",en:"My birthday is May 10th."},
+  {wk:0,pre:"你是老师",ans:{c:"吗",py:"ma",m:"(yes/no particle)"},post:"？",en:"Are you a teacher?"},
+  {wk:1,pre:"因为周末我很忙，",ans:{c:"所以",py:"suǒ yǐ",m:"so / therefore"},post:"我常常睡觉。",en:"Because I'm busy on weekends, I often sleep."},
+  {wk:1,pre:"我要喝一",ans:{c:"杯",py:"bēi",m:"cup"},post:"茶。",en:"I'll have a cup of tea."},
+  {wk:1,pre:"好久不",ans:{c:"见",py:"jiàn",m:"to see / meet"},post:"，你怎么样？",en:"Long time no see, how are you?"},
+  {wk:1,pre:"我觉得学中文很有",ans:{c:"意思",py:"yì si",m:"meaning / interest"},post:"。",en:"I think studying Chinese is interesting."},
+  {wk:2,pre:"明天我们考试，我",ans:{c:"得",py:"děi",m:"must / have to"},post:"去图书馆看书。",en:"We have an exam tomorrow — I have to study at the library."},
+  {wk:2,pre:"来，我",ans:{c:"给",py:"gěi",m:"to / for (someone)"},post:"你介绍一下。",en:"Come, let me introduce (someone) to you."},
+  {wk:2,pre:"我们八点上课，他七点半",ans:{c:"就",py:"jiù",m:"as early as"},post:"来了。",en:"Class is at 8; he came as early as 7:30."},
+  {wk:2,pre:"我写汉字写",ans:{c:"得",py:"de",m:"(complement particle)"},post:"很慢。",en:"I write characters slowly."},
+  {wk:2,pre:"我觉得写汉字有一点儿",ans:{c:"难",py:"nán",m:"difficult"},post:"。",en:"I find writing characters a little hard."},
+  {wk:2,pre:"要是你有空，",ans:{c:"给",py:"gěi",m:"to (someone)"},post:"我打电话吧。",en:"If you're free, give me a call."}
+];
+const CONSTRUCT=[
+  {wk:0,en:"I am American.",order:["我","是","美国","人"],extra:["你","中国"]},
+  {wk:0,en:"Is this your book?",order:["这","是","你","的","书","吗"],extra:["那"]},
+  {wk:0,en:"My family has five people.",order:["我","家","有","五","口","人"],extra:["个"]},
+  {wk:1,en:"I'd like a little tea.",order:["我","要","喝","一点儿","茶"],extra:["咖啡"]},
+  {wk:1,en:"He often watches movies with friends.",order:["他","常常","和","朋友","看","电影"],extra:["打球"]},
+  {wk:1,en:"I think Chinese food is delicious.",order:["我","觉得","中国","菜","很","好吃"],extra:["美国"]},
+  {wk:2,en:"I have to review Chinese.",order:["我","得","复习","中文"],extra:["预习"]},
+  {wk:2,en:"Please give me a call.",order:["请","给","我","打电话"],extra:["说"]},
+  {wk:2,en:"He came as early as 7:30.",order:["他","七点半","就","来","了"],extra:["才"]},
+  {wk:2,en:"I write characters very slowly.",order:["我","写","汉字","写","得","很","慢"],extra:["快"]}
+];
+
 /* ===================== state ===================== */
-let W=WEEKS[0];
+let W=WEEKS[0], WI=0;
 
 function buildWeekSelect(){
   const s=$("#weekSelect"); s.innerHTML="";
   WEEKS.forEach((w,i)=>{const o=document.createElement("option");o.value=i;o.textContent=w.label+" · "+w.range;s.appendChild(o);});
-  s.onchange=()=>{ W=WEEKS[+s.value]; renderAll(); window.scrollTo({top:0}); };
+  s.onchange=()=>{ WI=+s.value; W=WEEKS[WI]; renderAll(); window.scrollTo({top:0}); };
 }
 function renderAll(){
   $("#brandSub").textContent="Chinese · "+W.range;
   $("#heroWeek").textContent=W.label;
   $("#heroRange").textContent=W.range;
-  const lede=$("#heroLede"); if(lede)lede.textContent="Everything on your "+W.examTitle+" in one place — vocabulary, stroke-order writing, listening, reading, speaking, and the composition — for "+W.range+", "+W.subtitle+".";
-  buildRoadmap(); buildVocab(); buildWriting(); startListening(); buildReading(); buildSpeaking(); buildCompose();
+  buildRoadmap(); buildRecall(); buildSentences(); buildWords();
+  buildVocab(); buildWriting(); startListening(); buildReading(); buildSpeaking(); buildCompose();
   paintSpk();
 }
+/* pool helpers for cumulative buildup */
+function weekVocab(i){ return WEEKS[i].vocab.flatMap(g=>g.items.map(it=>({id:"w"+i+":"+it.c, c:it.c, py:it.py, m:it.m, group:WEEKS[i].label+" · "+g.group}))); }
+function poolVocab(cumulative){ let arr=[]; for(let i=(cumulative?0:WI);i<=WI;i++)arr=arr.concat(weekVocab(i));
+  const seen=new Set(); return arr.filter(x=>{if(seen.has(x.c))return false;seen.add(x.c);return true;}); }
+
+/* ---------- Recall Trainer (Leitner SRS, persisted) ---------- */
+const SRS_KEY="ec_srs_v1", DAY=86400000, BOX_DAYS=[0,1,2,4,8];
+let srs={}; try{ srs=JSON.parse(localStorage.getItem(SRS_KEY)||"{}")||{}; }catch(e){ srs={}; }
+function srsSave(){ try{ localStorage.setItem(SRS_KEY,JSON.stringify(srs)); }catch(e){} }
+let recallScope="week", recallDir="m2h", rQueue=[], rItem=null, rRevealed=false, rReviewed=0;
+function recallPool(){ return poolVocab(recallScope==="cumulative"); }
+function dueList(pool){ const now=Date.now(),due=[],fresh=[]; pool.forEach(it=>{const s=srs[it.id]; if(!s)fresh.push(it); else if(s.due<=now)due.push(it);}); return shuffle(due).concat(shuffle(fresh)); }
+function buildRecall(){
+  $$("#recallScope .seg-btn").forEach(b=>b.onclick=()=>{$$("#recallScope .seg-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");recallScope=b.dataset.scope;startRecall();});
+  $$("#recallDir .seg-btn").forEach(b=>b.onclick=()=>{$$("#recallDir .seg-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");recallDir=b.dataset.dir;startRecall();});
+  startRecall();
+}
+function startRecall(){ rReviewed=0; rQueue=dueList(recallPool()); renderRecallStats(); nextRecall(); }
+function renderRecallStats(){
+  const pool=recallPool(); let neu=0,learn=0,young=0,mature=0;
+  pool.forEach(it=>{const s=srs[it.id];if(!s)neu++;else if(s.box<=1)learn++;else if(s.box<=3)young++;else mature++;});
+  $("#recallStats").innerHTML=
+    '<div class="rs-line"><b>'+rQueue.length+'</b> queued now · <b>'+rReviewed+'</b> reviewed this session · '+pool.length+' words in scope</div>'+
+    '<div class="rs-bars">'+
+      '<span class="rs-b new" style="flex:'+(neu||0.001)+'">'+(neu||"")+'</span>'+
+      '<span class="rs-b learn" style="flex:'+(learn||0.001)+'">'+(learn||"")+'</span>'+
+      '<span class="rs-b young" style="flex:'+(young||0.001)+'">'+(young||"")+'</span>'+
+      '<span class="rs-b mature" style="flex:'+(mature||0.001)+'">'+(mature||"")+'</span>'+
+    '</div><div class="rs-legend"><span class="k new"></span>new <span class="k learn"></span>learning <span class="k young"></span>familiar <span class="k mature"></span>known</div>';
+}
+function nextRecall(){
+  const box=$("#recallBox");
+  if(!rQueue.length){
+    box.innerHTML='<div class="recall-done"><div class="rd-han hanzi">✓</div><h3>All caught up.</h3><p>Nothing is due right now'+(recallScope==="week"?" this week":"")+'. Spacing works best across days — come back tomorrow, switch to “all weeks,” or change the direction above.</p><button class="btn soft" id="rRefill">Drill everything anyway</button></div>';
+    $("#rRefill").onclick=()=>{ rQueue=shuffle(recallPool()); nextRecall(); };
+    return;
+  }
+  rItem=rQueue[0]; rRevealed=false;
+  box.innerHTML='<div class="recall-card">'+recallPromptHTML(rItem)+'<div class="recall-answer" id="rAnswer" hidden></div><div class="recall-actions" id="rActions"><button class="btn mark" id="rReveal">Reveal answer</button></div></div>';
+  const hint=$("#rHint"); if(hint)hint.onclick=()=>{hint.outerHTML='<div class="r-pyhint">'+pyHTML(rItem.py)+'</div>';};
+  const play=$("#rPlay"); if(play)play.onclick=()=>speak(rItem.c);
+  if(recallDir==="a2h")setTimeout(()=>speak(rItem.c),260);
+  $("#rReveal").onclick=revealRecall;
+  paintSpk(box);
+}
+function recallPromptHTML(it){
+  if(recallDir==="m2h")return '<div class="r-prompt"><div class="r-cue">produce the character(s) from memory</div><div class="r-mean">“'+it.m+'”</div><button class="btn ghost r-hint" id="rHint">Pinyin hint</button></div>';
+  if(recallDir==="m2p")return '<div class="r-prompt"><div class="r-cue">say the pinyin with tones</div><div class="r-han hanzi">'+it.c+'</div><div class="r-mean">“'+it.m+'”</div></div>';
+  if(recallDir==="h2m")return '<div class="r-prompt"><div class="r-cue">recall the meaning</div><div class="r-han hanzi">'+it.c+'</div><button class="spk lg" data-say="'+it.c+'" aria-label="Hear"></button></div>';
+  return '<div class="r-prompt"><div class="r-cue">listen, then write the character(s)</div><button class="big-play" id="rPlay" aria-label="Play">'+PLAY+'</button></div>';
+}
+function revealRecall(){
+  if(rRevealed)return; rRevealed=true; const it=rItem;
+  const a=$("#rAnswer"); a.hidden=false;
+  a.innerHTML='<div class="ra-han hanzi">'+it.c+'</div><div class="ra-py">'+pyHTML(it.py)+'</div><div class="ra-m">'+it.m+'</div><button class="spk" data-say="'+it.c+'" aria-label="Hear"></button>';
+  speak(it.c);
+  $("#rActions").innerHTML='<div class="rate4"><button class="r4 again" data-g="0">Again</button><button class="r4 hard" data-g="1">Hard</button><button class="r4 good" data-g="2">Good</button><button class="r4 easy" data-g="3">Easy</button></div>';
+  $$("#rActions .r4").forEach(b=>b.onclick=()=>gradeRecall(+b.dataset.g));
+  paintSpk(a);
+}
+function gradeRecall(g){
+  const it=rItem; const s=srs[it.id]||{box:0,due:0}; let box=s.box||0;
+  if(g===0)box=0; else if(g===1)box=Math.max(0,box-1); else if(g===2)box=Math.min(4,box+1); else box=Math.min(4,box+2);
+  srs[it.id]={box,due: g===0?Date.now()+60000:Date.now()+BOX_DAYS[box]*DAY}; srsSave();
+  rReviewed++; rQueue.shift();
+  if(g===0)rQueue.splice(Math.min(rQueue.length,4),0,it);
+  renderRecallStats(); nextRecall();
+}
+
+/* ---------- Sentences: cloze + construct (cumulative) ---------- */
+let sentMode="cloze";
+function buildSentences(){
+  $$("#sentMode .seg-btn").forEach(b=>b.onclick=()=>{$$("#sentMode .seg-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");sentMode=b.dataset.mode;toggleSent();});
+  buildCloze(); buildConstruct(); toggleSent();
+}
+function toggleSent(){ $("#clozePanel").hidden=sentMode!=="cloze"; $("#buildPanel").hidden=sentMode!=="build"; }
+let clozeQ=[],clozeI=0;
+function buildCloze(){ clozeQ=shuffle(CLOZE.filter(x=>x.wk<=WI)); clozeI=0; renderCloze(); }
+function renderCloze(){
+  const p=$("#clozePanel");
+  if(!clozeQ.length){p.innerHTML='<p class="muted-note">No sentences for this week yet.</p>';return;}
+  const it=clozeQ[clozeI%clozeQ.length];
+  p.innerHTML='<div class="sent-card"><div class="sent-top"><span class="mono">'+((clozeI%clozeQ.length)+1)+' / '+clozeQ.length+'</span><span class="sent-en">'+it.en+'</span></div>'+
+    '<div class="cloze-sentence hanzi">'+it.pre+'<span class="blank" id="clozeBlank">▁▁</span>'+it.post+'</div>'+
+    '<div class="cloze-hint">the missing word means <b>“'+it.ans.m+'”</b></div>'+
+    '<div class="sent-actions"><button class="btn mark" id="clozeReveal">Reveal</button><button class="btn soft" id="clozeNext">Next →</button></div>'+
+    '<div class="cloze-answer" id="clozeAns" hidden></div></div>';
+  $("#clozeReveal").onclick=()=>{ $("#clozeBlank").outerHTML='<b class="fill hanzi">'+it.ans.c+'</b>';
+    const ans=$("#clozeAns"); ans.hidden=false; ans.innerHTML='<span class="hanzi">'+it.ans.c+'</span> '+pyHTML(it.ans.py)+' — '+it.ans.m+' <button class="spk" data-say="'+it.ans.c+'"></button>';
+    speak(it.pre+it.ans.c+it.post); paintSpk(ans); };
+  $("#clozeNext").onclick=()=>{clozeI++;renderCloze();};
+}
+let conQ=[],conI=0,conPick=[];
+function buildConstruct(){ conQ=shuffle(CONSTRUCT.filter(x=>x.wk<=WI)); conI=0; renderConstruct(); }
+function renderConstruct(){
+  const p=$("#buildPanel");
+  if(!conQ.length){p.innerHTML='<p class="muted-note">No build sentences for this week yet.</p>';return;}
+  const it=conQ[conI%conQ.length]; conPick=[];
+  const tiles=shuffle(it.order.concat(it.extra||[]));
+  p.innerHTML='<div class="sent-card"><div class="sent-top"><span class="mono">'+((conI%conQ.length)+1)+' / '+conQ.length+'</span><span class="sent-en">'+it.en+'</span></div>'+
+    '<div class="build-line" id="buildLine"></div><div class="build-tiles" id="buildTiles"></div>'+
+    '<div class="sent-actions"><button class="btn mark" id="buildCheck">Check</button><button class="btn soft" id="buildReset">Clear</button><button class="btn soft" id="buildNext">Next →</button></div>'+
+    '<div class="build-fb" id="buildFb"></div></div>';
+  const tb=$("#buildTiles");
+  tiles.forEach(w=>{const b=document.createElement("button");b.className="tile hanzi";b.textContent=w;b.onclick=()=>{if(b.disabled)return;b.disabled=true;conPick.push({w,el:b});renderBuildLine();};tb.appendChild(b);});
+  $("#buildCheck").onclick=()=>{ const fb=$("#buildFb"); const ans=conPick.map(p=>p.w).join(""),correct=it.order.join("");
+    if(ans===correct){fb.className="build-fb good";fb.innerHTML="✓ 对了！ <span class='hanzi'>"+it.order.join(" ")+"</span>";speak(correct);}
+    else{fb.className="build-fb bad";fb.innerHTML="✗ Not quite — answer: <span class='hanzi'>"+it.order.join("")+"</span>";} };
+  $("#buildReset").onclick=()=>{conPick.forEach(p=>p.el.disabled=false);conPick=[];renderBuildLine();$("#buildFb").textContent="";};
+  $("#buildNext").onclick=()=>{conI++;renderConstruct();};
+  renderBuildLine();
+}
+function renderBuildLine(){
+  const line=$("#buildLine");
+  if(!conPick.length){line.innerHTML='<span class="bl-placeholder">tap the words in order…</span>';return;}
+  line.innerHTML=""; conPick.forEach((p,idx)=>{const s=document.createElement("button");s.className="picked hanzi";s.textContent=p.w;s.onclick=()=>{p.el.disabled=false;conPick.splice(idx,1);renderBuildLine();};line.appendChild(s);});
+}
+
+/* ---------- Words reference ---------- */
+let wordScope="week";
+function buildWords(){
+  $$("#wordScope .seg-btn").forEach(b=>b.onclick=()=>{$$("#wordScope .seg-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");wordScope=b.dataset.scope;renderWords();});
+  $("#wordSearch").oninput=renderWords;
+  renderWords();
+}
+function renderWords(){
+  const q=($("#wordSearch").value||"").trim().toLowerCase();
+  const norm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  const host=$("#wordGroups"); host.innerHTML=""; let total=0;
+  const weeks = wordScope==="cumulative" ? WEEKS.slice(0,WI+1) : [W];
+  weeks.forEach(wk=>{
+    wk.vocab.forEach(g=>{
+      const items=g.items.filter(it=> !q || it.c.includes(q)||norm(it.py).includes(norm(q))||it.m.toLowerCase().includes(q));
+      if(!items.length)return; total+=items.length;
+      const sec=document.createElement("div"); sec.className="word-group";
+      sec.innerHTML='<div class="wg-title">'+wk.label+' · '+g.group+'</div>';
+      const grid=document.createElement("div"); grid.className="word-grid";
+      items.forEach(it=>{const cell=document.createElement("button");cell.className="word-cell";cell.dataset.say=it.c;
+        cell.innerHTML='<span class="wc-han hanzi">'+it.c+'</span><span class="wc-py">'+pyHTML(it.py)+'</span><span class="wc-m">'+it.m+'</span>';grid.appendChild(cell);});
+      sec.appendChild(grid); host.appendChild(sec);
+    });
+  });
+  $("#wordCount").textContent=total+" word"+(total===1?"":"s")+(wordScope==="cumulative"?" · all weeks so far":" · this week");
+  paintSpk(host);
+}
+
+/* ---------- make-up email composer (Week 3) ---------- */
+function buildComposeMakeup(){
+  const f=$("#composeFields");
+  f.innerHTML=
+    '<div class="field"><label>Your full name <span class="zh">你的名字</span></label><input id="kName" placeholder="e.g. 王小明 / Alex Smith"></div>'+
+    '<div class="field"><label>Grade & class <span class="zh">几年级／班</span></label><input id="kClass" placeholder="e.g. 中文一年级 CHIN134"></div>'+
+    '<div class="field"><label>Reason you can\'t test <span class="zh">为什么不能考试</span></label><input id="kReason" placeholder="e.g. 下周一我有工作面试"></div>'+
+    '<div class="field"><label>Time 1 — specific <span class="zh">时间（具体）</span></label><input id="kT1" placeholder="e.g. 周二下午十二点到三点"></div>'+
+    '<div class="field"><label>Time 2 — a range <span class="zh">时间（范围）</span></label><input id="kT2" placeholder="e.g. 周三两点以后"></div>'+
+    '<div class="field"><label>Time 3 — general <span class="zh">时间（大概）</span></label><input id="kT3" placeholder="e.g. 周四上课以前"></div>'+
+    '<div class="field"><label>What you find hard <span class="zh">什么很难</span></label><input id="kHard" placeholder="e.g. 写汉字 / 语法"></div>';
+  ["kName","kClass","kReason","kT1","kT2","kT3","kHard"].forEach(id=>{const el=$("#"+id);el.addEventListener("input",renderComposeMakeup);el.addEventListener("change",renderComposeMakeup);});
+  renderComposeMakeup();
+}
+function renderComposeMakeup(){
+  const g=id=>$("#"+id)?$("#"+id).value.trim():"";
+  const name=g("kName")||"XXX", cls=g("kClass")||"中文一年级CHIN134", reason=g("kReason")||"下周一我有工作面试";
+  const t1=g("kT1")||"周二下午十二点到三点", t2=g("kT2")||"周三两点以后", t3=g("kT3")||"周四上课以前", hard=g("kHard")||"写汉字";
+  const zh="亲爱的朱老师：您好！我是"+cls+"班的"+name+"。因为"+reason+"，不能来学校考试。我可以晚一点补考吗？我"+t1+"、"+t2+"、"+t3+"都有时间。要是这三个时间您都没有空，下个星期也可以。我觉得"+hard+"很难，我可以在考试以前问您问题吗？谢谢您！"+name;
+  setComposeOut(zh);
+  $("#composeEn").textContent="Dear Teacher Zhu, hello. I'm "+name+" from "+cls+". Because "+reason+", I can't come to school for the test. May I take a make-up a little later? I'm free "+t1+", "+t2+", and "+t3+". If none of those work for you, next week is fine too. I find "+hard+" hard — may I ask you some questions before the test? Thank you! "+name;
+}
+
 
 /* ---------- roadmap ---------- */
 function buildRoadmap(){
@@ -1018,25 +1459,31 @@ function loadChar(i){
 }
 $("#wPrev").onclick=()=>loadChar(wIndex-1);
 $("#wNext").onclick=()=>loadChar(wIndex+1);
-$("#wAnimate").onclick=()=>{ if(!writer)return; $("#wFeedback").textContent=""; writer.cancelQuiz(); writer.showCharacter(); writer.animateCharacter(); };
-$("#wOutline").onclick=()=>{ if(!writer)return; wOutlineOn=!wOutlineOn; wOutlineOn?writer.showOutline():writer.hideOutline(); };
-$("#wReset").onclick=()=>{ if(!writer)return; writer.cancelQuiz(); writer.showCharacter(); if(wOutlineOn)writer.showOutline(); $("#wFeedback").textContent=""; $("#wFeedback").className="write-feedback"; };
-$("#wPractice").onclick=()=>{
+$("#wAnimate").onclick=()=>{ if(!writer)return; $("#wFeedback").textContent=""; writer.cancelQuiz(); writer.showOutline(); writer.showCharacter(); writer.animateCharacter(); };
+$("#wReset").onclick=()=>{ if(!writer)return; writer.cancelQuiz(); writer.showCharacter(); writer.showOutline(); $("#wFeedback").textContent=""; $("#wFeedback").className="write-feedback"; };
+function runQuiz(fromMemory){
   if(!writer)return;
-  const fb=$("#wFeedback"); fb.className="write-feedback"; fb.textContent="Draw the strokes in order…";
+  const fb=$("#wFeedback"); fb.className="write-feedback";
+  const ch=W.writeChars[wIndex];
+  if(fromMemory){ writer.hideOutline(); writer.hideCharacter(); fb.textContent="From memory: write “"+ch.m+"” ("+ch.py+")"; }
+  else { writer.showOutline(); fb.textContent="Trace the strokes in order…"; }
   writer.quiz({
-    showHintAfterMisses:2, leniency:1.0, highlightOnComplete:true,
+    showHintAfterMisses: fromMemory?4:2, leniency:1.0, highlightOnComplete:true,
     onMistake:(s)=>{ fb.className="write-feedback bad"; fb.textContent="Stroke "+(s.strokeNum+1)+" — try again ("+s.mistakesOnStroke+")"; },
     onCorrectStroke:(s)=>{ fb.className="write-feedback"; fb.textContent="Stroke "+(s.strokeNum+1)+" ✓  ·  "+s.strokesRemaining+" to go"; },
     onComplete:(s)=>{
       fb.className="write-feedback good";
-      fb.textContent = s.totalMistakes===0 ? "Perfect — clean strokes! 完成" : "Done! "+s.totalMistakes+" mistake"+(s.totalMistakes===1?"":"s")+".";
+      const tag=fromMemory?" (from memory!)":"";
+      fb.textContent = (s.totalMistakes===0 ? "Perfect — clean strokes! 完成" : "Done! "+s.totalMistakes+" mistake"+(s.totalMistakes===1?"":"s")+".")+tag;
+      writer.showCharacter();
       wDoneSet.add(wIndex); $("#wDone").textContent=wDoneSet.size;
       const tile=$('#charGrid .char-tile[data-i="'+wIndex+'"]'); if(tile)tile.classList.add("done");
-      speak(W.writeChars[wIndex].c);
+      speak(ch.c);
     }
   });
-};
+}
+$("#wPractice").onclick=()=>runQuiz(false);
+$("#wMemory").onclick=()=>runQuiz(true);
 function startHero(){
   const host=$("#heroWriter");
   if(typeof HanziWriter==="undefined"){ host.innerHTML='<span class="hero-fallback hanzi">写</span>'; return; }
@@ -1211,12 +1658,17 @@ function buildCompose(){
     if(label)label.textContent="Your message · 给客人的短信";
     if(heading)heading.textContent="Write your weekend message.";
     if(intro)intro.textContent="Fill in the details and a friendly 8–10 sentence note to your visiting friend or family assembles in real time — greeting, plan, reason, and what to eat and drink. Read it aloud, then write your own.";
-  }else{
-    if(label)label.textContent="Your composition · 自我介绍";
-    if(heading)heading.textContent="Build your self-introduction.";
-    if(intro)intro.textContent="Fill in your details and watch a complete 自我介绍 assemble in real time — the exact 8–10 sentence structure the exam asks for. Read it aloud, then memorize your own.";
+    return buildComposeVisit();
   }
-  if(mode==="visitmsg") return buildComposeVisit();
+  if(mode==="makeup"){
+    if(label)label.textContent="Your email · 给老师的邮件";
+    if(heading)heading.textContent="Email your teacher.";
+    if(intro)intro.textContent="Request a make-up test: give your name, class, the reason, three different ways of stating your availability, and a polite question about the hard material. The full email assembles as you type.";
+    return buildComposeMakeup();
+  }
+  if(label)label.textContent="Your composition · 自我介绍";
+  if(heading)heading.textContent="Build your self-introduction.";
+  if(intro)intro.textContent="Fill in your details and watch a complete 自我介绍 assemble in real time — the exact 8–10 sentence structure the exam asks for. Read it aloud, then memorize your own.";
   return buildComposeSelf();
 }
 function buildComposeSelf(){
@@ -1308,7 +1760,7 @@ $("#composeSpk")&&($("#composeSpk").onclick=()=>speakOnce($("#composeText").text
 
 /* ---------- nav scroll-spy + reveal ---------- */
 const navLinks=$$("#navlinks a");
-const sections=["roadmap","vocab","writing","listening","reading","speaking","compose"].map(id=>$("#"+id));
+const sections=["roadmap","recall","writing","sentences","vocab","listening","reading","speaking","compose","words"].map(id=>$("#"+id));
 if("IntersectionObserver" in window){
   const no=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));}),{rootMargin:"-45% 0px -50% 0px"});
   sections.forEach(s=>s&&no.observe(s));
