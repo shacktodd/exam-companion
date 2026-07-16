@@ -345,6 +345,44 @@
   .wc-py{font-family:"IBM Plex Mono",monospace;font-size:.8rem;font-weight:600}
   .wc-m{font-size:.8rem;color:var(--muted)}
 
+  /* GRAMMAR LAB */
+  .gram-stage{max-width:640px;margin:0 auto}
+  .gram-card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:24px}
+  .gc-head{border-bottom:1px dashed var(--line);padding-bottom:14px;margin-bottom:16px}
+  .gc-t{font-family:"Noto Serif SC",serif;font-size:1.7rem;font-weight:700;line-height:1.2}
+  .gc-sub{font-family:"Fraunces",serif;font-style:italic;color:var(--muted);margin-top:2px}
+  .gc-pts{list-style:none;padding:0;margin:0 0 18px}
+  .gc-pts li{position:relative;padding-left:18px;margin-bottom:7px;font-size:.92rem;color:var(--ink-soft);line-height:1.55}
+  .gc-pts li::before{content:"▸";position:absolute;left:0;color:var(--mark);font-weight:700}
+  .gc-pts b{font-family:"Noto Serif SC",serif;color:var(--ink);font-weight:600}
+  .gc-lbl{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mark);margin:0 0 8px}
+  .gc-ex{background:var(--paper-2);border-radius:11px;padding:12px 14px;margin-bottom:8px}
+  .gc-ex .ge-han{font-family:"Noto Serif SC",serif;font-size:1.15rem;line-height:1.6;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .gc-ex .ge-py{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--blue);margin-top:3px}
+  .gc-ex .ge-en{font-size:.84rem;color:var(--muted);font-style:italic;margin-top:1px}
+  .gc-ex .spk{width:28px;height:28px}.gc-ex .spk svg{width:14px;height:14px}
+  .gc-drill{border-top:1px dashed var(--line);margin-top:18px;padding-top:16px}
+  .gd-item{margin-bottom:14px}
+  .gd-q{font-family:"Noto Serif SC",serif;font-size:1.1rem;margin-bottom:9px;line-height:1.6}
+  .gd-opts{display:flex;gap:7px;flex-wrap:wrap}
+  .gd-btn{border:1px solid var(--line);background:var(--paper);cursor:pointer;border-radius:9px;padding:7px 15px;font-family:"Noto Serif SC",serif;font-size:1rem;font-weight:600;color:var(--ink);transition:.12s}
+  .gd-btn:hover:not(:disabled){border-color:var(--jade)}
+  .gd-btn.correct{background:rgba(47,125,91,.16);border-color:var(--jade);color:var(--jade-deep)}
+  .gd-btn.wrong{background:rgba(207,63,44,.12);border-color:var(--mark);color:var(--mark-deep)}
+  .gd-btn:disabled{cursor:default}
+  .gd-x{font-size:.8rem;color:var(--muted);margin-top:7px}
+  .gram-prog{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--muted);text-align:center;margin-top:14px}
+
+  /* 猜词 */
+  .guess-card{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px;text-align:center}
+  .guess-word{font-family:"Noto Serif SC",serif;font-size:3.2rem;font-weight:700;line-height:1.1}
+  .guess-cue{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mark);margin-bottom:10px}
+  .guess-hint{color:var(--muted);font-size:.86rem;margin-top:10px}
+  .guess-rev{border-top:1px dashed var(--line);margin-top:18px;padding-top:16px}
+  .guess-rev .gr-py{font-family:"IBM Plex Mono",monospace;font-size:1.1rem;font-weight:700;color:var(--blue)}
+  .guess-rev .gr-m{font-family:"Fraunces",serif;font-size:1.4rem;font-weight:600;margin-top:2px}
+  .guess-rev .gr-p{font-size:.85rem;color:var(--muted);margin-top:8px}
+
   /* FOOTER */
   footer{background:var(--ink);color:#aeb8c2;padding:44px 0 38px;margin-top:20px}
   footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
@@ -392,6 +430,7 @@
       <a href="#roadmap">Exam</a>
       <a href="#recall">Recall</a>
       <a href="#writing">Writing</a>
+      <a href="#grammar">Grammar</a>
       <a href="#sentences">Sentences</a>
       <a href="#vocab">Learn</a>
       <a href="#listening">Listen</a>
@@ -467,8 +506,21 @@
   </div>
 </section>
 
+<!-- GRAMMAR LAB -->
+<section class="block" id="grammar">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Patterns · Grammar lab</span>
+      <h2>The patterns behind the sentences.</h2>
+      <p>Vocabulary is only half of it — the exam rewards patterns. Each card gives you the structure, real examples you can hear, and a drill that forces you to choose. Get the pattern wrong and it tells you why.</p>
+    </div>
+    <div class="chips" id="gramChips"></div>
+    <div class="gram-stage" id="gramStage"></div>
+  </div>
+</section>
+
 <!-- SENTENCES (cloze + construct) -->
-<section class="block" id="sentences">
+<section class="block band" id="sentences">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Build up · Cumulative sentence practice</span>
@@ -478,9 +530,11 @@
     <div class="seg" id="sentMode" role="group" aria-label="mode" style="margin-bottom:18px">
       <button class="seg-btn active" data-mode="cloze">Fill the blank</button>
       <button class="seg-btn" data-mode="build">Build the sentence</button>
+      <button class="seg-btn" data-mode="guess">猜词 Guess the word</button>
     </div>
     <div id="clozePanel"></div>
     <div id="buildPanel" hidden></div>
+    <div id="guessPanel" hidden></div>
   </div>
 </section>
 
@@ -1013,7 +1067,8 @@ const WEEKS=[{
     {n:3,pts:10,title:"Answer about yourself",desc:"3 spoken questions + 4 fill-in-the-blank writing prompts.",go:"#speaking"},
     {n:4,pts:10,title:"Reading — true / false",desc:"A dialogue about who studies what, with five statements.",go:"#reading"},
     {n:5,pts:10,title:"Email your teacher",desc:"Request a make-up test and ask a question before the exam.",go:"#compose"},
-    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"This week's radicals: 糸/纟 虫 言/讠 女 竹/⺮.",go:"#writing",extra:true}
+    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"This week's radicals: 糸/纟 虫 言/讠 女 竹/⺮.",go:"#writing",extra:true},
+    {n:"文",pts:0,title:"Culture · 书法",desc:"Chinese calligraphy activity — practice strokes in the writing lab.",go:"#writing",extra:true}
   ],
   vocab:[
     {group:"L6 · D1", items:[
@@ -1032,10 +1087,111 @@ const WEEKS=[{
       {c:"年级",py:"nián jí",m:"grade level"},{c:"喂",py:"wéi",m:"hello (on the phone)"},{c:"行",py:"xíng",m:"ok / it works"},{c:"别",py:"bié",m:"don't"},{c:"方便",py:"fāng biàn",m:"convenient"},{c:"等",py:"děng",m:"to wait"},{c:"哪位",py:"nǎ wèi",m:"which person"},{c:"上午",py:"shàng wǔ",m:"morning"},{c:"下午",py:"xià wǔ",m:"afternoon"},{c:"空儿",py:"kòngr",m:"free time"},{c:"别客气",py:"bié kè qi",m:"you're welcome"},{c:"要",py:"yào",m:"will / to want"},{c:"课",py:"kè",m:"class / lesson"},{c:"节",py:"jié",m:"(measure word: class periods)"},{c:"以后",py:"yǐ hòu",m:"after"},{c:"到",py:"dào",m:"to arrive"},{c:"办公室",py:"bàn gōng shì",m:"office"},{c:"上个",py:"shàng ge",m:"last / previous"},{c:"下个",py:"xià ge",m:"next"},{c:"前天",py:"qián tiān",m:"day before yesterday"},{c:"后天",py:"hòu tiān",m:"day after tomorrow"},{c:"跟",py:"gēn",m:"with"},{c:"帮",py:"bāng",m:"to help"},{c:"准备",py:"zhǔn bèi",m:"to prepare"},{c:"位",py:"wèi",m:"(polite MW for people)"},{c:"电话",py:"diàn huà",m:"telephone"},{c:"帮忙",py:"bāng máng",m:"to help / do a favor"}
     ]},
     {group:"L7 · More", items:[
-      {c:"第",py:"dì",m:"(ordinal prefix)"},{c:"生词",py:"shēng cí",m:"new words / vocabulary"},{c:"多",py:"duō",m:"many / much"},{c:"汉字",py:"hàn zì",m:"Chinese characters"},{c:"写",py:"xiě",m:"to write"},{c:"怎么",py:"zěn me",m:"how / how come"},{c:"笔",py:"bǐ",m:"pen"},{c:"纸",py:"zhǐ",m:"paper"},{c:"教",py:"jiāo",m:"to teach"},{c:"懂",py:"dǒng",m:"to understand"},{c:"容易",py:"róng yì",m:"easy"},{c:"难",py:"nán",m:"difficult"},{c:"真",py:"zhēn",m:"real / really"},{c:"哪里",py:"nǎ lǐ",m:"where / (modest reply)"},{c:"慢",py:"màn",m:"slow(ly)"},{c:"快",py:"kuài",m:"fast / quick(ly)"},{c:"大家",py:"dà jiā",m:"everyone"},{c:"学习",py:"xué xí",m:"to study / learn"},{c:"念课文",py:"niàn kè wén",m:"to read the text aloud"},{c:"做功课",py:"zuò gōng kè",m:"to do homework"},{c:"帅",py:"shuài",m:"handsome"},{c:"酷",py:"kù",m:"cool"},{c:"早",py:"zǎo",m:"early"},{c:"课文",py:"kè wén",m:"text of a lesson"},{c:"录音",py:"lù yīn",m:"sound recording"},{c:"念",py:"niàn",m:"to read aloud"},{c:"字",py:"zì",m:"character"},{c:"有一点儿",py:"yǒu yì diǎnr",m:"a little / somewhat"}
+      {c:"第",py:"dì",m:"(ordinal prefix)"},{c:"生词",py:"shēng cí",m:"new words / vocabulary"},{c:"多",py:"duō",m:"many / much"},{c:"汉字",py:"hàn zì",m:"Chinese characters"},{c:"写",py:"xiě",m:"to write"},{c:"怎么",py:"zěn me",m:"how / how come"},{c:"笔",py:"bǐ",m:"pen"},{c:"纸",py:"zhǐ",m:"paper"},{c:"教",py:"jiāo",m:"to teach"},{c:"懂",py:"dǒng",m:"to understand"},{c:"容易",py:"róng yì",m:"easy"},{c:"难",py:"nán",m:"difficult"},{c:"真",py:"zhēn",m:"real / really"},{c:"哪里",py:"nǎ lǐ",m:"where / (modest reply)"},{c:"慢",py:"màn",m:"slow(ly)"},{c:"快",py:"kuài",m:"fast / quick(ly)"},{c:"大家",py:"dà jiā",m:"everyone"},{c:"学习",py:"xué xí",m:"to study / learn"},{c:"念课文",py:"niàn kè wén",m:"to read the text aloud"},{c:"做功课",py:"zuò gōng kè",m:"to do homework"},{c:"帅",py:"shuài",m:"handsome"},{c:"酷",py:"kù",m:"cool"},{c:"早",py:"zǎo",m:"early"},{c:"课文",py:"kè wén",m:"text of a lesson"},{c:"录音",py:"lù yīn",m:"sound recording"},{c:"念",py:"niàn",m:"to read aloud"},{c:"字",py:"zì",m:"character"},{c:"有一点儿",py:"yǒu yì diǎnr",m:"a little / somewhat"},{c:"功课",py:"gōng kè",m:"homework"},{c:"书法",py:"shū fǎ",m:"calligraphy"},{c:"累",py:"lèi",m:"tired"},{c:"打字",py:"dǎ zì",m:"to type"}
+    ]},
+    {group:"L7 · Colors & 的", items:[
+      {c:"颜色",py:"yán sè",m:"color"},{c:"红色",py:"hóng sè",m:"red"},{c:"蓝色",py:"lán sè",m:"blue"},{c:"黄色",py:"huáng sè",m:"yellow"},{c:"绿色",py:"lǜ sè",m:"green"},{c:"黑色",py:"hēi sè",m:"black"},{c:"白色",py:"bái sè",m:"white"},
+      {c:"衣服",py:"yī fu",m:"clothes"},{c:"头发",py:"tóu fa",m:"hair"},{c:"花",py:"huā",m:"flower"},{c:"糖",py:"táng",m:"candy"},{c:"车",py:"chē",m:"car"},{c:"手机",py:"shǒu jī",m:"cell phone"},{c:"食物",py:"shí wù",m:"food"},{c:"眼睛",py:"yǎn jing",m:"eyes"},
+      {c:"男的",py:"nán de",m:"a guy / male one"},{c:"女的",py:"nǚ de",m:"a lady / female one"}
     ]}
   ],
   pinyinTask:[{c:"问题",py:"wèn tí"},{c:"办公室",py:"bàn gōng shì"},{c:"准备",py:"zhǔn bèi"},{c:"容易",py:"róng yì"},{c:"听录音",py:"tīng lù yīn"}],
+  grammar:[
+    {id:"jc",t:"就 vs. 才",sub:"earliness vs. lateness",
+     pts:["<b>S + early time + 就 + VP 了</b> — sooner than expected","<b>S + late time + 才 + VP</b> — later than expected","就 also means “precisely / exactly”: 我就是你要找的人。","Early or late is judged by comparison or common expectation."],
+     ex:[{c:"我们八点钟上中文课，他七点半就来了。",py:"wǒmen bā diǎnzhōng shàng zhōngwén kè, tā qī diǎn bàn jiù lái le.",en:"Class is at 8:00 — he came as early as 7:30."},
+         {c:"我们八点钟上中文课，他八点半才来。",py:"wǒmen bā diǎnzhōng shàng zhōngwén kè, tā bā diǎn bàn cái lái.",en:"Class is at 8:00 — he didn't come until 8:30."},
+         {c:"我下个星期就去北京，我的朋友十二月才去。",py:"wǒ xià ge xīngqī jiù qù Běijīng, wǒ de péngyou shí'èr yuè cái qù.",en:"I'm going to Beijing as soon as next week; my friend won't go until December."}],
+     drill:[{q:"昨天，不，今天早上两点我＿＿睡觉。",o:["就","才"],a:1,x:"2 a.m. is very late → 才"},
+            {q:"我今天想问马老师几个问题，所以八点＿＿来学校了。",o:["就","才"],a:0,x:"8:00 is early → 就…了"},
+            {q:"对，＿＿是她。她给我们的考试怎么这么多！",o:["就","才"],a:0,x:"就是 = precisely / exactly her"},
+            {q:"我常常六点回家，可是今天五点＿＿回家了。",o:["就","才"],a:0,x:"earlier than usual → 就…了"},
+            {q:"我常常六点回家，可是今天八点＿＿回家。",o:["就","才"],a:1,x:"later than usual → 才"}]},
+    {id:"zm",t:"怎么 + Verb",sub:"how to… / how come…",
+     pts:["<b>怎么 + VO</b> = how to do something — 怎么说、怎么写、怎么念、怎么学","<b>怎么 + 不/没 + VO</b> = how come someone doesn't / didn't — implies surprise","<b>怎么 + V + 得 + 这么 + adj</b> — how come (someone) does it so…"],
+     ex:[{c:"请问，这个字怎么念？",py:"qǐng wèn, zhège zì zěnme niàn?",en:"Excuse me, how do you read this character?"},
+         {c:"学生都来了，老师怎么没来？",py:"xuéshēng dōu lái le, lǎoshī zěnme méi lái?",en:"All the students are here — how come the teacher hasn't?"},
+         {c:"他怎么睡得这么晚？",py:"tā zěnme shuì de zhème wǎn?",en:"How come he sleeps so late?"}],
+     drill:[{q:"“睡”这个字你知道＿＿写吗？",o:["怎么","这么"],a:0,x:"asking HOW to write → 怎么"},
+            {q:"很晚了，你＿＿不睡觉？",o:["怎么","这么"],a:0,x:"how come you're not sleeping → 怎么"},
+            {q:"今天有中文课，你＿＿在家？",o:["怎么","这么"],a:0,x:"counter-expectation → 怎么"},
+            {q:"大家都去吃饭了，你＿＿没去？",o:["怎么","这么"],a:0,x:"how come you didn't go → 怎么"}]},
+    {id:"zhm",t:"这么 + adj / verb",sub:"so… / like this",
+     pts:["<b>这么 + adj</b> = so / such — 这么多！这么难！","<b>V + 得 + 这么 + adj</b> — 他来得这么早！","<b>这么 + verb</b> = do it like this — 你就这么写！"],
+     ex:[{c:"他这么早就到了！",py:"tā zhème zǎo jiù dào le!",en:"He arrived so early!"},
+         {c:"你这么晚才到！",py:"nǐ zhème wǎn cái dào!",en:"You didn't get here until so late!"},
+         {c:"“早”字怎么写？你就这么写！",py:"“zǎo” zì zěnme xiě? nǐ jiù zhème xiě!",en:"How do you write 早? You write it just like this!"}],
+     drill:[{q:"第七课的生词怎么＿＿多？！",o:["这么","怎么"],a:0,x:"怎么这么多 — 这么 modifies the adjective"},
+            {q:"你来得＿＿早！",o:["这么","怎么"],a:0,x:"V得 + 这么 + adj = so early"},
+            {q:"“早”字怎么写？你就＿＿写！",o:["这么","怎么"],a:0,x:"这么 + verb = do it like this"}]},
+    {id:"pc",t:"平常 vs. 常常",sub:"usually vs. often",
+     pts:["<b>平常</b> — (n.) usual time; (adj.) usual, ordinary; (adv.) usually, as a rule","<b>常常</b> — (adv.) often, frequently; about how <i>often</i> something happens"],
+     ex:[{c:"平常我写汉字写得很慢，所以常常练习。",py:"píngcháng wǒ xiě hànzì xiě de hěn màn, suǒyǐ chángcháng liànxí.",en:"I usually write characters slowly, so I practice often."},
+         {c:"你平常来上课来得早吗？",py:"nǐ píngcháng lái shàngkè lái de zǎo ma?",en:"Do you usually get to class early?"}],
+     drill:[{q:"我＿＿不喜欢喝咖啡，喜欢喝茶。",o:["平常","常常"],a:0,x:"as a rule / usually → 平常"},
+            {q:"大家都觉得他不是一个＿＿人。",o:["平常","常常"],a:0,x:"平常 as an adjective = ordinary"},
+            {q:"你＿＿去哪儿看书，图书馆还是咖啡馆？",o:["平常","常常"],a:0,x:"usual routine → 平常"},
+            {q:"他＿＿来得很早，可是今天来得很晚。",o:["平常","常常"],a:0,x:"usually — contrasted with today → 平常"},
+            {q:"周末王朋＿＿给爸爸妈妈打电话，有时候回家。",o:["平常","常常"],a:1,x:"frequency, contrasted with 有时候 → 常常"}]},
+    {id:"ydr",t:"有(一)点儿 + adj",sub:"a little — usually undesirable",
+     pts:["<b>有(一)点儿 + adj</b> — “a bit too…”, normally something you don't want","<b>有(一)点儿 + mental verb</b> (想 / 喜欢) — 我有点儿想喝咖啡。","<b>V + (一)点儿 + noun</b> = have a bit of something — 吃点儿什么"],
+     ex:[{c:"我觉得学中文有一点儿难。",py:"wǒ juéde xué zhōngwén yǒu yìdiǎnr nán.",en:"I find studying Chinese a little hard."},
+         {c:"这个星期我有一点儿忙。",py:"zhège xīngqī wǒ yǒu yìdiǎnr máng.",en:"I'm a little busy this week."},
+         {c:"今天午饭你想吃点儿什么？",py:"jīntiān wǔfàn nǐ xiǎng chī diǎnr shénme?",en:"What would you like to eat for lunch today?"}],
+     drill:[{q:"第七课的生词＿＿多。",o:["有一点儿","一点儿"],a:0,x:"有一点儿 + adj (undesirable)"},
+            {q:"你想喝＿＿什么？",o:["有一点儿","一点儿"],a:1,x:"V + (一)点儿 + noun"},
+            {q:"我今天＿＿忙。",o:["有点儿","点儿"],a:0,x:"有点儿 + adj"}]},
+    {id:"di",t:"第 + number",sub:"ordinal numbers",
+     pts:["<b>第 + # + MW + noun</b> — 第一个人、第二位老师、第三杯茶","<b>No measure word</b> with: 第一天、第二年、第十课","Ask with <b>第几</b> — 你是第几个孩子？"],
+     ex:[{c:"今天我们考第七课。",py:"jīntiān wǒmen kǎo dì-qī kè.",en:"Today we're testing Lesson 7."},
+         {c:"你是爸爸妈妈的第几个孩子？",py:"nǐ shì bàba māma de dì-jǐ ge háizi?",en:"Which number child are you?"},
+         {c:"这是你在西雅图的第几年？",py:"zhè shì nǐ zài Xīyǎtú de dì-jǐ nián?",en:"Which year is this for you in Seattle?"}],
+     drill:[{q:"这是我的第三＿＿咖啡。",o:["杯","个","天"],a:0,x:"咖啡 takes 杯"},
+            {q:"今天是这个月的第十＿＿。",o:["天","个天","个日"],a:0,x:"第 + # + 天 — no measure word"},
+            {q:"他是我的第二＿＿老师。",o:["位","杯","张"],a:0,x:"位 is the polite MW for people"}]},
+    {id:"de",t:"V + 得 + description",sub:"descriptive complement",
+     pts:["<b>S + V + 得 + (很/不) + adj</b> — 他来得很早。","<b>S + V + O + V + 得 + adj</b> — repeat the verb: 说中文说得很好。","Intensifiers: 太…了！ 真…！ 很… 有(一)点儿… 不…"],
+     ex:[{c:"你说中文说得怎么样？",py:"nǐ shuō zhōngwén shuō de zěnmeyàng?",en:"How well do you speak Chinese?"},
+         {c:"我写汉字写得很慢。",py:"wǒ xiě hànzì xiě de hěn màn.",en:"I write characters very slowly."},
+         {c:"中文考试你考得怎么样？",py:"zhōngwén kǎoshì nǐ kǎo de zěnmeyàng?",en:"How did you do on the Chinese exam?"}],
+     drill:[{q:"我说中文＿＿很慢。",o:["说得","得说","说"],a:0,x:"S V O V 得 — repeat the verb 说"},
+            {q:"他来＿＿很早。",o:["得","的","地"],a:0,x:"V + 得 + adj"},
+            {q:"你写汉字写得＿＿？",o:["怎么样","什么","哪儿"],a:0,x:"怎么样 asks for a description"}]},
+    {id:"den",t:"Adj + 的 → Noun",sub:"“the ___ one”",
+     pts:["<b>Adj + 的</b> stands in for a noun — 男的 (a guy), 女的 (a lady), 大的 (the big one)","Works with any modifier — 中文的、老师的、9:30的、什么颜色的"],
+     ex:[{c:"他是男的还是女的？",py:"tā shì nán de háishì nǚ de?",en:"Is that person a man or a woman?"},
+         {c:"你要喝大杯的还是小杯的？",py:"nǐ yào hē dà bēi de háishì xiǎo bēi de?",en:"Do you want a large one or a small one?"},
+         {c:"中文课你喜欢早的还是晚的？",py:"zhōngwén kè nǐ xǐhuān zǎo de háishì wǎn de?",en:"Do you prefer the early Chinese class or the late one?"}],
+     drill:[{q:"这儿有几个男＿＿，几个女＿＿？",o:["的","得","地"],a:0,x:"男的 / 女的 = a guy / a lady"},
+            {q:"你要吃哪一个？我要吃多＿＿。",o:["的","得","了"],a:0,x:"多的 = the one with more"},
+            {q:"你喜欢什么颜色＿＿衣服？",o:["的","得","地"],a:0,x:"什么颜色的 + noun"}]},
+    {id:"gjw",t:"给 / 教 / 问 + somebody",sub:"two-object verbs",
+     pts:["<b>A 给 B + noun</b> — 老师给了他一本书。","<b>A 教 B + skill</b> — 谁教你中文？","<b>A 问 B + 问题</b> — 我问老师一个问题。","Also: A 给 B 打电话 · A 给 B 介绍一下"],
+     ex:[{c:"他给我打了一个电话。",py:"tā gěi wǒ dǎ le yí ge diànhuà.",en:"He gave me a call."},
+         {c:"来，我给你介绍一下，这是我妹妹。",py:"lái, wǒ gěi nǐ jièshào yíxià, zhè shì wǒ mèimei.",en:"Here, let me introduce you — this is my younger sister."},
+         {c:"我有几个问题，我得问老师。",py:"wǒ yǒu jǐ ge wèntí, wǒ děi wèn lǎoshī.",en:"I have a few questions; I have to ask the teacher."}],
+     drill:[{q:"谁＿＿你中文？",o:["教","给","问"],a:0,x:"teaching a skill → 教"},
+            {q:"要是你有语法问题，你可以＿＿老师问题。",o:["问","给","教"],a:0,x:"问 somebody questions"},
+            {q:"周末我常常＿＿爸爸妈妈打电话。",o:["给","问","教"],a:0,x:"给 B 打电话"}]},
+    {id:"qw",t:"Question words",sub:"ask precisely",
+     pts:["什么 what · 什么时候 when · 谁 / 谁的 who / whose","哪儿 · 什么地方 where · 怎么 how / how come","几 + MW how many · 哪 + MW which"],
+     ex:[{c:"你什么时候有空？",py:"nǐ shénme shíhou yǒu kòngr?",en:"When are you free?"},
+         {c:"这是谁的手机？",py:"zhè shì shéi de shǒujī?",en:"Whose cell phone is this?"},
+         {c:"你有几个妹妹？",py:"nǐ yǒu jǐ ge mèimei?",en:"How many younger sisters do you have?"}],
+     drill:[{q:"＿＿是你的中文老师？",o:["谁","什么","哪儿"],a:0,x:"asking about a person → 谁"},
+            {q:"你＿＿有空？",o:["什么时候","什么","怎么"],a:0,x:"asking about time → 什么时候"},
+            {q:"你平常去＿＿看书？",o:["哪儿","谁","怎么"],a:0,x:"asking about place → 哪儿"},
+            {q:"这是＿＿手机？",o:["谁的","谁","几"],a:0,x:"whose → 谁的"}]}
+  ],
+  guessWords:[
+    {c:"上学",py:"shàng xué",m:"to go to school",parts:"上 (to go to) + 学 (study)"},
+    {c:"难吃",py:"nán chī",m:"bad-tasting",parts:"难 (difficult) + 吃 (eat) → hard to eat"},
+    {c:"教室",py:"jiào shì",m:"classroom",parts:"教 (teach) + 室 (room)"},
+    {c:"打字",py:"dǎ zì",m:"to type",parts:"打 (to hit / strike) + 字 (character)"},
+    {c:"念书",py:"niàn shū",m:"to read / to study",parts:"念 (read aloud) + 书 (book)"},
+    {c:"易懂",py:"yì dǒng",m:"easy to understand",parts:"易 (easy) + 懂 (understand)"},
+    {c:"法律",py:"fǎ lǜ",m:"law",parts:"法 (law / method) + 律 (rule / law)"}
+  ],
   writeChars:[
     {c:"给",py:"gěi",m:"to give"},{c:"打",py:"dǎ",m:"to hit / make (a call)"},{c:"电",py:"diàn",m:"electric"},{c:"话",py:"huà",m:"speech / words"},{c:"就",py:"jiù",m:"precisely"},
     {c:"问",py:"wèn",m:"to ask"},{c:"题",py:"tí",m:"topic / problem"},{c:"要",py:"yào",m:"to want / will"},{c:"开",py:"kāi",m:"to open / start"},{c:"会",py:"huì",m:"can / meeting"},
@@ -1111,7 +1267,20 @@ const WEEKS=[{
     {c:"Part 2 (1)：要是你不喜欢看电影，＿＿（那……吧）。",py:"—",en:"Complete with 那…吧.",mHan:"那我们去打球吧。",mEn:"Then let's play ball."},
     {c:"Part 2 (2)：因为我有中文考试，所以＿＿（要 + 动词短语）。",py:"—",en:"Complete with 要 + verb phrase.",mHan:"所以我要复习生词和语法。",mEn:"So I'm going to review vocab and grammar."},
     {c:"Part 2 (3)：Q: 你觉得说中文难不难？ A: 我觉得＿＿（有一点儿）。",py:"—",en:"Complete with 有一点儿.",mHan:"我觉得有一点儿难。",mEn:"I think it's a little hard."},
-    {c:"Part 2 (4)：Q: 你写汉字写得怎么样？ A: 我写汉字＿＿（得 de）。",py:"—",en:"Complete with a 得-complement.",mHan:"我写汉字写得很慢。",mEn:"I write characters slowly."}
+    {c:"Part 2 (4)：Q: 你写汉字写得怎么样？ A: 我写汉字＿＿（得 de）。",py:"—",en:"Complete with a 得-complement.",mHan:"我写汉字写得很慢。",mEn:"I write characters slowly."},
+    {c:"你平常怎么复习中文？",py:"nǐ píngcháng zěnme fùxí zhōngwén?",en:"How do you usually review Chinese?",mHan:"我得练习汉字，复习难的语法，还得念课文、听录音。",mEn:"I practice characters, review hard grammar, and read the text and listen to recordings."},
+    {c:"你怎么准备中文考试？",py:"nǐ zěnme zhǔnbèi zhōngwén kǎoshì?",en:"How do you prepare for the Chinese exam?",mHan:"我得＿＿，＿＿，还得＿＿。",mEn:"I have to ＿, ＿, and also ＿."},
+    {c:"你说中文怎么说得这么好？！",py:"nǐ shuō zhōngwén zěnme shuō de zhème hǎo?!",en:"How come you speak Chinese so well?!",mHan:"哪里哪里！我说得不好。",mEn:"Not at all — I don't speak well."},
+    {c:"你知道怎么念课文吗？",py:"nǐ zhīdào zěnme niàn kèwén ma?",en:"Do you know how to read the text aloud?",mHan:"我知道／我不知道怎么念。",mEn:"I do / I don't know how."},
+    {c:"你怎么不喝中国茶？",py:"nǐ zěnme bù hē zhōngguó chá?",en:"How come you don't drink Chinese tea?",mHan:"因为我有点儿想喝咖啡。",mEn:"Because I feel a bit like coffee."},
+    {c:"你觉得学中文很酷吗？",py:"nǐ juéde xué zhōngwén hěn kù ma?",en:"Do you think studying Chinese is cool?",mHan:"我觉得学中文很酷／很有意思。",mEn:"I think it's cool / interesting."},
+    {c:"这是你在西雅图的第几年？",py:"zhè shì nǐ zài Xīyǎtú de dì-jǐ nián?",en:"Which year is this for you in Seattle?",mHan:"这是我在西雅图的第＿年。",mEn:"This is my ＿th year in Seattle."},
+    {c:"你是爸爸妈妈的第几个孩子？",py:"nǐ shì bàba māma de dì-jǐ ge háizi?",en:"Which number child are you?",mHan:"我是第＿个孩子。",mEn:"I'm the ＿th child."},
+    {c:"你觉得第几课难？",py:"nǐ juéde dì-jǐ kè nán?",en:"Which lesson do you find hard?",mHan:"我觉得第＿课有一点儿难。",mEn:"I find Lesson ＿ a little hard."},
+    {c:"你喜欢什么颜色的衣服？",py:"nǐ xǐhuān shénme yánsè de yīfu?",en:"What color clothes do you like?",mHan:"我喜欢＿色的衣服。",mEn:"I like ＿ clothes."},
+    {c:"你平常什么时候做功课？",py:"nǐ píngcháng shénme shíhou zuò gōngkè?",en:"When do you usually do homework?",mHan:"我平常＿＿做功课。",mEn:"I usually do homework ＿."},
+    {c:"课堂调查：你觉得中文难学吗？",py:"kètáng diàochá: nǐ juéde zhōngwén nán xué ma?",en:"Class poll: is Chinese hard to learn?",mHan:"太难了！／ 真难！／ 有一点儿难／ 不难／ 很容易／ 真容易！／ 太容易了！",mEn:"Pick one: too hard! / really hard! / a little hard / not hard / very easy / really easy! / too easy!"},
+    {c:"你会打什么？你打得好吗？",py:"nǐ huì dǎ shénme? nǐ dǎ de hǎo ma?",en:"What can you play? Do you play well?",mHan:"我会打球，我打球打得不错／不太好。",mEn:"I can play ball; I play pretty well / not very well."}
   ],
   compose:{ mode:"makeup" }
 }];
@@ -1138,7 +1307,14 @@ const CLOZE=[
   {wk:2,pre:"我有",ans:{c:"几",py:"jǐ",m:"several"},post:"个问题，我得问老师。",en:"I have a few questions to ask the teacher."},
   {wk:2,pre:"我想请你",ans:{c:"帮",py:"bāng",m:"to help"},post:"我练习说中文。",en:"I'd like you to help me practice speaking Chinese."},
   {wk:2,pre:"我们八点上课，他八点半",ans:{c:"才",py:"cái",m:"not until"},post:"来。",en:"Class is at 8, but he doesn't come until 8:30."},
-  {wk:2,pre:"请问，这个字",ans:{c:"怎么",py:"zěn me",m:"how"},post:"念？",en:"Excuse me, how do you read this character?"}
+  {wk:2,pre:"请问，这个字",ans:{c:"怎么",py:"zěn me",m:"how"},post:"念？",en:"Excuse me, how do you read this character?"},
+  {wk:2,pre:"我",ans:{c:"平常",py:"píng cháng",m:"usually"},post:"不喜欢喝咖啡，喜欢喝茶。",en:"I usually don't like coffee; I like tea."},
+  {wk:2,pre:"学生都来了，老师",ans:{c:"怎么",py:"zěn me",m:"how come"},post:"没来？",en:"All the students are here — how come the teacher hasn't come?"},
+  {wk:2,pre:"他来得",ans:{c:"这么",py:"zhè me",m:"so / such"},post:"早！",en:"He came so early!"},
+  {wk:2,pre:"今天我",ans:{c:"有点儿",py:"yǒu diǎnr",m:"a little"},post:"忙。",en:"I'm a little busy today."},
+  {wk:2,pre:"今天我们考",ans:{c:"第",py:"dì",m:"(ordinal prefix)"},post:"七课。",en:"Today we're testing Lesson 7."},
+  {wk:2,pre:"他是男的还是女",ans:{c:"的",py:"de",m:"(adj + 的 = the ___ one)"},post:"？",en:"Is that person a man or a woman?"},
+  {wk:2,pre:"谁",ans:{c:"教",py:"jiāo",m:"to teach"},post:"你中文？",en:"Who teaches you Chinese?"}
 ];
 const CONSTRUCT=[
   {wk:0,en:"I am American.",order:["我","是","美国","人"],extra:["你","中国"]},
@@ -1154,7 +1330,12 @@ const CONSTRUCT=[
   {wk:2,en:"He called me.",order:["他","给","我","打电话","了"],extra:["说"]},
   {wk:2,en:"I have to go to the library to study.",order:["我","得","去","图书馆","看书"],extra:["想"]},
   {wk:2,en:"I think Chinese is a little hard.",order:["我","觉得","中文","有一点儿","难"],extra:["容易"]},
-  {wk:2,en:"He speaks Chinese very fast.",order:["他","说","中文","说","得","很","快"],extra:["慢"]}
+  {wk:2,en:"He speaks Chinese very fast.",order:["他","说","中文","说","得","很","快"],extra:["慢"]},
+  {wk:2,en:"He arrived so early!",order:["他","这么","早","就","到","了"],extra:["才"]},
+  {wk:2,en:"You didn't get here until so late!",order:["你","这么","晚","才","到"],extra:["就"]},
+  {wk:2,en:"Today we're testing Lesson 7.",order:["今天","我们","考","第七","课"],extra:["第一"]},
+  {wk:2,en:"Do you want the big one or the small one?",order:["你","要","大","的","还是","小","的"],extra:["多"]},
+  {wk:2,en:"I have a few questions; I have to ask the teacher.",order:["我","有","几个","问题","我","得","问","老师"],extra:["教"]}
 ];
 
 /* ===================== state ===================== */
@@ -1169,7 +1350,7 @@ function renderAll(){
   $("#brandSub").textContent="Chinese · "+W.range;
   $("#heroWeek").textContent=W.label;
   $("#heroRange").textContent=W.range;
-  buildRoadmap(); buildRecall(); buildSentences(); buildWords();
+  buildRoadmap(); buildRecall(); buildGrammar(); buildSentences(); buildWords();
   buildVocab(); buildWriting(); startListening(); buildReading(); buildSpeaking(); buildCompose();
   paintSpk();
 }
@@ -1242,13 +1423,75 @@ function gradeRecall(g){
   renderRecallStats(); nextRecall();
 }
 
+/* ---------- Grammar Lab ---------- */
+let gramI=0;
+function buildGrammar(){
+  const list=W.grammar||[]; gramI=0;
+  const chips=$("#gramChips"); chips.innerHTML="";
+  if(!list.length){ $("#gramStage").innerHTML='<p class="muted-note" style="text-align:center">No grammar patterns for this week yet — they arrive with the week\'s class deck.</p>'; return; }
+  list.forEach((g,i)=>{
+    const b=document.createElement("button"); b.className="chip"+(i===0?" active":"");
+    b.innerHTML='<span class="hanzi">'+g.t+'</span>';
+    b.onclick=()=>{gramI=i;$$("#gramChips .chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderGram();};
+    chips.appendChild(b);
+  });
+  renderGram();
+}
+function renderGram(){
+  const list=W.grammar||[]; if(!list.length)return;
+  const g=list[gramI];
+  const ex=g.ex.map(e=>'<div class="gc-ex"><div class="ge-han hanzi">'+e.c+' <button class="spk" data-say="'+e.c+'" aria-label="Hear"></button></div><div class="ge-py">'+e.py+'</div><div class="ge-en">'+e.en+'</div></div>').join("");
+  const drills=(g.drill||[]).map((d,i)=>'<div class="gd-item" data-i="'+i+'"><div class="gd-q hanzi">'+(i+1)+'. '+d.q+'</div><div class="gd-opts"></div><div class="gd-x" hidden>'+d.x+'</div></div>').join("");
+  $("#gramStage").innerHTML='<div class="gram-card">'+
+    '<div class="gc-head"><div class="gc-t hanzi">'+g.t+'</div><div class="gc-sub">'+g.sub+'</div></div>'+
+    '<ul class="gc-pts">'+g.pts.map(p=>'<li>'+p+'</li>').join("")+'</ul>'+
+    '<div class="gc-lbl">Examples</div>'+ex+
+    '<div class="gc-drill"><div class="gc-lbl">Your turn — choose the right one</div>'+drills+'</div></div>'+
+    '<div class="gram-prog">pattern '+(gramI+1)+' / '+list.length+'</div>';
+  (g.drill||[]).forEach((d,i)=>{
+    const item=$('#gramStage .gd-item[data-i="'+i+'"]');
+    const box=$(".gd-opts",item);
+    d.o.forEach((opt,k)=>{
+      const b=document.createElement("button"); b.className="gd-btn"; b.textContent=opt;
+      b.onclick=()=>{
+        if(item.dataset.done)return; item.dataset.done="1";
+        $$(".gd-btn",item).forEach(x=>x.disabled=true);
+        $$(".gd-btn",item)[d.a].classList.add("correct");
+        if(k!==d.a)b.classList.add("wrong");
+        $(".gd-x",item).hidden=false;
+        if(k===d.a)speakOnce(d.q.replace(/＿+/g,d.o[d.a]));
+      };
+      box.appendChild(b);
+    });
+  });
+  paintSpk($("#gramStage"));
+}
+
 /* ---------- Sentences: cloze + construct (cumulative) ---------- */
 let sentMode="cloze";
 function buildSentences(){
   $$("#sentMode .seg-btn").forEach(b=>b.onclick=()=>{$$("#sentMode .seg-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");sentMode=b.dataset.mode;toggleSent();});
-  buildCloze(); buildConstruct(); toggleSent();
+  buildCloze(); buildConstruct(); buildGuess(); toggleSent();
 }
-function toggleSent(){ $("#clozePanel").hidden=sentMode!=="cloze"; $("#buildPanel").hidden=sentMode!=="build"; }
+function toggleSent(){ $("#clozePanel").hidden=sentMode!=="cloze"; $("#buildPanel").hidden=sentMode!=="build"; $("#guessPanel").hidden=sentMode!=="guess"; }
+let guessQ=[],guessI=0;
+function buildGuess(){ guessQ=shuffle(W.guessWords||[]); guessI=0; renderGuess(); }
+function renderGuess(){
+  const p=$("#guessPanel");
+  if(!guessQ.length){p.innerHTML='<p class="muted-note" style="text-align:center">No 猜词 words for this week yet.</p>';return;}
+  const it=guessQ[guessI%guessQ.length];
+  p.innerHTML='<div class="guess-card"><div class="guess-cue">you already know both characters — guess the compound</div>'+
+    '<div class="guess-word hanzi">'+it.c+'</div>'+
+    '<div class="guess-hint">Say the pinyin and guess the meaning before you reveal.</div>'+
+    '<div class="sent-actions"><button class="btn mark" id="guessReveal">Reveal</button><button class="btn soft" id="guessNext">Next →</button></div>'+
+    '<div class="guess-rev" id="guessRev" hidden></div></div>';
+  $("#guessReveal").onclick=()=>{
+    const r=$("#guessRev"); r.hidden=false;
+    r.innerHTML='<div class="gr-py">'+it.py+'</div><div class="gr-m">'+it.m+'</div><div class="gr-p">'+it.parts+'</div><button class="spk" data-say="'+it.c+'" aria-label="Hear"></button>';
+    speak(it.c); paintSpk(r);
+  };
+  $("#guessNext").onclick=()=>{guessI++;renderGuess();};
+}
 let clozeQ=[],clozeI=0;
 function buildCloze(){ clozeQ=shuffle(CLOZE.filter(x=>x.wk<=WI)); clozeI=0; renderCloze(); }
 function renderCloze(){
@@ -1782,7 +2025,7 @@ $("#composeSpk")&&($("#composeSpk").onclick=()=>speakOnce($("#composeText").text
 
 /* ---------- nav scroll-spy + reveal ---------- */
 const navLinks=$$("#navlinks a");
-const sections=["roadmap","recall","writing","sentences","vocab","listening","reading","speaking","compose","words"].map(id=>$("#"+id));
+const sections=["roadmap","recall","writing","grammar","sentences","vocab","listening","reading","speaking","compose","words"].map(id=>$("#"+id));
 if("IntersectionObserver" in window){
   const no=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));}),{rootMargin:"-45% 0px -50% 0px"});
   sections.forEach(s=>s&&no.observe(s));
