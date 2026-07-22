@@ -1292,7 +1292,8 @@ const WEEKS=[{
     {n:3,pts:10,title:"Answer about yourself",desc:"3 spoken questions + 5 fill-in-the-blank writing prompts.",go:"#speaking"},
     {n:4,pts:10,title:"Reading — true / false",desc:"A shopping-mall dialogue about a Totoro T-shirt.",go:"#reading"},
     {n:5,pts:10,title:"Describe your daily schedule",desc:"An 8–10 sentence 我的一天, diary-style.",go:"#compose"},
-    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"This week's radicals: 火/灬 王/玉 日 石 鱼.",go:"#writing",extra:true}
+    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"This week's radicals: 火/灬 王/玉 日 石 鱼.",go:"#writing",extra:true},
+    {n:"文",pts:0,title:"Culture · 买衣服",desc:"Clothes and shopping — colors, sizes, prices, and paying.",go:"#grammar",extra:true}
   ],
   vocab:[
     {group:"L8 · D1", items:[
@@ -1312,6 +1313,15 @@ const WEEKS=[{
     ]},
     {group:"L9 · More", items:[
       {c:"买",py:"mǎi",m:"to buy"},{c:"售货员",py:"shòu huò yuán",m:"shop clerk"},{c:"衬衫",py:"chèn shān",m:"shirt"},{c:"条",py:"tiáo",m:"(MW: pants / skirts)"},{c:"裤子",py:"kù zi",m:"pants"},{c:"鞋子",py:"xié zi",m:"shoes"},{c:"双",py:"shuāng",m:"a pair of"},{c:"颜色",py:"yán sè",m:"color"},{c:"穿",py:"chuān",m:"to wear / put on"},{c:"黄色",py:"huáng sè",m:"yellow"},{c:"红色",py:"hóng sè",m:"red"},{c:"黑色",py:"hēi sè",m:"black"},{c:"咖啡色",py:"kā fēi sè",m:"brown"},{c:"号",py:"hào",m:"size"},{c:"大小",py:"dà xiǎo",m:"size (big/small)"},{c:"长短",py:"cháng duǎn",m:"length"},{c:"样子",py:"yàng zi",m:"look / appearance"},{c:"试",py:"shì",m:"to try (on)"},{c:"不用",py:"bú yòng",m:"need not"},{c:"一共",py:"yí gòng",m:"altogether"},{c:"块",py:"kuài",m:"(money) dollar"},{c:"毛",py:"máo",m:"(money) dime"},{c:"百",py:"bǎi",m:"hundred"},{c:"这儿",py:"zhèr",m:"here"},{c:"找钱",py:"zhǎo qián",m:"to give change"},{c:"收",py:"shōu",m:"to receive / accept"},{c:"信用卡",py:"xìn yòng kǎ",m:"credit card"},{c:"刷卡",py:"shuā kǎ",m:"to pay by card"},{c:"种",py:"zhǒng",m:"kind / type"},{c:"它",py:"tā",m:"it"},{c:"再",py:"zài",m:"again"}
+    ]},
+    {group:"L9 · Sizes & colors", items:[
+      {c:"上衣",py:"shàng yī",m:"upper garment / top"},{c:"裙子",py:"qún zi",m:"skirt"},{c:"大衣",py:"dà yī",m:"overcoat"},{c:"手表",py:"shǒu biǎo",m:"wristwatch"},
+      {c:"中号",py:"zhōng hào",m:"medium size"},{c:"几号",py:"jǐ hào",m:"what size"},{c:"多长",py:"duō cháng",m:"how long (in length)"},
+      {c:"灰色",py:"huī sè",m:"gray"},{c:"粉红色",py:"fěn hóng sè",m:"pink"},{c:"紫色",py:"zǐ sè",m:"purple"}
+    ]},
+    {group:"L9 · Money & measure words", items:[
+      {c:"元",py:"yuán",m:"(formal) dollar unit"},{c:"角",py:"jiǎo",m:"(formal) dime unit"},{c:"现金",py:"xiàn jīn",m:"cash"},{c:"扫码",py:"sǎo mǎ",m:"to scan a QR code"},{c:"欢迎光临",py:"huān yíng guāng lín",m:"welcome (to a shop)"},
+      {c:"本",py:"běn",m:"(MW: books)"},{c:"门",py:"mén",m:"(MW: a course)"},{c:"报",py:"bào",m:"newspaper"}
     ]}
   ],
   pinyinTask:[{c:"餐厅",py:"cān tīng"},{c:"学期",py:"xué qī"},{c:"希望",py:"xī wàng"},{c:"鞋子",py:"xié zi"},{c:"刷卡",py:"shuā kǎ"}],
@@ -1327,6 +1337,16 @@ const WEEKS=[{
     {c:"火",py:"huǒ",m:"fire",rad:"灬"},{c:"王",py:"wáng",m:"king / jade",rad:"玉"},{c:"日",py:"rì",m:"sun / day",rad:"日"},{c:"石",py:"shí",m:"stone",rad:"石"},{c:"鱼",py:"yú",m:"fish",rad:"鱼"}
   ],
   listenPool:["最近","学期","除了","会","能","希望","一边","正在","起床","已经","商店","衣服","如果","便宜","合适","件","虽然","挺","不过","付钱","换","多少钱"],
+  listenComp:[
+    {dialogue:"小姐，您要买什么衣服？我想买一件衬衫。您喜欢什么颜色的，黄的还是红的？我喜欢穿红的。我还想买一条裤子。多大的？大号的、中号的、还是小号的？中号的，不要太贵的，也不要太便宜的。这条裤子怎么样？颜色很好，如果长短合适的话，我就买。您试一下。不用试，可以。这件衬衫呢？也不错，一共多少钱？衬衫二十一块五，裤子三十二块九毛九，一共是五十四块四毛九分钱。好，这是一百块钱。找您四十五块五毛一。谢谢。",
+     q:"他们在哪里？做什么？",opts:["在商店买东西","在学校上课","在餐厅吃饭","在宿舍上网"],a:0},
+    {dialogue:"小姐，您要买什么衣服？我想买一件衬衫。您喜欢什么颜色的，黄的还是红的？我喜欢穿红的。我还想买一条裤子。中号的，不要太贵的，也不要太便宜的。",
+     q:"李友想买什么？",opts:["只有一件衬衫","一件衬衫和一条裤子","一双鞋子","一条裙子"],a:1},
+    {dialogue:"您喜欢什么颜色的，黄的还是红的？我喜欢穿红的。",
+     q:"她喜欢什么颜色？",opts:["黄色","红色","黑色","蓝色"],a:1},
+    {dialogue:"衬衫二十一块五，裤子三十二块九毛九，一共是五十四块四毛九分钱。好，这是一百块钱。找您四十五块五毛一。",
+     q:"一共花了多少钱？",opts:["二十一块五","三十二块九毛九","五十四块四毛九","一百块"],a:2}
+  ],
   reading:{
     lines:[
       {who:"甲",c:"你的这件T恤真好看！我也喜欢豆豆龙！是新买的吗？",py:"nǐ de zhè jiàn T-xù zhēn hǎokàn! wǒ yě xǐhuān Dòudòulóng! shì xīn mǎi de ma?",en:"Your T-shirt is so nice! I love Totoro too! Is it new?"},
@@ -1373,7 +1393,17 @@ const WEEKS=[{
     {c:"Part 2 (2)：Q: 你觉得说中文难还是容易？ A: 我觉得＿＿（有一点儿）。",py:"—",en:"Answer with 有一点儿.",mHan:"我觉得有一点儿难。",mEn:"I think it's a little hard."},
     {c:"Part 2 (3)：Q: 你写汉字写得怎么样？ A: 我写汉字＿＿（得 de）。",py:"—",en:"Answer with a 得-complement.",mHan:"我写汉字写得很慢。",mEn:"I write characters slowly."},
     {c:"Part 2 (4)：Q: 做功课的时候，你还喜欢做什么？ A: 我喜欢＿＿（一边）。",py:"—",en:"Answer with 一边…一边….",mHan:"我喜欢一边做功课，一边听音乐。",mEn:"I like to listen to music while doing homework."},
-    {c:"Part 2 (5)：Q: 这条裤子怎么样？ A: ＿＿（虽然……，不过……）。",py:"—",en:"Answer with 虽然…, 不过….",mHan:"虽然这条裤子很便宜，不过有一点儿长。",mEn:"Although these pants are cheap, they're a bit long."}
+    {c:"Part 2 (5)：Q: 这条裤子怎么样？ A: ＿＿（虽然……，不过……）。",py:"—",en:"Answer with 虽然…, 不过….",mHan:"虽然这条裤子很便宜，不过有一点儿长。",mEn:"Although these pants are cheap, they're a bit long."},
+    {c:"你平常穿衬衫吗？",py:"nǐ píngcháng chuān chènshān ma?",en:"Do you usually wear a shirt?",mHan:"我平常穿衬衫／不穿衬衫，我穿T恤。",mEn:"I usually wear shirts / don't; I wear T-shirts."},
+    {c:"你喜欢什么颜色？",py:"nǐ xǐhuān shénme yánsè?",en:"What color do you like?",mHan:"我喜欢＿色的。",mEn:"I like ＿ ones."},
+    {c:"你穿多长的裤子？大号的、中号的还是小号的？",py:"nǐ chuān duō cháng de kùzi? dà hào de, zhōng hào de háishì xiǎo hào de?",en:"What length pants do you wear — large, medium, or small?",mHan:"我穿中号的。",mEn:"I wear a medium."},
+    {c:"买衣服的时候，你能试吗？",py:"mǎi yīfu de shíhou, nǐ néng shì ma?",en:"When buying clothes, can you try them on?",mHan:"在商店能试，上网买不能试。",mEn:"In a store you can; online you can't."},
+    {c:"你觉得五十块的衣服便宜吗？",py:"nǐ juéde wǔshí kuài de yīfu piányi ma?",en:"Do you think $50 clothes are cheap?",mHan:"我觉得挺便宜的／有一点儿贵。",mEn:"I think it's fairly cheap / a bit expensive."},
+    {c:"这件衣服的样子、大小、长短合适吗？",py:"zhè jiàn yīfu de yàngzi, dàxiǎo, chángduǎn héshì ma?",en:"Is this garment's style, size, and length suitable?",mHan:"样子很好，可是大小不太合适。",mEn:"The style is nice, but the size isn't quite right."},
+    {c:"你会唱歌吗？你能在图书馆唱歌吗？",py:"nǐ huì chànggē ma? nǐ néng zài túshūguǎn chànggē ma?",en:"Can you sing? Are you allowed to sing in the library?",mHan:"我会唱歌，可是在图书馆不能唱歌。",mEn:"I can sing, but I'm not allowed to in the library."},
+    {c:"你平常怎么付钱？用现金、刷信用卡还是扫码？",py:"nǐ píngcháng zěnme fùqián? yòng xiànjīn, shuā xìnyòngkǎ háishì sǎomǎ?",en:"How do you usually pay — cash, card, or QR code?",mHan:"我平常刷信用卡／用现金／扫码付钱。",mEn:"I usually pay by card / cash / QR code."},
+    {c:"说说你的进步：开始／以前我＿＿，后来＿＿，我就＿＿了。",py:"—",en:"Describe your progress with 以前…后来…就…了.",mHan:"以前我写汉字写得很慢，后来我常常练习，就写得快了。",mEn:"I used to write slowly; later I practiced a lot and got faster."},
+    {c:"角色扮演：欢迎光临！您要买点儿什么？",py:"juésè bànyǎn: huānyíng guānglín! nín yào mǎi diǎnr shénme?",en:"Role-play: Welcome! What would you like to buy?",mHan:"我想买一件红色的衬衫，中号的。可以试一下吗？一共多少钱？",mEn:"I'd like a red shirt, medium. May I try it on? How much altogether?"}
   ],
   grammar:[
     {id:"lhj",t:"…了…以后就…",sub:"as soon as V1 is done, V2",
@@ -1437,13 +1467,47 @@ const WEEKS=[{
          {c:"虽然上网买很方便，不过不能试。",py:"suīrán shàngwǎng mǎi hěn fāngbiàn, búguò bù néng shì.",en:"Although buying online is convenient, you can't try things on."}],
      drill:[{q:"＿我很忙，可是我很高兴。",o:["虽然","因为","除了"],a:0,x:"虽然…，可是… = although…, but…"},
             {q:"虽然很便宜，＿样子不好。",o:["不过","所以","还"],a:0,x:"不过 = but (softer 但是)"}]},
-    {id:"den2",t:"Adj + 的 → Noun",sub:"“the ___ one”, review",
+    {id:"den2",t:"的-structure（复习）",sub:"“the ___ one” when shopping",
      pts:["<b>Adj + 的</b> replaces the noun — 红的、便宜的、大的","Also possessive: 这个电视是我的。","红衬衫 → 红的；我的电视 → 我的"],
      ex:[{c:"你喜欢红衬衫还是黄衬衫？我喜欢红的。",py:"nǐ xǐhuān hóng chènshān háishì huáng chènshān? wǒ xǐhuān hóng de.",en:"Do you like the red shirt or the yellow one? I like the red one."},
          {c:"这个电脑是谁的？是我的。",py:"zhège diànnǎo shì shéi de? shì wǒ de.",en:"Whose computer is this? It's mine."},
          {c:"我喜欢买便宜的。",py:"wǒ xǐhuān mǎi piányi de.",en:"I like to buy cheap ones."}],
      drill:[{q:"你喜欢红的还是黄＿？",o:["的","得","了"],a:0,x:"Adj + 的 = the ___ one"},
-            {q:"这个电脑是谁＿？",o:["的","得","吗"],a:0,x:"possessive 的"}]}
+            {q:"这个电脑是谁＿？",o:["的","得","吗"],a:0,x:"possessive 的"}]},
+    {id:"ysrg",t:"要是 / 如果…（的话），就…",sub:"if…, then…",
+     pts:["<b>要是/如果 + condition，S + 就 + VP</b> — the second clause depends on the first","如果 may add <b>……的话</b> at the end of the condition","要是 is more colloquial; 如果 works in speech and writing, and is used more often","The two clauses can have different subjects"],
+     ex:[{c:"要是你想吃披萨，你就吃吧。",py:"yàoshì nǐ xiǎng chī pīsà, nǐ jiù chī ba.",en:"If you want pizza, then go ahead and eat it."},
+         {c:"我试一下，如果大小合适的话，我就买。",py:"wǒ shì yíxià, rúguǒ dàxiǎo héshì de huà, wǒ jiù mǎi.",en:"I'll try it on; if the size fits, I'll buy it."},
+         {c:"如果您喜欢的话，可以试一下。",py:"rúguǒ nín xǐhuān de huà, kěyǐ shì yíxià.",en:"If you like it, you can try it on."}],
+     drill:[{q:"＿你想吃披萨，你就吃吧。",o:["要是","虽然","除了"],a:0,x:"要是 introduces the condition"},
+            {q:"如果长短合适＿，我就买。",o:["的话","以后","以外"],a:0,x:"如果……的话 brackets the condition"},
+            {q:"如果颜色合适的话，我＿买。",o:["就","才","还"],a:0,x:"就 marks the consequence"},
+            {q:"Which one is more colloquial?",o:["要是","如果"],a:0,x:"要是 is the more colloquial of the two"}]},
+    {id:"hl",t:"以前…，后来…，就…了",sub:"how things changed",
+     pts:["<b>开始/以前 + past situation，后来 + new event，(S) 就 + result 了</b>","后来 = “later on”, only inside a past time frame","Sentence-final 了 reports the new, currently relevant situation"],
+     ex:[{c:"以前他写得不好看，后来他常常练习，就写得很好看了。",py:"yǐqián tā xiě de bù hǎokàn, hòulái tā chángcháng liànxí, jiù xiě de hěn hǎokàn le.",en:"He used to write poorly; later he practiced a lot and then wrote beautifully."},
+         {c:"以前她觉得中文很难，后来她朋友帮她练习，她就觉得不难了。",py:"yǐqián tā juéde zhōngwén hěn nán, hòulái tā péngyou bāng tā liànxí, tā jiù juéde bù nán le.",en:"She used to find Chinese hard; later a friend helped her practice, and then it didn't seem hard."},
+         {c:"以前他们不认识，后来高文中给他们介绍了一下，他们就认识了。",py:"yǐqián tāmen bú rènshi, hòulái Gāo Wénzhōng gěi tāmen jièshào le yíxià, tāmen jiù rènshi le.",en:"They didn't know each other; later Gao Wenzhong introduced them, and then they did."}],
+     drill:[{q:"以前他不会做饭，＿爸爸教他，他就会了。",o:["后来","以前","正在"],a:0,x:"后来 introduces the later event"},
+            {q:"以前她不喜欢唱歌，后来跟朋友一起唱歌，就喜欢＿。",o:["了","的","得"],a:0,x:"sentence-final 了 = the new situation"},
+            {q:"后来 refers to which time frame?",o:["the past","the future","right now"],a:0,x:"后来 is only used within a past narrative"}]},
+    {id:"money",t:"块 / 毛 / 分",sub:"saying prices",
+     pts:["Informal: <b>X 块 X 毛 X 分（钱）</b> · Formal: <b>X 元 X 角 X 分</b>","The measure word of the <b>smallest</b> unit is often dropped — 182块5(毛钱)","An internal zero is read 零 — 一百零三块零三分","Shop phrases: 一共…钱 · 收您…钱 · 找您…钱 · 不用找了"],
+     ex:[{c:"衬衫二十一块五，一共是五十四块四毛九分钱。",py:"chènshān èrshíyī kuài wǔ, yígòng shì wǔshísì kuài sì máo jiǔ fēn qián.",en:"The shirt is $21.50; altogether it's $54.49."},
+         {c:"这是一百块钱。找您四十五块五毛一。",py:"zhè shì yìbǎi kuài qián. zhǎo nín sìshíwǔ kuài wǔ máo yī.",en:"Here's $100. Your change is $45.51."},
+         {c:"你们收现金吗？我想刷卡。",py:"nǐmen shōu xiànjīn ma? wǒ xiǎng shuā kǎ.",en:"Do you take cash? I'd like to pay by card."}],
+     drill:[{q:"$13.99 怎么说？",o:["十三块九毛九","十三毛九块九","十三分九毛九"],a:0,x:"块 → 毛 → 分, largest unit first"},
+            {q:"块 的正式说法是＿。",o:["元","角","分"],a:0,x:"块/毛/分 informal = 元/角/分 formal"},
+            {q:"$182.50 常常说成＿。",o:["一百八十二块五","一百八十二块五分","一百八十二毛五"],a:0,x:"the smallest unit's MW is dropped"},
+            {q:"售货员说：“＿您四十五块五毛一。”",o:["找","收","买"],a:0,x:"找钱 = to give change"}]},
+    {id:"size",t:"多大 / 几号 / 多长",sub:"asking about size",
+     pts:["<b>多大</b> — how big (clothing, shoes)","<b>几号</b> — what size number","<b>多长</b> — how long (pants, skirts)","Answer with an <b>Adj + 的</b> phrase: 我穿中号的。"],
+     ex:[{c:"您穿多大的衬衫？我穿小号的。",py:"nín chuān duō dà de chènshān? wǒ chuān xiǎo hào de.",en:"What size shirt do you wear? I wear a small."},
+         {c:"你穿几号的鞋子？我穿六号的。",py:"nǐ chuān jǐ hào de xiézi? wǒ chuān liù hào de.",en:"What size shoes do you wear? I wear a size six."},
+         {c:"你穿多长的裤子？我穿中号的。",py:"nǐ chuān duō cháng de kùzi? wǒ chuān zhōng hào de.",en:"What length pants do you wear? I wear a medium."}],
+     drill:[{q:"你穿＿的鞋子？我穿六号的。",o:["几号","多长","多少"],a:0,x:"shoe size by number → 几号"},
+            {q:"你穿＿的裤子？",o:["多长","多大","几点"],a:0,x:"pants are asked about by length → 多长"},
+            {q:"A: 你穿多大的衬衫？ B: 我穿中号＿。",o:["的","了","吗"],a:0,x:"answer with Adj + 的"}]}
   ],
   guessWords:[
     {c:"日记",py:"rì jì",m:"diary",parts:"日 (day) + 记 (to record) → a daily record"},
@@ -1454,7 +1518,12 @@ const WEEKS=[{
     {c:"信用卡",py:"xìn yòng kǎ",m:"credit card",parts:"信用 (credit) + 卡 (card)"},
     {c:"售货员",py:"shòu huò yuán",m:"shop clerk",parts:"售 (sell) + 货 (goods) + 员 (staff)"},
     {c:"付钱",py:"fù qián",m:"to pay",parts:"付 (hand over) + 钱 (money)"},
-    {c:"找钱",py:"zhǎo qián",m:"to give change",parts:"找 (seek/return) + 钱 (money)"}
+    {c:"找钱",py:"zhǎo qián",m:"to give change",parts:"找 (seek/return) + 钱 (money)"},
+    {c:"上衣",py:"shàng yī",m:"upper garment / top",parts:"上 (upper) + 衣 (clothes)"},
+    {c:"大衣",py:"dà yī",m:"overcoat",parts:"大 (big) + 衣 (clothes)"},
+    {c:"书店",py:"shū diàn",m:"bookstore",parts:"书 (book) + 店 (shop)"},
+    {c:"饭店",py:"fàn diàn",m:"restaurant / hotel",parts:"饭 (meal) + 店 (shop)"},
+    {c:"现金",py:"xiàn jīn",m:"cash",parts:"现 (present) + 金 (gold / money)"}
   ],
   compose:{ mode:"day" }
 }];
@@ -1497,7 +1566,13 @@ const CLOZE=[
   {wk:3,pre:"别给他打电话，他",ans:{c:"已经",py:"yǐ jīng",m:"already"},post:"睡觉了。",en:"Don't call him — he's already asleep."},
   {wk:3,pre:"第九课的语法跟第八课",ans:{c:"一样",py:"yí yàng",m:"the same"},post:"难。",en:"L9 grammar is as hard as L8 grammar."},
   {wk:3,pre:"",ans:{c:"虽然",py:"suī rán",m:"although"},post:"我很忙，可是我很高兴。",en:"Although I'm busy, I'm happy."},
-  {wk:3,pre:"你喜欢红衬衫还是黄衬衫？我喜欢红",ans:{c:"的",py:"de",m:"(the ___ one)"},post:"。",en:"…I like the red one."}
+  {wk:3,pre:"你喜欢红衬衫还是黄衬衫？我喜欢红",ans:{c:"的",py:"de",m:"(the ___ one)"},post:"。",en:"…I like the red one."},
+  {wk:3,pre:"要是你想吃披萨，你",ans:{c:"就",py:"jiù",m:"then"},post:"吃吧。",en:"If you want pizza, then eat it."},
+  {wk:3,pre:"我试一下，如果大小合适",ans:{c:"的话",py:"de huà",m:"if… (is the case)"},post:"，我就买。",en:"I'll try it on; if the size fits, I'll buy it."},
+  {wk:3,pre:"以前他写得不好看，",ans:{c:"后来",py:"hòu lái",m:"later on"},post:"他常常练习，就写得很好看了。",en:"He used to write poorly; later he practiced and wrote well."},
+  {wk:3,pre:"衬衫二十一块五，裤子三十二块九毛九，",ans:{c:"一共",py:"yí gòng",m:"altogether"},post:"是五十四块四毛九分钱。",en:"…altogether it's $54.49."},
+  {wk:3,pre:"你穿",ans:{c:"几号",py:"jǐ hào",m:"what size"},post:"的鞋子？我穿六号的。",en:"What size shoes do you wear? I wear a six."},
+  {wk:3,pre:"售货员说：",ans:{c:"找",py:"zhǎo",m:"to give change"},post:"您四十五块五毛一。",en:"The clerk says: your change is $45.51."}
 ];
 const CONSTRUCT=[
   {wk:0,en:"I am American.",order:["我","是","美国","人"],extra:["你","中国"]},
@@ -1524,7 +1599,11 @@ const CONSTRUCT=[
   {wk:3,en:"When I called him, he was eating.",order:["我","给","他","打电话","的时候","他","正在","吃饭"],extra:["以前"]},
   {wk:3,en:"Besides Chinese, I can also speak Japanese.",order:["除了","中文","以外","我","还","会","说","日文"],extra:["能"]},
   {wk:3,en:"Although these clothes are cheap, the style isn't great.",order:["虽然","这","件","衣服","很","便宜","不过","样子","不","好"],extra:["一样"]},
-  {wk:3,en:"He didn't start learning Chinese until age 60.",order:["他","六十","岁","才","开始","学","中文"],extra:["就"]}
+  {wk:3,en:"He didn't start learning Chinese until age 60.",order:["他","六十","岁","才","开始","学","中文"],extra:["就"]},
+  {wk:3,en:"If the length is right, I'll buy it.",order:["如果","长短","合适","的话","我","就","买"],extra:["虽然"]},
+  {wk:3,en:"Later he practiced often, and then he wrote beautifully.",order:["后来","他","常常","练习","就","写","得","很","好看","了"],extra:["以前"]},
+  {wk:3,en:"What size shirt do you wear?",order:["你","穿","多大","的","衬衫"],extra:["多长"]},
+  {wk:3,en:"Altogether it's fifty-four dollars forty-nine.",order:["一共","是","五十四","块","四","毛","九","分","钱"],extra:["元"]}
 ];
 
 /* ===================== state ===================== */
