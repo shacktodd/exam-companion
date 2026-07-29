@@ -1556,6 +1556,10 @@ const WEEKS=[{
     ]},
     {group:"L11 · More", items:[
       {c:"晴天",py:"qíng tiān",m:"sunny day"},{c:"约",py:"yuē",m:"to make an appointment"},{c:"滑雪",py:"huá xuě",m:"to ski"},{c:"冷",py:"lěng",m:"cold"},{c:"暖和",py:"nuǎn huo",m:"nice and warm"},{c:"热",py:"rè",m:"hot"},{c:"刚才",py:"gāng cái",m:"just now"},{c:"网上",py:"wǎng shang",m:"on the internet"},{c:"预报",py:"yù bào",m:"forecast"},{c:"办",py:"bàn",m:"to handle / do"},{c:"糟糕",py:"zāo gāo",m:"terrible"},{c:"又",py:"yòu",m:"again (completed)"},{c:"面试",py:"miàn shì",m:"interview"},{c:"回来",py:"huí lái",m:"to come back"},{c:"冬天",py:"dōng tiān",m:"winter"},{c:"夏天",py:"xià tiān",m:"summer"},{c:"秋天",py:"qiū tiān",m:"autumn"},{c:"加州",py:"jiā zhōu",m:"California"},{c:"季节",py:"jì jié",m:"season"},{c:"地图",py:"dì tú",m:"map"}
+    ]},
+    {group:"L11 · Weather & transport extras", items:[
+      {c:"阴天",py:"yīn tiān",m:"overcast day"},{c:"刮风",py:"guā fēng",m:"to be windy"},{c:"凉快",py:"liáng kuai",m:"pleasantly cool"},{c:"度",py:"dù",m:"degree (temperature)"},{c:"华氏",py:"huá shì",m:"Fahrenheit"},{c:"摄氏",py:"shè shì",m:"Celsius"},{c:"暖气",py:"nuǎn qì",m:"heating"},
+      {c:"自行车",py:"zì xíng chē",m:"bicycle"},{c:"停车",py:"tíng chē",m:"to park"},{c:"拼车",py:"pīn chē",m:"to carpool"},{c:"约会",py:"yuē huì",m:"a date / appointment"},{c:"客气",py:"kè qi",m:"polite"},{c:"别客气",py:"bié kè qi",m:"you're welcome"},{c:"老家",py:"lǎo jiā",m:"hometown"}
     ]}
   ],
   pinyinTask:[{c:"寒假",py:"hán jià"},{c:"地铁",py:"dì tiě"},{c:"城市",py:"chéng shì"},{c:"紧张",py:"jǐn zhāng"},{c:"糟糕",py:"zāo gāo"}],
@@ -1577,7 +1581,11 @@ const WEEKS=[{
     {dialogue:"你知道到飞机场怎么走吗？你先坐三号公共汽车，然后再坐蓝线地铁，最后换绿线，就到了。",
      q:"到飞机场要坐什么？",opts:["只坐公共汽车","只坐地铁","先坐公共汽车，再坐两条地铁线","坐出租汽车"],a:2},
     {dialogue:"今天天气怎么样？今天很冷，网上说下午会下雪。那我们别去公园了，还是在家看录像吧。",
-     q:"他们最后决定做什么？",opts:["去公园滑冰","在家看录像","去滑雪","去看电影"],a:1}
+     q:"他们最后决定做什么？",opts:["去公园滑冰","在家看录像","去滑雪","去看电影"],a:1},
+    {dialogue:"今天天气比昨天好，不下雪了。我约了朋友明天去公园滑冰，不知道天气会怎么样，冷不冷？我刚才看了网上的天气预报，明天天气比今天更好，不但不会下雪，而且会暖和一点儿。是吗？太好了！",
+     q:"明天的天气会怎么样？",opts:["会下雪，很冷","比今天更好，暖和一点儿","跟今天一样","会刮风下雨"],a:1},
+    {dialogue:"你约了谁去滑冰？白英爱。你约了白英爱？可是她今天早上坐飞机去纽约了。真的啊？那我明天怎么办？你还是在家看电视吧。",
+     q:"小音明天可能怎么办？",opts:["跟白英爱去滑冰","一个人坐飞机去纽约","还是在家看电视","去公园看雪"],a:2}
   ],
   reading:{
     lines:[
@@ -1706,7 +1714,12 @@ const WEEKS=[{
     {c:"高速公路",py:"gāo sù gōng lù",m:"highway",parts:"高速 (high-speed) + 公路 (public road)"},
     {c:"电子邮件",py:"diàn zǐ yóu jiàn",m:"e-mail",parts:"电子 (electronic) + 邮件 (mail)"},
     {c:"发短信",py:"fā duǎn xìn",m:"to text",parts:"发 (send) + 短 (short) + 信 (message)"},
-    {c:"天气预报",py:"tiān qì yù bào",m:"weather forecast",parts:"天气 (weather) + 预报 (forecast)"}
+    {c:"天气预报",py:"tiān qì yù bào",m:"weather forecast",parts:"天气 (weather) + 预报 (forecast)"},
+    {c:"出来",py:"chū lái",m:"to come out",parts:"出 (exit) + 来 (come)"},
+    {c:"邮票",py:"yóu piào",m:"postage stamp",parts:"邮 (mail) + 票 (ticket / slip)"},
+    {c:"报纸",py:"bào zhǐ",m:"newspaper",parts:"报 (report) + 纸 (paper)"},
+    {c:"冰冷",py:"bīng lěng",m:"ice-cold",parts:"冰 (ice) + 冷 (cold)"},
+    {c:"预约",py:"yù yuē",m:"to book in advance",parts:"预 (in advance) + 约 (arrange)"}
   ],
   compose:{ mode:"travel" }
 }];
