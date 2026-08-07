@@ -253,6 +253,10 @@
   .model .m-en{font-size:.86rem;color:var(--muted);margin-top:4px}
   .speak-nav{display:flex;align-items:center;justify-content:space-between;margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
 
+  .q-tag{display:inline-block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;padding:.22rem .55rem;border-radius:999px;margin-bottom:.6rem;font-weight:600}
+  .t-oral{background:#2f7d5d;color:#fff}
+  .t-listen{background:#8a6d3b;color:#fff}
+  .t-write{background:#9b4a3f;color:#fff}
   /* CAMPUS MAP */
   .map-head h3{font-family:var(--display,inherit);font-size:1.15rem;margin:0 0 .2rem}
   .map-head p{margin:0 0 .9rem;font-size:.9rem;opacity:.75}
@@ -1742,29 +1746,29 @@ const WEEKS=[{
 {
   id:"w6", label:"Week 6", range:"Lessons 12–13", subtitle:"Dining Out · Directions", examTitle:"L12–13 Exam",
   exam:[
-    {n:1,pts:10,title:"Listening — word bank",desc:"Hear a word and copy it (the last three aren't in the bank).",go:"#listening"},
-    {n:2,pts:10,title:"Write the pinyin",desc:"Add correct pinyin with tones: 点菜 青菜 清楚 欢迎 地图.",go:"#vocab"},
-    {n:3,pts:10,title:"Answer about yourself",desc:"3 spoken questions + 2 written questions using a required pattern.",go:"#speaking"},
-    {n:4,pts:10,title:"Reading — true / false",desc:"A campus map with four location statements, plus the cafeteria dialogue.",go:"#reading"},
-    {n:5,pts:10,title:"Write a short composition",desc:"10–12 sentences on Chinese food you've tried and want to try.",go:"#compose"},
-    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"This week's radicals: 衣/衤 犬/犭 目 刀/刂 邑/阝.",go:"#writing",extra:true},
-    {n:"文",pts:0,title:"Culture · 在中国饭馆",desc:"Ordering, the bill, tipping, and asking the way.",go:"#grammar",extra:true}
+    {n:1,pts:10,title:"Find & copy what you hear",desc:"5 items. Two come from the printed word bank; the last three do NOT — you write them from scratch.",go:"#listening"},
+    {n:2,pts:10,title:"Write the pinyin",desc:"Exactly these five: 点菜 青菜 清楚 欢迎 地图. Tone marks count.",go:"#vocab"},
+    {n:3,pts:10,title:"Answer about yourself",desc:"Part 1 — 3 questions you hear. Part 2 — 2 written questions, each with a required pattern.",go:"#speaking"},
+    {n:4,pts:10,title:"Reading — the campus map",desc:"Four true/false statements about a map. Practice with the map plus both textbook dialogues.",go:"#reading"},
+    {n:5,pts:10,title:"Short composition",desc:"10\u201312 sentences: dishes you like, what you would try, how it looks and tastes, what you would order.",go:"#compose"},
+    {n:"+",pts:10,title:"Radicals (extra credit)",desc:"Fill shape, variation, pinyin and meaning: \u8863/\u8864 \u72ac/\u72ad \u76ee \u5200/\u5202 \u9091/\u961d.",go:"#writing",extra:true},
+    {n:"\u53e3",pts:0,title:"Oral test",desc:"Read one L12\u201313 textbook dialogue aloud, then answer 5 of the 10 listed questions. Plus pinyin package part 5.",go:"#reading",extra:true}
   ],
   vocab:[
     {group:"L12 · D1 · 在饭馆", items:[
-      {c:"饭馆（儿）",py:"fàn guǎn(r)",m:"restaurant"},{c:"好像",py:"hǎo xiàng",m:"to seem / to be like"},{c:"位子",py:"wèi zi",m:"seat"},{c:"服务员",py:"fú wù yuán",m:"waiter / server"},{c:"服务",py:"fú wù",m:"to serve / service"},{c:"桌子",py:"zhuō zi",m:"table"},{c:"点菜",py:"diǎn cài",m:"to order food"},{c:"极了",py:"jí le",m:"extremely (after adj.)"},{c:"盘",py:"pán",m:"plate; (MW) a plate of"},{c:"饺子",py:"jiǎo zi",m:"dumplings"},{c:"素",py:"sù",m:"vegetarian / plain"},{c:"家常",py:"jiā cháng",m:"home-style"},{c:"豆腐",py:"dòu fu",m:"tofu"},{c:"放",py:"fàng",m:"to put / to add"},{c:"肉",py:"ròu",m:"meat"},{c:"碗",py:"wǎn",m:"bowl; (MW) a bowl of"},{c:"酸辣汤",py:"suān là tāng",m:"hot-and-sour soup"},{c:"味精",py:"wèi jīng",m:"MSG"},{c:"盐",py:"yán",m:"salt"},{c:"酸",py:"suān",m:"sour"}
+      {c:"饭馆（儿）",py:"fàn guǎn(r)",m:"restaurant"},{c:"好像",py:"hǎo xiàng",m:"(adv.) to seem, to be like"},{c:"位子",py:"wèi zi",m:"seat"},{c:"服务员",py:"fú wù yuán",m:"waiter / server"},{c:"服务",py:"fú wù",m:"to serve / service"},{c:"桌子",py:"zhuō zi",m:"table"},{c:"点菜",py:"diǎn cài",m:"to order food"},{c:"极了",py:"jí le",m:"extremely (after adj.)"},{c:"盘",py:"pán",m:"plate; (MW) a plate of"},{c:"饺子",py:"jiǎo zi",m:"dumplings"},{c:"素",py:"sù",m:"vegetarian / plain"},{c:"家常",py:"jiā cháng",m:"home-style"},{c:"豆腐",py:"dòu fu",m:"tofu"},{c:"放",py:"fàng",m:"to put / to add"},{c:"肉",py:"ròu",m:"meat"},{c:"碗",py:"wǎn",m:"bowl; (MW) a bowl of"},{c:"酸辣汤",py:"suān là tāng",m:"hot-and-sour soup"},{c:"味精",py:"wèi jīng",m:"MSG"},{c:"盐",py:"yán",m:"salt"},{c:"酸",py:"suān",m:"sour"}
     ]},
     {group:"L12 · D1 · 味道与分量", items:[
-      {c:"甜",py:"tián",m:"sweet"},{c:"辣",py:"là",m:"spicy / hot"},{c:"辣椒",py:"là jiāo",m:"chili pepper"},{c:"小白菜",py:"xiǎo bái cài",m:"bok choy"},{c:"刚",py:"gāng",m:"just (a moment ago)"},{c:"卖完",py:"mài wán",m:"to be sold out"},{c:"完",py:"wán",m:"to finish / run out"},{c:"青菜",py:"qīng cài",m:"green leafy vegetable"},{c:"冰茶",py:"bīng chá",m:"iced tea"},{c:"渴",py:"kě",m:"thirsty"},{c:"些",py:"xiē",m:"some (uncertain amount)"},{c:"够",py:"gòu",m:"enough"},{c:"饿",py:"è",m:"hungry"},{c:"上菜",py:"shàng cài",m:"to serve the dishes"},{c:"汤",py:"tāng",m:"soup"},{c:"糖",py:"táng",m:"sugar / candy"},{c:"醋",py:"cù",m:"vinegar"},{c:"冰",py:"bīng",m:"ice / iced"}
+      {c:"甜",py:"tián",m:"sweet"},{c:"辣",py:"là",m:"spicy / hot"},{c:"辣椒",py:"là jiāo",m:"chili pepper"},{c:"小白菜",py:"xiǎo bái cài",m:"bok choy"},{c:"刚",py:"gāng",m:"just (a moment ago)"},{c:"卖完",py:"mài wán",m:"to be sold out"},{c:"完",py:"wán",m:"to finish / run out"},{c:"青菜",py:"qīng cài",m:"green leafy vegetable"},{c:"冰茶",py:"bīng chá",m:"iced tea"},{c:"渴",py:"kě",m:"thirsty"},{c:"些",py:"xiē",m:"(MW) an indefinite amount; some"},{c:"够",py:"gòu",m:"enough"},{c:"饿",py:"è",m:"hungry"},{c:"上菜",py:"shàng cài",m:"to serve the dishes"},{c:"汤",py:"tāng",m:"soup"},{c:"糖",py:"táng",m:"sugar / candy"},{c:"醋",py:"cù",m:"vinegar"},{c:"冰",py:"bīng",m:"ice / iced"}
     ]},
     {group:"L12 · D2 · 食堂与付钱", items:[
-      {c:"糖醋",py:"táng cù",m:"sweet and sour"},{c:"红烧",py:"hóng shāo",m:"braised in soy sauce"},{c:"凉拌",py:"liáng bàn",m:"cold-tossed"},{c:"牛肉",py:"niú ròu",m:"beef"},{c:"鱼",py:"yú",m:"fish"},{c:"黄瓜",py:"huáng guā",m:"cucumber"},{c:"米饭",py:"mǐ fàn",m:"cooked rice"},{c:"欢迎",py:"huān yíng",m:"to welcome"},{c:"光临",py:"guāng lín",m:"(your) honoured presence"},{c:"账单",py:"zhàng dān",m:"bill / check"},{c:"小费",py:"xiǎo fèi",m:"tip"},{c:"打折",py:"dǎ zhé",m:"to give a discount"},{c:"师傅",py:"shī fu",m:"master worker / cook"},{c:"好吃",py:"hǎo chī",m:"tasty (to eat)"},{c:"忘",py:"wàng",m:"to forget"},{c:"带",py:"dài",m:"to bring / carry"},{c:"饭卡",py:"fàn kǎ",m:"meal card"},{c:"错",py:"cuò",m:"wrong / mistaken"},{c:"清楚",py:"qīng chu",m:"clear / clearly"},{c:"没关系",py:"méi guān xi",m:"it doesn't matter"},{c:"上海",py:"Shàng hǎi",m:"Shanghai"},{c:"食堂",py:"shí táng",m:"cafeteria"}
+      {c:"糖醋",py:"táng cù",m:"sweet and sour"},{c:"红烧",py:"hóng shāo",m:"braised in soy sauce"},{c:"凉拌",py:"liáng bàn",m:"cold-tossed"},{c:"牛肉",py:"niú ròu",m:"beef"},{c:"鱼",py:"yú",m:"fish"},{c:"黄瓜",py:"huáng guā",m:"cucumber"},{c:"米饭",py:"mǐ fàn",m:"cooked rice"},{c:"欢迎",py:"huān yíng",m:"to welcome"},{c:"光临",py:"guāng lín",m:"to visit; honoured presence"},{c:"账单",py:"zhàng dān",m:"bill / check"},{c:"小费",py:"xiǎo fèi",m:"tip"},{c:"打折",py:"dǎ zhé",m:"to give a discount"},{c:"师傅",py:"shī fu",m:"master worker"},{c:"好吃",py:"hǎo chī",m:"tasty (to eat)"},{c:"忘",py:"wàng",m:"to forget"},{c:"带",py:"dài",m:"to bring, take, carry, come with"},{c:"饭卡",py:"fàn kǎ",m:"meal card"},{c:"错",py:"cuò",m:"wrong / mistaken"},{c:"清楚",py:"qīng chu",m:"clear / clearly"},{c:"没关系",py:"méi guān xi",m:"it doesn't matter"},{c:"上海",py:"Shàng hǎi",m:"Shanghai"},{c:"食堂",py:"shí táng",m:"canteen, cafeteria, dining room"}
     ]},
     {group:"L13 · D1 · 在哪儿", items:[
-      {c:"上",py:"shàng",m:"to go to (colloquial)"},{c:"中心",py:"zhōng xīn",m:"center"},{c:"听说",py:"tīng shuō",m:"it is said / I heard"},{c:"运动",py:"yùn dòng",m:"sports / to exercise"},{c:"场",py:"chǎng",m:"field / ground"},{c:"运动场",py:"yùn dòng chǎng",m:"sports field"},{c:"旁边",py:"páng biān",m:"beside / next to"},{c:"离",py:"lí",m:"away from"},{c:"远",py:"yuǎn",m:"far"},{c:"近",py:"jìn",m:"near"},{c:"活动",py:"huó dòng",m:"activity"},{c:"中间",py:"zhōng jiān",m:"middle / between"},{c:"书店",py:"shū diàn",m:"bookstore"},{c:"地方",py:"dì fang",m:"place"},{c:"里边",py:"lǐ bian",m:"inside"},{c:"前面",py:"qián miàn",m:"in front / ahead"},{c:"前",py:"qián",m:"front / before"},{c:"后",py:"hòu",m:"back / after"},{c:"上下左右",py:"shàng xià zuǒ yòu",m:"up down left right"}
+      {c:"上",py:"shàng",m:"to go to (a place)"},{c:"中心",py:"zhōng xīn",m:"center"},{c:"听说",py:"tīng shuō",m:"it is said / I heard"},{c:"运动",py:"yùn dòng",m:"sports / to exercise"},{c:"场",py:"chǎng",m:"field / ground"},{c:"运动场",py:"yùn dòng chǎng",m:"sports field"},{c:"旁边",py:"páng biān",m:"beside / next to"},{c:"在……旁边",py:"zài … páng biān",m:"on the side of; next to …"},{c:"离……远",py:"lí … yuǎn",m:"is far from …"},{c:"离……近",py:"lí … jìn",m:"is close to …"},{c:"离",py:"lí",m:"away from"},{c:"远",py:"yuǎn",m:"far"},{c:"近",py:"jìn",m:"near"},{c:"活动",py:"huó dòng",m:"activity; to move around"},{c:"中间",py:"zhōng jiān",m:"middle / between"},{c:"书店",py:"shū diàn",m:"bookstore"},{c:"地方",py:"dì fang",m:"place"},{c:"里边",py:"lǐ bian",m:"inside"},{c:"前面",py:"qián miàn",m:"in front / ahead"},{c:"前",py:"qián",m:"front / before"},{c:"后",py:"hòu",m:"back / after"},{c:"上下左右",py:"shàng xià zuǒ yòu",m:"up down left right"}
     ]},
     {group:"L13 · D2 · 怎么走", items:[
-      {c:"中国城",py:"Zhōng guó chéng",m:"Chinatown"},{c:"过",py:"guò",m:"to pass / cross"},{c:"地图",py:"dì tú",m:"map"},{c:"东京",py:"Dōng jīng",m:"Tokyo"},{c:"拿",py:"ná",m:"to take / hold"},{c:"次",py:"cì",m:"(MW) time / occasion"},{c:"从",py:"cóng",m:"from"},{c:"一直",py:"yì zhí",m:"straight / continuously"},{c:"往",py:"wǎng",m:"towards"},{c:"路口",py:"lù kǒu",m:"intersection"},{c:"拐",py:"guǎi",m:"to turn"},{c:"东西南北",py:"dōng xī nán běi",m:"east west south north"},{c:"哎",py:"āi",m:"(exclamation) hey / oh"},{c:"红绿灯",py:"hóng lǜ dēng",m:"traffic light"},{c:"谷歌",py:"Gǔ gē",m:"Google"},{c:"就",py:"jiù",m:"just / exactly / then"}
+      {c:"中国城",py:"Zhōng guó chéng",m:"Chinatown"},{c:"过",py:"guò",m:"to pass / cross"},{c:"地图",py:"dì tú",m:"map"},{c:"东京",py:"Dōng jīng",m:"Tokyo"},{c:"拿",py:"ná",m:"to hold with hands, to take, to get"},{c:"次",py:"cì",m:"(MW) time / occasion"},{c:"从",py:"cóng",m:"from"},{c:"一直",py:"yì zhí",m:"straight / continuously"},{c:"往",py:"wǎng",m:"towards"},{c:"路口",py:"lù kǒu",m:"intersection"},{c:"拐",py:"guǎi",m:"to turn"},{c:"东西南北",py:"dōng xī nán běi",m:"east west south north"},{c:"哎",py:"āi",m:"(exclamation) hey / oh"},{c:"红绿灯",py:"hóng lǜ dēng",m:"traffic light"},{c:"谷歌",py:"Gǔ gē",m:"Google"},{c:"就",py:"jiù",m:"just / exactly / then"}
     ]},
     {group:"课堂用语 · From the class decks", items:[
       {c:"菜单",py:"cài dān",m:"menu"},{c:"套餐",py:"tào cān",m:"set meal / combo"},{c:"饮料",py:"yǐn liào",m:"beverage"},{c:"主食",py:"zhǔ shí",m:"staple food"},{c:"蔬菜",py:"shū cài",m:"vegetables"},{c:"吃素",py:"chī sù",m:"to eat vegetarian"},{c:"素菜",py:"sù cài",m:"vegetarian dish"},{c:"素饺子",py:"sù jiǎo zi",m:"vegetarian dumplings"},{c:"家常豆腐",py:"jiā cháng dòu fu",m:"home-style tofu"},{c:"凉拌黄瓜",py:"liáng bàn huáng guā",m:"cold-tossed cucumber"},{c:"红烧牛肉",py:"hóng shāo niú ròu",m:"soy-braised beef"},{c:"糖醋鱼",py:"táng cù yú",m:"sweet-and-sour fish"},{c:"青菜豆腐汤",py:"qīng cài dòu fu tāng",m:"greens-and-tofu soup"},{c:"牛肉汤",py:"niú ròu tāng",m:"beef soup"},{c:"北京烤鸭",py:"Běi jīng kǎo yā",m:"Peking duck"},{c:"奶茶",py:"nǎi chá",m:"milk tea"},{c:"珍珠",py:"zhēn zhū",m:"boba / pearls"},{c:"刚才",py:"gāng cái",m:"just now (time word)"},{c:"才",py:"cái",m:"not until (later than expected)"},{c:"算了",py:"suàn le",m:"forget it / never mind"},{c:"行",py:"xíng",m:"all right / OK"},{c:"糟糕",py:"zāo gāo",m:"too bad / what a mess"},{c:"办公室",py:"bàn gōng shì",m:"office"},{c:"宿舍",py:"sù shè",m:"dormitory"},{c:"餐厅",py:"cān tīng",m:"dining hall / restaurant"},{c:"电脑中心",py:"diàn nǎo zhōng xīn",m:"computer center"},{c:"图书馆",py:"tú shū guǎn",m:"library"},{c:"老家",py:"lǎo jiā",m:"hometown"},{c:"起床",py:"qǐ chuáng",m:"to get up"},{c:"早饭",py:"zǎo fàn",m:"breakfast"},{c:"中午",py:"zhōng wǔ",m:"noon"}
@@ -1774,6 +1778,9 @@ const WEEKS=[{
     ]},
     {group:"问路扩展 · From the class decks", items:[
       {c:"单行道",py:"dān xíng dào",m:"one-way street"},{c:"语言实验室",py:"yǔ yán shí yàn shì",m:"language lab"},{c:"借",py:"jiè",m:"to borrow"},{c:"借书证",py:"jiè shū zhèng",m:"library card"},{c:"甜品店",py:"tián pǐn diàn",m:"dessert shop"},{c:"咖啡馆",py:"kā fēi guǎn",m:"café"},{c:"打包带走",py:"dǎ bāo dài zǒu",m:"to get it to go"},{c:"付钱",py:"fù qián",m:"to pay"},{c:"AA制",py:"AA zhì",m:"to split the bill"},{c:"出口",py:"chū kǒu",m:"exit"},{c:"公车站",py:"gōng chē zhàn",m:"bus stop"},{c:"花园",py:"huā yuán",m:"garden"},{c:"喷泉",py:"pēn quán",m:"fountain"},{c:"最后",py:"zuì hòu",m:"finally / last"},{c:"告诉",py:"gào su",m:"to tell"}
+    ]},
+    {group:"L13 · 语法复习词汇 (把 · 时段)", items:[
+      {c:"把",py:"bǎ",m:"(marks the object acted on)"},{c:"应该",py:"yīng gāi",m:"should, ought to"},{c:"久",py:"jiǔ",m:"long (of time)"},{c:"多久",py:"duō jiǔ",m:"how long"},{c:"钟头",py:"zhōng tóu",m:"hour"},{c:"小时",py:"xiǎo shí",m:"hour"},{c:"分钟",py:"fēn zhōng",m:"minute"},{c:"刻钟",py:"kè zhōng",m:"quarter of an hour"},{c:"半夜",py:"bàn yè",m:"midnight"},{c:"还",py:"huán",m:"to return (something)"},{c:"留",py:"liú",m:"to leave (behind)"},{c:"送",py:"sòng",m:"to give as a gift; to see off"},{c:"洗",py:"xǐ",m:"to wash"},{c:"学生证",py:"xué shēng zhèng",m:"student ID"},{c:"录音带",py:"lù yīn dài",m:"cassette tape"},{c:"机场",py:"jī chǎng",m:"airport"},{c:"孩子",py:"hái zi",m:"child"},{c:"零",py:"líng",m:"zero; and (in 3 hrs and 10 min)"}
     ]},
     {group:"味道 · Reduplicated tastes", items:[
       {c:"酸酸的",py:"suān suān de",m:"nice and sour"},{c:"甜甜的",py:"tián tián de",m:"nice and sweet"},{c:"辣辣的",py:"là là de",m:"nice and spicy"},{c:"咸咸的",py:"xián xián de",m:"nice and salty"},{c:"苦苦的",py:"kǔ kǔ de",m:"bitter"},{c:"冰冰的",py:"bīng bīng de",m:"ice-cold"},{c:"凉凉的",py:"liáng liáng de",m:"nice and cool"},{c:"臭臭的",py:"chòu chòu de",m:"stinky"},{c:"软软的",py:"ruǎn ruǎn de",m:"nice and soft"},{c:"脆脆的",py:"cuì cuì de",m:"crunchy"},{c:"咸",py:"xián",m:"salty"},{c:"苦",py:"kǔ",m:"bitter"},{c:"软",py:"ruǎn",m:"soft"},{c:"脆",py:"cuì",m:"crunchy"},{c:"味道",py:"wèi dào",m:"taste / flavor"},{c:"零食",py:"líng shí",m:"snack"}
@@ -1797,6 +1804,9 @@ const WEEKS=[{
     {c:"前",py:"qián",m:"front"},{c:"后",py:"hòu",m:"back"},{c:"城",py:"chéng",m:"city / wall"},{c:"过",py:"guò",m:"to pass"},{c:"图",py:"tú",m:"picture / map"},
     {c:"拿",py:"ná",m:"to take"},{c:"次",py:"cì",m:"(MW) time"},{c:"从",py:"cóng",m:"from"},{c:"直",py:"zhí",m:"straight"},{c:"往",py:"wǎng",m:"towards"},
     {c:"口",py:"kǒu",m:"mouth / opening"},{c:"拐",py:"guǎi",m:"to turn"},{c:"灯",py:"dēng",m:"lamp / light"},{c:"就",py:"jiù",m:"just / then"},{c:"像",py:"xiàng",m:"to resemble"},
+    {c:"把",py:"bǎ",m:"(disposal marker)"},{c:"应",py:"yīng",m:"ought to"},{c:"该",py:"gāi",m:"should"},{c:"久",py:"jiǔ",m:"long (time)"},{c:"钟",py:"zhōng",m:"clock / o'clock"},
+    {c:"半",py:"bàn",m:"half"},{c:"夜",py:"yè",m:"night"},{c:"留",py:"liú",m:"to leave behind"},{c:"送",py:"sòng",m:"to give / see off"},{c:"洗",py:"xǐ",m:"to wash"},
+    {c:"证",py:"zhèng",m:"certificate / ID"},{c:"机",py:"jī",m:"machine"},{c:"孩",py:"hái",m:"child"},{c:"刻",py:"kè",m:"quarter hour; to carve"},{c:"零",py:"líng",m:"zero"},
     {c:"衣",py:"yī",m:"clothes",rad:"衤"},{c:"犬",py:"quǎn",m:"dog",rad:"犭"},{c:"目",py:"mù",m:"eye",rad:"目"},{c:"刀",py:"dāo",m:"knife",rad:"刂"},{c:"邑",py:"yì",m:"city / town",rad:"阝"}
   ],
   radicalTable:[
@@ -1888,32 +1898,32 @@ const WEEKS=[{
     ]
   },
   speaking:[
-    {c:"如果去中国饭馆，你会点什么喝的？你会点什么菜？",py:"rúguǒ qù zhōngguó fànguǎn, nǐ huì diǎn shénme hē de? nǐ huì diǎn shénme cài?",en:"At a Chinese restaurant, what drink and what dishes would you order?",mHan:"我会点一杯＿＿，请少放冰。我想来一盘＿＿和一碗＿＿。",mEn:"I'd order a ＿, easy on the ice, plus a plate of ＿ and a bowl of ＿."},
-    {c:"今天的中文功课你做完了吗？",py:"jīntiān de zhōngwén gōngkè nǐ zuò wán le ma?",en:"Have you finished today's Chinese homework?",mHan:"我做完了。／我还没做完，晚上才能做好。",mEn:"I've finished. / Not yet — I won't get it done until tonight."},
-    {c:"你的家离UW远吗？在UW的哪边？",py:"nǐ de jiā lí UW yuǎn ma? zài UW de nǎ biān?",en:"Is your home far from UW? On which side?",mHan:"我家离UW不远，走路＿分钟就到了。我家在UW的＿边。",mEn:"Not far — ＿ minutes on foot. It's on the ＿ side of UW."},
-    {c:"你吃过饺子吗？你觉得饺子有没有pizza好吃？",py:"nǐ chī guo jiǎozi ma? nǐ juéde jiǎozi yǒu méiyǒu pizza hǎochī?",en:"Have you had dumplings? Are they as tasty as pizza?",mHan:"我吃过饺子。我觉得pizza没有饺子那么好吃。",mEn:"I have. I think pizza isn't as tasty as dumplings."},
-    {c:"你去过中国城吗？从学校到那儿怎么走？",py:"nǐ qù guo Zhōngguóchéng ma? cóng xuéxiào dào nàr zěnme zǒu?",en:"Have you been to Chinatown? How do you get there from school?",mHan:"去过＿次。从学校一直往南走，过＿个红绿灯，在第＿个路口往左一拐，就到了。",mEn:"Been ＿ times. Go straight south, pass ＿ lights, turn left at the ＿ intersection — there it is."},
-    {c:"你在西雅图住了多久了？",py:"nǐ zài Xīyǎtú zhù le duō jiǔ le?",en:"How long have you lived in Seattle?",mHan:"我在西雅图住了＿年了。／我刚来，才住了几个月。",mEn:"I've lived here ＿ years. / I just arrived — only a few months."},
-    {c:"你知道图书馆开到几点？",py:"nǐ zhīdào túshūguǎn kāi dào jǐ diǎn?",en:"Do you know what time the library is open until?",mHan:"听说图书馆开到晚上＿点。／我不清楚，我得上网看看。",mEn:"I heard it's open till ＿. / Not sure — I'd have to look it up."},
-    {c:"如果你买的衣服不合适，又不能退，你怎么办？",py:"rúguǒ nǐ mǎi de yīfu bù héshì, yòu bù néng tuì, nǐ zěnme bàn?",en:"If clothes you bought don't fit and can't be returned, what do you do?",mHan:"那我就送给朋友吧。／算了，我自己穿。",mEn:"Then I'd give them to a friend. / Never mind — I'd wear them anyway."},
-    {c:"你去过中国吗？你想去哪里？",py:"nǐ qù guo Zhōngguó ma? nǐ xiǎng qù nǎlǐ?",en:"Have you been to China? Where would you like to go?",mHan:"我还没去过。我想去＿＿，因为听说那儿的菜好吃极了。",mEn:"Not yet. I'd like to go to ＿ — I hear the food there is amazing."},
-    {c:"你觉得在西雅图，出去吃午饭，10块钱够不够？",py:"nǐ juéde zài Xīyǎtú, chūqu chī wǔfàn, shí kuài qián gòu bu gòu?",en:"For lunch out in Seattle, is $10 enough?",mHan:"我觉得不够。在西雅图吃午饭，十块钱一点儿都不够。",mEn:"I don't think so — $10 isn't nearly enough for lunch in Seattle."},
-    {c:"你最喜欢的中国菜是什么？味道怎么样？",py:"nǐ zuì xǐhuān de zhōngguó cài shì shénme? wèidào zěnmeyàng?",en:"What's your favourite Chinese dish? How does it taste?",mHan:"我最喜欢＿＿。它酸酸的、辣辣的，好吃极了。",mEn:"My favourite is ＿. It's nice and sour and spicy — delicious."},
-    {c:"昨天的语法你听懂了吗？",py:"zuótiān de yǔfǎ nǐ tīng dǒng le ma?",en:"Did you understand yesterday's grammar?",mHan:"我听懂了。／我没听懂，老师说得太快了。",mEn:"I understood it. / I didn't — the teacher spoke too fast."},
-    {c:"昨天晚上你睡好了吗？",py:"zuótiān wǎnshang nǐ shuì hǎo le ma?",en:"Did you sleep well last night?",mHan:"我睡好了。／我没睡好，睡了才四个小时。",mEn:"I slept well. / I didn't — only four hours."},
-    {c:"在西雅图你吃到很辣的菜了吗？",py:"zài Xīyǎtú nǐ chī dào hěn là de cài le ma?",en:"Have you managed to find really spicy food in Seattle?",mHan:"吃到了，在中国城吃到了很辣的菜。／还没吃到。",mEn:"Yes, in Chinatown. / Not yet."},
-    {c:"你觉得什么菜好吃极了？什么汤好喝极了？",py:"nǐ juéde shénme cài hǎochī jí le? shénme tāng hǎohē jí le?",en:"Which dish is extremely tasty? Which soup?",mHan:"我觉得糖醋鱼好吃极了，酸辣汤好喝极了。",mEn:"Sweet-and-sour fish is amazing, and hot-and-sour soup is great."},
-    {c:"你觉得什么东西不好吃？什么东西不好喝？",py:"nǐ juéde shénme dōngxi bù hǎochī? shénme dōngxi bù hǎohē?",en:"What do you find not tasty? What's not good to drink?",mHan:"我觉得皮蛋不好吃，臭臭的。味精汤不好喝。",mEn:"I think century eggs aren't tasty — they're stinky. MSG soup isn't good."},
-    {c:"今天你的衣服洗完了吗？",py:"jīntiān nǐ de yīfu xǐ wán le ma?",en:"Did you finish your laundry today?",mHan:"洗完了。／还没洗完，我一件都没洗。",mEn:"Finished. / Not yet — I haven't washed a single piece."},
-    {c:"上课的时候，老师说的中文你听清楚了吗？",py:"shàngkè de shíhou, lǎoshī shuō de zhōngwén nǐ tīng qīngchu le ma?",en:"In class, did you hear the teacher's Chinese clearly?",mHan:"听清楚了。／我没听清楚，得请老师再说一下。",mEn:"Yes. / No — I have to ask the teacher to repeat it."},
-    {c:"在中餐厅点菜的时候，你会跟服务员说什么？",py:"zài zhōngcāntīng diǎn cài de shíhou, nǐ huì gēn fúwùyuán shuō shénme?",en:"What do you say to the server when ordering?",mHan:"我来一盘＿＿，请别放味精，我一点儿味精都不吃。这些够了，请快点儿上菜。",mEn:"I'll have a plate of ＿, no MSG please — I don't eat any. That's enough; please serve quickly."},
-    {c:"中国城离UW远吗？飞机场离UW呢？UW的图书馆离学生活动中心近吗？",py:"Zhōngguóchéng lí UW yuǎn ma? jīchǎng lí UW ne? UW de túshūguǎn lí xuésheng huódòng zhōngxīn jìn ma?",en:"Is Chinatown far from UW? The airport? Is the library near the student center?",mHan:"中国城离UW不太远，飞机场离UW远得多。图书馆离学生活动中心很近。",mEn:"Chinatown isn't too far; the airport is much farther. The library is close to the student center."},
-    {c:"学英文有没有学中文那么难？",py:"xué yīngwén yǒu méiyǒu xué zhōngwén nàme nán?",en:"Is learning English as hard as learning Chinese?",mHan:"学英文没有学中文那么难，因为中文的汉字太多了。",mEn:"English isn't as hard as Chinese — there are too many characters."},
-    {c:"糖醋鱼有没有酸辣汤那么酸？",py:"tángcù yú yǒu méiyǒu suānlà tāng nàme suān?",en:"Is sweet-and-sour fish as sour as hot-and-sour soup?",mHan:"糖醋鱼没有酸辣汤那么酸，它甜甜的。",mEn:"It isn't as sour — it's on the sweet side."},
-    {c:"你说中文说得比老师快吗？",py:"nǐ shuō zhōngwén shuō de bǐ lǎoshī kuài ma?",en:"Do you speak Chinese faster than the teacher?",mHan:"我说中文没有老师那么快，我说得慢极了。",mEn:"I don't speak as fast as the teacher — I'm extremely slow."},
-    {c:"今天下了课以后你上哪儿去，做什么？",py:"jīntiān xià le kè yǐhòu nǐ shàng nǎr qù, zuò shénme?",en:"Where are you going after class today, and to do what?",mHan:"下了课以后我上图书馆去看书，然后再去食堂吃饭。",mEn:"After class I'll go to the library to read, then eat at the cafeteria."},
-    {c:"你去过UW的学生活动中心吗？去过几次？你平时在那儿做什么？",py:"nǐ qù guo UW de xuésheng huódòng zhōngxīn ma? qù guo jǐ cì? nǐ píngshí zài nàr zuò shénme?",en:"Have you been to the HUB? How many times? What do you usually do there?",mHan:"我去过＿次。我平时在那儿吃午饭、跟朋友聊天儿。",mEn:"I've been ＿ times. I usually eat lunch and chat with friends there."},
-    {c:"红灯的时候，你能不能在路口往前开？",py:"hóng dēng de shíhou, nǐ néng bu néng zài lùkǒu wǎng qián kāi?",en:"At a red light, can you drive straight through the intersection?",mHan:"不能。红灯的时候一点儿都不能往前开，得等绿灯。",mEn:"No. At a red light you can't move forward at all — you have to wait for green."},
+    {c:"如果去中国饭馆，你会点什么喝的？你会点什么菜？",tag:"ORAL TEST",py:"rúguǒ qù zhōngguó fànguǎn, nǐ huì diǎn shénme hē de? nǐ huì diǎn shénme cài?",en:"At a Chinese restaurant, what drink and what dishes would you order?",mHan:"我会点一杯＿＿，请少放冰。我想来一盘＿＿和一碗＿＿。",mEn:"I'd order a ＿, easy on the ice, plus a plate of ＿ and a bowl of ＿."},
+    {c:"今天的中文功课你做完了吗？",tag:"ORAL TEST",py:"jīntiān de zhōngwén gōngkè nǐ zuò wán le ma?",en:"Have you finished today's Chinese homework?",mHan:"我做完了。／我还没做完，晚上才能做好。",mEn:"I've finished. / Not yet — I won't get it done until tonight."},
+    {c:"你的家离UW远吗？在UW的哪边？",tag:"ORAL TEST",py:"nǐ de jiā lí UW yuǎn ma? zài UW de nǎ biān?",en:"Is your home far from UW? On which side?",mHan:"我家离UW不远，走路＿分钟就到了。我家在UW的＿边。",mEn:"Not far — ＿ minutes on foot. It's on the ＿ side of UW."},
+    {c:"你吃过饺子吗？你觉得饺子有没有pizza好吃？",tag:"ORAL TEST",py:"nǐ chī guo jiǎozi ma? nǐ juéde jiǎozi yǒu méiyǒu pizza hǎochī?",en:"Have you had dumplings? Are they as tasty as pizza?",mHan:"我吃过饺子。我觉得pizza没有饺子那么好吃。",mEn:"I have. I think pizza isn't as tasty as dumplings."},
+    {c:"你去过中国城吗？从学校到那儿怎么走？",tag:"ORAL TEST",py:"nǐ qù guo Zhōngguóchéng ma? cóng xuéxiào dào nàr zěnme zǒu?",en:"Have you been to Chinatown? How do you get there from school?",mHan:"去过＿次。从学校一直往南走，过＿个红绿灯，在第＿个路口往左一拐，就到了。",mEn:"Been ＿ times. Go straight south, pass ＿ lights, turn left at the ＿ intersection — there it is."},
+    {c:"你在西雅图住了多久了？",tag:"ORAL TEST",py:"nǐ zài Xīyǎtú zhù le duō jiǔ le?",en:"How long have you lived in Seattle?",mHan:"我在西雅图住了＿年了。／我刚来，才住了几个月。",mEn:"I've lived here ＿ years. / I just arrived — only a few months."},
+    {c:"你知道图书馆开到几点？",tag:"ORAL TEST",py:"nǐ zhīdào túshūguǎn kāi dào jǐ diǎn?",en:"Do you know what time the library is open until?",mHan:"听说图书馆开到晚上＿点。／我不清楚，我得上网看看。",mEn:"I heard it's open till ＿. / Not sure — I'd have to look it up."},
+    {c:"如果你买的衣服不合适，又不能退，你怎么办？",tag:"ORAL TEST",py:"rúguǒ nǐ mǎi de yīfu bù héshì, yòu bù néng tuì, nǐ zěnme bàn?",en:"If clothes you bought don't fit and can't be returned, what do you do?",mHan:"那我就送给朋友吧。／算了，我自己穿。",mEn:"Then I'd give them to a friend. / Never mind — I'd wear them anyway."},
+    {c:"你去过中国吗？你想去哪里？",tag:"ORAL TEST",py:"nǐ qù guo Zhōngguó ma? nǐ xiǎng qù nǎlǐ?",en:"Have you been to China? Where would you like to go?",mHan:"我还没去过。我想去＿＿，因为听说那儿的菜好吃极了。",mEn:"Not yet. I'd like to go to ＿ — I hear the food there is amazing."},
+    {c:"你觉得在西雅图，出去吃午饭，10块钱够不够？",tag:"ORAL TEST",py:"nǐ juéde zài Xīyǎtú, chūqu chī wǔfàn, shí kuài qián gòu bu gòu?",en:"For lunch out in Seattle, is $10 enough?",mHan:"我觉得不够。在西雅图吃午饭，十块钱一点儿都不够。",mEn:"I don't think so — $10 isn't nearly enough for lunch in Seattle."},
+    {c:"你最喜欢的中国菜是什么？味道怎么样？",tag:"PART 1 · LISTENING",py:"nǐ zuì xǐhuān de zhōngguó cài shì shénme? wèidào zěnmeyàng?",en:"What's your favourite Chinese dish? How does it taste?",mHan:"我最喜欢＿＿。它酸酸的、辣辣的，好吃极了。",mEn:"My favourite is ＿. It's nice and sour and spicy — delicious."},
+    {c:"昨天的语法你听懂了吗？",tag:"PART 1 · LISTENING",py:"zuótiān de yǔfǎ nǐ tīng dǒng le ma?",en:"Did you understand yesterday's grammar?",mHan:"我听懂了。／我没听懂，老师说得太快了。",mEn:"I understood it. / I didn't — the teacher spoke too fast."},
+    {c:"昨天晚上你睡好了吗？",tag:"PART 1 · LISTENING",py:"zuótiān wǎnshang nǐ shuì hǎo le ma?",en:"Did you sleep well last night?",mHan:"我睡好了。／我没睡好，睡了才四个小时。",mEn:"I slept well. / I didn't — only four hours."},
+    {c:"在西雅图你吃到很辣的菜了吗？",tag:"PART 1 · LISTENING",py:"zài Xīyǎtú nǐ chī dào hěn là de cài le ma?",en:"Have you managed to find really spicy food in Seattle?",mHan:"吃到了，在中国城吃到了很辣的菜。／还没吃到。",mEn:"Yes, in Chinatown. / Not yet."},
+    {c:"你觉得什么菜好吃极了？什么汤好喝极了？",tag:"PART 1 · LISTENING",py:"nǐ juéde shénme cài hǎochī jí le? shénme tāng hǎohē jí le?",en:"Which dish is extremely tasty? Which soup?",mHan:"我觉得糖醋鱼好吃极了，酸辣汤好喝极了。",mEn:"Sweet-and-sour fish is amazing, and hot-and-sour soup is great."},
+    {c:"你觉得什么东西不好吃？什么东西不好喝？",tag:"PART 1 · LISTENING",py:"nǐ juéde shénme dōngxi bù hǎochī? shénme dōngxi bù hǎohē?",en:"What do you find not tasty? What's not good to drink?",mHan:"我觉得皮蛋不好吃，臭臭的。味精汤不好喝。",mEn:"I think century eggs aren't tasty — they're stinky. MSG soup isn't good."},
+    {c:"今天你的衣服洗完了吗？",tag:"PART 1 · LISTENING",py:"jīntiān nǐ de yīfu xǐ wán le ma?",en:"Did you finish your laundry today?",mHan:"洗完了。／还没洗完，我一件都没洗。",mEn:"Finished. / Not yet — I haven't washed a single piece."},
+    {c:"上课的时候，老师说的中文你听清楚了吗？",tag:"PART 1 · LISTENING",py:"shàngkè de shíhou, lǎoshī shuō de zhōngwén nǐ tīng qīngchu le ma?",en:"In class, did you hear the teacher's Chinese clearly?",mHan:"听清楚了。／我没听清楚，得请老师再说一下。",mEn:"Yes. / No — I have to ask the teacher to repeat it."},
+    {c:"在中餐厅点菜的时候，你会跟服务员说什么？",tag:"PART 1 · LISTENING",py:"zài zhōngcāntīng diǎn cài de shíhou, nǐ huì gēn fúwùyuán shuō shénme?",en:"What do you say to the server when ordering?",mHan:"我来一盘＿＿，请别放味精，我一点儿味精都不吃。这些够了，请快点儿上菜。",mEn:"I'll have a plate of ＿, no MSG please — I don't eat any. That's enough; please serve quickly."},
+    {c:"中国城离UW远吗？飞机场离UW呢？UW的图书馆离学生活动中心近吗？",tag:"PART 1 · LISTENING",py:"Zhōngguóchéng lí UW yuǎn ma? jīchǎng lí UW ne? UW de túshūguǎn lí xuésheng huódòng zhōngxīn jìn ma?",en:"Is Chinatown far from UW? The airport? Is the library near the student center?",mHan:"中国城离UW不太远，飞机场离UW远得多。图书馆离学生活动中心很近。",mEn:"Chinatown isn't too far; the airport is much farther. The library is close to the student center."},
+    {c:"学英文有没有学中文那么难？",tag:"PART 1 · LISTENING",py:"xué yīngwén yǒu méiyǒu xué zhōngwén nàme nán?",en:"Is learning English as hard as learning Chinese?",mHan:"学英文没有学中文那么难，因为中文的汉字太多了。",mEn:"English isn't as hard as Chinese — there are too many characters."},
+    {c:"糖醋鱼有没有酸辣汤那么酸？",tag:"PART 1 · LISTENING",py:"tángcù yú yǒu méiyǒu suānlà tāng nàme suān?",en:"Is sweet-and-sour fish as sour as hot-and-sour soup?",mHan:"糖醋鱼没有酸辣汤那么酸，它甜甜的。",mEn:"It isn't as sour — it's on the sweet side."},
+    {c:"你说中文说得比老师快吗？",tag:"PART 1 · LISTENING",py:"nǐ shuō zhōngwén shuō de bǐ lǎoshī kuài ma?",en:"Do you speak Chinese faster than the teacher?",mHan:"我说中文没有老师那么快，我说得慢极了。",mEn:"I don't speak as fast as the teacher — I'm extremely slow."},
+    {c:"今天下了课以后你上哪儿去，做什么？",tag:"PART 1 · LISTENING",py:"jīntiān xià le kè yǐhòu nǐ shàng nǎr qù, zuò shénme?",en:"Where are you going after class today, and to do what?",mHan:"下了课以后我上图书馆去看书，然后再去食堂吃饭。",mEn:"After class I'll go to the library to read, then eat at the cafeteria."},
+    {c:"你去过UW的学生活动中心吗？去过几次？你平时在那儿做什么？",tag:"PART 1 · LISTENING",py:"nǐ qù guo UW de xuésheng huódòng zhōngxīn ma? qù guo jǐ cì? nǐ píngshí zài nàr zuò shénme?",en:"Have you been to the HUB? How many times? What do you usually do there?",mHan:"我去过＿次。我平时在那儿吃午饭、跟朋友聊天儿。",mEn:"I've been ＿ times. I usually eat lunch and chat with friends there."},
+    {c:"红灯的时候，你能不能在路口往前开？",tag:"PART 1 · LISTENING",py:"hóng dēng de shíhou, nǐ néng bu néng zài lùkǒu wǎng qián kāi?",en:"At a red light, can you drive straight through the intersection?",mHan:"不能。红灯的时候一点儿都不能往前开，得等绿灯。",mEn:"No. At a red light you can't move forward at all — you have to wait for green."},
     {c:"中国离美国远不远？有多远？坐飞机要多久？",py:"Zhōngguó lí Měiguó yuǎn bu yuǎn? yǒu duō yuǎn? zuò fēijī yào duō jiǔ?",en:"Is China far from the US? How far? How long is the flight?",mHan:"中国离美国很远，坐飞机要十几个小时。",mEn:"Very far — the flight takes over ten hours."},
     {c:"你住的地方离学校远吗？旁边有什么地方？",py:"nǐ zhù de dìfang lí xuéxiào yuǎn ma? pángbiān yǒu shénme dìfang?",en:"Is where you live far from school? What's next to it?",mHan:"我住的地方离学校不远，旁边有一个咖啡馆和一家书店。",mEn:"Not far — there's a café and a bookstore next to it."},
     {c:"UW的学生活动中心里边有什么？",py:"UW de xuésheng huódòng zhōngxīn lǐbian yǒu shénme?",en:"What's inside the UW student activity center?",mHan:"里边有饭馆儿、书店和咖啡馆，还有很多学生活动。",mEn:"Restaurants, a bookstore, a café, and lots of student activities."},
@@ -1925,10 +1935,10 @@ const WEEKS=[{
     {c:"晚上你在哪儿睡觉？你睡得早还是睡得晚？",py:"wǎnshang nǐ zài nǎr shuìjiào? nǐ shuì de zǎo háishì shuì de wǎn?",en:"Where do you sleep at night? Early or late?",mHan:"我在宿舍睡觉。我睡得很晚，常常十二点才睡。",mEn:"In the dorm. I sleep late — often not until midnight."},
     {c:"你吃过杨国福麻辣烫吗？吃过几次？",py:"nǐ chī guo Yáng Guófú málàtàng ma? chī guo jǐ cì?",en:"Have you had Yang Guofu málàtàng? How many times?",mHan:"我吃过＿次。／我一次也没吃过，很想试一试。",mEn:"I've had it ＿ times. / Never — I'd like to try it."},
     {c:"我们一起去吃中国菜吧！你想去哪家饭馆？为什么？",py:"wǒmen yìqǐ qù chī zhōngguó cài ba! nǐ xiǎng qù nǎ jiā fànguǎn? wèishénme?",en:"Let's go eat Chinese food! Which restaurant, and why?",mHan:"我们到＿＿去吃饭吧。我想去那儿，因为我还没去过，听说好吃极了。",mEn:"Let's go to ＿. I want to go because I've never been and I hear it's amazing."},
-    {c:"Part 2 (1)：你会说阿拉伯语吗？（一 MW／一点儿 + 都 + 不／没）",py:"—",en:"Answer with complete negation.",mHan:"我一点儿阿拉伯语都不会说，一个字都不认识。",mEn:"I can't speak a word of Arabic — I don't know a single character."},
-    {c:"Part 2 (2)：如果你的菜是25块，你给服务员30块，他找你4块，你会跟他说什么？（多／少 + V 了 + amount）",py:"—",en:"Answer with 多／少 + V + 了 + amount.",mHan:"对不起，钱你找错了，少找了一块钱。",mEn:"Excuse me, the change is wrong — you gave me one yuan too little."},
-    {c:"Part 2 (3)：你觉得打球难还是滑冰难？（A 没有 B 那么……）",py:"—",en:"Answer with A 没有 B 那么…",mHan:"我觉得打球没有滑冰那么难。",mEn:"I think playing ball isn't as hard as ice-skating."},
-    {c:"Part 2 (4)：有时间的话，你周末想做什么？（V-V）",py:"—",en:"Answer with a reduplicated verb.",mHan:"有时间的话，我想去中国城看看，试一试那儿的小笼包。",mEn:"If I have time I'd like to look around Chinatown and try the soup dumplings there."}
+    {c:"Part 2 (1)：你会说阿拉伯语吗？（一 MW／一点儿 + 都 + 不／没）",tag:"PART 2 · WRITTEN",py:"—",en:"Answer with complete negation.",mHan:"我一点儿阿拉伯语都不会说，一个字都不认识。",mEn:"I can't speak a word of Arabic — I don't know a single character."},
+    {c:"Part 2 (2)：如果你的菜是25块，你给服务员30块，他找你4块，你会跟他说什么？（多／少 + V 了 + amount）",tag:"PART 2 · WRITTEN",py:"—",en:"Answer with 多／少 + V + 了 + amount.",mHan:"对不起，钱你找错了，少找了一块钱。",mEn:"Excuse me, the change is wrong — you gave me one yuan too little."},
+    {c:"Part 2 (3)：你觉得打球难还是滑冰难？（A 没有 B 那么……）",tag:"PART 2 · WRITTEN",py:"—",en:"Answer with A 没有 B 那么…",mHan:"我觉得打球没有滑冰那么难。",mEn:"I think playing ball isn't as hard as ice-skating."},
+    {c:"Part 2 (4)：有时间的话，你周末想做什么？（V-V）",tag:"PART 2 · WRITTEN",py:"—",en:"Answer with a reduplicated verb.",mHan:"有时间的话，我想去中国城看看，试一试那儿的小笼包。",mEn:"If I have time I'd like to look around Chinatown and try the soup dumplings there."}
   ],
   grammar:[
     {id:"vrc",t:"Verb + Resultative Complement",sub:"V-RC · the result of an action",
@@ -1942,17 +1952,20 @@ const WEEKS=[{
             {q:"他走＿学校了。",o:["到","好","完"],a:0,x:"到 = reached the destination"},
             {q:"我没看＿，麻烦你再说一下。",o:["清楚","会","错"],a:0,x:"清楚 = clearly"},
             {q:"我学＿开车了。",o:["会","好","到"],a:0,x:"会 = acquired the skill"}]},
-    {id:"rcmap",t:"The eight RCs to memorise",sub:"对 错 完 好 清楚 到 懂 会",
-     pts:["<b>对</b> correct · <b>错</b> incorrect — 写对／写错 看对／看错 找对／找错 走对／走错","<b>完</b> finish — 写完 看完 做完 吃完 喝完 买完 卖完","<b>好</b> satisfaction / ready to move on — 做好 吃好 点好 热好","<b>清楚</b> clear — 看清楚 听清楚 想清楚","<b>到</b> arrival / success — 走到 开到 送到 看到 听到 找到 买到","<b>懂</b> understand — 看懂 听懂 · <b>会</b> ability acquired — 学会"],
-     ex:[{c:"饭你做好了吗？",py:"fàn nǐ zuò hǎo le ma?",en:"Is the food ready?"},
-         {c:"我点的菜你吃完了吗？",py:"wǒ diǎn de cài nǐ chī wán le ma?",en:"Did you finish the dishes I ordered?"},
-         {c:"天气预报你听清楚了吗？",py:"tiānqì yùbào nǐ tīng qīngchu le ma?",en:"Did you catch the weather forecast clearly?"}],
-     drill:[{q:"中文课我预习＿了，可以上课了。",o:["好","错","到"],a:0,x:"好 = ready / satisfying result"},
+    {id:"rcmap",t:"The RC table from the guide",sub:"好 错 对 到 完 — with question and negative forms",
+     pts:["<b>Question:</b> (O) S V C 了没有？ · <b>Positive:</b> (O) S V C 了。 · <b>Negative:</b> (O) S 没 V C。 → 饭，做好了没有？／饭，做好了。／饭，没做好。","<b>好</b> action completed as expected — 做好 吃好 睡好 预习好","<b>错 / 对</b> done incorrectly / correctly — 写·说·看·听·找 + 错／对","<b>到</b> reached the desired conclusion — 听·看·找·开·走 + 到","<b>完</b> finished — 做·写·看·听·吃·喝·卖·买·学 + 完","<b>Object placement:</b> a short object can follow the complement — 你找错钱了。A long object must be preposed — 我买衣服的钱，你找错了。","Also on this exam: <b>懂</b> (听懂 看懂), <b>清楚</b> (听清楚 看清楚), <b>会</b> (学会)."],
+     ex:[{c:"功课我已经做好了，我可以睡觉了。",py:"gōngkè wǒ yǐjīng zuò hǎo le, wǒ kěyǐ shuìjiào le.",en:"I've finished my homework, so I can sleep."},
+         {c:"我没有找到位子。",py:"wǒ méiyǒu zhǎo dào wèizi.",en:"I didn't manage to find a seat."},
+         {c:"对不起，糖醋鱼已经卖完了。",py:"duìbuqǐ, tángcù yú yǐjīng mài wán le.",en:"Sorry, the sweet-and-sour fish is sold out."}],
+     drill:[{q:"饭，做好了＿？",o:["没有","不是","吗好"],a:0,x:"question form: V C 了没有？"},
+            {q:"饭，＿做好。",o:["没","不","别"],a:0,x:"negate a resultative complement with 没"},
+            {q:"哪句对（长宾语）？",o:["我买衣服的钱，你找错了。","你找错我买衣服的钱了。","你找我买衣服的钱错了。"],a:0,x:"a long object is preposed to the front"},
+            {q:"中文课我预习＿了，可以上课了。",o:["好","错","到"],a:0,x:"好 = completed as expected"},
             {q:"中文书我买＿了，就在书店。",o:["到","完","会"],a:0,x:"到 = successfully got it"},
-            {q:"这个语法我学＿了。",o:["会","清楚","错"],a:0,x:"会 = learned the skill"}]},
+            {q:"这个语法我学＿了。",o:["会","清楚","错"],a:0,x:"会 = acquired the skill"}]},
     {id:"neg1",t:"一 MW／一点儿 … 都／也 不／没／别",
      sub:"complete negation — not even one",
-     pts:["<b>S + 一 + MW + N + 都／也 + 不／没 + V</b> — countable: not even one","<b>S + 一点儿 + N + 都／也 + 不／没 + V</b> — uncountable: not even a bit","<b>S + 一点儿 + 都／也 + 不 + adj</b> — not … at all","<b>别</b> makes it an imperative: 一点儿味精都别放！"],
+     pts:["<b>S + 一 + MW + N + 都／也 + 不／没 + V</b> — countable: not even one","<b>S + 一点儿 + N + 都／也 + 不／没 + V</b> — uncountable: not even a bit","<b>S + 一点儿 + 都／也 + 不 + adj</b> — not … at all","<b>别</b> makes it an imperative: 一点儿味精都别放！","<b>Long objects get preposed:</b> 学生餐厅的师傅，我一个都不认识。"],
      ex:[{c:"这个饭馆一个位子都没有了。",py:"zhège fànguǎn yí ge wèizi dōu méiyǒu le.",en:"This restaurant doesn't have a single seat left."},
          {c:"我一点儿酒都不喝。",py:"wǒ yìdiǎnr jiǔ dōu bù hē.",en:"I don't drink any alcohol at all."},
          {c:"我不吃肉，我点的菜请你一点儿肉都别放。",py:"wǒ bù chī ròu, wǒ diǎn de cài qǐng nǐ yìdiǎnr ròu dōu bié fàng.",en:"I don't eat meat — please don't put any meat in my dishes."}],
@@ -1999,12 +2012,14 @@ const WEEKS=[{
             {q:"你怎么现在＿送到？!",o:["才","刚","刚才"],a:0,x:"later than expected → 才"},
             {q:"虽然小豆＿来中国一年，可是她中文说得很好。",o:["刚","刚才","就"],a:0,x:"刚 + VP, no 了"}]},
     {id:"duoshao",t:"多／少 + V + 了 + amount",sub:"more/less than it should be",
-     pts:["<b>S 多／少 V 了 + specific amount (+ object)</b> — did something to a degree above/below what was correct.","钱你找错了，<b>多找了一块钱</b>。","Distinguish from imperative <b>多 V／少 V</b> (请多放点儿糖) — that one has no 了 and no amount."],
+     pts:["<b>S 多／少 V 了 + specific amount (+ object)</b> — did something above/below what it should have been.","应该找我10块，你找了11块 → 你<b>多</b>找了我一块钱。 · 找了9块 → 你<b>少</b>找了我一块钱。","<b>早／晚</b> work the same way for time: 应该8点来，8:30才来 → 你<b>晚</b>来了半个钟头。7:30来 → 你<b>早</b>来了半个钟头。","Distinguish from imperative <b>多 V／少 V</b> (请多放点儿糖) — no 了, no amount."],
      ex:[{c:"师傅，钱你找错了，多找了一块钱。",py:"shīfu, qián nǐ zhǎo cuò le, duō zhǎo le yí kuài qián.",en:"Sir, the change is wrong — you gave one yuan too much."},
          {c:"我少给了你五块钱。",py:"wǒ shǎo gěi le nǐ wǔ kuài qián.",en:"I gave you five yuan too little."},
          {c:"我多点了两个饺子。",py:"wǒ duō diǎn le liǎng ge jiǎozi.",en:"I ordered two dumplings too many."}],
      drill:[{q:"你＿找了我一块钱，这是还你的。",o:["多","很","再"],a:0,x:"gave too much → 多 V 了 amount"},
-            {q:"菜25块，我给30块，他找我4块 —— 他＿找了一块钱。",o:["少","多","别"],a:0,x:"should be 5 back, got 4 → one too little"}]},
+            {q:"菜25块，我给30块，他找我4块 —— 他＿找了一块钱。",o:["少","多","别"],a:0,x:"should be 5 back, got 4 → one too little"},
+            {q:"你应该8点来，可是你8:30才来 —— 你＿来了半个钟头。",o:["晚","早","多"],a:0,x:"later than it should be → 晚 V 了 amount"},
+            {q:"你应该8点来，可是你7:30就来了 —— 你＿来了半个钟头。",o:["早","晚","少"],a:0,x:"earlier than it should be → 早 V 了 amount"}]},
     {id:"haoxiang",t:"好像",sub:"it seems / looks like",
      pts:["<b>S 好像 + VP／adj</b> — a hedged judgement, “seems”.","好像 + 是／有／很… — 这个菜好像很辣。","Often pairs with 听说 (“I heard…”) for second-hand information."],
      ex:[{c:"老师好像是美国人。",py:"lǎoshī hǎoxiàng shì Měiguó rén.",en:"The teacher seems to be American."},
@@ -2078,6 +2093,40 @@ const WEEKS=[{
      drill:[{q:"哪个不能重叠 (reduplicate)？",o:["喜欢","看","复习"],a:0,x:"static/feeling verbs can't reduplicate"},
             {q:"哪个不能重叠？",o:["忘","听","做"],a:0,x:"beyond your control → 忘 can't reduplicate"},
             {q:"哪个不能重叠？",o:["能","走","问"],a:0,x:"modal verbs can't reduplicate"}]},
+    {id:"ba",t:"把-structure",sub:"S 把 O V 补语／了 — what HAPPENED to the object",
+     pts:["<b>S + 把 + O + V + complement／了</b> — the focus is the <i>resulting status</i> of the object. 我吃饺子了 → 我把饺子吃了。","<b>The object must be definite</b> — known to both speakers. 他把<u>那</u>本书看完了。✗ 他把<u>一</u>本书看完了。","<b>The verb can never stand alone.</b> It needs 了 / a resultative complement / a prepositional phrase / an object: 你快把饭吃<b>了</b>。我把功课做<b>完</b>了。你把书放<b>在桌子上</b>。我把钱给<b>他</b>了。","<b>Action verbs only</b> — 打 找 买 卖 留 还 洗 吃 喝 写 看 做 借 忘 放 给 开. Verbs of existence or mental state can't: 是 有 爱 喜欢 觉得 知道. ✗ 我把她爱极了。","<b>Negatives and auxiliaries go BEFORE 把</b>: 别把钱放在桌子上。她不会把孩子一个人留在家里。"],
+     ex:[{c:"我把今天的功课做完了。",py:"wǒ bǎ jīntiān de gōngkè zuò wán le.",en:"I finished today's homework."},
+         {c:"我刚才把衣服忘在饭馆了。",py:"wǒ gāngcái bǎ yīfu wàng zài fànguǎn le.",en:"I left my clothes at the restaurant just now."},
+         {c:"别把钱放在桌子上。",py:"bié bǎ qián fàng zài zhuōzi shàng.",en:"Don't leave the money on the table."}],
+     drill:[{q:"哪句对？",o:["他把那本书看完了。","他把一本书看完了。","他把书看。"],a:0,x:"the object must be definite, and the verb needs a complement"},
+            {q:"你快把饭吃＿。",o:["了","吗","的"],a:0,x:"the verb can't stand alone — 了 completes it"},
+            {q:"哪个动词不能用把？",o:["喜欢","洗","放"],a:0,x:"mental-state verbs are blocked"},
+            {q:"＿把钱放在桌子上。",o:["别","把别","不把别"],a:0,x:"negatives go before 把"},
+            {q:"我把学生证＿图书馆了。",o:["放在","放","在放"],a:0,x:"把 + O + V + 在 + location"}]},
+    {id:"ba2",t:"When 把 is MANDATORY",sub:"with 在 / 给 / 到 after the verb",
+     pts:["When the resultative complement <b>在／给／到</b> follows a main verb that also takes an object, the 把-structure is <b>required</b>.","<b>a) S 把 O V 在 location</b> — 老师把笔放在桌子上了。小张把钱留在宿舍了。","<b>b) S 把 O V 给 someone</b> — 小王把书借给我了。老王把钱还给小李了。","<b>c) S 把 O V 到 location</b> — 爸爸把妈妈送到机场了。我得把录音带带到学校。"],
+     ex:[{c:"我把学生证放在图书馆了。",py:"wǒ bǎ xuéshēngzhèng fàng zài túshūguǎn le.",en:"I left my student ID at the library."},
+         {c:"我哥哥把电脑送给我了。",py:"wǒ gēge bǎ diànnǎo sòng gěi wǒ le.",en:"My older brother gave me his computer."},
+         {c:"爸爸把妈妈送到机场了。",py:"bàba bǎ māma sòng dào jīchǎng le.",en:"Dad took Mom to the airport."}],
+     drill:[{q:"小王把书借＿我了。",o:["给","在","到"],a:0,x:"transferring to a person → V 给 someone"},
+            {q:"我得把录音带带＿学校。",o:["到","给","在"],a:0,x:"moving to a destination → V 到 location"},
+            {q:"老师把笔放＿桌子上了。",o:["在","给","完"],a:0,x:"placing at a location → V 在 location"}]},
+    {id:"timedur",t:"Time-When vs. Time-Duration",sub:"when it happened vs. how long it lasted",
+     pts:["<b>Time-When goes BEFORE the verb:</b> S + time-when + V. 我昨天晚上十二点睡觉。","<b>Time-Duration goes AFTER the verb:</b> S + V + (O) + (V) + duration. 我昨天睡觉睡了八个钟头。","<b>Note the verb repeats</b> when there's an object: 小高打球打了四十分钟。书你可以借四个星期。","Duration measure words: 钟头／小时 (hour), 分钟 (minute), 刻钟 (quarter hour).","Compare: 三点十分 = ten past three (when) · 三个钟头零十分钟 = 3 hrs 10 mins (how long)."],
+     ex:[{c:"你昨天几点睡觉？我昨天晚上十二点睡觉。",py:"nǐ zuótiān jǐ diǎn shuìjiào? wǒ zuótiān wǎnshang shí\u2019èr diǎn shuìjiào.",en:"What time did you sleep last night? At twelve."},
+         {c:"你昨天睡觉睡了多久？我睡了八个钟头。",py:"nǐ zuótiān shuìjiào shuì le duō jiǔ? wǒ shuì le bā ge zhōngtóu.",en:"How long did you sleep? Eight hours."},
+         {c:"小高打球打了四十分钟。",py:"Xiǎo Gāo dǎ qiú dǎ le sìshí fēnzhōng.",en:"Xiao Gao played ball for forty minutes."}],
+     drill:[{q:"我昨天晚上十二点＿。",o:["睡觉","睡觉了八个钟头","睡了八个钟头觉"],a:0,x:"time-when goes before the verb"},
+            {q:"我昨天睡觉＿八个钟头。",o:["睡了","了","睡觉了"],a:0,x:"with an object, repeat the verb before the duration"},
+            {q:"书我可以借＿？",o:["多久","几点","什么时候"],a:0,x:"asking duration → 多久"},
+            {q:"哪个是时段 (duration)？",o:["两个半钟头","两点半","三点十分"],a:0,x:"个 + measure word marks duration"}]},
+    {id:"vdao",t:"V 到 + time-when",sub:"do something UNTIL a time",
+     pts:["<b>S + V + 到 + time-when</b> — the action continues up to that clock time.","With an object, repeat the verb: <b>S V O V 到 time-when</b>. 我在图书馆看书看到半夜。","Very common on this exam: 你知道图书馆开到几点？"],
+     ex:[{c:"图书馆开到晚上九点。",py:"túshūguǎn kāi dào wǎnshang jiǔ diǎn.",en:"The library is open until nine at night."},
+         {c:"我在图书馆看书看到半夜。",py:"wǒ zài túshūguǎn kàn shū kàn dào bànyè.",en:"I read at the library until midnight."},
+         {c:"我看电视看到十点。",py:"wǒ kàn diànshì kàn dào shí diǎn.",en:"I watched TV until ten."}],
+     drill:[{q:"图书馆开＿晚上九点。",o:["到","了","过"],a:0,x:"V 到 + clock time = until"},
+            {q:"我在图书馆看书＿半夜。",o:["看到","到看","看了到"],a:0,x:"repeat the verb before 到 when there is an object"}]},
     {id:"yijiu",t:"一……，就……",sub:"as soon as A, then B",
      pts:["<b>S 一 VP1，(S) 就 VP2。</b> — the second action happens the moment the first is realized, and can be caused by it.","<b>Habitual:</b> no 了 — 西雅图一到冬天就下雪。她一起床就玩手机。","<b>One-time past:</b> ends with 了 — 他一回家就睡觉了。我往右一拐，就开到了。","<b>Two subjects</b> also work: A 一……，B 就…… — 妈妈一说她，她就找别人聊天。","This is why directions use 往右一拐<b>就</b>到了 — the arrival follows the turn immediately."]
      ,ex:[{c:"我们一到中文课，就开始只说中文。",py:"wǒmen yí dào zhōngwén kè, jiù kāishǐ zhǐ shuō zhōngwén.",en:"The moment we get to Chinese class, we start speaking only Chinese."},
@@ -2193,7 +2242,16 @@ const CLOZE=[
   {wk:5,pre:"你有谷歌地图吗？拿给我",ans:{c:"看看",py:"kàn kan",m:"have a look"},post:"。",en:"Do you have Google Maps? Let me have a look."},
   {wk:5,pre:"手机在宿舍里，我",ans:{c:"忘",py:"wàng",m:"to forget"},post:"了带了。",en:"My phone's in the dorm — I forgot to bring it."},
   {wk:5,pre:"中国城我去过很多",ans:{c:"次",py:"cì",m:"(MW) times"},post:"，不用地图也能找到。",en:"I've been to Chinatown many times — I can find it without a map."},
-  {wk:5,pre:"我不知道",ans:{c:"东南西北",py:"dōng nán xī běi",m:"the four directions"},post:"。",en:"I don't know east from west."}
+  {wk:5,pre:"我不知道",ans:{c:"东南西北",py:"dōng nán xī běi",m:"the four directions"},post:"。",en:"I don't know east from west."},
+  {wk:5,pre:"我",ans:{c:"把",py:"bǎ",m:"(disposal marker)"},post:"今天的功课做完了。",en:"I finished today's homework."},
+  {wk:5,pre:"我刚才把衣服忘",ans:{c:"在",py:"zài",m:"at (location)"},post:"饭馆了。",en:"I left my clothes at the restaurant just now."},
+  {wk:5,pre:"小王把书借",ans:{c:"给",py:"gěi",m:"to (a person)"},post:"我了。",en:"Xiao Wang lent me the book."},
+  {wk:5,pre:"爸爸把妈妈送",ans:{c:"到",py:"dào",m:"to (a destination)"},post:"机场了。",en:"Dad took Mom to the airport."},
+  {wk:5,pre:"",ans:{c:"别",py:"bié",m:"don't"},post:"把钱放在桌子上。",en:"Don't leave the money on the table."},
+  {wk:5,pre:"我昨天睡觉睡了八个",ans:{c:"钟头",py:"zhōng tóu",m:"hours"},post:"。",en:"I slept eight hours last night."},
+  {wk:5,pre:"书我可以借",ans:{c:"多久",py:"duō jiǔ",m:"how long"},post:"？",en:"How long may I borrow the book for?"},
+  {wk:5,pre:"图书馆开",ans:{c:"到",py:"dào",m:"until"},post:"晚上九点。",en:"The library is open until nine."},
+  {wk:5,pre:"你应该8点来，可是8:30才来，你",ans:{c:"晚",py:"wǎn",m:"late"},post:"来了半个钟头。",en:"You should have come at 8 but came at 8:30 — half an hour late."}
 ];
 const CONSTRUCT=[
   {wk:0,en:"I am American.",order:["我","是","美国","人"],extra:["你","中国"]},
@@ -2250,7 +2308,15 @@ const CONSTRUCT=[
   {wk:5,en:"Let me have a look at your map.",order:["你","的","地图","拿给","我","看看"],extra:["了"]},
   {wk:5,en:"I've never been to Chinatown.",order:["我","没","去","过","中国城"],extra:["了"]},
   {wk:5,en:"Drive straight south, turn west at the third intersection and you're there.",order:["一直","往","南","开","到","第三个","路口","往","西","一拐","就","到","了"],extra:["东"]},
-  {wk:5,en:"The library isn't as far as the bookstore.",order:["图书馆","没有","书店","那么","远"],extra:["比"]}
+  {wk:5,en:"The library isn't as far as the bookstore.",order:["图书馆","没有","书店","那么","远"],extra:["比"]},
+  {wk:5,en:"I finished today's homework.",order:["我","把","今天的功课","做","完","了"],extra:["在"]},
+  {wk:5,en:"The teacher put the pen on the table.",order:["老师","把","笔","放","在","桌子上","了"],extra:["给"]},
+  {wk:5,en:"Don't leave the money on the table.",order:["别","把","钱","放","在","桌子上"],extra:["把别"]},
+  {wk:5,en:"My brother gave me his computer.",order:["我哥哥","把","电脑","送","给","我","了"],extra:["到"]},
+  {wk:5,en:"I slept eight hours last night.",order:["我","昨天","睡觉","睡","了","八个","钟头"],extra:["点"]},
+  {wk:5,en:"Xiao Gao played ball for forty minutes.",order:["小高","打","球","打","了","四十","分钟"],extra:["到"]},
+  {wk:5,en:"I read at the library until midnight.",order:["我","在图书馆","看","书","看","到","半夜"],extra:["了"]},
+  {wk:5,en:"I don't know a single one of the cafeteria cooks.",order:["学生餐厅的师傅","我","一个","都","不","认识"],extra:["没"]}
 ];
 
 /* ===================== state ===================== */
@@ -2957,6 +3023,7 @@ function buildSpeaking(){ spIndex=0; renderSpeak(); }
 function renderSpeak(){
   const q=W.speaking[spIndex];
   $("#speakCard").innerHTML=
+    (q.tag?'<div class="q-tag '+(q.tag==="ORAL TEST"?"t-oral":q.tag==="PART 2 · WRITTEN"?"t-write":"t-listen")+'">'+q.tag+'</div>':'')+
     '<div class="speak-q-han hanzi">'+q.c+'</div>'+
     '<div class="speak-q-py">'+q.py+'</div>'+
     '<div class="speak-q-en">'+q.en+'</div>'+
