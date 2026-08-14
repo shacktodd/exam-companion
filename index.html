@@ -2213,6 +2213,12 @@ const WEEKS=[{
     ]},
     {group:"复习 · 时段与是……的搭配", items:[
       {c:"玩手机",py:"wán shǒu jī",m:"to mess around on one's phone"},{c:"出生",py:"chū shēng",m:"to be born"},{c:"外语",py:"wài yǔ",m:"foreign language"},{c:"专业课",py:"zhuān yè kè",m:"major course"},{c:"好玩",py:"hǎo wán",m:"fun, entertaining"},{c:"有钱",py:"yǒu qián",m:"rich, well-off"}
+    ]},
+    {group:"文化 · 中药 (Chinese medicine)", items:[
+      {c:"中医",py:"zhōng yī",m:"traditional Chinese medicine; a TCM doctor"},{c:"西医",py:"xī yī",m:"Western medicine; a Western-trained doctor"},{c:"养生",py:"yǎng shēng",m:"to nurture one's health; wellness practice"},{c:"牌子",py:"pái zi",m:"brand"},{c:"成份",py:"chéng fèn",m:"ingredient, component"},{c:"天然",py:"tiān rán",m:"natural"},{c:"含",py:"hán",m:"to contain"},{c:"减少",py:"jiǎn shǎo",m:"to reduce, to lessen"},{c:"止痒",py:"zhǐ yǎng",m:"to relieve itching"},{c:"清凉",py:"qīng liáng",m:"cool and refreshing"},{c:"舒缓",py:"shū huǎn",m:"to ease, to soothe"},{c:"咽喉",py:"yān hóu",m:"throat"},{c:"咽喉痛",py:"yān hóu tòng",m:"sore throat"},{c:"痛",py:"tòng",m:"pain; to hurt"},{c:"自汗",py:"zì hàn",m:"spontaneous sweating"},{c:"泡脚",py:"pào jiǎo",m:"to soak one's feet"},{c:"不一样",py:"bù yí yàng",m:"different, not the same"},{c:"周末愉快",py:"zhōu mò yú kuài",m:"have a good weekend"},{c:"愉快",py:"yú kuài",m:"pleasant, cheerful"}
+    ]},
+    {group:"文化 · 中药名与成分 (products & ingredients)", items:[
+      {c:"风油精",py:"fēng yóu jīng",m:"medicated balm — bites, itching, aches"},{c:"花露水",py:"huā lù shuǐ",m:"floral water — cooling, anti-itch"},{c:"泡脚包",py:"pào jiǎo bāo",m:"herbal foot-bath sachet"},{c:"川贝枇杷糖",py:"chuān bèi pí pá táng",m:"loquat throat lozenge"},{c:"胖大海",py:"pàng dà hǎi",m:"boat sterculia seed (for the throat)"},{c:"生脉饮",py:"shēng mài yǐn",m:"Shengmai tonic — reduces sweating"},{c:"念慈菴",py:"Niàn cí ān",m:"Nin Jiom — throat syrup brand"},{c:"归脾丸",py:"guī pí wán",m:"Guipi pill — for 'anemia'"},{c:"薄荷",py:"bò he",m:"mint, menthol"},{c:"冰片",py:"bīng piàn",m:"borneol"},{c:"酒精",py:"jiǔ jīng",m:"alcohol"},{c:"蜂蜜",py:"fēng mì",m:"honey"}
     ]}
   ],
   pinyinTask:[{c:"舞会",py:"wǔ huì"},{c:"聪明",py:"cōng míng"},{c:"眼睛",py:"yǎn jīng"},{c:"健康",py:"jiàn kāng"},{c:"感冒",py:"gǎn mào"}],
@@ -2328,7 +2334,12 @@ const WEEKS=[{
     {c:"你今天累不累？现在饿不饿？（……死了）",py:"nǐ jīntiān lèi bu lèi? xiànzài è bu è?",en:"Are you tired today? Hungry now?",mHan:"我今天累死了，现在也饿死了。",mEn:"I'm dead tired today, and starving right now."},
     {c:"美国的课本贵不贵？",py:"Měiguó de kèběn guì bu guì?",en:"Are American textbooks expensive?",mHan:"美国的课本贵死了，一本要一百多块。",mEn:"They're insanely expensive — over a hundred dollars a book."},
     {c:"你哪里不舒服？从什么时候开始的？",py:"nǐ nǎlǐ bù shūfu? cóng shénme shíhou kāishǐ de?",en:"Where does it hurt? When did it start?",mHan:"我肚子疼，从昨天晚上开始的，后来越来越疼。",mEn:"My stomach hurts — it started last night and got worse and worse."},
-    {c:"生病的时候，医生会让你做什么？",py:"shēngbìng de shíhou, yīshēng huì ràng nǐ zuò shénme?",en:"When you're sick, what does the doctor tell you to do?",mHan:"医生会让我赶快吃药、打针，躺下休息，多喝水，最好三天不要上课。",mEn:"Take medicine right away, get a shot, lie down and rest, drink water, and ideally skip class for three days."}
+    {c:"生病的时候，医生会让你做什么？",py:"shēngbìng de shíhou, yīshēng huì ràng nǐ zuò shénme?",en:"When you're sick, what does the doctor tell you to do?",mHan:"医生会让我赶快吃药、打针，躺下休息，多喝水，最好三天不要上课。",mEn:"Take medicine right away, get a shot, lie down and rest, drink water, and ideally skip class for three days."},
+    {c:"你觉得中医中药和西医西药有什么不一样？",tag:"文化 · 中药",py:"nǐ juéde zhōngyī zhōngyào hé xīyī xīyào yǒu shénme bù yíyàng?",en:"How do you think Chinese and Western medicine differ?",mHan:"我觉得很不一样。中药里面常常有天然的成份，吃了以后身体越来越舒服，可是很慢。西药很快，可是我觉得对身体不太好。中医还说养生，让你多休息、多喝水。",mEn:"I think they're quite different. Chinese medicine often uses natural ingredients — you feel better and better, but slowly. Western medicine is fast, but I don't think it's as good for the body. Chinese medicine also talks about wellness: rest more, drink more water."},
+    {c:"这个药叫什么名字？是什么牌子的？",tag:"文化 · 中药",py:"zhège yào jiào shénme míngzi? shì shénme páizi de?",en:"What is this medicine called? What brand is it?",mHan:"这个药叫花露水，是六神牌子的。",mEn:"This one is called huālùshuǐ — the brand is Liushen."},
+    {c:"这个药有什么用？里面有什么？",tag:"文化 · 中药",py:"zhège yào yǒu shénme yòng? lǐmiàn yǒu shénme?",en:"What is this medicine for? What is in it?",mHan:"它可以止痒，也很清凉舒缓。里面有酒精、水、薄荷和冰片，都是天然的成份。",mEn:"It relieves itching and is cooling and soothing. It contains alcohol, water, mint and borneol — all natural ingredients."},
+    {c:"你咽喉痛的时候吃什么药？",tag:"文化 · 中药",py:"nǐ yānhóu tòng de shíhou chī shénme yào?",en:"What do you take when you have a sore throat?",mHan:"我咽喉痛的时候吃川贝枇杷糖，里面有糖、枇杷叶和蜂蜜。／我就多喝水，多休息。",mEn:"When my throat hurts I take loquat lozenges — sugar, loquat leaf and honey. / I just drink more water and rest more."},
+    {c:"你试过中药吗？泡脚有什么用？",tag:"文化 · 中药",py:"nǐ shì guo zhōngyào ma? pào jiǎo yǒu shénme yòng?",en:"Have you ever tried Chinese medicine? What is a foot soak for?",mHan:"我试过一次／我一次也没试过。泡脚可以让身体暖和起来，睡觉也睡得越来越好。",mEn:"I've tried it once / not even once. A foot soak warms the body up and helps you sleep better and better."}
   ],
   grammar:[
     {id:"prog",t:"（在／正在）VP 呢",sub:"an action in progress",
