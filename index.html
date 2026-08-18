@@ -2172,7 +2172,7 @@ const WEEKS=[{
     {n:4,pts:10,title:"Reading — true / false",desc:"Five statements about a description of a puppy: eyes, height, what it's doing, tail, fur.",go:"#reading"},
     {n:5,pts:10,title:"Short composition",desc:"6–8 sentences: an absent note to your teacher. Where it hurts, when it started, symptoms, doctor, medicine, days of leave.",go:"#compose"},
     {n:"+",pts:10,title:"Radicals (extra credit)",desc:"Fill shape, variation, pinyin and meaning: 宀 (宝盖头) 禾 马 贝 车.",go:"#writing",extra:true},
-    {n:"口",pts:0,title:"No 1-for-1 oral test",desc:"There is no individual oral test for L14–15. An oral activity covering L14–16 happens Wednesday, August 20.",go:"#speaking",extra:true}
+    {n:"口",pts:0,title:"No 1-for-1 oral test",desc:"There is no individual oral test for L14–15. An oral activity covering L14–16 happens Wednesday, August 19.",go:"#speaking",extra:true}
   ],
   vocab:[
     {group:"L14 · D1 · 过生日与礼物", items:[
@@ -2219,6 +2219,9 @@ const WEEKS=[{
     ]},
     {group:"文化 · 中药名与成分 (products & ingredients)", items:[
       {c:"风油精",py:"fēng yóu jīng",m:"medicated balm — bites, itching, aches"},{c:"花露水",py:"huā lù shuǐ",m:"floral water — cooling, anti-itch"},{c:"泡脚包",py:"pào jiǎo bāo",m:"herbal foot-bath sachet"},{c:"川贝枇杷糖",py:"chuān bèi pí pá táng",m:"loquat throat lozenge"},{c:"胖大海",py:"pàng dà hǎi",m:"boat sterculia seed (for the throat)"},{c:"生脉饮",py:"shēng mài yǐn",m:"Shengmai tonic — reduces sweating"},{c:"念慈菴",py:"Niàn cí ān",m:"Nin Jiom — throat syrup brand"},{c:"归脾丸",py:"guī pí wán",m:"Guipi pill — for 'anemia'"},{c:"薄荷",py:"bò he",m:"mint, menthol"},{c:"冰片",py:"bīng piàn",m:"borneol"},{c:"酒精",py:"jiǔ jīng",m:"alcohol"},{c:"蜂蜜",py:"fēng mì",m:"honey"}
+    ]},
+    {group:"L14–15 · 考试范围补漏 (guide gaps)", items:[
+      {c:"夜里",py:"yè lǐ",m:"at night, during the night"},{c:"好几",py:"hǎo jǐ",m:"(MW) quite a few, several"},{c:"厕所",py:"cè suǒ",m:"restroom, toilet"},{c:"躺",py:"tǎng",m:"to lie, to recline"},{c:"针",py:"zhēn",m:"needle"},{c:"吃坏",py:"chī huài",m:"to make oneself sick from bad food"},{c:"办法",py:"bàn fǎ",m:"method, way, solution"},{c:"送礼物",py:"sòng lǐ wù",m:"to give a gift"},{c:"收礼物",py:"shōu lǐ wù",m:"to receive a gift"},{c:"接礼物",py:"jiē lǐ wù",m:"to take a gift (with the hands)"},{c:"吃蛋糕",py:"chī dàn gāo",m:"to eat cake"},{c:"喝饮料",py:"hē yǐn liào",m:"to drink a beverage"},{c:"长得像",py:"zhǎng de xiàng",m:"to look like, to take after"},{c:"一块",py:"yí kuài",m:"(MW) a piece / slice of"}
     ]}
   ],
   pinyinTask:[{c:"舞会",py:"wǔ huì"},{c:"聪明",py:"cōng míng"},{c:"眼睛",py:"yǎn jīng"},{c:"健康",py:"jiàn kāng"},{c:"感冒",py:"gǎn mào"}],
@@ -2252,7 +2255,7 @@ const WEEKS=[{
     {rad:"贝",py:"bèi",m:"treasure / shell (money)",ex:"贵 guì — expensive"},
     {rad:"车",py:"chē",m:"vehicle",ex:"轮 lún — wheel"}
   ],
-  listenPool:["苹果","住在","重","接","以为","聪明","脸","可爱","眼睛","长大","病","医院","疼","发烧","坏","打针","药","痒","过敏","要不然","过生日","礼物","本","饮料","一定","最","感冒","越来越","休息","舞会","健康","身体","保险","赶快","上次","懒","再说","乱","水果","西瓜"],
+  listenPool:["苹果","住在","重","接","以为","聪明","脸","可爱","眼睛","长大","病","医院","疼","发烧","坏","打针","药","痒","过敏","要不然","表姐","中学","暑期","梨","西瓜","属","圆","鼻子","嘴","像","躺下","检查","夜里","厕所","冰箱","药店","办法","懒","乱","好几","一定","最好","赶快","钟头","过生日","礼物","本","饮料","最","感冒","越来越","休息","舞会","健康","身体","保险","上次","再说","水果"],
   listenComp:[
     {dialogue:"甲：你的生日是几月几号？乙：我的生日是九月十八号。今年我表姐要给我开一个舞会。",
      q:"谁给他开舞会？",opts:["他妈妈","他表姐","他同学","他自己"],a:1},
@@ -3323,25 +3326,28 @@ function buildComposeSick(){
     '<div class="field"><label>What got worse <span class="zh">越来越……的地方</span></label><input id="sWorse" placeholder="e.g. 肚子越来越疼"></div>'+
     '<div class="field"><label>Other symptoms <span class="zh">还有什么症状</span></label><input id="sSym2" placeholder="e.g. 还有点发烧，也咳嗽"></div>'+
     '<div class="field"><label>What you think caused it <span class="zh">可能是……</span></label><input id="sCause" placeholder="e.g. 把肚子吃坏了"></div>'+
+    '<div class="field"><label>Saw a doctor? <span class="zh">有没有看医生</span></label><select id="sDoc"><option value="today">今天去看医生 — going today</option><option value="yes">已经看了医生 — already been</option><option value="no">还没看医生 — not yet</option></select></div>'+
     '<div class="field"><label>Medicine you took <span class="zh">吃了什么药</span></label><input id="sMed" placeholder="e.g. 几种药"></div>'+
     '<div class="field"><label>Days of leave <span class="zh">请几天的假</span></label><input id="sDays" placeholder="e.g. 两"></div>'+
     '<div class="field"><label>Your name <span class="zh">你的名字</span></label><input id="sName" placeholder="e.g. 王大明"></div>';
-  ["sTeach","sWhen","sSym1","sWorse","sSym2","sCause","sMed","sDays","sName"].forEach(id=>{const el=$("#"+id);el.addEventListener("input",renderComposeSick);el.addEventListener("change",renderComposeSick);});
+  ["sTeach","sWhen","sSym1","sWorse","sSym2","sCause","sDoc","sMed","sDays","sName"].forEach(id=>{const el=$("#"+id);el.addEventListener("input",renderComposeSick);el.addEventListener("change",renderComposeSick);});
   renderComposeSick();
 }
 function renderComposeSick(){
   const g=id=>$("#"+id)?$("#"+id).value.trim():"";
   const t=g("sTeach")||"周", when=g("sWhen")||"昨天晚上", s1=g("sSym1")||"拉肚子";
   const worse=g("sWorse")||"肚子越来越疼", s2=g("sSym2")||"还有点发烧";
-  const cause=g("sCause")||"把肚子吃坏了", med=g("sMed")||"几种药";
+  const cause=g("sCause")||"把肚子吃坏了", med=g("sMed")||"几种药", doc=g("sDoc")||"today";
+  const docZh={yes:"我已经看了医生，现在在家休息。",today:"今天我得去医院看医生，然后在家休息。",no:"我还没看医生，今天想在家好好儿休息。"}[doc];
+  const docEn={yes:"I have already seen a doctor and am resting at home. ",today:"Today I have to go to the hospital to see a doctor and then rest at home. ",no:"I haven't seen a doctor yet; today I want to rest properly at home. "}[doc];
   const days=g("sDays")||"两", name=g("sName")||"＿＿";
   const zh=t+"老师，您好！对不起，我今天身体不舒服，不能来上课。"+when+"我开始"+s1+"，后来"+worse+
-    "，"+s2+"。我可能是"+cause+"，也可能是流感。我吃了"+med+"，但是没有用。今天我得去医院看医生，然后在家休息。我想请"+days+
+    "，"+s2+"。我可能是"+cause+"，也可能是流感。我吃了"+med+"，但是没有用。"+docZh+"我想请"+days+
     "天的假。请您原谅。学生："+name;
   setComposeOut(zh);
   $("#composeEn").textContent="Dear Professor "+t+", I'm not well today and can't come to class. "+when+
     " I started with "+s1+"; afterwards "+worse+", and "+s2+". It may be that I "+cause+
-    ", or it may be the flu. I took "+med+" but it didn't help. Today I have to see a doctor and then rest at home. I'd like to request "+days+
+    ", or it may be the flu. I took "+med+" but it didn't help. "+docEn+"I'd like to request "+days+
     " days of leave. Please excuse me. Your student, "+name+".";
 }
 function buildComposeFood(){
