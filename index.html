@@ -427,6 +427,192 @@
     .nav nav{display:none}
     .opts{grid-template-columns:1fr}
   }
+
+/* ================= PHASE II ================= */
+.p2-divider{background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.p2-div-inner{max-width:760px}
+.p2-div-inner h2{margin:.2em 0 .4em}
+.p2-div-inner p{color:var(--ink-soft);line-height:1.7}
+.p2-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-bottom:18px}
+.p2-select{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+.p2-field{display:flex;flex-direction:column;gap:4px;min-width:180px}
+.p2-field label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.p2-field input[type=range]{accent-color:var(--mark)}
+.btn.sm{padding:6px 12px;font-size:13px}
+
+.p2stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+.p2stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;min-width:84px}
+.p2stat b{display:block;font-size:20px;line-height:1.1;color:var(--ink)}
+.p2stat span{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.p2heat{display:flex;gap:3px;margin-bottom:14px;flex-wrap:wrap}
+.p2heat .heat{width:11px;height:11px;border-radius:3px;background:var(--line-2);display:block}
+.p2heat .heat.h1{background:#b9d3c4}.p2heat .heat.h2{background:#6fae8d}.p2heat .heat.h3{background:var(--jade-deep)}
+.p2prog{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+
+.p2card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.p2tag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.p2cue{text-align:center;margin-bottom:16px}
+.p2cue .pinyin{font-size:22px}
+.p2mean{font-size:17px;color:var(--ink);margin-top:4px}
+.p2mean.big{font-size:24px;font-weight:600;padding:18px 0}
+.p2src{font-size:11px;color:var(--muted);margin-top:6px}
+.p2wrap{display:flex;justify-content:center}
+.p2boxes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.p2box{border:1px dashed var(--line);border-radius:10px;background:linear-gradient(var(--grid),var(--grid));position:relative;width:150px;height:150px}
+.p2box.on{border-color:var(--mark);box-shadow:0 0 0 2px rgba(207,63,44,.12)}
+.p2box.ok{border-color:var(--jade);border-style:solid}
+.p2fall{font-size:64px;display:grid;place-items:center;height:100%}
+.p2hintrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.p2answer{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-2)}
+.p2big{font-size:44px;line-height:1}
+.p2ansmeta{font-size:15px;color:var(--ink-soft)}
+.p2note{font-size:12px;color:var(--muted);margin-top:2px}
+.p2grade{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.p2grade .gbtn{padding:10px 4px;border-radius:10px;border:1px solid var(--line);background:var(--card-2);color:var(--ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;gap:2px;align-items:center}
+.p2grade .gbtn em{font-style:normal;font-size:10px;color:var(--muted);font-weight:400}
+.p2grade .gbtn:hover{border-color:var(--ink-soft)}
+.p2grade .g1{border-color:rgba(207,63,44,.4)}.p2grade .g4{border-color:rgba(47,125,91,.4)}
+.p2opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.p2opts.tone{grid-template-columns:repeat(4,1fr)}
+.p2opt{padding:14px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card-2);font:inherit;font-size:15px;color:var(--ink);cursor:pointer;text-align:center}
+.p2opt .hanzi{font-size:22px}
+.p2opt:hover{border-color:var(--ink-soft)}
+.p2opt.right{border-color:var(--jade);background:rgba(47,125,91,.1)}
+.p2opt.wrong{border-color:var(--mark);background:rgba(207,63,44,.09)}
+.p2play{border:1px solid var(--line);background:var(--card-2);border-radius:999px;padding:12px 26px;font:inherit;font-size:16px;cursor:pointer;color:var(--ink)}
+.p2play:hover{border-color:var(--mark);color:var(--mark)}
+.tn{font-style:normal;font-weight:700;font-size:17px;padding:0 2px}
+.tn.t1{color:var(--t1)}.tn.t2{color:var(--t2)}.tn.t3{color:var(--t3)}.tn.t4{color:var(--t4)}.tn.t0{color:var(--t0)}
+.p2done{text-align:center;padding:34px 16px}
+.p2done-h{font-size:40px;color:var(--jade);margin-bottom:10px}
+.p2hint{font-size:13px;color:var(--muted);line-height:1.6}
+.p2sub{font-size:13px;color:var(--ink-soft);margin-top:12px;line-height:1.7}
+.p2meta{display:flex;gap:6px;flex-wrap:wrap}
+.p2chip{font-size:11px;padding:3px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--card)}
+.p2mini{font-size:15px;padding:2px 8px;margin:2px;border:1px solid var(--line);border-radius:8px;background:var(--card);cursor:pointer;font-family:inherit}
+.p2stage{min-height:120px}
+
+/* reading room */
+.rd-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.rd-head h3{margin:0;font-size:22px}
+.rd-head h3 small{display:block;font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.04em}
+.rd-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.rd-body{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px;box-shadow:var(--shadow)}
+.rd-s{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line-2)}
+.rd-s:last-child{border-bottom:0}
+.rd-play{flex:0 0 auto;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--card-2);cursor:pointer;color:var(--ink-soft);font-size:11px}
+.rd-txt{flex:1;min-width:0}
+.rd-py{font-size:12.5px;color:var(--muted);margin-bottom:3px;letter-spacing:.02em}
+.rd-en{font-size:13px;color:var(--ink-soft);margin-top:4px;font-style:italic}
+.rd-py.off,.rd-en.off{display:none}
+.rd-han{font-size:21px;line-height:1.85}
+.tok{cursor:pointer;border-bottom:1px solid transparent;padding-bottom:1px}
+.tok:hover{border-bottom-color:var(--mark);color:var(--mark)}
+.tok.new{background:rgba(176,129,58,.16);border-radius:3px}
+.tok.unk{background:rgba(207,63,44,.12);border-radius:3px}
+.tok.fn{color:var(--ink-soft)}
+.pc{color:var(--muted)}
+.rd-qs-wrap{margin-top:20px}
+.rd-qs-wrap h4{margin:0 0 10px;font-size:15px}
+.rd-q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
+.rd-qt{font-size:16px;margin-bottom:8px}
+.rd-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rd-opt{padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--card-2);cursor:pointer;font-size:15px;color:var(--ink)}
+.rd-opt.right{border-color:var(--jade);background:rgba(47,125,91,.1)}
+.rd-opt.wrong{border-color:var(--mark);background:rgba(207,63,44,.09)}
+.rd-fb{font-size:12.5px;color:var(--ink-soft);margin-top:8px}
+.p2-import{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.p2-import h4{margin:0 0 4px;font-size:15px}
+.sl-in{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:18px;line-height:1.7;margin:10px 0;resize:vertical}
+.sl-in:focus{outline:none;border-color:var(--mark)}
+#glossBox{position:absolute;z-index:60;width:230px;background:var(--card);border:1px solid var(--ink-soft);border-radius:12px;padding:14px;box-shadow:0 24px 50px -20px rgba(27,36,48,.55)}
+.gl-x{position:absolute;top:6px;right:9px;border:0;background:none;font-size:17px;color:var(--muted);cursor:pointer;line-height:1}
+.gl-h .hanzi{font-size:30px}
+.gl-spk{border:0;background:none;cursor:pointer;font-size:15px;margin-left:6px}
+.gl-py{margin:2px 0}
+.gl-m{font-size:14px;color:var(--ink);margin-bottom:6px;line-height:1.5}
+.gl-src{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.gl-in{font-size:11px;color:var(--jade)}
+#p2toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:80}
+#p2toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* sound lab */
+.sl-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:6px}
+.sl-score{font-size:22px;font-weight:700;margin:14px 0 8px;text-align:center}
+.sl-score.good{color:var(--jade)}.sl-score.mid{color:var(--gold)}.sl-score.low{color:var(--mark)}
+.sl-target{font-size:24px;line-height:1.8;text-align:center}
+.dh.ok{color:var(--ink)}
+.dh.miss{color:var(--mark);background:rgba(207,63,44,.12);border-radius:3px}
+.sl-py{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+.sl-en{font-size:13.5px;color:var(--ink-soft);text-align:center;font-style:italic;margin-top:2px}
+.tone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.tone-cell{padding:14px 4px;border:1px solid var(--line);border-radius:10px;background:var(--card-2);cursor:pointer}
+.tone-cell.right{border-color:var(--jade);background:rgba(47,125,91,.1)}
+.tone-cell.wrong{border-color:var(--mark);background:rgba(207,63,44,.09)}
+.sh-steps{display:flex;flex-direction:column;gap:7px;align-items:center;margin-bottom:14px}
+.sh-step{border:1px solid var(--line);background:var(--card-2);border-radius:999px;padding:8px 18px;font-size:18px;cursor:pointer;font-family:inherit;color:var(--ink)}
+.sh-step:hover{border-color:var(--mark)}
+.sh-full{font-size:24px;text-align:center;padding:12px 0;border-top:1px solid var(--line-2)}
+.sh-rates{display:flex;gap:8px;justify-content:center;margin-top:12px}
+
+/* forge */
+.fg-toggle{font-size:12.5px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;margin-bottom:12px}
+.fg-pattern{font-size:19px;font-weight:600;text-align:center}
+.fg-pattern small{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+.fg-en{font-size:17px;text-align:center;color:var(--ink-soft);margin:14px 0;line-height:1.6}
+.fg-timer{text-align:center;font-size:13px;color:var(--muted);letter-spacing:.1em}
+.fg-timer.hot{color:var(--mark);font-weight:700}
+.fg-model,.fg-mine{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-2)}
+.fg-han{font-size:23px;line-height:1.7}
+.an-score{text-align:center;margin:16px 0 12px}
+.an-score b{display:block;font-size:44px;line-height:1;color:var(--mark)}
+.an-score span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.an-block{margin-top:20px}
+.an-block h4{margin:0 0 8px;font-size:14px}
+.an-bars{display:flex;flex-direction:column;gap:5px}
+.an-bar{display:grid;grid-template-columns:96px 1fr 34px;gap:8px;align-items:center;font-size:12px;color:var(--ink-soft)}
+.an-bar i{display:block;height:9px;background:var(--jade);border-radius:999px;min-width:3px}
+.an-bar em{font-style:normal;color:var(--muted);text-align:right}
+.an-tags{display:flex;flex-wrap:wrap;gap:6px}
+.an-tag{font-size:12.5px;padding:4px 10px;border-radius:999px;background:rgba(47,125,91,.12);border:1px solid rgba(47,125,91,.3);color:var(--jade-deep)}
+.an-tag.adv{background:rgba(176,129,58,.15);border-color:rgba(176,129,58,.4);color:var(--gold)}
+.an-tag.ghost{background:transparent;border-style:dashed;border-color:var(--line);color:var(--muted)}
+.pl-ring{text-align:center;padding:6px 0 12px}
+.pl-num{font-size:46px;font-weight:700;line-height:1}
+.pl-of{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.pl-bar{height:8px;background:var(--line-2);border-radius:999px;margin:12px auto;max-width:360px;overflow:hidden}
+.pl-bar i{display:block;height:100%;background:var(--mark);border-radius:999px}
+.pl-week{display:flex;gap:8px;justify-content:center;align-items:flex-end;margin:14px 0 20px}
+.pl-d{display:flex;flex-direction:column;align-items:center;gap:4px}
+.pl-d i{display:block;width:22px;background:var(--jade);border-radius:4px 4px 0 0}
+.pl-d span{font-size:11px;color:var(--muted)}
+.pl-list{display:flex;flex-direction:column;gap:8px}
+.pl-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:var(--card-2);text-decoration:none;color:var(--ink)}
+.pl-row:hover{border-color:var(--mark)}
+.pl-row b{font-size:15px}
+.pl-row span{font-size:12px;color:var(--mark);margin-left:8px}
+.pl-row p{margin:4px 0 0;font-size:12.5px;color:var(--muted);line-height:1.5;max-width:52ch}
+.pl-row i{font-style:normal;color:var(--muted);font-size:19px}
+@media(max-width:640px){
+  .p2grade{grid-template-columns:1fr 1fr}
+  .p2opts,.rd-opts{grid-template-columns:1fr}
+  .tone-grid,.p2opts.tone{grid-template-columns:repeat(2,1fr)}
+  .an-bar{grid-template-columns:78px 1fr 28px}
+}
+
+
+.p2fb{text-align:center;font-size:13px;color:var(--muted);min-height:20px;margin-top:10px;letter-spacing:.02em}
+.p2fb.bad{color:var(--mark)}
+.p2fb.good{color:var(--jade)}
+.p2nav{color:var(--mark)!important}
+
+.p2rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px;max-width:720px}
+.p2room{display:block;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);text-decoration:none;color:var(--ink);transition:.15s}
+.p2room:hover{border-color:var(--mark);transform:translateY(-2px)}
+.p2room b{display:block;font-size:17px;margin-bottom:2px}
+.p2room span{font-size:11.5px;color:var(--muted);line-height:1.35;display:block}
+#navlinks a[hidden]{display:none}
+@media(max-width:760px){.p2rooms{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -452,6 +638,10 @@
       <a href="#speaking">Speak</a>
       <a href="#compose">Compose</a>
       <a href="#words">Words</a>
+      <a class="p2nav" href="#dojo">道场</a>
+      <a class="p2nav" href="#reader">阅读室</a>
+      <a class="p2nav" href="#sound">语音房</a>
+      <a class="p2nav" href="#forge">工坊</a>
     </nav>
   </div>
 </header>
@@ -461,9 +651,9 @@
   <div class="wrap">
     <div>
       <div class="kick"><span class="wk" id="heroWeek">Week 1</span><span class="eyebrow" id="heroRange">Lessons 1–3</span></div>
-      <h1>Don't just recognize it — <em>recall it.</em></h1>
+      <h1 id="heroH1">Don't just recognize it — <em>recall it.</em></h1>
       <p class="lede" id="heroLede">Recognizing a character is easy; producing it from memory is the exam. This companion is built around retrieval practice and spaced repetition — the two most proven ways to make vocabulary stick — and it builds week over week.</p>
-      <div class="cta">
+      <div class="cta" id="heroCta">
         <a class="btn mark" href="#recall">Start recalling</a>
         <a class="btn ghost" href="#roadmap">See what's on the exam</a>
       </div>
@@ -751,6 +941,119 @@
     <div id="wordGroups"></div>
   </div>
 </section>
+
+<!-- ============ PHASE II DIVIDER ============ -->
+<section class="block p2-divider" id="phase2">
+  <div class="wrap">
+    <div class="p2-div-inner">
+      <span class="eyebrow">Phase II · the standing system</span>
+      <h2>Four rooms, one loop.</h2>
+      <p>The course built a foundation of <b id="p2wordCount">—</b> words and <b id="p2charCount">—</b> characters. These four tools keep it from decaying and push past it: a dojo that schedules every character you know, a reading room that writes you fresh text on demand, a lab for the ear, and a forge for output.</p>
+      <div class="p2rooms">
+        <a class="p2room" href="#forge"><b>今天</b><span>Daily plan — start here</span></a>
+        <a class="p2room" href="#dojo"><b>字道场</b><span>Spaced writing &amp; recall</span></a>
+        <a class="p2room" href="#reader"><b>阅读室</b><span>Generated reading</span></a>
+        <a class="p2room" href="#sound"><b>语音房</b><span>Dictation &amp; tones</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1 · CHARACTER DOJO ============ -->
+<section class="block band" id="dojo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Maintain · Spaced writing practice</span>
+      <h2>字道场 — The Character Dojo.</h2>
+      <p>Every word you've met, scheduled. Four card types drill four different failure modes: writing it stroke by stroke from memory, reading it cold, hearing its tones, and pulling it back from the English. Each card is scheduled separately, because knowing what 印象 means is not the same as being able to write it.</p>
+    </div>
+    <div class="p2-controls">
+      <select id="dojoScope" class="p2-select" aria-label="deck scope"></select>
+      <div class="seg" id="dojoTypes" role="group" aria-label="card types"></div>
+    </div>
+    <div class="p2stats" id="dojoStats"></div>
+    <div class="p2heat" id="dojoHeat" title="last 30 days"></div>
+    <div class="p2prog" id="dojoProg"></div>
+    <div class="p2stage" id="dojoStage"></div>
+  </div>
+</section>
+
+<!-- ============ 2 · READING ROOM ============ -->
+<section class="block" id="reader">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Build · Generated comprehensible input</span>
+      <h2>阅读室 — The Reading Room.</h2>
+      <p>Fresh passages, generated on demand from your own vocabulary plus a controlled dose of what's next. Tap any word for a gloss and send it straight to the Dojo. Comprehension questions are built from the same material the passage was assembled from, so they're never wrong — and never the same twice.</p>
+    </div>
+    <div class="p2-controls">
+      <div class="p2-field"><label for="rdLevel">Difficulty <span id="rdLevelOut"></span></label>
+        <input type="range" id="rdLevel" min="1" max="6" value="3"></div>
+      <select id="rdGenre" class="p2-select" aria-label="genre"></select>
+      <button class="btn mark" onclick="generatePassage()">Generate a new passage</button>
+    </div>
+    <div class="rd-head"><h3 id="rdTitle"></h3><div class="p2meta" id="rdMeta"></div></div>
+    <div class="rd-tools">
+      <button class="seg-btn" onclick="rdPy=!rdPy;renderPassage()">拼音 pinyin</button>
+      <button class="seg-btn" onclick="rdEn=!rdEn;renderPassage()">English</button>
+      <button class="seg-btn" onclick="curPassage&&speak(curPassage.sents.map(s=>s.c).join(''))">▶ read it aloud</button>
+    </div>
+    <div class="rd-body" id="rdBody"></div>
+    <div class="rd-qs-wrap"><h4>看懂了吗？</h4><div id="rdQs"></div></div>
+    <div class="p2-import">
+      <h4>Bring your own text</h4>
+      <p class="p2hint">Paste anything Chinese — a news paragraph, a WeChat message, a page you found. It gets segmented, glossed word by word, and measured against what you already know.</p>
+      <textarea id="impText" class="sl-in hanzi" rows="4" placeholder="把中文粘贴到这里……"></textarea>
+      <button class="btn mark" id="impGo">Analyze this text</button>
+      <div id="impOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · SOUND LAB ============ -->
+<section class="block band" id="sound">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The missing half · Ear training</span>
+      <h2>语音房 — The Sound Lab.</h2>
+      <p>Reading holds up long after listening collapses — the ear is the first thing to go and the last thing anyone trains. Three drills: dictation scored character by character, tone-pair identification pulled from your own vocabulary, and backward buildup shadowing, the technique conference interpreters use to hold long chunks.</p>
+    </div>
+    <div class="p2-controls">
+      <div class="seg" id="slModes" role="group">
+        <button class="seg-btn active" data-m="dictation">听写 Dictation</button>
+        <button class="seg-btn" data-m="tone">声调 Tone pairs</button>
+        <button class="seg-btn" data-m="shadow">跟读 Shadowing</button>
+      </div>
+      <div class="p2-field"><label for="slLevel">Source <span id="slLevelOut"></span></label>
+        <input type="range" id="slLevel" min="3" max="10" value="8"></div>
+      <div class="p2-field"><label for="slLen">Length <span id="slLenOut"></span></label>
+        <input type="range" id="slLen" min="6" max="30" value="14"></div>
+    </div>
+    <div class="p2stage" id="slStage"></div>
+  </div>
+</section>
+
+<!-- ============ 4 · THE FORGE ============ -->
+<section class="block" id="forge">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Produce · Output, analysis, and the daily loop</span>
+      <h2>工坊 — The Forge.</h2>
+      <p>Input alone plateaus. This is where you produce: timed sentence construction against a pattern bank that runs well past the course, an analyzer that reads what you wrote and tells you which structures you actually reached for — and which you've quietly stopped using — and a daily plan that holds the whole system together.</p>
+    </div>
+    <div class="p2-controls">
+      <div class="seg" id="fgModes" role="group">
+        <button class="seg-btn active" data-m="gym">造句 Pattern gym</button>
+        <button class="seg-btn" data-m="analyze">分析 Writing analyzer</button>
+        <button class="seg-btn" data-m="plan">今天 Daily plan</button>
+      </div>
+    </div>
+    <div class="p2stage" id="fgStage"></div>
+  </div>
+</section>
+
+<div id="glossBox" hidden></div>
+
 
 <footer>
   <div class="wrap">
@@ -3045,18 +3348,58 @@ const CONSTRUCT=[
 
 /* ===================== state ===================== */
 const WK_KEY="ec.week";
+let SAVED_MODE="week";
 function initWeekIndex(){
   let i=WEEKS.length-1;
-  try{ const v=localStorage.getItem(WK_KEY); if(v!==null&&WEEKS[+v])i=+v; }catch(e){}
+  try{ const v=localStorage.getItem(WK_KEY);
+    if(v==="p2"){ SAVED_MODE="p2"; }
+    else if(v!==null&&WEEKS[+v]) i=+v; }catch(e){}
   return i;
 }
 let WI=initWeekIndex(), W=WEEKS[WI];
 
+const WEEK_SECTIONS=["roadmap","recall","writing","grammar","sentences","vocab","listening","reading","speaking","compose","words"];
+const P2_SECTIONS=["phase2","dojo","reader","sound","forge"];
+let MODE="week";
 function buildWeekSelect(){
   const s=$("#weekSelect"); s.innerHTML="";
-  WEEKS.forEach((w,i)=>{const o=document.createElement("option");o.value=i;o.textContent=w.label+" · "+w.range;s.appendChild(o);});
-  s.value=WI;
-  s.onchange=()=>{ WI=+s.value; W=WEEKS[WI]; try{localStorage.setItem(WK_KEY,String(WI));}catch(e){} renderAll(); window.scrollTo({top:0}); };
+  const g1=document.createElement("optgroup"); g1.label="CHIN 134 · the course";
+  WEEKS.forEach((w,i)=>{const o=document.createElement("option");o.value=i;o.textContent=w.label+" · "+w.range;g1.appendChild(o);});
+  s.appendChild(g1);
+  const g2=document.createElement("optgroup"); g2.label="After the course";
+  const o2=document.createElement("option"); o2.value="p2"; o2.textContent="Phase II · 维持与提高"; g2.appendChild(o2);
+  s.appendChild(g2);
+  s.value=(MODE==="p2"?"p2":String(WI));
+  s.onchange=()=>{
+    if(s.value==="p2"){ setMode("p2"); }
+    else { WI=+s.value; W=WEEKS[WI]; setMode("week"); renderAll(); }
+    try{localStorage.setItem(WK_KEY,s.value);}catch(e){}
+    window.scrollTo({top:0});
+  };
+}
+function setMode(m){
+  MODE=m;
+  const p2=(m==="p2");
+  WEEK_SECTIONS.forEach(id=>{ const el=$("#"+id); if(el)el.hidden=p2; });
+  P2_SECTIONS.forEach(id=>{ const el=$("#"+id); if(el)el.hidden=!p2; });
+  $$("#navlinks a").forEach(a=>{ a.hidden=a.classList.contains("p2nav")?!p2:p2; });
+  const sel=$("#weekSelect"); if(sel) sel.value=(p2?"p2":String(WI));
+  if(p2){
+    $("#brandSub").textContent="Chinese · Phase II";
+    $("#heroWeek").textContent="Phase II";
+    $("#heroRange").textContent="Maintenance & growth";
+    $("#heroH1").innerHTML="The course ended. The <em>language didn't.</em>";
+    $("#heroLede").textContent="Eight weeks of material is now a corpus, not a syllabus. Everything you learned gets scheduled, re-read, re-heard and re-produced here — and stretched past where the course stopped.";
+    $("#heroCta").innerHTML='<a class="btn mark" href="#forge">Today\'s plan</a><a class="btn ghost" href="#dojo">Open the Dojo</a>';
+    p2Refresh();
+  } else {
+    $("#brandSub").textContent="Chinese · "+W.range;
+    $("#heroWeek").textContent=W.label;
+    $("#heroRange").textContent=W.range;
+    $("#heroH1").innerHTML="Don't just recognize it — <em>recall it.</em>";
+    $("#heroLede").textContent="Recognizing a character is easy; producing it from memory is the exam. This companion is built around retrieval practice and spaced repetition — the two most proven ways to make vocabulary stick — and it builds week over week.";
+    $("#heroCta").innerHTML='<a class="btn mark" href="#recall">Start recalling</a><a class="btn ghost" href="#roadmap">See what\'s on the exam</a>';
+  }
 }
 function renderAll(){
   $("#brandSub").textContent="Chinese · "+W.range;
@@ -3967,18 +4310,1194 @@ function setComposeOut(zh){
 }
 $("#composeSpk")&&($("#composeSpk").onclick=()=>speakOnce($("#composeText").textContent));
 
+/* ==================================================================
+   PHASE II — data layer
+   HSK+ lexicon · pattern bank (with detectors) · passage templates
+   ================================================================== */
+
+/* ---------- HSK 3–5 vocabulary, thematically packed ----------
+   [hanzi, pinyin, meaning, level, pack]                            */
+const HSK_RAW=[
+/* — connectors & logic (the scaffolding of adult prose) — */
+["虽然","suī rán","although",3,"逻辑"],["但是","dàn shì","but, however",3,"逻辑"],
+["不但","bú dàn","not only",3,"逻辑"],["而且","ér qiě","moreover, and",3,"逻辑"],
+["因此","yīn cǐ","therefore, hence",4,"逻辑"],["于是","yú shì","thereupon, so",4,"逻辑"],
+["由于","yóu yú","due to, owing to",4,"逻辑"],["导致","dǎo zhì","to lead to, to cause",4,"逻辑"],
+["造成","zào chéng","to bring about, to create",4,"逻辑"],["影响","yǐng xiǎng","to affect; influence",3,"逻辑"],
+["结果","jié guǒ","result; as a result",3,"逻辑"],["原因","yuán yīn","reason, cause",3,"逻辑"],
+["尽管","jǐn guǎn","even though; feel free to",4,"逻辑"],["反而","fǎn ér","on the contrary",4,"逻辑"],
+["甚至","shèn zhì","even, to the point that",4,"逻辑"],["何况","hé kuàng","let alone, much less",5,"逻辑"],
+["随着","suí zhe","along with, as",4,"逻辑"],["通过","tōng guò","by means of; to pass",4,"逻辑"],
+["根据","gēn jù","according to; basis",4,"逻辑"],["按照","àn zhào","in accordance with",4,"逻辑"],
+["关于","guān yú","regarding, about",3,"逻辑"],["对于","duì yú","with regard to",4,"逻辑"],
+["至于","zhì yú","as for, as to",5,"逻辑"],["总之","zǒng zhī","in short, in a word",5,"逻辑"],
+["另外","lìng wài","besides, in addition",3,"逻辑"],["其中","qí zhōng","among them, of which",4,"逻辑"],
+["以及","yǐ jí","as well as",4,"逻辑"],["或者","huò zhě","or (in statements)",3,"逻辑"],
+["只要","zhǐ yào","so long as",3,"逻辑"],["只有","zhǐ yǒu","only if",3,"逻辑"],
+["即使","jí shǐ","even if",4,"逻辑"],["无论","wú lùn","no matter (what/how)",4,"逻辑"],
+["否则","fǒu zé","otherwise",4,"逻辑"],["确实","què shí","indeed, really",4,"逻辑"],
+/* — study, work, career — */
+["专业","zhuān yè","major; professional",4,"学业"],["研究","yán jiū","to research; research",4,"学业"],
+["学期","xué qī","semester, term",3,"学业"],["成绩","chéng jì","grade, result",3,"学业"],
+["提高","tí gāo","to raise, to improve",3,"学业"],["水平","shuǐ píng","level, standard",3,"学业"],
+["能力","néng lì","ability, capability",4,"学业"],["经验","jīng yàn","experience",4,"学业"],
+["知识","zhī shi","knowledge",4,"学业"],["理解","lǐ jiě","to understand, to comprehend",4,"学业"],
+["解释","jiě shì","to explain; explanation",4,"学业"],["讨论","tǎo lùn","to discuss",4,"学业"],
+["总结","zǒng jié","to summarize; summary",4,"学业"],["报告","bào gào","report; to report",4,"学业"],
+["计划","jì huà","plan; to plan",3,"学业"],["安排","ān pái","to arrange; arrangement",4,"学业"],
+["任务","rèn wu","task, assignment",4,"学业"],["项目","xiàng mù","project, item",4,"学业"],
+["职业","zhí yè","occupation, profession",4,"工作"],["工资","gōng zī","wages, salary",4,"工作"],
+["招聘","zhāo pìn","to recruit, to hire",5,"工作"],["面试","miàn shì","interview; to interview",5,"工作"],
+["简历","jiǎn lì","résumé, CV",5,"工作"],["同事","tóng shì","colleague",3,"工作"],
+["领导","lǐng dǎo","leader; leadership",4,"工作"],["管理","guǎn lǐ","to manage; management",4,"工作"],
+["负责","fù zé","to be responsible for",4,"工作"],["完成","wán chéng","to complete",3,"工作"],
+["效率","xiào lǜ","efficiency",5,"工作"],["压力","yā lì","pressure, stress",4,"工作"],
+["机会","jī huì","opportunity",3,"工作"],["能够","néng gòu","to be able to",3,"工作"],
+["决定","jué dìng","to decide; decision",3,"工作"],["选择","xuǎn zé","to choose; choice",3,"工作"],
+["建议","jiàn yì","to suggest; suggestion",4,"工作"],["同意","tóng yì","to agree",3,"工作"],
+["反对","fǎn duì","to oppose",4,"工作"],["支持","zhī chí","to support",4,"工作"],
+/* — society, news, policy — */
+["社会","shè huì","society",4,"社会"],["政府","zhèng fǔ","government",4,"社会"],
+["政策","zhèng cè","policy",5,"社会"],["法律","fǎ lǜ","law",4,"社会"],
+["规定","guī dìng","regulation; to stipulate",4,"社会"],["制度","zhì dù","system, institution",5,"社会"],
+["国家","guó jiā","country, state",3,"社会"],["国际","guó jì","international",4,"社会"],
+["世界","shì jiè","world",3,"社会"],["人口","rén kǒu","population",5,"社会"],
+["城市","chéng shì","city",3,"社会"],["农村","nóng cūn","countryside, rural area",4,"社会"],
+["environment_placeholder","","",0,""],
+["环境","huán jìng","environment",3,"社会"],["污染","wū rǎn","pollution; to pollute",4,"社会"],
+["资源","zī yuán","resources",5,"社会"],["能源","néng yuán","energy (resources)",5,"社会"],
+["安全","ān quán","safe; security",4,"社会"],["危险","wēi xiǎn","dangerous; danger",4,"社会"],
+["保护","bǎo hù","to protect",4,"社会"],["解决","jiě jué","to solve, to resolve",3,"社会"],
+["问题","wèn tí","problem, question",2,"社会"],["情况","qíng kuàng","situation, circumstances",4,"社会"],
+["新闻","xīn wén","news",3,"社会"],["报道","bào dào","to report; report",5,"社会"],
+["消息","xiāo xi","news, message",4,"社会"],["调查","diào chá","to survey; investigation",4,"社会"],
+["数据","shù jù","data",5,"社会"],["统计","tǒng jì","statistics; to count",5,"社会"],
+["百分之","bǎi fēn zhī","percent",4,"社会"],["增长","zēng zhǎng","to grow; growth",5,"社会"],
+["下降","xià jiàng","to decline, to drop",5,"社会"],["提供","tí gōng","to provide",4,"社会"],
+/* — economy & finance (his field) — */
+["经济","jīng jì","economy; economic",4,"经济"],["市场","shì chǎng","market",4,"经济"],
+["贸易","mào yì","trade",5,"经济"],["出口","chū kǒu","to export; exit",5,"经济"],
+["进口","jìn kǒu","to import",5,"经济"],["价格","jià gé","price",4,"经济"],
+["成本","chéng běn","cost",5,"经济"],["利润","lì rùn","profit",5,"经济"],
+["投资","tóu zī","to invest; investment",5,"经济"],["银行","yín háng","bank",3,"经济"],
+["公司","gōng sī","company",2,"经济"],["企业","qǐ yè","enterprise, firm",5,"经济"],
+["工厂","gōng chǎng","factory",4,"经济"],["产品","chǎn pǐn","product",4,"经济"],
+["生产","shēng chǎn","to produce; production",5,"经济"],["供应","gōng yìng","to supply",5,"经济"],
+["需求","xū qiú","demand, requirement",5,"经济"],["竞争","jìng zhēng","to compete; competition",5,"经济"],
+["合作","hé zuò","to cooperate; cooperation",4,"经济"],["发展","fā zhǎn","to develop; development",4,"经济"],
+["风险","fēng xiǎn","risk",5,"经济"],["损失","sǔn shī","loss; to lose",5,"经济"],
+["增加","zēng jiā","to increase",4,"经济"],["减少","jiǎn shǎo","to reduce",4,"经济"],
+["降低","jiàng dī","to lower, to bring down",5,"经济"],["稳定","wěn dìng","stable; stability",5,"经济"],
+/* — technology — */
+["科技","kē jì","science and technology",4,"科技"],["技术","jì shù","technology, technique",4,"科技"],
+["网络","wǎng luò","network, the internet",4,"科技"],["软件","ruǎn jiàn","software",5,"科技"],
+["系统","xì tǒng","system",5,"科技"],["设备","shè bèi","equipment",5,"科技"],
+["功能","gōng néng","function, feature",5,"科技"],["应用","yìng yòng","to apply; application",5,"科技"],
+["信息","xìn xī","information",4,"科技"],["密码","mì mǎ","password, code",4,"科技"],
+["互联网","hù lián wǎng","the internet",5,"科技"],["人工智能","rén gōng zhì néng","artificial intelligence",5,"科技"],
+["发明","fā míng","to invent; invention",4,"科技"],["实验","shí yàn","experiment",4,"科技"],
+["科学","kē xué","science",3,"科技"],["工程","gōng chéng","engineering, project",5,"科技"],
+/* — description, mind, emotion — */
+["性格","xìng gé","personality",4,"心理"],["态度","tài du","attitude",4,"心理"],
+["感觉","gǎn jué","to feel; feeling",3,"心理"],["感情","gǎn qíng","feeling, affection",4,"心理"],
+["印象","yìn xiàng","impression",4,"心理"],["信心","xìn xīn","confidence",4,"心理"],
+["耐心","nài xīn","patience",4,"心理"],["紧张","jǐn zhāng","nervous; tense",4,"心理"],
+["轻松","qīng sōng","relaxed, easy",4,"心理"],["兴奋","xīng fèn","excited",5,"心理"],
+["失望","shī wàng","disappointed",4,"心理"],["满意","mǎn yì","satisfied",4,"心理"],
+["羡慕","xiàn mù","to envy, to admire",5,"心理"],["后悔","hòu huǐ","to regret",5,"心理"],
+["怀疑","huái yí","to doubt, to suspect",5,"心理"],["肯定","kěn dìng","certainly; to affirm",3,"心理"],
+["熟悉","shú xī","familiar with",4,"心理"],["陌生","mò shēng","unfamiliar, strange",5,"心理"],
+["habit_placeholder","","",0,""],
+["习惯","xí guàn","habit; to be used to",3,"心理"],["坚持","jiān chí","to persist in",4,"心理"],
+["努力","nǔ lì","to work hard; effort",3,"心理"],["放弃","fàng qì","to give up",4,"心理"],
+["鼓励","gǔ lì","to encourage",4,"心理"],["批评","pī píng","to criticize",4,"心理"],
+["表扬","biǎo yáng","to praise",4,"心理"],["尊重","zūn zhòng","to respect",5,"心理"],
+/* — daily life extension — */
+["经历","jīng lì","to experience; experience",4,"生活"],["生活","shēng huó","life; to live",3,"生活"],
+["条件","tiáo jiàn","condition, requirement",4,"生活"],["方面","fāng miàn","aspect, side",4,"生活"],
+["区别","qū bié","difference; to distinguish",4,"生活"],["特点","tè diǎn","characteristic",4,"生活"],
+["方式","fāng shì","way, manner",4,"生活"],["方法","fāng fǎ","method",3,"生活"],
+["过程","guò chéng","process",4,"生活"],["阶段","jiē duàn","stage, phase",5,"生活"],
+["机场","jī chǎng","airport",2,"生活"],["交通","jiāo tōng","traffic, transport",4,"生活"],
+["堵车","dǔ chē","traffic jam",4,"生活"],["地铁","dì tiě","subway",3,"生活"],
+["高铁","gāo tiě","high-speed rail",4,"生活"],["房租","fáng zū","rent",5,"生活"],
+["价钱","jià qian","price",3,"生活"],["便宜","pián yi","cheap",2,"生活"],
+["billing_placeholder","","",0,""],
+["费用","fèi yòng","cost, expenses",5,"生活"],["节约","jié yuē","to economize, to save",5,"生活"],
+["浪费","làng fèi","to waste",4,"生活"],["污水","wū shuǐ","waste water",5,"生活"],
+["垃圾","lā jī","garbage",4,"生活"],["回收","huí shōu","to recycle",5,"生活"],
+["锻炼","duàn liàn","to exercise",3,"生活"],["营养","yíng yǎng","nutrition",5,"生活"],
+["睡眠","shuì mián","sleep",5,"生活"],["熬夜","áo yè","to stay up late",5,"生活"],
+/* — time, degree, frequency — */
+["最近","zuì jìn","recently",3,"程度"],["目前","mù qián","at present",5,"程度"],
+["将来","jiāng lái","in the future",4,"程度"],["过去","guò qù","the past; to pass by",3,"程度"],
+["曾经","céng jīng","once, formerly",4,"程度"],["仍然","réng rán","still, yet",4,"程度"],
+["逐渐","zhú jiàn","gradually",4,"程度"],["突然","tū rán","suddenly",3,"程度"],
+["立刻","lì kè","immediately",4,"程度"],["马上","mǎ shàng","right away",2,"程度"],
+["偶尔","ǒu ěr","occasionally",4,"程度"],["往往","wǎng wǎng","often, more often than not",4,"程度"],
+["几乎","jī hū","almost",3,"程度"],["完全","wán quán","completely",4,"程度"],
+["特别","tè bié","especially; special",3,"程度"],["相当","xiāng dāng","quite, fairly",5,"程度"],
+["比较","bǐ jiào","relatively; to compare",3,"程度"],["尤其","yóu qí","especially",4,"程度"],
+["至少","zhì shǎo","at least",4,"程度"],["大约","dà yuē","approximately",4,"程度"],
+["超过","chāo guò","to exceed",4,"程度"],["占","zhàn","to account for, to occupy",5,"程度"]
+];
+const HSK_BANK=HSK_RAW.filter(r=>r[3]>0).map(r=>({c:r[0],py:r[1],m:r[2],lv:r[3],pack:r[4]}));
+
+/* ---------- Pattern bank beyond the course ----------
+   detect: RegExp used by the Composition Analyzer            */
+const PATTERNS_PLUS=[
+ {id:"suiran",t:"虽然……，但是／可是……",lv:3,sub:"although — the concession",
+  detect:/虽然[\s\S]{0,40}(但是|可是|还是)/,
+  pts:["Chinese keeps <b>both halves</b>: 虽然 opens, 但是／可是 answers. English drops one; Chinese does not.","虽然 can sit before or after the subject: 虽然他很忙，…… ／ 他虽然很忙，……"],
+  ex:[{c:"虽然这个工作压力很大，但是我学到了很多经验。",py:"suīrán zhège gōngzuò yālì hěn dà, dànshì wǒ xué dào le hěn duō jīngyàn.",en:"Although this job is stressful, I've gained a lot of experience."},
+      {c:"他虽然只学了两年中文，可是说得相当流利。",py:"tā suīrán zhǐ xué le liǎng nián zhōngwén, kěshì shuō de xiāngdāng liúlì.",en:"Although he's only studied Chinese for two years, he speaks quite fluently."}]},
+ {id:"budan",t:"不但……，而且／还……",lv:3,sub:"not only — the escalation",
+  detect:/不但[\s\S]{0,40}(而且|还|也)/,
+  pts:["Same subject → 不但 goes <b>after</b> it. Different subjects → 不但 goes before the first.","而且 upgrades; 还／也 simply adds."],
+  ex:[{c:"这种药不但很贵，而且没有什么用。",py:"zhè zhǒng yào búdàn hěn guì, érqiě méiyǒu shénme yòng.",en:"This medicine is not only expensive, it's also useless."},
+      {c:"不但他去过中国，而且他姐姐在那儿工作了三年。",py:"búdàn tā qù guo Zhōngguó, érqiě tā jiějie zài nàr gōngzuò le sān nián.",en:"Not only has he been to China, his sister worked there for three years."}]},
+ {id:"chule",t:"除了……（以外），都／还／也……",lv:3,sub:"except for — or in addition to",
+  detect:/除了[\s\S]{0,30}(以外|之外)?[\s\S]{0,20}(都|还|也)/,
+  pts:["With <b>都</b> it means <i>except</i>: 除了他以外，我们都去。","With <b>还／也</b> it means <i>besides</i>: 除了中文，我还学日文。","The 以外 is optional but tidy."],
+  ex:[{c:"除了星期天以外，我每天都得上班。",py:"chúle xīngqītiān yǐwài, wǒ měitiān dōu děi shàngbān.",en:"Except for Sunday, I have to work every day."},
+      {c:"除了看新闻，我还喜欢看纪录片。",py:"chúle kàn xīnwén, wǒ hái xǐhuan kàn jìlùpiàn.",en:"Besides watching the news, I also like documentaries."}]},
+ {id:"zhiyao",t:"只要……，就…… ／ 只有……，才……",lv:3,sub:"sufficient vs. necessary condition",
+  detect:/(只要[\s\S]{0,40}就|只有[\s\S]{0,40}才)/,
+  pts:["<b>只要 A 就 B</b> — A is enough for B. <b>只有 A 才 B</b> — A is the <i>only</i> way to B.","The pairing is fixed: 只要…就, 只有…才. Swapping them is the classic error."],
+  ex:[{c:"只要每天复习二十分钟，你的水平就会慢慢提高。",py:"zhǐyào měitiān fùxí èrshí fēnzhōng, nǐ de shuǐpíng jiù huì mànmàn tígāo.",en:"As long as you review twenty minutes a day, your level will gradually rise."},
+      {c:"只有多跟中国人说话，才能真正提高口语。",py:"zhǐyǒu duō gēn Zhōngguó rén shuōhuà, cái néng zhēnzhèng tígāo kǒuyǔ.",en:"Only by talking with Chinese people can you really improve your speaking."}]},
+ {id:"jishi",t:"即使／就算……，也……",lv:4,sub:"even if — the hypothetical concession",
+  detect:/(即使|就算|哪怕)[\s\S]{0,40}也/,
+  pts:["即使 is written, 就算 is spoken, 哪怕 is emphatic — all take <b>也</b>.","Different from 虽然: 虽然 concedes a <i>fact</i>, 即使 concedes a <i>hypothetical</i>."],
+  ex:[{c:"即使明天下雨，我们也要去。",py:"jíshǐ míngtiān xià yǔ, wǒmen yě yào qù.",en:"Even if it rains tomorrow, we're still going."},
+      {c:"就算你现在开始准备，时间也不太够了。",py:"jiùsuàn nǐ xiànzài kāishǐ zhǔnbèi, shíjiān yě bú tài gòu le.",en:"Even if you start preparing now, there still isn't quite enough time."}]},
+ {id:"wulun",t:"无论／不管……，都……",lv:4,sub:"no matter what — the universal",
+  detect:/(无论|不管)[\s\S]{0,40}(都|也)/,
+  pts:["Must be followed by an <b>open</b> element: a question word (谁/什么/怎么), an A-not-A, or an 还是 choice.","无论多贵 / 不管谁来 / 无论去不去 / 不管是A还是B — then 都."],
+  ex:[{c:"无论多忙，他每天都会看半个小时的书。",py:"wúlùn duō máng, tā měitiān dōu huì kàn bàn ge xiǎoshí de shū.",en:"No matter how busy he is, he reads for half an hour every day."},
+      {c:"不管是中药还是西药，都得听医生的。",py:"bùguǎn shì zhōngyào háishi xīyào, dōu děi tīng yīshēng de.",en:"Whether it's Chinese or Western medicine, you have to listen to the doctor."}]},
+ {id:"yibian",t:"一边……，一边……",lv:3,sub:"two actions at once",
+  detect:/一边[\s\S]{0,20}一边/,
+  pts:["Both actions are <b>ongoing and simultaneous</b>, same subject. Spoken 一边儿.","For two things done in one <i>period</i> (not one moment), use 一方面……一方面…… instead."],
+  ex:[{c:"他一边工作，一边读硕士。",py:"tā yìbiān gōngzuò, yìbiān dú shuòshì.",en:"He works and does a master's at the same time."},
+      {c:"别一边吃饭一边看手机。",py:"bié yìbiān chīfàn yìbiān kàn shǒujī.",en:"Don't look at your phone while you eat."}]},
+ {id:"yuelaiyue2",t:"越……越…… ／ 越来越……",lv:3,sub:"the more … the more",
+  detect:/越[\s\S]{0,12}越/,
+  pts:["<b>越 A 越 B</b> — two variables move together: 越忙越累。","<b>越来越 + adj／V</b> — one thing changes over time: 越来越贵。","Never add 很 or 非常 after 越."],
+  ex:[{c:"这本书越看越有意思。",py:"zhè běn shū yuè kàn yuè yǒu yìsi.",en:"The more I read this book the more interesting it gets."},
+      {c:"随着经济的发展，城市的人口越来越多。",py:"suízhe jīngjì de fāzhǎn, chéngshì de rénkǒu yuè lái yuè duō.",en:"As the economy develops, the urban population grows ever larger."}]},
+ {id:"suizhe",t:"随着……，……",lv:4,sub:"as X proceeds — the trend frame",
+  detect:/随着/,
+  pts:["<b>随着 + noun phrase</b>, not a full clause: 随着经济的发展 (✓) / 随着经济发展了 (✗).","The main clause usually carries 越来越, 逐渐, or a number."],
+  ex:[{c:"随着人口的增长，能源需求也在增加。",py:"suízhe rénkǒu de zēngzhǎng, néngyuán xūqiú yě zài zēngjiā.",en:"As the population grows, energy demand is rising too."},
+      {c:"随着年纪的增长，他的态度逐渐变了。",py:"suízhe niánjì de zēngzhǎng, tā de tàidu zhújiàn biàn le.",en:"As he got older, his attitude gradually changed."}]},
+ {id:"youyu",t:"由于……，因此／所以……",lv:4,sub:"formal cause and effect",
+  detect:/(由于|因此|导致|造成)/,
+  pts:["由于 is the written cousin of 因为; 因此 the written cousin of 所以.","<b>导致／造成</b> take a <i>bad</i> outcome as object: 导致损失、造成污染。 Good outcomes take 带来 or 使."],
+  ex:[{c:"由于成本上升，公司的利润下降了百分之十。",py:"yóuyú chéngběn shàngshēng, gōngsī de lìrùn xiàjiàng le bǎi fēn zhī shí.",en:"Owing to rising costs, the firm's profit fell ten percent."},
+      {c:"这个决定导致了很大的损失。",py:"zhège juédìng dǎozhì le hěn dà de sǔnshī.",en:"That decision led to a major loss."}]},
+ {id:"tongguo",t:"通过……，……",lv:4,sub:"by means of",
+  detect:/通过[^。]{1,25}(，|,)/,
+  pts:["<b>通过 + method</b> = by means of: 通过调查我们发现…… Do not confuse with 经过 (to go through a process or a place).","For a tool, 用 is still correct; 通过 is for methods and channels."],
+  ex:[{c:"通过这次调查，我们发现了三个问题。",py:"tōngguò zhè cì diàochá, wǒmen fāxiàn le sān ge wèntí.",en:"Through this survey we identified three problems."},
+      {c:"通过跟同事合作，我提高了自己的管理能力。",py:"tōngguò gēn tóngshì hézuò, wǒ tígāo le zìjǐ de guǎnlǐ nénglì.",en:"By working with colleagues I improved my management ability."}]},
+ {id:"duiyulaishuo",t:"对……来说 ／ 在……方面",lv:4,sub:"framing a perspective or a domain",
+  detect:/(对[\s\S]{0,12}来说|在[\s\S]{0,12}方面)/,
+  pts:["<b>对 X 来说</b> — from X's point of view: 对留学生来说，房租是最大的压力。","<b>在 X 方面</b> — in the domain of X: 在语言方面他很有天分。","Both open the sentence; don't bury them."],
+  ex:[{c:"对我来说，写作比口语难得多。",py:"duì wǒ lái shuō, xiězuò bǐ kǒuyǔ nán de duō.",en:"For me, writing is much harder than speaking."},
+      {c:"在经济方面，两国的合作越来越紧密。",py:"zài jīngjì fāngmiàn, liǎng guó de hézuò yuè lái yuè jǐnmì.",en:"In the economic domain, the two countries cooperate ever more closely."}]},
+ {id:"bijiao",t:"A 比 B + adj + 得多／一点儿／数量",lv:3,sub:"comparison with a measured gap",
+  detect:/(比[^。，]{1,16}(得多|多了|一点|一些|得很|更|还)|没有[^。，]{1,12}那么)/,
+  pts:["The degree word goes <b>after</b> the adjective: 贵得多、贵一点儿、贵两倍。 Never 很贵 in a 比 sentence.","Negative: A 没有 B 那么 adj. 不比 means <i>not more than</i>, which is a different claim."],
+  ex:[{c:"高铁比飞机方便得多。",py:"gāotiě bǐ fēijī fāngbiàn de duō.",en:"High-speed rail is far more convenient than flying."},
+      {c:"这个城市的房租没有北京那么贵。",py:"zhège chéngshì de fángzū méiyǒu Běijīng nàme guì.",en:"Rent in this city isn't as expensive as in Beijing."}]},
+ {id:"beizzz",t:"被／让／叫 — the passive",lv:4,sub:"when the subject is on the receiving end",
+  detect:/(被|叫|让)[\s\S]{0,10}(给)?[\s\S]{0,6}(了|过|完|走|坏|掉)/,
+  pts:["<b>S 被 (agent) V + extra</b> — the verb needs a complement or 了; a bare verb is ungrammatical.","被 is written and often negative; 让／叫 are spoken and require the agent.","Chinese uses the passive far less than English — prefer 把 or an active subject."],
+  ex:[{c:"我的自行车被人骑走了。",py:"wǒ de zìxíngchē bèi rén qí zǒu le.",en:"Someone rode off with my bike."},
+      {c:"那个项目让新来的同事负责了。",py:"nàge xiàngmù ràng xīn lái de tóngshì fùzé le.",en:"That project was handed to the new colleague."}]},
+ {id:"shide2",t:"使／让 + O + adj／VP",lv:4,sub:"to cause someone to be or do",
+  detect:/(使[^。，]{1,10}(感到|觉得|变得|更|增加|减少|提高|下降)|令人)/,
+  pts:["<b>使</b> is written and takes abstract causes: 这个消息使大家很失望。","<b>让</b> is spoken and also means <i>to let</i>. 令 is literary and pairs with feelings: 令人失望。"],
+  ex:[{c:"这个结果使很多投资者感到失望。",py:"zhège jiéguǒ shǐ hěn duō tóuzīzhě gǎndào shīwàng.",en:"The outcome left many investors disappointed."},
+      {c:"新的政策让企业的成本增加了。",py:"xīn de zhèngcè ràng qǐyè de chéngběn zēngjiā le.",en:"The new policy raised firms' costs."}]},
+ {id:"deadj",t:"V 得 + 补语 — degree, extended",lv:3,sub:"how well, how much, to what point",
+  detect:/得(很|非常|特别|不|太|多|快|慢|好|清楚|流利)/,
+  pts:["<b>V 得 + adj</b> rates the performance: 说得很流利。 With an object, repeat the verb: 说中文说得很流利。","<b>V 得 + clause</b> states an extent: 累得说不出话来。 This is the adult version and it is worth drilling."],
+  ex:[{c:"他忙得连饭都没时间吃。",py:"tā máng de lián fàn dōu méi shíjiān chī.",en:"He's so busy he doesn't even have time to eat."},
+      {c:"这次考试难得大家都考不好。",py:"zhè cì kǎoshì nán de dàjiā dōu kǎo bu hǎo.",en:"The exam was so hard nobody did well."}]},
+ {id:"lian",t:"连……都／也……",lv:4,sub:"even X — the emphatic floor",
+  detect:/连[\s\S]{0,14}(都|也)/,
+  pts:["<b>连 + the surprising item + 都／也</b>: 他连自己的名字都写不好。","Marks the extreme end of a scale, so the rest is implied. Very common in speech."],
+  ex:[{c:"他忙得连周末都在工作。",py:"tā máng de lián zhōumò dōu zài gōngzuò.",en:"He's so busy he even works weekends."},
+      {c:"这个词连老师也没听说过。",py:"zhège cí lián lǎoshī yě méi tīngshuō guo.",en:"Even the teacher had never heard of this word."}]},
+ {id:"yijing",t:"一……就…… ／ 一旦……，就……",lv:3,sub:"as soon as; once",
+  detect:/(一[\s\S]{0,14}就|一旦)/,
+  pts:["<b>一 A 就 B</b> — B follows A immediately, or B is A's automatic consequence.","<b>一旦</b> is the hypothetical version: once/if ever. 一旦出问题，就很难解决。"],
+  ex:[{c:"他一回国就找到了工作。",py:"tā yì huí guó jiù zhǎo dào le gōngzuò.",en:"He found a job as soon as he returned home."},
+      {c:"一旦供应出了问题，价格就会马上上升。",py:"yídàn gōngyìng chū le wèntí, jiàgé jiù huì mǎshàng shàngshēng.",en:"Once supply runs into trouble, prices rise immediately."}]},
+ {id:"nengbu",t:"V 不了 ／ V 得了 ／ 来得及",lv:4,sub:"capacity and time, not skill",
+  detect:/([^。，]不了|[^。，]得了|来不及|来得及)/,
+  pts:["<b>V 不了 (liǎo)</b> — can't manage it, usually for reasons of quantity, health or circumstance: 我吃不了这么多。","Distinct from 不会 (no skill) and 不能 (not permitted).","<b>来不及</b> — not enough time; <b>来得及</b> — still time."],
+  ex:[{c:"今天太多事，我去不了了。",py:"jīntiān tài duō shì, wǒ qù bu liǎo le.",en:"Too much on today — I won't be able to make it."},
+      {c:"现在出发还来得及吗？",py:"xiànzài chūfā hái láidejí ma?",en:"Is there still time if we leave now?"}]},
+ {id:"suoyi2",t:"之所以……，是因为……",lv:5,sub:"the reason X is that Y — result first",
+  detect:/之所以[\s\S]{0,40}是因为/,
+  pts:["Inverts 因为……所以……: the <b>result</b> comes first and the reason lands last, where it carries weight.","Written register. Common in analysis and argument."],
+  ex:[{c:"他之所以选择这个专业，是因为将来的机会比较多。",py:"tā zhī suǒyǐ xuǎnzé zhège zhuānyè, shì yīnwèi jiānglái de jīhuì bǐjiào duō.",en:"The reason he chose this major is that there are more opportunities later."},
+      {c:"价格之所以下降，是因为需求突然减少了。",py:"jiàgé zhī suǒyǐ xiàjiàng, shì yīnwèi xūqiú tūrán jiǎnshǎo le.",en:"The reason prices fell is that demand suddenly shrank."}]},
+ {id:"yuqi",t:"与其……，不如…… ／ 宁可……，也不……",lv:5,sub:"weighing two bad options",
+  detect:/(与其[\s\S]{0,40}不如|宁可[\s\S]{0,40}也不|不如)/,
+  pts:["<b>与其 A，不如 B</b> — rather than A, better B. The preferred option is the <b>second</b>.","<b>宁可 A，也不 B</b> — would rather A than B; here the preferred option is the <b>first</b>. Reversing them is the standard error."],
+  ex:[{c:"与其在家着急，不如去问问老师。",py:"yǔqí zài jiā zháojí, bùrú qù wènwen lǎoshī.",en:"Rather than fretting at home, better to go ask the teacher."},
+      {c:"他宁可自己多花点时间，也不愿意麻烦别人。",py:"tā nìngkě zìjǐ duō huā diǎn shíjiān, yě bú yuànyì máfan biérén.",en:"He'd rather spend the extra time himself than trouble anyone."}]},
+ {id:"nandian",t:"难免 ／ 恐怕 ／ 未必 — hedging",lv:5,sub:"the analyst's three qualifiers",
+  detect:/(难免|恐怕|未必|不见得)/,
+  pts:["<b>难免</b> — hard to avoid, bound to happen: 刚开始，出错难免。","<b>恐怕</b> — I'm afraid that (unwelcome likelihood): 恐怕来不及了。","<b>未必／不见得</b> — not necessarily: 贵的未必好。 These three carry most of the hedging load in written Chinese."],
+  ex:[{c:"刚开始工作的时候，犯错误是难免的。",py:"gāng kāishǐ gōngzuò de shíhou, fàn cuòwù shì nánmiǎn de.",en:"When you first start a job, mistakes are unavoidable."},
+      {c:"这个消息恐怕不太可靠。",py:"zhège xiāoxi kǒngpà bú tài kěkào.",en:"I'm afraid this news isn't very reliable."}]},
+ {id:"suoweide",t:"所谓…… ／ 也就是说……",lv:5,sub:"defining and restating",
+  detect:/(所谓|也就是说|换句话说)/,
+  pts:["<b>所谓 X，就是……</b> introduces a term you're about to define — the move that opens an analytical paragraph.","<b>也就是说／换句话说</b> restates in plainer terms. Both signal that you control the frame."],
+  ex:[{c:"所谓风险，就是我们不知道会发生什么。",py:"suǒwèi fēngxiǎn, jiù shì wǒmen bù zhīdào huì fāshēng shénme.",en:"So-called risk is simply not knowing what will happen."},
+      {c:"成本上升了三倍，也就是说，利润几乎没有了。",py:"chéngběn shàngshēng le sān bèi, yě jiù shì shuō, lìrùn jīhū méiyǒu le.",en:"Costs tripled — which is to say, the profit is all but gone."}]},
+ {id:"shuzi",t:"Numbers that carry an argument",lv:4,sub:"百分之 · 倍 · 左右 · 以上 · 占",
+  detect:/(百分之|[一二三四五六七八九十两\d]倍|左右|以上|以下|占[^。，]{0,6}(百分|比例|的))/,
+  pts:["<b>百分之三十</b> = 30%. Growth: 增长了百分之三十 (by 30%) vs 增长到 (to 30%).","<b>三倍</b> — 是……的三倍 (three times as much) vs 增加了三倍 (increased fourfold). Chinese counts differently; be precise.","<b>左右</b> after the number (三十岁左右), <b>以上／以下</b> after (二十岁以上), <b>占</b> for share: 占百分之六十。"],
+  ex:[{c:"这项支出占总成本的百分之四十左右。",py:"zhè xiàng zhīchū zhàn zǒng chéngběn de bǎi fēn zhī sìshí zuǒyòu.",en:"This expense accounts for around forty percent of total cost."},
+      {c:"今年的出口比去年增长了百分之十二。",py:"jīnnián de chūkǒu bǐ qùnián zēngzhǎng le bǎi fēn zhī shí'èr.",en:"Exports grew twelve percent over last year."}]},
+ {id:"debuyi",t:"的 · 得 · 地 — the three de",lv:3,sub:"the most-graded distinction in written Chinese",
+  detect:/[^。，的得]地[^。，方图铁点]/,
+  pts:["<b>的</b> joins a modifier to a <b>noun</b>: 努力的学生。","<b>得</b> joins a verb to its <b>complement</b>: 学得很努力。","<b>地</b> joins a manner word to a <b>verb</b>: 努力地学习。","One test: 的 → noun follows; 得 → after the verb; 地 → before the verb."],
+  ex:[{c:"他认真地看完了那份报告。",py:"tā rènzhēn de kàn wán le nà fèn bàogào.",en:"He read that report through carefully."},
+      {c:"他写的报告写得非常清楚。",py:"tā xiě de bàogào xiě de fēicháng qīngchu.",en:"The report he wrote is written very clearly."}]},
+ {id:"zaidebasic",t:"在……上／中／下 — abstract location",lv:4,sub:"where an abstract thing sits",
+  detect:/在[\s\S]{0,14}(上|中|下|方面|过程中)/,
+  pts:["<b>在……上</b> — in respect of: 在这个问题上。 <b>在……中</b> — in the course of: 在学习中。 <b>在……下</b> — under a condition: 在老师的帮助下。","These three carry abstract relations that English handles with in/under/on."],
+  ex:[{c:"在老师的帮助下，我的发音提高了很多。",py:"zài lǎoshī de bāngzhù xià, wǒ de fāyīn tígāo le hěn duō.",en:"With the teacher's help my pronunciation improved a lot."},
+      {c:"在这个问题上，我跟他的看法不太一样。",py:"zài zhège wèntí shàng, wǒ gēn tā de kànfǎ bú tài yíyàng.",en:"On this question my view differs from his."}]},
+ {id:"guanjian",t:"值得 ／ 免得 ／ 以便",lv:5,sub:"worth doing, and doing it so that",
+  detect:/(值得|免得|以免|以便)/,
+  pts:["<b>值得 + VP</b> — worth doing: 这本书值得看两遍。","<b>免得／以免 + bad outcome</b> — so as to avoid: 早点儿去，免得堵车。","<b>以便 + good outcome</b> — so as to enable. 为了 states the purpose up front."],
+  ex:[{c:"这个问题值得我们再讨论一次。",py:"zhège wèntí zhíde wǒmen zài tǎolùn yí cì.",en:"This question is worth our discussing once more."},
+      {c:"你最好早点出发，免得路上堵车。",py:"nǐ zuìhǎo zǎo diǎn chūfā, miǎnde lùshang dǔchē.",en:"Better set off early so you don't hit traffic."}]},
+ {id:"jiuq",t:"就 · 才 · 都 — the three timing adverbs",lv:3,sub:"earlier, later, and already",
+  detect:/(都[^。，]{1,10}了|[一二三四五六七八九十两几\d][^。，]{0,8}才|才[一二三四五六七八九十两几\d])/,
+  pts:["<b>就</b> — sooner or easier than expected. <b>才</b> — later or harder than expected. Both sit before the verb.","才 <b>blocks</b> 了: 他昨天才来。(no 了) — one of the most reliable exam traps.","<b>都……了</b> — already, with a note of surprise: 都十点了。"],
+  ex:[{c:"我等了两个小时，他才来。",py:"wǒ děng le liǎng ge xiǎoshí, tā cái lái.",en:"I waited two hours before he showed up."},
+      {c:"都这么晚了，你怎么还不休息？",py:"dōu zhème wǎn le, nǐ zěnme hái bù xiūxi?",en:"It's already this late — why aren't you resting?"}]},
+ {id:"guanxi",t:"是……的 — extended",lv:4,sub:"asserting the frame, not the event",
+  detect:/是[^。]{3,30}的(。|，|$)/,
+  pts:["Marks that the event is <b>known</b> and you're specifying <i>when/where/how/who</i>: 我是坐高铁来的。","Also used for judgments: 这样做是不对的。 That second use is everywhere in written Chinese.","Never combine with 了."],
+  ex:[{c:"这个决定是经过很长时间讨论的。",py:"zhège juédìng shì jīngguò hěn cháng shíjiān tǎolùn de.",en:"This decision came after a long discussion."},
+      {c:"不做调查就下结论是很危险的。",py:"bú zuò diàochá jiù xià jiélùn shì hěn wēixiǎn de.",en:"Drawing conclusions without investigating is dangerous."}]},
+ {id:"chengyu",t:"Four-character phrases worth owning",lv:5,sub:"eight that carry real weight",
+  detect:/(一言为定|不可思议|实事求是|与此同时|供不应求|不相上下|一举两得|三心二意|全力以赴|各有各的)/,
+  pts:["<b>实事求是</b> — seek truth from facts. <b>与此同时</b> — meanwhile. <b>供不应求</b> — demand outstrips supply.","<b>一举两得</b> — kill two birds. <b>全力以赴</b> — go all out. <b>不相上下</b> — evenly matched.","<b>三心二意</b> — half-hearted. <b>一言为定</b> — it's a deal.","Two or three per essay reads well; more reads like a phrasebook."],
+  ex:[{c:"最近这种产品供不应求，价格上升得很快。",py:"zuìjìn zhè zhǒng chǎnpǐn gōng bù yìng qiú, jiàgé shàngshēng de hěn kuài.",en:"Lately demand for this product outstrips supply and prices are climbing fast."},
+      {c:"分析问题的时候，最重要的是实事求是。",py:"fēnxī wèntí de shíhou, zuì zhòngyào de shì shí shì qiú shì.",en:"When analyzing a problem, the most important thing is to seek truth from facts."}]}
+];
+
+/* Detectors for patterns already taught in the course (for the analyzer) */
+const CORE_DETECT=[
+ {id:"ba",t:"把",detect:/把[^。，]{1,12}(放|拿|搬|带|送|开|吃|喝|写|用|做|给|扔|挂)/,lv:2},
+ {id:"yuelai",t:"越来越",detect:/越来越/,lv:2},
+ {id:"guo",t:"过 (experience)",detect:/(没)?[^。，]过(。|，|吗|没|三|两|一|几|、)/,lv:2},
+ {id:"zhengzai",t:"（正）在……呢",detect:/(正在|在[^。，]{1,8}呢)/,lv:1},
+ {id:"shide",t:"是……的",detect:/是[^。，]{2,18}的(。|，|$|吗)/,lv:2},
+ {id:"youyou",t:"又……又……",detect:/又[^。，]{1,8}又/,lv:2},
+ {id:"haimei",t:"还没／还在",detect:/还(没|在)/,lv:1},
+ {id:"qilai",t:"起来",detect:/起来/,lv:2},
+ {id:"sile",t:"……死了",detect:/死了/,lv:2},
+ {id:"dir",t:"方向补语",detect:/(进来|进去|出来|出去|上来|上去|下来|下去|回来|回去|过来|过去)/,lv:2},
+ {id:"potential",t:"可能补语 V得／不RC",detect:/[^。，](得|不)(到|完|懂|见|住|会|清楚|了)/,lv:2},
+ {id:"yaoburan",t:"要不然",detect:/要不然/,lv:2},
+ {id:"zaishuo",t:"再说",detect:/再说/,lv:2},
+ {id:"dur",t:"time duration",detect:/(了|]?)[一二三四五六七八九十两半几\d]+(个)?(小时|钟头|分钟|天|年|个月|星期)/,lv:1},
+ {id:"yinwei",t:"因为……所以",detect:/因为[^。]{1,40}所以|因为/,lv:1},
+ {id:"ruguo",t:"如果／要是……就",detect:/(如果|要是)[^。]{0,30}就/,lv:2},
+ {id:"gen",t:"跟……一样",detect:/跟[^。，]{1,12}一样/,lv:2},
+ {id:"bidegen",t:"比 comparison",detect:/[^。，]比[^。，]{1,14}(得多|多了|一点|一些|更|还)/,lv:2}
+];
+
+/* ---------- passage templates ----------
+   A line is an array of segments. A segment is either a fixed
+   {c,py,en} chunk or {s:"SLOT"}. Pinyin and translation assemble
+   themselves, so every generated passage is glossed correctly.
+   Questions read their answers straight out of the chosen slots,
+   so they cannot be wrong.                                        */
+const F=(c,py,en)=>({c,py,en});
+const TEMPLATES=[
+{id:"diary",lv:1,genre:"日记",title:"一天的日记",titleEn:"A page from a diary",
+ slots:{
+  DAY:[F("昨天","zuótiān","yesterday"),F("前天","qiántiān","the day before yesterday"),F("上个星期六","shàng ge xīngqīliù","last Saturday"),F("今天早上","jīntiān zǎoshang","this morning")],
+  WHO:[F("我的室友","wǒ de shìyǒu","my roommate"),F("我的同学","wǒ de tóngxué","my classmate"),F("我表姐","wǒ biǎojiě","my cousin"),F("我的老朋友","wǒ de lǎo péngyou","my old friend")],
+  PLACE:[F("学校餐厅","xuéxiào cāntīng","the school cafeteria"),F("图书馆","túshūguǎn","the library"),F("咖啡店","kāfēidiàn","the coffee shop"),F("中国城","Zhōngguóchéng","Chinatown")],
+  ACT:[F("吃饭","chīfàn","have a meal"),F("复习中文","fùxí zhōngwén","review Chinese"),F("聊天","liáotiān","chat"),F("看书","kànshū","read")],
+  HOWLONG:[F("两个小时","liǎng ge xiǎoshí","two hours"),F("三个钟头","sān ge zhōngtóu","three hours"),F("一个下午","yí ge xiàwǔ","a whole afternoon"),F("半天","bàntiān","half a day")],
+  FEEL:[F("很高兴","hěn gāoxìng","very happy"),F("有点儿累","yǒudiǎnr lèi","a bit tired"),F("非常紧张","fēicháng jǐnzhāng","very tense"),F("特别轻松","tèbié qīngsōng","especially relaxed")],
+  FOOD:[F("饺子","jiǎozi","dumplings"),F("红烧牛肉","hóngshāo niúròu","braised beef"),F("家常豆腐","jiācháng dòufu","home-style tofu"),F("酸辣汤","suānlàtāng","hot-and-sour soup")]},
+ lines:[
+  [{s:"DAY"},F("我跟","wǒ gēn","I and"),{s:"WHO"},F("一起去了","yìqǐ qù le","went together to"),{s:"PLACE"},F("。","."," ")],
+  [F("我们在那儿","wǒmen zài nàr","There we"),{s:"ACT"},F("，一共待了","yígòng dāi le",", staying"),{s:"HOWLONG"},F("。","."," ")],
+  [F("那儿的","nàr de","Their"),{s:"FOOD"},F("很好吃，可是有一点儿贵。","hěn hǎochī, kěshì yǒu yìdiǎnr guì.","was delicious, though a bit pricey.")],
+  [F("回来的时候我","huílai de shíhou wǒ","On the way back I was"),{s:"FEEL"},F("。","."," ")],
+  [F("下个星期我想再去一次。","xià ge xīngqī wǒ xiǎng zài qù yí cì.","Next week I want to go again.")]],
+ qs:[{q:"他们去了哪儿？",slot:"PLACE"},{q:"他跟谁一起去的？",slot:"WHO"},{q:"他们在那儿做了多久？",slot:"HOWLONG"},{q:"那儿的什么很好吃？",slot:"FOOD"}]},
+
+{id:"msg",lv:2,genre:"对话",title:"两条短信",titleEn:"A text exchange",
+ slots:{
+  NAME:[F("小李","Xiǎo Lǐ","Xiao Li"),F("小王","Xiǎo Wáng","Xiao Wang"),F("小张","Xiǎo Zhāng","Xiao Zhang")],
+  EVENT:[F("看电影","kàn diànyǐng","see a film"),F("打球","dǎ qiú","play ball"),F("去听音乐会","qù tīng yīnyuèhuì","go to a concert"),F("去看展览","qù kàn zhǎnlǎn","see an exhibition")],
+  DAY:[F("这个周末","zhège zhōumò","this weekend"),F("后天晚上","hòutiān wǎnshang","the day after tomorrow evening"),F("下个星期五","xià ge xīngqīwǔ","next Friday")],
+  TIME:[F("七点","qī diǎn","seven o'clock"),F("六点半","liù diǎn bàn","half past six"),F("八点一刻","bā diǎn yí kè","a quarter past eight")],
+  SPOT:[F("学校门口","xuéxiào ménkǒu","the school gate"),F("地铁站","dìtiě zhàn","the subway station"),F("咖啡店门口","kāfēidiàn ménkǒu","outside the coffee shop")],
+  PROB:[F("我得先去看医生","wǒ děi xiān qù kàn yīshēng","I have to see a doctor first"),F("我还有一个报告没写完","wǒ hái yǒu yí ge bàogào méi xiě wán","I still have a report to finish"),F("我姐姐那天来看我","wǒ jiějie nà tiān lái kàn wǒ","my sister is visiting that day")],
+  FIX:[F("晚一个小时","wǎn yí ge xiǎoshí","an hour later"),F("换到星期天","huàn dào xīngqītiān","move it to Sunday"),F("改天再说","gǎi tiān zài shuō","do it another day")]},
+ lines:[
+  [{s:"NAME"},F("：你","：nǐ","：Are you"),{s:"DAY"},F("有空吗？我想请你","yǒu kòng ma? wǒ xiǎng qǐng nǐ","free? I'd like to invite you to"),{s:"EVENT"},F("。","."," ")],
+  [F("我：听起来不错，可是","wǒ: tīng qǐlai búcuò, kěshì","Me: Sounds good, but"),{s:"PROB"},F("，恐怕来不及。","kǒngpà lái bu jí.","— I'm afraid I won't make it in time.")],
+  [{s:"NAME"},F("：没关系，我们可以","：méi guānxi, wǒmen kěyǐ","：No problem, we can"),{s:"FIX"},F("。","."," ")],
+  [F("我：那太好了。我们","wǒ: nà tài hǎo le. wǒmen","Me: Great. Let's meet at"),{s:"TIME"},F("在","zài","at"),{s:"SPOT"},F("见，好吗？","jiàn, hǎo ma?","— all right?")],
+  [{s:"NAME"},F("：好，一言为定！我一到就给你发短信。","：hǎo, yì yán wéi dìng! wǒ yí dào jiù gěi nǐ fā duǎnxìn.","：Deal! I'll text you the moment I arrive.")]],
+ qs:[{q:"他们要一起做什么？",slot:"EVENT"},{q:"他们几点见面？",slot:"TIME"},{q:"他们在哪儿见面？",slot:"SPOT"},{q:"为什么第一次的时间不行？",slot:"PROB"}]},
+
+{id:"campus",lv:3,genre:"故事",title:"新学期",titleEn:"A new semester",
+ slots:{
+  SUBJ:[F("经济","jīngjì","economics"),F("历史","lìshǐ","history"),F("电脑","diànnǎo","computing"),F("国际关系","guójì guānxi","international relations")],
+  DIFF:[F("生词太多","shēngcí tài duō","there was too much vocabulary"),F("老师说得太快","lǎoshī shuō de tài kuài","the teacher spoke too fast"),F("功课特别重","gōngkè tèbié zhòng","the workload was heavy")],
+  FIX:[F("每天早上复习半个小时","měitiān zǎoshang fùxí bàn ge xiǎoshí","review half an hour each morning"),F("跟同学一起讨论","gēn tóngxué yìqǐ tǎolùn","discuss it with classmates"),F("下课以后去问老师","xiàkè yǐhòu qù wèn lǎoshī","go ask the teacher after class")],
+  RESULT:[F("成绩提高了不少","chéngjì tígāo le bù shǎo","my grades improved a good deal"),F("现在听得懂百分之八十","xiànzài tīng de dǒng bǎi fēn zhī bāshí","now I understand eighty percent"),F("越来越有信心","yuè lái yuè yǒu xìnxīn","I grew more and more confident")],
+  TIME:[F("开学的第一个星期","kāixué de dì yī ge xīngqī","the first week of term"),F("上个学期","shàng ge xuéqī","last semester"),F("刚开始上课的时候","gāng kāishǐ shàngkè de shíhou","when classes first started")]},
+ lines:[
+  [{s:"TIME"},F("，我选了一门","，wǒ xuǎn le yì mén",", I signed up for a"),{s:"SUBJ"},F("课。","kè.","course.")],
+  [F("虽然我很努力，但是","suīrán wǒ hěn nǔlì, dànshì","Although I worked hard,"),{s:"DIFF"},F("，我常常觉得跟不上。","wǒ chángcháng juéde gēn bu shàng.","and I often felt I couldn't keep up.")],
+  [F("后来我决定","hòulái wǒ juédìng","Later I decided to"),{s:"FIX"},F("。","."," ")],
+  [F("只要每天坚持，水平就会慢慢提高。","zhǐyào měitiān jiānchí, shuǐpíng jiù huì mànmàn tígāo.","As long as you keep at it daily, your level rises bit by bit.")],
+  [F("三个月以后，","sān ge yuè yǐhòu,","Three months later,"),{s:"RESULT"},F("。","."," ")],
+  [F("对我来说，这是这个学期最大的收获。","duì wǒ lái shuō, zhè shì zhège xuéqī zuì dà de shōuhuò.","For me that was the biggest gain of the semester.")]],
+ qs:[{q:"他选了什么课？",slot:"SUBJ"},{q:"开始的时候，问题是什么？",slot:"DIFF"},{q:"他用了什么办法？",slot:"FIX"},{q:"最后的结果是什么？",slot:"RESULT"}]},
+
+{id:"health",lv:3,genre:"说明",title:"中医与西医",titleEn:"Chinese and Western medicine",
+ slots:{
+  SYM:[F("咳嗽","késou","a cough"),F("头疼","tóuténg","a headache"),F("肚子不舒服","dùzi bù shūfu","an upset stomach"),F("睡不好","shuì bu hǎo","trouble sleeping")],
+  WEST:[F("马上吃药","mǎshàng chī yào","take medicine right away"),F("去医院检查","qù yīyuàn jiǎnchá","get checked at the hospital"),F("打一针","dǎ yì zhēn","get a shot")],
+  CHIN:[F("多喝热水，好好休息","duō hē rè shuǐ, hǎohāo xiūxi","drink hot water and rest properly"),F("用中药泡脚","yòng zhōngyào pào jiǎo","soak the feet in an herbal bath"),F("少吃凉的东西","shǎo chī liáng de dōngxi","eat fewer cold things")],
+  SPEED:[F("很快","hěn kuài","fast"),F("比较快","bǐjiào kuài","fairly fast"),F("非常快","fēicháng kuài","very fast")]},
+ lines:[
+  [F("很多人问：中医和西医到底有什么不一样？","hěn duō rén wèn: zhōngyī hé xīyī dàodǐ yǒu shénme bù yíyàng?","Many people ask: what really is the difference between Chinese and Western medicine?")],
+  [F("比方说，你有","bǐfang shuō, nǐ yǒu","Say you have"),{s:"SYM"},F("的时候，西医常常让你","de shíhou, xīyī chángcháng ràng nǐ",". Western medicine usually has you"),{s:"WEST"},F("。","."," ")],
+  [F("这种办法","zhè zhǒng bànfǎ","This approach works"),{s:"SPEED"},F("，可是有的人觉得对身体的影响比较大。","kěshì yǒu de rén juéde duì shēntǐ de yǐngxiǎng bǐjiào dà.","fast, but some feel its effect on the body is considerable.")],
+  [F("中医的看法不太一样。医生可能让你","zhōngyī de kànfǎ bú tài yíyàng. yīshēng kěnéng ràng nǐ","Chinese medicine sees it differently. The doctor may have you"),{s:"CHIN"},F("。","."," ")],
+  [F("虽然慢一点儿，但是中医更重视养生，也就是说，重视平时的习惯。","suīrán màn yìdiǎnr, dànshì zhōngyī gèng zhòngshì yǎngshēng, yě jiù shì shuō, zhòngshì píngshí de xíguàn.","Although slower, Chinese medicine puts more weight on wellness — that is, on everyday habits.")],
+  [F("其实两种办法各有各的用处，不见得只能选一种。","qíshí liǎng zhǒng bànfǎ gè yǒu gè de yòngchu, bú jiàn de zhǐ néng xuǎn yì zhǒng.","In fact each has its uses; you don't necessarily have to pick just one.")]],
+ qs:[{q:"文章里说的症状是什么？",slot:"SYM"},{q:"西医常常让病人做什么？",slot:"WEST"},{q:"中医可能让病人做什么？",slot:"CHIN"}]},
+
+{id:"news",lv:4,genre:"新闻",title:"简讯",titleEn:"A news brief",
+ slots:{
+  CITY:[F("上海","Shànghǎi","Shanghai"),F("深圳","Shēnzhèn","Shenzhen"),F("成都","Chéngdū","Chengdu"),F("杭州","Hángzhōu","Hangzhou")],
+  SECTOR:[F("新能源汽车","xīn néngyuán qìchē","new-energy vehicles"),F("人工智能","réngōng zhìnéng","artificial intelligence"),F("高铁设备","gāotiě shèbèi","high-speed rail equipment"),F("软件出口","ruǎnjiàn chūkǒu","software exports")],
+  PCT:[F("百分之十二","bǎi fēn zhī shí'èr","twelve percent"),F("百分之八","bǎi fēn zhī bā","eight percent"),F("百分之二十三","bǎi fēn zhī èrshísān","twenty-three percent")],
+  DIR:[F("增长","zēngzhǎng","grew"),F("下降","xiàjiàng","fell")],
+  CAUSE:[F("国际市场的需求增加","guójì shìchǎng de xūqiú zēngjiā","demand in international markets rose"),F("生产成本上升","shēngchǎn chéngběn shàngshēng","production costs climbed"),F("新政策的影响","xīn zhèngcè de yǐngxiǎng","the effect of the new policy")],
+  NEXT:[F("明年会更稳定","míngnián huì gèng wěndìng","next year will be steadier"),F("短期内很难改变","duǎnqī nèi hěn nán gǎibiàn","it will be hard to change in the short term"),F("还要看国际情况","hái yào kàn guójì qíngkuàng","it still depends on the international situation")]},
+ lines:[
+  [F("据","jù","According to"),{s:"CITY"},F("的最新统计，今年上半年，","de zuìxīn tǒngjì, jīnnián shàngbànnián,","'s latest figures, in the first half of this year,"),{s:"SECTOR"},F("的出口","de chūkǒu","exports of"),{s:"DIR"},F("了","le",""),{s:"PCT"},F("。","."," ")],
+  [F("有关部门表示，主要原因是","yǒuguān bùmén biǎoshì, zhǔyào yuányīn shì","The relevant authorities said the main reason was that"),{s:"CAUSE"},F("。","."," ")],
+  [F("随着这一变化，很多企业开始调整自己的计划。","suízhe zhè yī biànhuà, hěn duō qǐyè kāishǐ tiáozhěng zìjǐ de jìhuà.","With this shift, many firms began adjusting their plans.")],
+  [F("一位研究人员说，之所以出现这种情况，是因为市场的条件跟去年已经完全不一样了。","yí wèi yánjiū rényuán shuō, zhī suǒyǐ chūxiàn zhè zhǒng qíngkuàng, shì yīnwèi shìchǎng de tiáojiàn gēn qùnián yǐjīng wánquán bù yíyàng le.","A researcher said the reason this happened is that market conditions are now completely different from last year.")],
+  [F("对于将来，他认为","duìyú jiānglái, tā rènwéi","As for the future, he believes"),{s:"NEXT"},F("。","."," ")]],
+ qs:[{q:"这条新闻说的是哪个城市？",slot:"CITY"},{q:"是什么行业？",slot:"SECTOR"},{q:"变化了多少？",slot:"PCT"},{q:"主要原因是什么？",slot:"CAUSE"},{q:"他对将来怎么看？",slot:"NEXT"}]},
+
+{id:"work",lv:4,genre:"叙述",title:"第一份工作",titleEn:"A first job",
+ slots:{
+  FIELD:[F("一家银行","yì jiā yínháng","a bank"),F("一家科技公司","yì jiā kējì gōngsī","a tech company"),F("一个研究所","yí ge yánjiūsuǒ","a research institute"),F("一家贸易公司","yì jiā màoyì gōngsī","a trading firm")],
+  TASK:[F("整理数据","zhěnglǐ shùjù","organizing data"),F("写调查报告","xiě diàochá bàogào","writing survey reports"),F("跟客户开会","gēn kèhù kāihuì","meeting with clients"),F("管理项目进度","guǎnlǐ xiàngmù jìndù","managing project schedules")],
+  HARD:[F("压力特别大","yālì tèbié dà","the pressure was intense"),F("时间总是不够","shíjiān zǒngshì bú gòu","there was never enough time"),F("很多东西都不熟悉","hěn duō dōngxi dōu bù shúxī","much of it was unfamiliar")],
+  LESSON:[F("做事要实事求是","zuòshì yào shí shì qiú shì","you must seek truth from facts"),F("跟人合作比什么都重要","gēn rén hézuò bǐ shénme dōu zhòngyào","working with people matters more than anything"),F("刚开始犯错误是难免的","gāng kāishǐ fàn cuòwù shì nánmiǎn de","mistakes at the start are unavoidable")]},
+ lines:[
+  [F("毕业以后，我在","bìyè yǐhòu, wǒ zài","After graduating, I worked at"),{s:"FIELD"},F("工作了两年。","gōngzuò le liǎng nián.","for two years.")],
+  [F("我主要负责","wǒ zhǔyào fùzé","I was mainly responsible for"),{s:"TASK"},F("。","."," ")],
+  [F("刚开始的时候","gāng kāishǐ de shíhou","At the beginning"),{s:"HARD"},F("，我甚至怀疑自己选错了专业。","wǒ shènzhì huáiyí zìjǐ xuǎn cuò le zhuānyè.",", and I even doubted I'd chosen the right field.")],
+  [F("后来我发现，与其一个人着急，不如早点儿去问有经验的同事。","hòulái wǒ fāxiàn, yǔqí yí ge rén zháojí, bùrú zǎo diǎnr qù wèn yǒu jīngyàn de tóngshì.","Later I found that rather than fretting alone, it's better to ask experienced colleagues early.")],
+  [F("那两年让我明白了一件事：","nà liǎng nián ràng wǒ míngbai le yí jiàn shì:","Those two years taught me one thing:"),{s:"LESSON"},F("。","."," ")]],
+ qs:[{q:"他在哪儿工作？",slot:"FIELD"},{q:"他负责什么？",slot:"TASK"},{q:"刚开始有什么困难？",slot:"HARD"},{q:"他学到了什么？",slot:"LESSON"}]},
+
+{id:"analysis",lv:5,genre:"评论",title:"短评",titleEn:"A short analytical comment",
+ slots:{
+  TOPIC:[F("供应链的安全","gōngyìngliàn de ānquán","supply-chain security"),F("能源价格的变化","néngyuán jiàgé de biànhuà","shifts in energy prices"),F("人口结构的问题","rénkǒu jiégòu de wèntí","the population-structure problem"),F("技术竞争","jìshù jìngzhēng","technological competition")],
+  VIEW1:[F("这只是一个短期的问题","zhè zhǐshì yí ge duǎnqī de wèntí","this is only a short-term problem"),F("市场自己会解决","shìchǎng zìjǐ huì jiějué","the market will sort it out itself"),F("政府应该马上出手","zhèngfǔ yīnggāi mǎshàng chūshǒu","the government should step in at once")],
+  VIEW2:[F("影响会持续很多年","yǐngxiǎng huì chíxù hěn duō nián","the effects will last many years"),F("成本最后还是要有人负担","chéngběn zuìhòu háishi yào yǒu rén fùdān","someone must ultimately bear the cost"),F("真正的风险还没出现","zhēnzhèng de fēngxiǎn hái méi chūxiàn","the real risk hasn't appeared yet")],
+  EVID:[F("过去五年的数据","guòqù wǔ nián de shùjù","data from the past five years"),F("几个主要国家的政策","jǐ ge zhǔyào guójiā de zhèngcè","the policies of several major countries"),F("企业的实际情况","qǐyè de shíjì qíngkuàng","the actual situation of firms")]},
+ lines:[
+  [F("最近，关于","zuìjìn, guānyú","Recently, on the subject of"),{s:"TOPIC"},F("的讨论越来越多。","de tǎolùn yuè lái yuè duō.","the discussion has grown steadily louder.")],
+  [F("有人认为，","yǒu rén rènwéi,","Some hold that"),{s:"VIEW1"},F("；也有人指出，","; yě yǒu rén zhǐchū,","; others point out that"),{s:"VIEW2"},F("。","."," ")],
+  [F("所谓分析，就是先弄清楚哪些是事实，哪些只是看法。","suǒwèi fēnxī, jiù shì xiān nòng qīngchu nǎxiē shì shìshí, nǎxiē zhǐshì kànfǎ.","Analysis, properly speaking, means first sorting out what is fact and what is merely opinion.")],
+  [F("如果看","rúguǒ kàn","If we look at"),{s:"EVID"},F("，就会发现，问题比想象的复杂。","jiù huì fāxiàn, wèntí bǐ xiǎngxiàng de fùzá.",", we find the problem is more complex than imagined.")],
+  [F("由于条件一直在变，任何简单的结论恐怕都未必可靠。","yóuyú tiáojiàn yìzhí zài biàn, rènhé jiǎndān de jiélùn kǒngpà dōu wèibì kěkào.","Since conditions keep changing, any simple conclusion is likely unreliable.")],
+  [F("与其急着下判断，不如再等一等，看看数据怎么说。","yǔqí jí zhe xià pànduàn, bùrú zài děng yi děng, kànkan shùjù zěnme shuō.","Rather than rushing to judgment, better to wait and see what the data say.")]],
+ qs:[{q:"这篇短评讨论的是什么？",slot:"TOPIC"},{q:"第一种看法是什么？",slot:"VIEW1"},{q:"第二种看法是什么？",slot:"VIEW2"},{q:"作者建议看什么？",slot:"EVID"}]},
+
+{id:"travel",lv:2,genre:"叙述",title:"一次旅行",titleEn:"A trip",
+ slots:{
+  DEST:[F("北京","Běijīng","Beijing"),F("台北","Táiběi","Taipei"),F("西安","Xī'ān","Xi'an"),F("香港","Xiānggǎng","Hong Kong")],
+  HOW:[F("坐飞机","zuò fēijī","by plane"),F("坐高铁","zuò gāotiě","by high-speed rail"),F("开车","kāichē","by car")],
+  DAYS:[F("五天","wǔ tiān","five days"),F("一个星期","yí ge xīngqī","a week"),F("十天","shí tiān","ten days")],
+  SEE:[F("参观了博物馆","cānguān le bówùguǎn","visited a museum"),F("去了很有名的市场","qù le hěn yǒumíng de shìchǎng","went to a famous market"),F("爬了山","pá le shān","climbed a mountain")],
+  PROB:[F("天天下雨","tiāntiān xià yǔ","it rained every day"),F("路上很堵车","lùshang hěn dǔchē","the traffic was bad"),F("我把手机丢了","wǒ bǎ shǒujī diū le","I lost my phone")],
+  END:[F("还是玩得很高兴","háishi wán de hěn gāoxìng","we still had a great time"),F("下次一定还要去","xià cì yídìng hái yào qù","I'll definitely go again"),F("学到了不少东西","xué dào le bù shǎo dōngxi","I learned quite a bit")]},
+ lines:[
+  [F("去年放假的时候，我","qùnián fàngjià de shíhou, wǒ","During last year's holiday I went"),{s:"HOW"},F("去了","qù le","to"),{s:"DEST"},F("，一共待了","yígòng dāi le",", staying"),{s:"DAYS"},F("。","."," ")],
+  [F("在那儿我","zài nàr wǒ","There I"),{s:"SEE"},F("，也吃了很多以前没吃过的东西。","yě chī le hěn duō yǐqián méi chī guo de dōngxi.",", and ate many things I'd never tried.")],
+  [F("可惜","kěxī","Unfortunately"),{s:"PROB"},F("，那几天有点儿麻烦。","nà jǐ tiān yǒudiǎnr máfan.",", so those days were a bit troublesome.")],
+  [F("不过","búguò","Even so,"),{s:"END"},F("。","."," ")]],
+ qs:[{q:"他去了哪儿？",slot:"DEST"},{q:"他是怎么去的？",slot:"HOW"},{q:"他去了多久？",slot:"DAYS"},{q:"路上有什么问题？",slot:"PROB"}]},
+
+{id:"tech",lv:4,genre:"说明",title:"技术与生活",titleEn:"Technology and daily life",
+ slots:{
+  THING:[F("手机支付","shǒujī zhīfù","mobile payment"),F("网上买菜","wǎngshàng mǎi cài","online grocery shopping"),F("人工智能助手","réngōng zhìnéng zhùshǒu","AI assistants"),F("共享单车","gòngxiǎng dānchē","shared bikes")],
+  GOOD:[F("方便得多","fāngbiàn de duō","far more convenient"),F("省了很多时间","shěng le hěn duō shíjiān","saves a lot of time"),F("成本比以前低","chéngběn bǐ yǐqián dī","cheaper than before")],
+  BAD:[F("个人信息的安全","gèrén xìnxī de ānquán","the security of personal information"),F("很多人失去了工作","hěn duō rén shīqù le gōngzuò","many people lost jobs"),F("我们越来越离不开它","wǒmen yuè lái yuè lí bu kāi tā","we depend on it more and more")],
+  WHO:[F("年纪大的人","niánjì dà de rén","older people"),F("农村的居民","nóngcūn de jūmín","rural residents"),F("刚来的留学生","gāng lái de liúxuéshēng","newly arrived international students")]},
+ lines:[
+  [F("这几年，","zhè jǐ nián,","In recent years,"),{s:"THING"},F("几乎改变了每个人的生活。","jīhū gǎibiàn le měi ge rén de shēnghuó.","has changed nearly everyone's life.")],
+  [F("对大部分人来说，这确实","duì dà bùfen rén lái shuō, zhè quèshí","For most people it really is"),{s:"GOOD"},F("。","."," ")],
+  [F("但是，我们也不能不注意","dànshì, wǒmen yě bù néng bú zhùyì","But we can't ignore"),{s:"BAD"},F("这个问题。","zhège wèntí.","either.")],
+  [F("尤其是","yóuqí shì","This is especially so for"),{s:"WHO"},F("，他们往往更难适应这种变化。","tāmen wǎngwǎng gèng nán shìyìng zhè zhǒng biànhuà.",", who often find such change harder to adapt to.")],
+  [F("通过一些简单的办法，比如多一点儿耐心和帮助，这个问题其实是可以解决的。","tōngguò yìxiē jiǎndān de bànfǎ, bǐrú duō yìdiǎnr nàixīn hé bāngzhù, zhège wèntí qíshí shì kěyǐ jiějué de.","Through simple measures — a little more patience and help — the problem can in fact be solved.")]],
+ qs:[{q:"文章说的是什么技术？",slot:"THING"},{q:"它有什么好处？",slot:"GOOD"},{q:"有什么问题？",slot:"BAD"},{q:"谁比较难适应？",slot:"WHO"}]},
+
+{id:"food",lv:2,genre:"说明",title:"点菜",titleEn:"Ordering a meal",
+ slots:{
+  REST:[F("学校附近的小饭馆","xuéxiào fùjìn de xiǎo fànguǎn","a small place near campus"),F("中国城的老店","Zhōngguóchéng de lǎo diàn","an old shop in Chinatown"),F("一家新开的餐厅","yì jiā xīn kāi de cāntīng","a newly opened restaurant")],
+  D1:[F("糖醋鱼","tángcùyú","sweet-and-sour fish"),F("宫保鸡丁","gōngbǎo jīdīng","kung pao chicken"),F("红烧牛肉","hóngshāo niúròu","braised beef")],
+  D2:[F("凉拌黄瓜","liángbàn huángguā","cold cucumber salad"),F("家常豆腐","jiācháng dòufu","home-style tofu"),F("青菜","qīngcài","greens")],
+  DRINK:[F("一壶茶","yì hú chá","a pot of tea"),F("两瓶冰水","liǎng píng bīng shuǐ","two bottles of cold water"),F("一杯热奶茶","yì bēi rè nǎichá","a hot milk tea")],
+  NEED:[F("我对花生过敏","wǒ duì huāshēng guòmǐn","I'm allergic to peanuts"),F("我不吃肉","wǒ bù chī ròu","I don't eat meat"),F("我不能吃太辣的","wǒ bù néng chī tài là de","I can't eat anything too spicy")]},
+ lines:[
+  [F("上个周末我跟朋友去了","shàng ge zhōumò wǒ gēn péngyou qù le","Last weekend a friend and I went to"),{s:"REST"},F("。","."," ")],
+  [F("我们点了","wǒmen diǎn le","We ordered"),{s:"D1"},F("和","hé","and"),{s:"D2"},F("，还要了","hái yào le",", plus"),{s:"DRINK"},F("。","."," ")],
+  [F("点菜以前我先告诉服务员：","diǎncài yǐqián wǒ xiān gàosu fúwùyuán:","Before ordering I told the server:"),{s:"NEED"},F("，请他们注意一下。","qǐng tāmen zhùyì yíxià.",", and asked them to keep it in mind.")],
+  [F("菜上得很快，味道也不错，我们吃得干干净净。","cài shàng de hěn kuài, wèidao yě búcuò, wǒmen chī de gāngān jìngjìng.","The food came fast and tasted good; we cleaned our plates.")],
+  [F("结账的时候才三十几块钱，比我们想的便宜多了。","jiézhàng de shíhou cái sānshí jǐ kuài qián, bǐ wǒmen xiǎng de piányi duō le.","The bill came to just over thirty — much cheaper than we expected.")]],
+ qs:[{q:"他们去了哪儿？",slot:"REST"},{q:"他们点的第一个菜是什么？",slot:"D1"},{q:"他们要了什么饮料？",slot:"DRINK"},{q:"他告诉服务员什么？",slot:"NEED"}]}
+];
+
+/* ==================================================================
+   PHASE II — engines
+   ================================================================== */
+
+/* ---------- unified lexicon + dictionary + tokenizer ---------- */
+const LEX=(()=>{ const seen=new Map();
+  WEEKS.forEach((w,i)=>w.vocab.forEach(g=>g.items.forEach(it=>{
+    if(!seen.has(it.c)) seen.set(it.c,{c:it.c,py:it.py,m:it.m,wk:i+1,src:"course",pack:w.label});
+  })));
+  return [...seen.values()];
+})();
+const CHAR_GLOSS=(()=>{ const m=new Map();
+  WEEKS.forEach(w=>(w.writeChars||[]).forEach(c=>{ if(c.m&&!m.has(c.c)) m.set(c.c,{c:c.c,py:c.py,m:c.m.split(" — radical")[0]}); }));
+  return m;
+})();
+const DICT=(()=>{ const m=new Map();
+  LEX.forEach(x=>m.set(x.c,x));
+  HSK_BANK.forEach(x=>{ if(!m.has(x.c)) m.set(x.c,{c:x.c,py:x.py,m:x.m,wk:9,src:"hsk",pack:"HSK"+x.lv+" · "+x.pack,lv:x.lv}); });
+  CHAR_GLOSS.forEach(x=>{ if(!m.has(x.c)) m.set(x.c,{c:x.c,py:x.py,m:x.m,wk:0,src:"char",pack:"single character"}); });
+  /* function words the course never lists explicitly */
+  [["的","de","(possessive / modifier)"],["了","le","(aspect particle)"],["是","shì","to be"],["在","zài","at, in; be -ing"],
+   ["我","wǒ","I, me"],["你","nǐ","you"],["他","tā","he, him"],["她","tā","she, her"],["们","men","(plural)"],
+   ["不","bù","not"],["也","yě","also"],["都","dōu","all, both"],["很","hěn","very"],["和","hé","and"],
+   ["有","yǒu","to have"],["就","jiù","then; only"],["会","huì","will; can"],["能","néng","can, able to"],
+   ["要","yào","to want; will"],["去","qù","to go"],["来","lái","to come"],["个","ge","(measure word)"],
+   ["这","zhè","this"],["那","nà","that"],["什么","shénme","what"],["可以","kěyǐ","may, can"],
+   ["一","yī","one"],["二","èr","two"],["三","sān","three"],["四","sì","four"],["五","wǔ","five"],
+   ["六","liù","six"],["七","qī","seven"],["八","bā","eight"],["九","jiǔ","nine"],["十","shí","ten"],
+   ["非常","fēicháng","extremely"],["自己","zìjǐ","oneself"],["认为","rènwéi","to think, to hold"],
+   ["表示","biǎoshì","to indicate, to state"],["发现","fāxiàn","to discover"],["出现","chūxiàn","to appear"],
+   ["变化","biànhuà","change"],["其实","qíshí","actually"],["比方说","bǐfang shuō","for example"],
+   ["主要","zhǔyào","main, mainly"],["部门","bùmén","department, authority"],["有关","yǒuguān","relevant, related"],
+   ["人员","rényuán","personnel, staff"],["调整","tiáozhěng","to adjust"],["注意","zhùyì","to pay attention"],
+   ["适应","shìyìng","to adapt"],["居民","jūmín","resident"],["大部分","dà bùfen","most of"],
+   ["复杂","fùzá","complicated"],["判断","pànduàn","judgment; to judge"],["事实","shìshí","fact"],
+   ["看法","kànfǎ","view, opinion"],["指出","zhǐchū","to point out"],["持续","chíxù","to continue"],
+   ["负担","fùdān","to bear; burden"],["实际","shíjì","actual"],["任何","rènhé","any"],
+   ["结论","jiélùn","conclusion"],["可靠","kěkào","reliable"],["想象","xiǎngxiàng","to imagine"],
+   ["收获","shōuhuò","gain, harvest"],["跟不上","gēn bu shàng","cannot keep up"],["坚持","jiānchí","to persist"],
+   ["毕业","bìyè","to graduate"],["客户","kèhù","client"],["进度","jìndù","progress, schedule"],
+   ["失去","shīqù","to lose"],["省","shěng","to save; province"],["丢","diū","to lose (an object)"],
+   ["参观","cānguān","to visit (a place)"],["博物馆","bówùguǎn","museum"],["可惜","kěxī","it's a pity"],
+   ["不过","búguò","however"],["待","dāi","to stay"],["服务员","fúwùyuán","server, attendant"],
+   ["味道","wèidao","flavor, taste"],["结账","jiézhàng","to settle the bill"],["附近","fùjìn","nearby"],
+   ["其","qí","its, his, their"],["之","zhī","(literary possessive)"],["据","jù","according to"],
+   ["上半年","shàngbànnián","the first half of the year"],["短期","duǎnqī","short term"],["长期","chángqī","long term"],
+   ["使用","shǐyòng","to use"],["担心","dānxīn","to worry"],["总额","zǒng'é","total amount"],
+   ["同比","tóngbǐ","year on year"],["上升","shàngshēng","to rise"],["下跌","xiàdiē","to fall (of prices)"],
+   ["该","gāi","the said; should"],["表现","biǎoxiàn","performance; to display"],["认识","rènshi","to know, to recognize"],
+   ["提出","tíchū","to put forward"],["进行","jìnxíng","to carry out"],["形成","xíngchéng","to form"],
+   ["存在","cúnzài","to exist"],["包括","bāokuò","to include"],["属于","shǔyú","to belong to"],
+   ["作为","zuòwéi","as, in the capacity of"],["方向","fāngxiàng","direction"],["需要","xūyào","to need"],
+   ["重要","zhòngyào","important"],["可能","kěnéng","possible; possibly"],["应该","yīnggāi","should"],
+   ["必须","bìxū","must"],["已经","yǐjīng","already"],["直接","zhíjiē","direct"],
+   ["之间","zhījiān","between"],["以来","yǐlái","since"],["国内","guónèi","domestic"],
+   ["国外","guówài","overseas"],["全球","quánqiú","global"],["地区","dìqū","region"],
+   ["行业","hángyè","industry"],["领域","lǐngyù","field, domain"],["规模","guīmó","scale"],
+   ["受到","shòudào","to receive, to suffer"],["面临","miànlín","to face (a situation)"],
+   ["取得","qǔdé","to obtain, to achieve"],["实现","shíxiàn","to realize, to achieve"]
+  ].forEach(([c,py,m2])=>{ if(!m.has(c)) m.set(c,{c,py,m:m2,wk:0,src:"function",pack:"function word"}); });
+  return m;
+})();
+const MAXTOK=Math.max(...[...DICT.keys()].map(k=>[...k].length));
+function tokenize(text){
+  const out=[]; const ch=[...text]; let i=0;
+  while(i<ch.length){
+    const c=ch[i];
+    if(!/[\u4e00-\u9fff]/.test(c)){ out.push({t:c,d:null,punc:true}); i++; continue; }
+    let hit=null,len=0;
+    for(let L=Math.min(MAXTOK,ch.length-i);L>=1;L--){
+      const cand=ch.slice(i,i+L).join("");
+      if(DICT.has(cand)){ hit=DICT.get(cand); len=L; break; }
+    }
+    if(hit){ out.push({t:hit.c,d:hit}); i+=len; }
+    else { out.push({t:c,d:null}); i++; }
+  }
+  return out;
+}
+/* ---------- sentence bank harvested from every week ---------- */
+const SENTS=(()=>{ const out=[],seen=new Set();
+  const push=(c,py,en,lv,src)=>{ if(!c||!py||py==="—")return; const k=c.slice(0,24); if(seen.has(k))return; seen.add(k);
+    out.push({c,py,en:en||"",lv,src,n:[...c].filter(x=>/[\u4e00-\u9fff]/.test(x)).length}); };
+  WEEKS.forEach((w,i)=>{
+    (w.grammar||[]).forEach(g=>(g.ex||[]).forEach(e=>push(e.c,e.py,e.en,i+1,w.label+" · "+g.t)));
+    if(w.reading){ (w.reading.lines||[]).forEach(l=>push(l.c,l.py,l.en,i+1,w.label+" · 阅读"));
+                   (w.reading.lines2||[]).forEach(l=>push(l.c,l.py,l.en,i+1,w.label+" · 阅读")); }
+    (w.speaking||[]).forEach(q=>push(q.c,q.py,q.en,i+1,w.label+" · 口语"));
+  });
+  PATTERNS_PLUS.forEach(p=>p.ex.forEach(e=>push(e.c,e.py,e.en,p.lv+5,"HSK"+p.lv+" · "+p.t)));
+  return out;
+})();
+
+/* ---------- shared SRS (SM-2 lite) ---------- */
+const P2_KEY="ec_phase2_v1";
+let P2=(()=>{ try{ return JSON.parse(localStorage.getItem(P2_KEY)||"{}")||{}; }catch(e){ return {}; } })();
+P2.srs=P2.srs||{}; P2.log=P2.log||{}; P2.lib=P2.lib||[]; P2.extra=P2.extra||[]; P2.forge=P2.forge||{};
+P2.opts=P2.opts||{dojoTypes:{write:1,read:1,tone:1,mean:1},dojoScope:"all",newPerDay:12};
+function p2save(){ try{ localStorage.setItem(P2_KEY,JSON.stringify(P2)); }catch(e){} }
+const D1=86400000;
+function schedule(key,grade){
+  const s=P2.srs[key]||{ef:2.5,ivl:0,reps:0,lapses:0,due:0};
+  if(grade<=1){ s.reps=0; s.lapses++; s.ivl=0; s.ef=Math.max(1.3,s.ef-0.2); s.due=Date.now()+6e4*10; }
+  else{
+    if(s.reps===0) s.ivl=(grade>=4?3:1);
+    else if(s.reps===1) s.ivl=(grade>=4?8:grade===2?2:4);
+    else s.ivl=Math.round(s.ivl*(grade===2?1.25:grade===3?s.ef:s.ef*1.35));
+    s.ivl=Math.max(1,Math.min(365,s.ivl));
+    s.ef=Math.max(1.3,Math.min(3.2,s.ef+(grade===2?-0.14:grade===3?0:0.1)));
+    s.reps++; s.due=Date.now()+s.ivl*D1;
+  }
+  s.seen=(s.seen||0)+1; if(grade>=2)s.ok=(s.ok||0)+1;
+  P2.srs[key]=s;
+  const day=new Date().toISOString().slice(0,10);
+  P2.log[day]=(P2.log[day]||0)+1;
+  p2save(); return s;
+}
+function dueCount(keys){ const now=Date.now(); let due=0,fresh=0;
+  keys.forEach(k=>{ const s=P2.srs[k]; if(!s)fresh++; else if(s.due<=now)due++; });
+  return {due,fresh}; }
+function streakDays(){ let n=0; const d=new Date();
+  for(;;){ const k=d.toISOString().slice(0,10); if(P2.log[k]){n++; d.setDate(d.getDate()-1);} else { if(n===0){ d.setDate(d.getDate()-1); const k2=d.toISOString().slice(0,10); if(P2.log[k2]){continue;} } break; } if(n>999)break; }
+  return n; }
+
+/* ================================================================
+   1 · CHARACTER DOJO
+   ================================================================ */
+const DOJO_TYPES=[["write","写 Write","Produce every stroke from memory"],["read","读 Read","Character → meaning"],["tone","声 Tone","Hear it, name the tone pattern"],["mean","义 Recall","Meaning → character"]];
+let dojoPool=[],dojoQueue=[],dojoCur=null,dojoWriter=null,dojoCharI=0,dojoMistakes=0,dojoRevealed=false,dojoDone=0,dojoRight=0;
+function dojoItems(){
+  const scope=P2.opts.dojoScope;
+  let base=LEX.filter(x=>[...x.c].some(ch=>/[\u4e00-\u9fff]/.test(ch)));
+  if(scope!=="all") base=base.filter(x=>x.wk===+scope);
+  const extra=(P2.extra||[]).map(x=>({...x,wk:9,src:"added"}));
+  if(scope==="all"||scope==="9") base=base.concat(extra);
+  if(scope==="hsk") base=HSK_BANK.map(x=>({c:x.c,py:x.py,m:x.m,wk:9,src:"hsk",pack:"HSK"+x.lv+" · "+x.pack}));
+  const types=DOJO_TYPES.map(t=>t[0]).filter(t=>P2.opts.dojoTypes[t]);
+  const out=[];
+  base.forEach(it=>types.forEach(ty=>{
+    if(ty==="tone"&&(it.py||"").trim().split(/\s+/).length<2) return;
+    if(ty==="write"&&[...it.c].filter(c=>/[\u4e00-\u9fff]/.test(c)).length>4) return;
+    out.push({key:ty+"|"+it.c,type:ty,it});
+  }));
+  return out;
+}
+function buildDojo(){
+  const sc=$("#dojoScope"); if(sc&&!sc.dataset.built){
+    sc.dataset.built="1";
+    sc.innerHTML='<option value="all">Everything I\'ve learned</option>'+
+      WEEKS.map((w,i)=>'<option value="'+(i+1)+'">'+w.label+' · '+w.range+'</option>').join("")+
+      '<option value="hsk">HSK 3–5 expansion bank</option>';
+    sc.value=P2.opts.dojoScope;
+    sc.onchange=()=>{ P2.opts.dojoScope=sc.value; p2save(); startDojo(); };
+  }
+  const tw=$("#dojoTypes"); if(tw&&!tw.dataset.built){
+    tw.dataset.built="1";
+    tw.innerHTML=DOJO_TYPES.map(t=>'<button class="seg-btn'+(P2.opts.dojoTypes[t[0]]?" active":"")+'" data-t="'+t[0]+'" title="'+t[2]+'">'+t[1]+'</button>').join("");
+    tw.onclick=e=>{ const b=e.target.closest("button"); if(!b)return;
+      const t=b.dataset.t, on=DOJO_TYPES.map(x=>x[0]).filter(x=>P2.opts.dojoTypes[x]);
+      if(P2.opts.dojoTypes[t]&&on.length===1)return;
+      P2.opts.dojoTypes[t]=P2.opts.dojoTypes[t]?0:1; b.classList.toggle("active"); p2save(); startDojo(); };
+  }
+  startDojo();
+}
+function startDojo(){
+  dojoPool=dojoItems(); dojoDone=0; dojoRight=0;
+  const now=Date.now(),due=[],fresh=[];
+  dojoPool.forEach(x=>{ const s=P2.srs[x.key]; if(!s)fresh.push(x); else if(s.due<=now)due.push(x); });
+  dojoQueue=shuffle(due).concat(shuffle(fresh).slice(0,P2.opts.newPerDay*2));
+  renderDojoStats(); nextDojo();
+}
+function renderDojoStats(){
+  const keys=dojoPool.map(x=>x.key), {due,fresh}=dueCount(keys);
+  const learned=keys.filter(k=>P2.srs[k]&&P2.srs[k].reps>=2).length;
+  const seen=keys.filter(k=>P2.srs[k]).length;
+  let ok=0,tot=0; keys.forEach(k=>{const s=P2.srs[k]; if(s){ok+=s.ok||0;tot+=s.seen||0;}});
+  const ret=tot?Math.round(ok/tot*100):0;
+  $("#dojoStats").innerHTML=
+    stat(due,"due now")+stat(fresh,"new")+stat(learned,"learned")+stat(seen+"/"+keys.length,"cards touched")+
+    stat(ret+"%","retention")+stat(streakDays(),"day streak");
+  const host=$("#dojoHeat"); if(host){
+    const cells=[]; const d=new Date(); d.setDate(d.getDate()-29);
+    for(let i=0;i<30;i++){ const k=d.toISOString().slice(0,10); const n=P2.log[k]||0;
+      cells.push('<i class="heat'+(n?(n>40?" h3":n>15?" h2":" h1"):"")+'" title="'+k+" · "+n+' reviews"></i>'); d.setDate(d.getDate()+1); }
+    host.innerHTML=cells.join("");
+  }
+  function stat(v,l){ return '<div class="p2stat"><b>'+v+'</b><span>'+l+'</span></div>'; }
+}
+function nextDojo(){
+  dojoRevealed=false; dojoMistakes=0; dojoCharI=0;
+  const stage=$("#dojoStage");
+  if(!dojoQueue.length){
+    stage.innerHTML='<div class="p2done"><div class="p2done-h hanzi">done</div><p>Nothing left in this queue. You reviewed <b>'+dojoDone+'</b> cards'+(dojoDone?' with <b>'+Math.round(dojoRight/dojoDone*100)+'%</b> recalled':'')+'.</p><button class="btn mark" onclick="startDojo()">Go again</button></div>';
+    return;
+  }
+  dojoCur=dojoQueue[0];
+  const t=dojoCur.type;
+  if(t==="write") renderDojoWrite();
+  else if(t==="read") renderDojoChoice("read");
+  else if(t==="mean") renderDojoChoice("mean");
+  else renderDojoTone();
+  $("#dojoProg").textContent=dojoQueue.length+" left · "+dojoDone+" done";
+}
+function dojoGradeRow(){
+  return '<div class="p2grade">'+
+    '<button class="gbtn g1" onclick="dojoGrade(1)">Again<em>&lt;10m</em></button>'+
+    '<button class="gbtn g2" onclick="dojoGrade(2)">Hard<em>'+prev(2)+'</em></button>'+
+    '<button class="gbtn g3" onclick="dojoGrade(3)">Good<em>'+prev(3)+'</em></button>'+
+    '<button class="gbtn g4" onclick="dojoGrade(4)">Easy<em>'+prev(4)+'</em></button></div>';
+  function prev(g){ const s=P2.srs[dojoCur.key]||{ef:2.5,ivl:0,reps:0};
+    let iv; if(s.reps===0) iv=(g>=4?3:g===2?1:1); else if(s.reps===1) iv=(g>=4?8:g===2?2:4);
+    else iv=Math.round(s.ivl*(g===2?1.25:g===3?s.ef:s.ef*1.35));
+    return iv>=30?Math.round(iv/30)+"mo":iv+"d"; }
+}
+function dojoGrade(g){
+  schedule(dojoCur.key,g); dojoDone++; if(g>=3)dojoRight++;
+  dojoQueue.shift(); if(g<=1) dojoQueue.splice(Math.min(4,dojoQueue.length),0,dojoCur);
+  renderDojoStats(); nextDojo();
+}
+function renderDojoWrite(){
+  const it=dojoCur.it, chars=[...it.c].filter(c=>/[\u4e00-\u9fff]/.test(c));
+  $("#dojoStage").innerHTML=
+   '<div class="p2card">'+
+    '<div class="p2tag">写 · produce every stroke from memory</div>'+
+    '<div class="p2cue">'+pyHTML(it.py)+'<div class="p2mean">'+it.m+'</div><div class="p2src">'+(it.pack||"")+'</div></div>'+
+    '<div class="p2wrap"><div class="p2boxes" id="dojoBoxes">'+chars.map((c,i)=>'<div class="p2box'+(i===0?" on":"")+'" id="dbox'+i+'"></div>').join("")+'</div></div>'+
+    '<div class="p2hintrow"><button class="btn ghost sm" onclick="dojoHint()">Show me a stroke</button>'+
+      '<button class="btn ghost sm" onclick="dojoRevealWrite()">I can\'t — show it</button></div>'+
+    '<div id="dojoAfter"></div>'+
+   '</div>';
+  dojoStartChar(0);
+}
+function dojoStartChar(i){
+  dojoCharI=i;
+  const chars=[...dojoCur.it.c].filter(c=>/[\u4e00-\u9fff]/.test(c));
+  $$(".p2box").forEach((b,k)=>b.classList.toggle("on",k===i));
+  const host=$("#dbox"+i); if(!host)return;
+  if(typeof HanziWriter==="undefined"){ host.innerHTML='<span class="hanzi p2fall">'+chars[i]+'</span>'; return; }
+  host.innerHTML="";
+  const sz=Math.max(120,Math.min(190,((window.innerWidth||360)-90)/Math.min(chars.length,3)));
+  host.style.width=sz+"px"; host.style.height=sz+"px";
+  dojoWriter=HanziWriter.create(host,chars[i],{width:sz,height:sz,padding:6,showCharacter:false,showOutline:false,
+    strokeColor:"#1b2430",drawingColor:"#cf3f2c",highlightColor:"#b0813a",drawingWidth:24,showHintAfterMisses:false});
+  dojoWriter.quiz({
+    onMistake:()=>{ dojoMistakes++; },
+    onComplete:()=>{
+      host.classList.add("ok");
+      if(i+1<chars.length) setTimeout(()=>dojoStartChar(i+1),260);
+      else dojoFinishWrite();
+    }});
+}
+function dojoHint(){ if(dojoWriter&&dojoWriter.highlightStroke) try{dojoWriter.highlightStroke(0);}catch(e){}
+  if(dojoWriter) try{ dojoWriter.animateCharacter(); dojoMistakes+=1; setTimeout(()=>dojoStartChar(dojoCharI),1200);}catch(e){} }
+function dojoRevealWrite(){ dojoMistakes+=3; dojoFinishWrite(true); }
+function dojoFinishWrite(failed){
+  if(dojoRevealed)return; dojoRevealed=true;
+  const it=dojoCur.it;
+  $("#dojoAfter").innerHTML=
+    '<div class="p2answer"><span class="hanzi p2big" data-say="'+it.c+'">'+it.c+'</span>'+
+    '<div class="p2ansmeta">'+pyHTML(it.py)+' · '+it.m+
+    '<div class="p2note">'+(failed?"shown":(dojoMistakes===0?"clean — no mistakes":dojoMistakes+" mistake"+(dojoMistakes>1?"s":"")))+'</div></div></div>'+
+    dojoGradeRow();
+  speakOnce(it.c); paintSpk($("#dojoAfter"));
+}
+function distractors(it,n,field){
+  const pool=shuffle(LEX.filter(x=>x.c!==it.c&&x.wk<=Math.max(it.wk,3)+2)).slice(0,60);
+  const out=[],seen=new Set([it[field]]);
+  for(const p of pool){ if(out.length>=n)break; if(seen.has(p[field]))continue; seen.add(p[field]); out.push(p); }
+  return out;
+}
+function renderDojoChoice(kind){
+  const it=dojoCur.it, isRead=kind==="read";
+  const opts=shuffle(distractors(it,3,isRead?"m":"c").concat([it]));
+  $("#dojoStage").innerHTML=
+   '<div class="p2card">'+
+    '<div class="p2tag">'+(isRead?"读 · character → meaning":"义 · meaning → character")+'</div>'+
+    '<div class="p2cue">'+(isRead?'<span class="hanzi p2big">'+it.c+'</span>':'<div class="p2mean big">'+it.m+'</div>')+'</div>'+
+    '<div class="p2opts" id="dojoOpts">'+opts.map(o=>'<button class="p2opt" data-c="'+o.c+'">'+(isRead?o.m:'<span class="hanzi">'+o.c+'</span>')+'</button>').join("")+'</div>'+
+    '<div id="dojoAfter"></div></div>';
+  $("#dojoOpts").onclick=e=>{ const b=e.target.closest(".p2opt"); if(!b||dojoRevealed)return;
+    dojoRevealed=true; const right=b.dataset.c===it.c;
+    $$(".p2opt").forEach(x=>{ if(x.dataset.c===it.c)x.classList.add("right"); else if(x===b)x.classList.add("wrong"); x.disabled=true; });
+    speakOnce(it.c);
+    $("#dojoAfter").innerHTML='<div class="p2answer"><span class="hanzi p2big" data-say="'+it.c+'">'+it.c+'</span><div class="p2ansmeta">'+pyHTML(it.py)+' · '+it.m+'</div></div>'+
+      (right?dojoGradeRow():'<div class="p2grade"><button class="gbtn g1" onclick="dojoGrade(1)">Again<em>&lt;10m</em></button><button class="gbtn g2" onclick="dojoGrade(2)">Got it now<em>1d</em></button></div>');
+    paintSpk($("#dojoAfter")); };
+}
+function tonePattern(py){ return (py||"").trim().split(/\s+/).map(s=>toneOf(s)).join("-"); }
+function renderDojoTone(){
+  const it=dojoCur.it, right=tonePattern(it.py), n=right.split("-").length;
+  const pool=new Set([right]);
+  while(pool.size<4){ const g=Array.from({length:n},()=>String(Math.floor(Math.random()*5))).join("-"); pool.add(g); }
+  const opts=shuffle([...pool]);
+  const lbl=p=>p.split("-").map(t=>'<i class="tn t'+t+'">'+(t==="0"?"·":t)+'</i>').join("");
+  $("#dojoStage").innerHTML=
+   '<div class="p2card">'+
+    '<div class="p2tag">声 · listen, then name the tone pattern</div>'+
+    '<div class="p2cue"><button class="p2play" onclick="speak(\''+it.c+'\')">▶ 听</button><div class="p2mean">'+it.m+'</div></div>'+
+    '<div class="p2opts tone" id="dojoOpts">'+opts.map(o=>'<button class="p2opt tone" data-p="'+o+'">'+lbl(o)+'</button>').join("")+'</div>'+
+    '<div id="dojoAfter"></div></div>';
+  speak(it.c);
+  $("#dojoOpts").onclick=e=>{ const b=e.target.closest(".p2opt"); if(!b||dojoRevealed)return;
+    dojoRevealed=true; const ok=b.dataset.p===right;
+    $$(".p2opt").forEach(x=>{ if(x.dataset.p===right)x.classList.add("right"); else if(x===b)x.classList.add("wrong"); x.disabled=true; });
+    $("#dojoAfter").innerHTML='<div class="p2answer"><span class="hanzi p2big" data-say="'+it.c+'">'+it.c+'</span><div class="p2ansmeta">'+pyHTML(it.py)+' · '+it.m+'</div></div>'+
+      (ok?dojoGradeRow():'<div class="p2grade"><button class="gbtn g1" onclick="dojoGrade(1)">Again<em>&lt;10m</em></button><button class="gbtn g2" onclick="dojoGrade(2)">Got it now<em>1d</em></button></div>');
+    paintSpk($("#dojoAfter")); };
+}
+
+/* ================================================================
+   2 · THE READING ROOM
+   ================================================================ */
+let curPassage=null, rdPy=false, rdEn=false;
+function pickSlots(tpl){
+  const chosen={}; Object.keys(tpl.slots).forEach(k=>{ const arr=tpl.slots[k]; chosen[k]=arr[Math.floor(Math.random()*arr.length)]; });
+  return chosen;
+}
+function buildPassage(tpl){
+  const pick=pickSlots(tpl);
+  const sents=tpl.lines.map(line=>{
+    let c="",py="",en="";
+    line.forEach(seg=>{ const s=seg.s?pick[seg.s]:seg;
+      c+=s.c; py+=(py&&!/^[，。？！、]/.test(s.c)?" ":"")+s.py; en+=(en?" ":"")+ (s.en||""); });
+    return {c,py:py.replace(/\s+/g," ").trim(),en:en.replace(/\s+/g," ").trim()};
+  });
+  const qs=(tpl.qs||[]).map(q=>{
+    const right=pick[q.slot];
+    const others=shuffle(tpl.slots[q.slot].filter(o=>o.c!==right.c)).slice(0,3);
+    const opts=shuffle([right].concat(others));
+    return {q:q.q,opts:opts.map(o=>o.c),a:opts.findIndex(o=>o.c===right.c),ex:right.en};
+  });
+  return {tpl,pick,sents,qs,id:tpl.id+"-"+Date.now()};
+}
+function generatePassage(){
+  const lv=+($("#rdLevel")?$("#rdLevel").value:3);
+  const genre=$("#rdGenre")?$("#rdGenre").value:"any";
+  let pool=TEMPLATES.filter(t=>t.lv===lv);
+  if(pool.length<2) pool=TEMPLATES.filter(t=>Math.abs(t.lv-lv)<=1);
+  if(genre!=="any"){ const g=pool.filter(t=>t.genre===genre); if(g.length)pool=g;
+    else { const g2=TEMPLATES.filter(t=>t.genre===genre); if(g2.length)pool=g2; } }
+  if(!pool.length) pool=TEMPLATES.filter(t=>t.lv<=lv+1);
+  if(!pool.length) pool=TEMPLATES;
+  const tpl=pool[Math.floor(Math.random()*pool.length)];
+  curPassage=buildPassage(tpl);
+  renderPassage();
+}
+function tokHTML(text){
+  return tokenize(text).map(t=>{
+    if(t.punc) return '<span class="pc">'+t.t+'</span>';
+    if(!t.d) return '<span class="tok unk" data-w="'+t.t+'">'+t.t+'</span>';
+    const cls=t.d.src==="hsk"?"tok new":(t.d.src==="char"||t.d.src==="function")?"tok fn":"tok";
+    return '<span class="'+cls+'" data-w="'+t.d.c+'">'+t.t+'</span>';
+  }).join("");
+}
+function renderPassage(){
+  const p=curPassage; if(!p)return;
+  const known=coverage(p.sents.map(s=>s.c).join(""));
+  $("#rdMeta").innerHTML='<span class="p2chip">'+p.tpl.genre+'</span><span class="p2chip">Level '+p.tpl.lv+'</span>'+
+    '<span class="p2chip">'+known.chars+' 字</span><span class="p2chip">'+known.pct+'% already known</span>';
+  $("#rdTitle").innerHTML='<span class="hanzi">'+p.tpl.title+'</span><small>'+p.tpl.titleEn+'</small>';
+  $("#rdBody").innerHTML=p.sents.map((s,i)=>
+    '<div class="rd-s" data-i="'+i+'">'+
+      '<button class="rd-play" title="play" onclick="speakOnce(curPassage.sents['+i+'].c)">▶</button>'+
+      '<div class="rd-txt"><div class="rd-py'+(rdPy?"":" off")+'">'+s.py+'</div>'+
+      '<div class="rd-han hanzi">'+tokHTML(s.c)+'</div>'+
+      '<div class="rd-en'+(rdEn?"":" off")+'">'+s.en+'</div></div></div>').join("");
+  $("#rdQs").innerHTML=p.qs.map((q,i)=>
+    '<div class="rd-q" data-i="'+i+'"><div class="rd-qt hanzi">'+(i+1)+'. '+q.q+'</div>'+
+    '<div class="rd-opts">'+q.opts.map((o,j)=>'<button class="rd-opt hanzi" data-q="'+i+'" data-j="'+j+'">'+o+'</button>').join("")+'</div></div>').join("");
+  $("#rdQs").onclick=e=>{ const b=e.target.closest(".rd-opt"); if(!b)return;
+    const qi=+b.dataset.q, q=p.qs[qi], box=b.closest(".rd-q");
+    if(box.dataset.done)return; box.dataset.done="1";
+    box.querySelectorAll(".rd-opt").forEach((x,j)=>{ if(j===q.a)x.classList.add("right"); else if(x===b)x.classList.add("wrong"); });
+    const fb=document.createElement("div"); fb.className="rd-fb"; fb.textContent=(+b.dataset.j===q.a?"✓ ":"✗ ")+q.ex; box.appendChild(fb); };
+  bindGloss($("#rdBody"));
+}
+function coverage(text){
+  const toks=tokenize(text).filter(t=>!t.punc);
+  const chars=[...text].filter(c=>/[\u4e00-\u9fff]/.test(c)).length;
+  const known=toks.filter(t=>t.d&&(t.d.src==="course"||t.d.src==="function"||t.d.src==="char"||t.d.src==="added")).length;
+  const nw=toks.filter(t=>t.d&&t.d.src==="hsk"), unk=toks.filter(t=>!t.d);
+  return {chars,tokens:toks.length,known,pct:toks.length?Math.round(known/toks.length*100):0,newWords:nw,unknown:unk};
+}
+function bindGloss(root){
+  if(!root)return;
+  root.onclick=e=>{ const t=e.target.closest(".tok"); if(!t)return; showGloss(t,t.dataset.w); };
+}
+function showGloss(el,w){
+  const d=DICT.get(w);
+  const box=$("#glossBox");
+  const inDojo=(P2.extra||[]).some(x=>x.c===w)||LEX.some(x=>x.c===w);
+  box.innerHTML=d?
+    '<button class="gl-x" onclick="$(\'#glossBox\').hidden=true">×</button>'+
+    '<div class="gl-h"><span class="hanzi">'+d.c+'</span><button class="gl-spk" onclick="speakOnce(\''+d.c+'\')">🔊</button></div>'+
+    '<div class="gl-py">'+pyHTML(d.py)+'</div><div class="gl-m">'+d.m+'</div>'+
+    '<div class="gl-src">'+(d.pack||"")+'</div>'+
+    (inDojo?'<div class="gl-in">already in your Dojo deck</div>':'<button class="btn mark sm" onclick="addToDojo(\''+d.c+'\')">+ add to Dojo</button>')
+   :'<button class="gl-x" onclick="$(\'#glossBox\').hidden=true">×</button><div class="gl-h"><span class="hanzi">'+w+'</span></div><div class="gl-m">Not in your dictionary yet.</div>';
+  box.hidden=false;
+  const r=el.getBoundingClientRect();
+  box.style.top=(window.scrollY+r.bottom+8)+"px";
+  box.style.left=Math.max(12,Math.min(window.innerWidth-260,r.left-40))+"px";
+}
+function addToDojo(c){
+  const d=DICT.get(c); if(!d)return;
+  if(!(P2.extra||[]).some(x=>x.c===c)){ P2.extra.push({c:d.c,py:d.py,m:d.m,pack:"added from reading"}); p2save(); }
+  $("#glossBox").hidden=true;
+  toast("加了 "+c+" — added to your Dojo deck");
+}
+function toast(msg){ let t=$("#p2toast"); if(!t){ t=document.createElement("div"); t.id="p2toast"; document.body.appendChild(t); }
+  t.textContent=msg; t.classList.add("on"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("on"),2200); }
+function buildReader(){
+  const g=$("#rdGenre"); if(g&&!g.dataset.built){ g.dataset.built="1";
+    const genres=[...new Set(TEMPLATES.map(t=>t.genre))];
+    g.innerHTML='<option value="any">Any genre</option>'+genres.map(x=>'<option>'+x+'</option>').join("");
+    g.onchange=generatePassage;
+  }
+  const l=$("#rdLevel"); if(l&&!l.dataset.built){ l.dataset.built="1";
+    l.oninput=()=>{ $("#rdLevelOut").textContent="Level "+l.value+" · "+["","HSK1–2","HSK2","HSK3","HSK3–4","HSK4–5","HSK5"][+l.value]; };
+    l.oninput();
+    l.onchange=generatePassage;
+  }
+  if(!curPassage) generatePassage();
+  const imp=$("#impGo"); if(imp&&!imp.dataset.built){ imp.dataset.built="1"; imp.onclick=analyzeImport; }
+}
+function analyzeImport(){
+  const txt=($("#impText").value||"").trim();
+  if(!txt){ $("#impOut").innerHTML='<p class="p2hint">Paste any Chinese text — a news paragraph, a chat message, a page from a graded reader.</p>'; return; }
+  const cov=coverage(txt);
+  const lines=txt.split(/\n+/).filter(Boolean);
+  $("#impOut").innerHTML=
+   '<div class="p2meta">'+['<span class="p2chip">'+cov.chars+' 字</span>','<span class="p2chip">'+cov.tokens+' words</span>',
+     '<span class="p2chip">'+cov.pct+'% known</span>','<span class="p2chip">'+cov.newWords.length+' HSK-bank</span>',
+     '<span class="p2chip">'+cov.unknown.length+' unknown</span>'].join("")+'</div>'+
+   '<div class="rd-body">'+lines.map(l=>'<div class="rd-s"><div class="rd-txt"><div class="rd-han hanzi">'+tokHTML(l)+'</div></div></div>').join("")+'</div>'+
+   (cov.unknown.length?'<div class="p2sub">Characters not in your dictionary — worth looking up: <span class="hanzi">'+[...new Set(cov.unknown.map(u=>u.t))].join(" ")+'</span></div>':"")+
+   (cov.newWords.length?'<div class="p2sub">Words from the HSK bank you can add: '+[...new Map(cov.newWords.map(u=>[u.d.c,u.d])).values()].slice(0,24).map(d=>'<button class="p2mini" onclick="addToDojo(\''+d.c+'\')">'+d.c+'</button>').join("")+'</div>':"");
+  bindGloss($("#impOut"));
+}
+
+/* ================================================================
+   3 · THE SOUND LAB
+   ================================================================ */
+let slMode="dictation", slSent=null, slRate=1, slChunk=0, slTonePair=null;
+function slPool(){
+  const lv=+($("#slLevel")?$("#slLevel").value:8);
+  const max=+($("#slLen")?$("#slLen").value:14);
+  let p=SENTS.filter(s=>s.lv<=lv&&s.n<=max&&s.n>=3);
+  return p.length?p:SENTS;
+}
+function buildSound(){
+  const m=$("#slModes"); if(m&&!m.dataset.built){ m.dataset.built="1";
+    m.onclick=e=>{ const b=e.target.closest("button"); if(!b)return;
+      $$("#slModes button").forEach(x=>x.classList.remove("active")); b.classList.add("active");
+      slMode=b.dataset.m; renderSound(); }; }
+  ["slLevel","slLen"].forEach(id=>{ const el=$("#"+id); if(el&&!el.dataset.built){ el.dataset.built="1"; el.onchange=renderSound;
+    el.oninput=()=>{ const o=$("#"+id+"Out"); if(o)o.textContent=(id==="slLevel"?"through week "+el.value:"max "+el.value+" 字"); }; el.oninput(); } });
+  renderSound();
+}
+function renderSound(){
+  if(slMode==="dictation") renderDictation();
+  else if(slMode==="tone") renderTonePair();
+  else renderShadow();
+}
+function newSent(){ const p=slPool(); slSent=p[Math.floor(Math.random()*p.length)]; }
+function renderDictation(){
+  newSent(); slRate=1;
+  $("#slStage").innerHTML=
+   '<div class="p2card"><div class="p2tag">听写 · type exactly what you hear</div>'+
+    '<div class="sl-controls">'+
+      '<button class="p2play" onclick="speak(slSent.c)">▶ 播放</button>'+
+      '<button class="btn ghost sm" onclick="slSlow()">0.6× slow</button>'+
+      '<button class="btn ghost sm" onclick="slChunks()">chunk by chunk</button></div>'+
+    '<textarea id="slIn" class="sl-in hanzi" rows="3" placeholder="用中文写下你听到的……"></textarea>'+
+    '<div class="p2hintrow"><button class="btn mark" onclick="slCheck()">Check</button>'+
+      '<button class="btn ghost sm" onclick="renderDictation()">Skip →</button></div>'+
+    '<div id="slOut"></div></div>';
+  setTimeout(()=>speak(slSent.c),260);
+}
+function slSlow(){ const u=new SpeechSynthesisUtterance(slSent.c); u.lang="zh-CN"; u.rate=.6; if(zhVoice)u.voice=zhVoice; speechSynthesis.cancel(); speechSynthesis.speak(u); }
+function slChunks(){
+  const parts=slSent.c.split(/[，。？！、]/).filter(Boolean);
+  let i=0; const go=()=>{ if(i>=parts.length)return; speakOnce(parts[i]); i++; setTimeout(go,1500+parts[i-1].length*120); }; go();
+}
+function slCheck(){
+  const got=($("#slIn").value||"").replace(/[\s，。？！、,.?!]/g,"");
+  const want=slSent.c.replace(/[\s，。？！、,.?!]/g,"");
+  const g=[...got],w=[...want];
+  const dp=Array.from({length:g.length+1},()=>new Array(w.length+1).fill(0));
+  for(let i=1;i<=g.length;i++)for(let j=1;j<=w.length;j++)
+    dp[i][j]=g[i-1]===w[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);
+  const lcs=dp[g.length][w.length], pct=w.length?Math.round(lcs/w.length*100):0;
+  const gset=new Set(g);
+  const html=w.map(c=>gset.has(c)?'<span class="dh ok">'+c+'</span>':'<span class="dh miss">'+c+'</span>').join("");
+  $("#slOut").innerHTML='<div class="sl-score '+(pct>=90?"good":pct>=60?"mid":"low")+'">'+pct+'% of characters recovered</div>'+
+    '<div class="sl-target hanzi">'+html+'</div>'+
+    '<div class="sl-py">'+slSent.py+'</div><div class="sl-en">'+slSent.en+'</div>'+
+    '<div class="p2src">'+slSent.src+'</div>'+
+    '<div class="p2grade"><button class="gbtn g1" onclick="slLog(1)">Missed it<em>again soon</em></button>'+
+    '<button class="gbtn g3" onclick="slLog(3)">Got it<em>next</em></button></div>';
+  paintSpk($("#slOut"));
+}
+function slLog(g){ schedule("dict|"+slSent.c.slice(0,14),g); renderDictation(); }
+function renderTonePair(){
+  const pool=LEX.filter(x=>(x.py||"").trim().split(/\s+/).length===2);
+  slTonePair=pool[Math.floor(Math.random()*pool.length)];
+  const right=tonePattern(slTonePair.py);
+  const all=[]; for(let a=1;a<=4;a++)for(let b=0;b<=4;b++)all.push(a+"-"+b);
+  const opts=shuffle([right].concat(shuffle(all.filter(x=>x!==right)).slice(0,7)));
+  $("#slStage").innerHTML=
+   '<div class="p2card"><div class="p2tag">声调 · hear the word, name the pair</div>'+
+    '<div class="p2cue"><button class="p2play" onclick="speak(slTonePair.c)">▶ 听</button></div>'+
+    '<div class="tone-grid" id="slTG">'+opts.map(o=>'<button class="tone-cell" data-p="'+o+'">'+
+      o.split("-").map(t=>'<i class="tn t'+t+'">'+(t==="0"?"·":t)+'</i>').join("")+'</button>').join("")+'</div>'+
+    '<div id="slOut"></div></div>';
+  speak(slTonePair.c);
+  $("#slTG").onclick=e=>{ const b=e.target.closest(".tone-cell"); if(!b||$("#slOut").dataset.done)return;
+    $("#slOut").dataset.done="1"; const ok=b.dataset.p===right;
+    $$(".tone-cell").forEach(x=>{ if(x.dataset.p===right)x.classList.add("right"); else if(x===b)x.classList.add("wrong"); });
+    schedule("tone|"+slTonePair.c,ok?3:1);
+    $("#slOut").innerHTML='<div class="p2answer"><span class="hanzi p2big" data-say="'+slTonePair.c+'">'+slTonePair.c+'</span>'+
+      '<div class="p2ansmeta">'+pyHTML(slTonePair.py)+' · '+slTonePair.m+'</div></div>'+
+      '<button class="btn mark" onclick="renderTonePair()">Next →</button>';
+    paintSpk($("#slOut")); };
+}
+function renderShadow(){
+  newSent(); slChunk=0;
+  const parts=chunkSent(slSent.c);
+  $("#slStage").innerHTML=
+   '<div class="p2card"><div class="p2tag">跟读 · backward buildup, then full speed</div>'+
+    '<div class="sh-steps" id="shSteps">'+parts.map((p,i)=>'<button class="sh-step" data-i="'+i+'">'+p+'</button>').join("")+'</div>'+
+    '<div class="sh-full hanzi" data-say="'+slSent.c+'">'+slSent.c+'</div>'+
+    '<div class="sl-py">'+slSent.py+'</div><div class="sl-en">'+slSent.en+'</div>'+
+    '<div class="sh-rates">'+[0.6,0.8,1,1.2].map(r=>'<button class="btn ghost sm" onclick="shSpeak('+r+')">'+r+'×</button>').join("")+'</div>'+
+    '<div class="p2hintrow"><button class="btn mark" onclick="renderShadow()">New sentence →</button></div></div>';
+  $("#shSteps").onclick=e=>{ const b=e.target.closest(".sh-step"); if(!b)return; speakOnce(b.textContent); };
+  paintSpk($("#slStage"));
+}
+function chunkSent(c){
+  const chars=[...c.replace(/[。？！]/g,"")];
+  const step=Math.max(2,Math.ceil(chars.length/4));
+  const tails=[]; for(let k=step;k<=chars.length;k+=step) tails.push(chars.slice(Math.max(0,chars.length-k)).join(""));
+  if(tails[tails.length-1]!==chars.join("")) tails.push(chars.join(""));
+  return tails;
+}
+function shSpeak(r){ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(slSent.c); u.lang="zh-CN"; u.rate=r; if(zhVoice)u.voice=zhVoice; speechSynthesis.speak(u); }
+
+/* ================================================================
+   4 · THE FORGE
+   ================================================================ */
+let fgMode="gym", fgItem=null, fgShown=false, fgTimer=null, fgLeft=0;
+const ALL_PATTERNS=(()=>{
+  const out=[];
+  WEEKS.forEach((w,i)=>(w.grammar||[]).forEach(g=>out.push({id:"w"+i+g.id,t:g.t,lv:Math.min(2,Math.ceil((i+1)/4)),ex:g.ex||[],src:w.label})));
+  PATTERNS_PLUS.forEach(p=>out.push({id:p.id,t:p.t,lv:p.lv,ex:p.ex,src:"HSK"+p.lv,pts:p.pts}));
+  return out;
+})();
+function buildForge(){
+  const m=$("#fgModes"); if(m&&!m.dataset.built){ m.dataset.built="1";
+    m.onclick=e=>{ const b=e.target.closest("button"); if(!b)return;
+      $$("#fgModes button").forEach(x=>x.classList.remove("active")); b.classList.add("active");
+      fgMode=b.dataset.m; renderForge(); }; }
+  renderForge();
+}
+function renderForge(){
+  if(fgMode==="gym") renderGym();
+  else if(fgMode==="analyze") renderAnalyzer();
+  else renderPlan();
+}
+function gymPool(){
+  const beyond=$("#fgBeyond")&&$("#fgBeyond").checked;
+  const src=beyond?ALL_PATTERNS.filter(p=>p.lv>=3):ALL_PATTERNS;
+  const out=[]; src.forEach(p=>p.ex.forEach(e=>out.push({p,e})));
+  return out.filter(x=>x.e&&x.e.en&&x.e.c);
+}
+function renderGym(){
+  const pool=gymPool();
+  const now=Date.now();
+  const scored=pool.map(x=>{ const s=P2.srs["gym|"+x.e.c.slice(0,14)]; return {x,due:s?s.due:0}; })
+                   .filter(o=>o.due<=now);
+  const pickFrom=scored.length?scored:pool.map(x=>({x}));
+  fgItem=pickFrom[Math.floor(Math.random()*pickFrom.length)].x; fgShown=false;
+  $("#fgStage").innerHTML=
+   '<div class="p2card"><div class="p2tag">造句 · say it in Chinese before you look</div>'+
+    '<label class="fg-toggle"><input type="checkbox" id="fgBeyond"'+(($("#fgBeyond")&&$("#fgBeyond").checked)?" checked":"")+' onchange="renderGym()"> beyond-course patterns only</label>'+
+    '<div class="fg-pattern">'+fgItem.p.t+'<small>'+fgItem.p.src+'</small></div>'+
+    '<div class="fg-en">'+fgItem.e.en+'</div>'+
+    '<div class="fg-timer" id="fgTimer">15</div>'+
+    '<textarea id="fgIn" class="sl-in hanzi" rows="2" placeholder="用这个句型说出来／写出来……"></textarea>'+
+    '<div class="p2hintrow"><button class="btn mark" onclick="fgReveal()">Show the model</button>'+
+    '<button class="btn ghost sm" onclick="renderGym()">Skip →</button></div>'+
+    '<div id="fgOut"></div></div>';
+  fgLeft=15; clearInterval(fgTimer);
+  fgTimer=setInterval(()=>{ fgLeft--; const t=$("#fgTimer"); if(!t){clearInterval(fgTimer);return;}
+    t.textContent=fgLeft>0?fgLeft:"—"; t.classList.toggle("hot",fgLeft<=5);
+    if(fgLeft<=0)clearInterval(fgTimer); },1000);
+}
+function fgReveal(){
+  if(fgShown)return; fgShown=true; clearInterval(fgTimer);
+  const mine=($("#fgIn").value||"").trim();
+  const cov=mine?coverage(mine):null;
+  $("#fgOut").innerHTML=
+   '<div class="fg-model"><div class="p2tag">model</div><div class="hanzi fg-han" data-say="'+fgItem.e.c+'">'+fgItem.e.c+'</div>'+
+   '<div class="sl-py">'+fgItem.e.py+'</div></div>'+
+   (mine?'<div class="fg-mine"><div class="p2tag">yours</div><div class="hanzi">'+tokHTML(mine)+'</div>'+
+     (cov?'<div class="p2sub">'+cov.tokens+' words · '+cov.pct+'% from your known vocabulary</div>':"")+'</div>':"")+
+   '<div class="p2grade"><button class="gbtn g1" onclick="fgGrade(1)">Couldn\'t<em>again</em></button>'+
+   '<button class="gbtn g2" onclick="fgGrade(2)">Rough<em>2d</em></button>'+
+   '<button class="gbtn g3" onclick="fgGrade(3)">Close<em>4d</em></button>'+
+   '<button class="gbtn g4" onclick="fgGrade(4)">Clean<em>8d</em></button></div>';
+  speakOnce(fgItem.e.c); paintSpk($("#fgOut"));
+  if(mine) bindGloss($("#fgOut"));
+}
+function fgGrade(g){ schedule("gym|"+fgItem.e.c.slice(0,14),g); renderGym(); }
+
+function renderAnalyzer(){
+  $("#fgStage").innerHTML=
+   '<div class="p2card"><div class="p2tag">分析 · write freely, then see what you actually used</div>'+
+    '<textarea id="anIn" class="sl-in hanzi" rows="8" placeholder="写一段话——日记、看法、一封信、一个报告的开头……越长越好。"></textarea>'+
+    '<div class="p2hintrow"><button class="btn mark" onclick="runAnalyzer()">Analyze</button>'+
+    '<button class="btn ghost sm" onclick="$(\'#anIn\').value=\'\';$(\'#anOut\').innerHTML=\'\'">Clear</button></div>'+
+    '<div id="anOut"></div></div>';
+  const last=P2.forge.lastText; if(last)$("#anIn").value=last;
+}
+function runAnalyzer(){
+  const txt=($("#anIn").value||"").trim();
+  if(!txt){ $("#anOut").innerHTML='<p class="p2hint">Write something first — even three sentences is enough to see a profile.</p>'; return; }
+  P2.forge.lastText=txt; p2save();
+  const cov=coverage(txt);
+  const toks=tokenize(txt).filter(t=>!t.punc);
+  const sentences=txt.split(/[。！？\n]/).filter(s=>s.trim().length>1);
+  const avg=sentences.length?Math.round(cov.chars/sentences.length):0;
+  const uniq=new Set(toks.map(t=>t.t)).size;
+  const ttr=toks.length?Math.round(uniq/toks.length*100):0;
+  const byWk={}; toks.forEach(t=>{ const k=t.d?(t.d.src==="hsk"?"HSK bank":t.d.src==="function"?"function":"Week "+t.d.wk):"unknown"; byWk[k]=(byWk[k]||0)+1; });
+  const used=[],unused=[];
+  CORE_DETECT.concat(PATTERNS_PLUS.map(p=>({id:p.id,t:p.t,detect:p.detect,lv:p.lv})))
+    .forEach(p=>{ if(p.detect&&p.detect.test(txt)) used.push(p); else unused.push(p); });
+  const adv=used.filter(u=>u.lv>=3);
+  const grade=Math.min(100,Math.round(ttr*0.30+Math.min(avg,24)*0.9+used.length*2.4+adv.length*3.6));
+  const nudge=shuffle(unused.filter(u=>u.lv>=3)).slice(0,4);
+  $("#anOut").innerHTML=
+   '<div class="an-score"><b>'+grade+'</b><span>range score</span></div>'+
+   '<div class="p2meta">'+[
+     '<span class="p2chip">'+cov.chars+' 字</span>','<span class="p2chip">'+sentences.length+' sentences</span>',
+     '<span class="p2chip">avg '+avg+' 字/句</span>','<span class="p2chip">'+uniq+' distinct words</span>',
+     '<span class="p2chip">variety '+ttr+'%</span>','<span class="p2chip">'+used.length+' patterns detected</span>'].join("")+'</div>'+
+   '<div class="an-block"><h4>Where your words come from</h4><div class="an-bars">'+
+     Object.entries(byWk).sort((a,b)=>b[1]-a[1]).map(([k,v])=>
+      '<div class="an-bar"><span>'+k+'</span><i style="width:'+Math.round(v/toks.length*100)+'%"></i><em>'+v+'</em></div>').join("")+'</div></div>'+
+   '<div class="an-block"><h4>Patterns you used</h4><div class="an-tags">'+
+     (used.length?used.map(u=>'<span class="an-tag'+(u.lv>=3?" adv":"")+'">'+u.t+'</span>').join(""):'<span class="p2hint">none detected — try building one in explicitly</span>')+'</div></div>'+
+   '<div class="an-block"><h4>Reach for these next time</h4><div class="an-tags">'+
+     nudge.map(u=>'<span class="an-tag ghost">'+u.t+'</span>').join("")+'</div>'+
+     '<p class="p2hint">Fossilization is the real enemy at your stage: you can say a great deal with the patterns you already trust, so the ones you never reach for quietly stop developing. Force two of these into the next thing you write.</p></div>'+
+   '<div class="an-block"><h4>Your text, glossed</h4><div class="rd-han hanzi">'+tokHTML(txt)+'</div></div>';
+  bindGloss($("#anOut"));
+}
+function renderPlan(){
+  const dojoKeys=dojoItems().map(x=>x.key), dj=dueCount(dojoKeys);
+  const gymKeys=gymPool().map(x=>"gym|"+x.e.c.slice(0,14)), gy=dueCount(gymKeys);
+  const today=new Date().toISOString().slice(0,10), doneToday=P2.log[today]||0;
+  const target=+(P2.forge.target||60);
+  const pct=Math.min(100,Math.round(doneToday/target*100));
+  const wk=[]; const d=new Date(); d.setDate(d.getDate()-6);
+  for(let i=0;i<7;i++){ const k=d.toISOString().slice(0,10); wk.push({k,n:P2.log[k]||0,lbl:"日一二三四五六".charAt(new Date(k+"T12:00").getDay())}); d.setDate(d.getDate()+1); }
+  const mx=Math.max(10,...wk.map(x=>x.n));
+  $("#fgStage").innerHTML=
+   '<div class="p2card"><div class="p2tag">今天 · your prescription for the day</div>'+
+    '<div class="pl-ring"><div class="pl-num">'+doneToday+'</div><div class="pl-of">of '+target+' reps today</div>'+
+      '<div class="pl-bar"><i style="width:'+pct+'%"></i></div>'+
+      '<div class="p2sub">'+streakDays()+'-day streak · '+Object.keys(P2.log).length+' active days total</div></div>'+
+    '<div class="pl-week">'+wk.map(w=>'<div class="pl-d"><i style="height:'+Math.round(w.n/mx*44+2)+'px"></i><span>'+w.lbl+'</span></div>').join("")+'</div>'+
+    '<div class="pl-list">'+
+      plRow("字 Dojo",dj.due+" due, "+dj.fresh+" new","#dojo","Characters and words on schedule. Clear the due pile first — that is the whole trick.")+
+      plRow("阅读 Reading Room","1 passage","#reader","One generated passage at your level, then one you paste in from the wild.")+
+      plRow("听写 Sound Lab","5 sentences","#sound","Dictation is the fastest way to find the gap between what you know and what you can hear.")+
+      plRow("造句 Forge",gy.due+" patterns due","#forge","Produce before you check. Retrieval failure is the point, not the problem.")+
+    '</div>'+
+    '<div class="p2hintrow"><label class="fg-toggle">daily target <input type="number" id="plTarget" value="'+target+'" min="10" max="400" step="10" style="width:70px"></label></div>'+
+   '</div>';
+  $("#plTarget").onchange=e=>{ P2.forge.target=+e.target.value||60; p2save(); renderPlan(); };
+  function plRow(t,meta,href,note){
+    return '<a class="pl-row" href="'+href+'"><div><b>'+t+'</b><span>'+meta+'</span><p>'+note+'</p></div><i>→</i></a>';
+  }
+}
+
 /* ---------- nav scroll-spy + reveal ---------- */
 const navLinks=$$("#navlinks a");
-const sections=["roadmap","recall","writing","grammar","sentences","vocab","listening","reading","speaking","compose","words"].map(id=>$("#"+id));
+const sections=WEEK_SECTIONS.concat(P2_SECTIONS).map(id=>$("#"+id));
 if("IntersectionObserver" in window){
-  const no=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));}),{rootMargin:"-45% 0px -50% 0px"});
+  const no=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!e.target.hidden)navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));}),{rootMargin:"-45% 0px -50% 0px"});
   sections.forEach(s=>s&&no.observe(s));
 }
 
 /* ===================== init ===================== */
 buildWeekSelect();
 renderAll();
-startHero();
+/* ---- Phase II boot ---- */
+$("#p2wordCount")&&($("#p2wordCount").textContent=LEX.length.toLocaleString());
+$("#p2charCount")&&($("#p2charCount").textContent=new Set(LEX.flatMap(x=>[...x.c]).filter(c=>/[\u4e00-\u9fff]/.test(c))).size.toLocaleString());
+let p2Built=false;
+function p2Refresh(){
+  if(!p2Built){ p2Built=true; buildDojo(); buildReader(); buildSound(); buildForge(); }
+  else { renderDojoStats(); renderForge(); }
+}
+(function(){
+  const hash=(location.hash||"").replace("#","");
+  if(P2_SECTIONS.includes(hash)) SAVED_MODE="p2";
+  else if(WEEK_SECTIONS.includes(hash)) SAVED_MODE="week";
+  setMode(SAVED_MODE);
+  if(hash){ const el=$("#"+hash); if(el&&!el.hidden) setTimeout(()=>el.scrollIntoView(),60); }
+})();
+document.addEventListener("click",e=>{ const g=$("#glossBox");
+  if(g&&!g.hidden&&!e.target.closest("#glossBox")&&!e.target.closest(".tok")) g.hidden=true; });
+try{ startHero(); }catch(e){}
 $("#ttsNoteClose")&&($("#ttsNoteClose").onclick=()=>{$("#ttsNote").hidden=true;});
 </script>
 </body>
